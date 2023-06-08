@@ -19,12 +19,12 @@ namespace ActivityReportSystem.Forms
         public Frm_Testing()
         {
             InitializeComponent();
-            clsAppConfig System = new clsAppConfig();
+            clsAppConfig SystemSettings = new clsAppConfig();
+            Db.UpdateDashboard();
         }
 
         private void Frm_Testing_Load(object sender, EventArgs e)
         {
-            Db.UpdateDashboard();
             Db.LoadDashboardDetails(Dgv_Testing);
         }
     }

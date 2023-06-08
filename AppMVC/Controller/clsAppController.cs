@@ -14,17 +14,16 @@ namespace ActivityReportSystem.AppMVC.Controller
     {
         clsAppStoredProc Sp = new clsAppStoredProc();
 
-        public DataTable ExecuteQuery(Action Action, string StatementType, string StatementBy, string SearchValue, string MaintenanceType, string Sql)
+        public DataTable ExecuteQuery(string StatementType, string StatementBy, string SearchValue, string MaintenanceType, string Sql, Action Action)
         {
 
          #region Debug Details
 
             Debug.WriteLine(clsFunctions.LineSeperator);
-            Debug.WriteLine("Execute Query");
+            Debug.WriteLine("EXECUTE QUERY");
             Debug.WriteLine(clsFunctions.LineSeperator);
-            Debug.WriteLine("Action: " + Action);
             Debug.WriteLine("Statement Type: " + StatementType);
-            Debug.WriteLine("Statement By: " + StatementBy);
+            Debug.WriteLine("Statement By: "   + StatementBy);
 
             if (!string.IsNullOrEmpty(SearchValue))
                 Debug.WriteLine("SearchValue: " + SearchValue);
@@ -58,6 +57,7 @@ namespace ActivityReportSystem.AppMVC.Controller
                 case Action.Delete:
                     Sp.CollectionDelete(StatementType, StatementBy, SearchValue);
                     break;
+
             }
 
             return resultTable;

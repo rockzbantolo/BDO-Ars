@@ -24,7 +24,7 @@ namespace ActivityReportSystem.AppMVC.Model
             {
                 Conn.Open();
 
-                Debug.WriteLine(string.Concat("CALL spCollectionDetails ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, ",\"", ")"));
+                Debug.WriteLine(string.Concat("CALL spCollectionDetails ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, "\"", ")"));
 
                 using (Cmd = new MySqlCommand("spCollectionDetails", Conn))
                 {
@@ -60,7 +60,7 @@ namespace ActivityReportSystem.AppMVC.Model
             {
                 Conn.Open();
 
-                Debug.WriteLine(string.Concat("CALL spCollectionUpdate ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, ",\"", ")"));
+                Debug.WriteLine(string.Concat("CALL spCollectionUpdate ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, "\"", ")"));
 
                 using (Cmd = new MySqlCommand("spCollectionUpdate", Conn))
                 {
@@ -92,7 +92,7 @@ namespace ActivityReportSystem.AppMVC.Model
 
                 Conn.Open();
 
-                Debug.WriteLine(string.Concat("CALL spCollectionInsert ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, ",\"", ")"));
+                Debug.WriteLine(string.Concat("CALL spCollectionInsert ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, "\"", ")"));
 
                 using (Cmd = new MySqlCommand("spCollectionInsert", Conn))
                 {
@@ -134,7 +134,7 @@ namespace ActivityReportSystem.AppMVC.Model
             {
                 Conn.Open();
 
-                Debug.WriteLine(string.Concat("CALL spCollectionUpdate ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, ",\"", ")"));
+                Debug.WriteLine(string.Concat("CALL spCollectionUpdate ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, "\"", ")"));
 
                 using (Cmd = new MySqlCommand("spCollectionUpdate", Conn))
                 {
@@ -158,5 +158,6 @@ namespace ActivityReportSystem.AppMVC.Model
             }
 
         }
+
     }
 }

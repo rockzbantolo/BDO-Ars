@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using ActivityReportSystem.Global;
 using System.Text;
 using System.Runtime.InteropServices;
+using ActivityReportSystem.Function;
 
 namespace ActivityReportSystem.Database
 {
@@ -14,6 +15,18 @@ namespace ActivityReportSystem.Database
         {
             MySqlSettings();
             SystemSettings();
+
+            Debug.WriteLine(clsFunctions.LineSeperator);
+            Debug.WriteLine("DATABASE INFORMATION");
+            Debug.WriteLine(clsFunctions.LineSeperator);
+            Debug.WriteLine(string.Concat("Persist Security Info: ", clsAppData.DataParam.sSecurity, "; "));
+            Debug.WriteLine(string.Concat("Server: ", clsAppData.DataParam.sServer, "; "));
+            Debug.WriteLine(string.Concat("Port: ", clsAppData.DataParam.sPort, "; "));
+            Debug.WriteLine(string.Concat("Database: ", clsAppData.DataParam.sDatabase, "; "));
+            Debug.WriteLine(string.Concat("Username: ", clsAppData.DataParam.sUserName, "; "));
+            Debug.WriteLine(string.Concat("Password: ", clsAppData.DataParam.sPassword, "; "));
+            Debug.WriteLine(string.Concat("Connection Timeout: ", clsAppData.DataParam.sTimeOut, ";"));
+            Debug.WriteLine(clsFunctions.LineSeperator);
         }
 
     }
