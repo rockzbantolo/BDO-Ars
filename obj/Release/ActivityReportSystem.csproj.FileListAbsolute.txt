@@ -1,0 +1,8 @@
+C:\Users\rockz\Documents\Visual Studio 2017\Projects\ActivityReportSystem\obj\Release\ActivityReportSystem.csprojResolveAssemblyReference.cache
+C:\Users\rockz\Documents\Visual Studio 2017\Projects\ActivityReportSystem\obj\Release\ActivityReportSystem.Forms.frmLogin.resources
+C:\Users\rockz\Documents\Visual Studio 2017\Projects\ActivityReportSystem\obj\Release\ActivityReportSystem.Forms.frmMain.resources
+C:\Users\rockz\Documents\Visual Studio 2017\Projects\ActivityReportSystem\obj\Release\ActivityReportSystem.frmMImport.resources
+C:\Users\rockz\Documents\Visual Studio 2017\Projects\ActivityReportSystem\obj\Release\ActivityReportSystem.Forms.frmSummary.resources
+C:\Users\rockz\Documents\Visual Studio 2017\Projects\ActivityReportSystem\obj\Release\ActivityReportSystem.Properties.Resources.resources
+C:\Users\rockz\Documents\Visual Studio 2017\Projects\ActivityReportSystem\obj\Release\ActivityReportSystem.csproj.GenerateResource.Cache
+C:\Users\rockz\Documents\Visual Studio 2017\Projects\ActivityReportSystem\obj\Release\ActivityReportSystem.Forms.frmReports.resources
