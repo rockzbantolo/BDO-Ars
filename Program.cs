@@ -17,7 +17,7 @@ namespace ActivityReportSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Testing());
+            Application.Run(new frmDashboard());
         }
     }
 }

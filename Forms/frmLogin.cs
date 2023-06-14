@@ -36,62 +36,21 @@ namespace ActivityReportSystem.Forms
 
         private void CheckUserDetails(string v_Username, string v_Password)
         {
-            Debug.WriteLine("---- Start Check User Info ----");
-
-            string sStoredProcedure = "spViewAccountDetails";
-
-            if (Db.Connect())
-            {
-                try
-                {
-                    Db.Command = new MySqlCommand(sStoredProcedure, Db.Conn);
-                    Db.Command.CommandType = CommandType.StoredProcedure;
-
-                    // PARAMETERS
-                    Db.Command.Parameters.Add(new MySqlParameter("@p_Username", v_Username));
-                    Db.Command.Parameters.Add(new MySqlParameter("@p_Password", v_Password));
-
-                    // EXECUTE COMMAND
-                    Db.Reader = Db.Command.ExecuteReader();
-
-                    // READ RECORD     
-                    while (Db.Reader.Read())
-                    {
-                        clsAppData.DataParam.strLogUserId = Db.Reader["ID"].ToString().Trim();
-                        clsAppData.DataParam.strLogUsername = Db.Reader["Username"].ToString().Trim();
-                        clsAppData.DataParam.strLogPassword = Db.Reader["Password"].ToString().Trim();
-                        clsAppData.DataParam.strLogUserLevel = Db.Reader["User_Level"].ToString().Trim();
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    throw ex;
-                }
-                finally
-                {
-                    if (Db.Conn != null)
-                    {
-                        Db.Disconnect();
-                        Db.Reader.Close();
-                    }
-                }
-            }
+  
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             CheckUserDetails(txtUsername.Text, txtPassword.Text);
 
-            if (clsAppData.DataParam.strLogUsername != txtUsername.Text.Trim())
+            if (sAppData.DataParam.strLogUsername != txtUsername.Text.Trim())
             {
-                dbFunction.setMessageBox("Incorrect Username", "Login", clsFunctions.IconType.iStop);
+                clsFunctions.setMessageBox("Incorrect Username", "Login", clsFunctions.IconType.iStop);
 
             }
-            else if (clsAppData.DataParam.strLogPassword != txtPassword.Text.Trim())
+            else if (sAppData.DataParam.strLogPassword != txtPassword.Text.Trim())
             {
-                dbFunction.setMessageBox("Incorrect Password", "Login", clsFunctions.IconType.iStop);
+                clsFunctions.setMessageBox("Incorrect Password", "Login", clsFunctions.IconType.iStop);
             }
 
         }

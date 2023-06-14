@@ -243,14 +243,14 @@ namespace ActivityReportSystem
 
                             }
                             catch (Exception e) {
-                                cFunc.setMessageBox(e.Message, "Activity Report System", clsFunctions.IconType.iError);
+                                clsFunctions.setMessageBox(e.Message, "Activity Report System", clsFunctions.IconType.iError);
                             }
 
                             Cursor.Current = Cursors.Default;
                         }
                     }
                     else {
-                        cFunc.setMessageBox("File Not a valid " + Template + " File", "Error Message", clsFunctions.IconType.iWarning);
+                        clsFunctions.setMessageBox("File Not a valid " + Template + " File", "Error Message", clsFunctions.IconType.iWarning);
                         Tbx.Clear();
                     }
                 }
@@ -264,7 +264,7 @@ namespace ActivityReportSystem
     // REFRESH DASHBOARD
         public void Refresh_Dashboard()
         {
-            Debug.WriteLine("--- Refresh Dashboard");
+            Debug.WriteLine(" ---- Refresh Dashboard -----");
             var Refresh = Application.OpenForms.OfType<frmDashboard>().Single();
             Refresh.InitializeDisplay();
         }

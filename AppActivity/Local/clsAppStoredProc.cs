@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ActivityReportSystem.AppMVC.Model
+namespace ActivityReportSystem.AppActivity.Model
 {
     class clsAppStoredProc
     {
@@ -20,7 +20,7 @@ namespace ActivityReportSystem.AppMVC.Model
         {
             DataTable dataTable = new DataTable();
 
-            using (Conn = new MySqlConnection(clsAppData.DataParam.ConnString))
+            using (Conn = new MySqlConnection(sAppData.DataParam.ConnString))
             {
                 Conn.Open();
 
@@ -56,7 +56,7 @@ namespace ActivityReportSystem.AppMVC.Model
 
         public void CollectionUpdate(string StatementType, string StatementBy, string SearchValue, string Sql)
         {
-            using (Conn = new MySqlConnection(clsAppData.DataParam.ConnString))
+            using (Conn = new MySqlConnection(sAppData.DataParam.ConnString))
             {
                 Conn.Open();
 
@@ -87,7 +87,7 @@ namespace ActivityReportSystem.AppMVC.Model
 
         public void CollectionInsert(string StatementType, string StatementBy, string SearchValue, string Sql)
         {
-            using (Conn = new MySqlConnection(clsAppData.DataParam.ConnString))
+            using (Conn = new MySqlConnection(sAppData.DataParam.ConnString))
             {
 
                 Conn.Open();
@@ -113,8 +113,8 @@ namespace ActivityReportSystem.AppMVC.Model
                         Cmd.ExecuteNonQuery();
 
                         // Retrieve the value of the output parameter
-                        clsAppData.DataParam.outLastInserted = Cmd.Parameters["@outLastInsertID"].Value.ToString().Trim();
-                        clsAppData.DataParam.outMessage = Cmd.Parameters["@outErrorMessage"].Value.ToString().Trim();
+                        sAppData.DataParam.outLastInserted = Cmd.Parameters["@outLastInsertID"].Value.ToString().Trim();
+                        sAppData.DataParam.outMessage = Cmd.Parameters["@outErrorMessage"].Value.ToString().Trim();
 
                     }
                     catch (Exception ex)
@@ -124,13 +124,13 @@ namespace ActivityReportSystem.AppMVC.Model
                     }
                 }
 
-                Debug.WriteLine("Last Inserted ID : " + clsAppData.DataParam.outLastInserted);
+                Debug.WriteLine("Last Inserted ID : " + sAppData.DataParam.outLastInserted);
             }
         }
 
         public void CollectionDelete(string StatementType, string StatementBy, string SearchValue)
         {
-            using (Conn = new MySqlConnection(clsAppData.DataParam.ConnString))
+            using (Conn = new MySqlConnection(sAppData.DataParam.ConnString))
             {
                 Conn.Open();
 

@@ -131,11 +131,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppMVC\Controller\clsAppController.cs" />
-    <Compile Include="AppMVC\Model\clsAppStoredProc.cs" />
-    <Compile Include="AppMVC\View\clsAppViews.cs" />
-    <Compile Include="Database\clsConnection.cs" />
-    <Compile Include="Database\clsSQLModels.cs" />
+    <Compile Include="AppActivity\Local\clsAppController.cs" />
+    <Compile Include="AppActivity\Local\clsAppStoredProc.cs" />
+    <Compile Include="AppActivity\Local\clsAppViews.cs" />
+    <Compile Include="AppDatabase\clsConnection.cs" />
+    <Compile Include="AppDatabase\clsSQLModels.cs" />
     <Compile Include="Forms\frmBreakdown.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,8 +197,8 @@
       <DependentUpon>Frm_Testing.cs</DependentUpon>
     </Compile>
     <Compile Include="Function\clsFunction.cs" />
-    <Compile Include="Global\clsArray.cs" />
-    <Compile Include="Global\clsAppData.cs" />
+    <Compile Include="AppGlobal\clsArray.cs" />
+    <Compile Include="AppGlobal\clsAppData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

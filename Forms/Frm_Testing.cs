@@ -1,4 +1,4 @@
-﻿using ActivityReportSystem.AppMVC.View;
+﻿using ActivityReportSystem.AppActivity.View;
 using ActivityReportSystem.Database;
 using System;
 using System.Collections.Generic;
@@ -25,7 +25,7 @@ namespace ActivityReportSystem.Forms
 
         private void Frm_Testing_Load(object sender, EventArgs e)
         {
-            Db.LoadDashboardDetails(Dgv_Testing);
+            Db.LoadDashboardDetails(Dgv_Testing, string.Empty);
         }
     }
 }

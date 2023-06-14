@@ -29,7 +29,7 @@ namespace ActivityReportSystem.Database
         public void InitializeUpdates()
         {
             CollectionUpdate("Update", "Dashboard", "");
-            ViewCountDetails("Count", "cTotals", "");
+           // ViewCountDetails("Count", "cTotals", "");
         }
 
         public void setCollectionInsert(string Template, DataGridView Obj)
@@ -43,7 +43,7 @@ namespace ActivityReportSystem.Database
             StringBuilder Query = new StringBuilder();
             var cultureInfo = new CultureInfo("en-US");
 
-            clsAppData.DataParam.outMessage = string.Empty;
+            sAppData.DataParam.outMessage = string.Empty;
             string RowQuery = string.Empty;
             string TempValue = string.Empty;
             bool isDateTime = false;
@@ -149,9 +149,9 @@ namespace ActivityReportSystem.Database
                 Obj = null;
 
                 // Check For Error Message
-                if (clsAppData.DataParam.outMessage.Length > 0)
+                if (sAppData.DataParam.outMessage.Length > 0)
                 {
-                    MessageBox.Show(clsAppData.DataParam.outMessage + "\n" + Template + " Column Count Doesn't Match Database Column",
+                    MessageBox.Show(sAppData.DataParam.outMessage + "\n" + Template + " Column Count Doesn't Match Database Column",
                     "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
@@ -195,15 +195,15 @@ namespace ActivityReportSystem.Database
         public void setDetailedStatus(DataGridView Obj, Label Com, Label Pen, Label Can)
         {
 
-            switch (clsAppData.DataParam.TempName)
+            switch (sAppData.DataParam.TempName)
             {
                 case clsFunctions.sInstall:
 
                     ViewCollectionDetails(Obj, "View", clsFunctions.sInstall, "");
 
-                    Com.Text = clsAppData.Template.inSum_Ttl_comIns.ToString("n0");
-                    Pen.Text = clsAppData.Template.inSum_Ttl_penIns.ToString("n0");
-                    Can.Text = clsAppData.Template.inSum_Ttl_canIns.ToString("n0");
+                    Com.Text = sAppData.Template.iTotal_comIns.ToString("n0");
+                    Pen.Text = sAppData.Template.iTotal_penIns.ToString("n0");
+                    Can.Text = sAppData.Template.iTotal_canIns.ToString("n0");
 
                     Obj.ClearSelection();
 
@@ -213,9 +213,9 @@ namespace ActivityReportSystem.Database
 
                     ViewCollectionDetails(Obj, "View", clsFunctions.sReprog, "");
 
-                    Com.Text = clsAppData.Template.inSum_Ttl_comReprog.ToString("n0");
-                    Pen.Text = clsAppData.Template.inSum_Ttl_penReprog.ToString("n0");
-                    Can.Text = clsAppData.Template.inSum_Ttl_canReprog.ToString("n0");
+                    Com.Text = sAppData.Template.iTotal_comReprog.ToString("n0");
+                    Pen.Text = sAppData.Template.iTotal_penReprog.ToString("n0");
+                    Can.Text = sAppData.Template.iTotal_canReprog.ToString("n0");
 
                     Obj.ClearSelection();
 
@@ -225,9 +225,9 @@ namespace ActivityReportSystem.Database
 
                     ViewCollectionDetails(Obj, "View", clsFunctions.sServ, "");
 
-                    Com.Text = clsAppData.Template.inSum_Ttl_comServ.ToString("n0");
-                    Pen.Text = clsAppData.Template.inSum_Ttl_penServ.ToString("n0");
-                    Can.Text = clsAppData.Template.inSum_Ttl_canServ.ToString("n0");
+                    Com.Text = sAppData.Template.iTotal_comServ.ToString("n0");
+                    Pen.Text = sAppData.Template.iTotal_penServ.ToString("n0");
+                    Can.Text = sAppData.Template.iTotal_canServ.ToString("n0");
 
                     Obj.ClearSelection();
 
@@ -237,9 +237,9 @@ namespace ActivityReportSystem.Database
 
                     ViewCollectionDetails(Obj, "View", clsFunctions.sRepair, "");
 
-                    Com.Text = clsAppData.Template.inSum_Ttl_comRep.ToString("n0");
-                    Pen.Text = clsAppData.Template.inSum_Ttl_penRep.ToString("n0");
-                    Can.Text = clsAppData.Template.inSum_Ttl_canRep.ToString("n0");
+                    Com.Text = sAppData.Template.iTotal_comRep.ToString("n0");
+                    Pen.Text = sAppData.Template.iTotal_penRep.ToString("n0");
+                    Can.Text = sAppData.Template.iTotal_canRep.ToString("n0");
 
                     Obj.ClearSelection();
 
@@ -372,8 +372,8 @@ namespace ActivityReportSystem.Database
                         Db.Reader = Db.Command.ExecuteReader(); // Execute Command
 
                         // Hold to Variable
-                        clsAppData.DataParam.outMessage = Db.Command.Parameters["@p_outErrorMessage"].Value.ToString().Trim();
-                        clsAppData.DataParam.outLastInserted = Db.Command.Parameters["@p_outLastInsertID"].Value.ToString().Trim();
+                        sAppData.DataParam.outMessage = Db.Command.Parameters["@p_outErrorMessage"].Value.ToString().Trim();
+                        sAppData.DataParam.outLastInserted = Db.Command.Parameters["@p_outLastInsertID"].Value.ToString().Trim();
 
                         //Debug.WriteLine("outMessage=" + cFunc.AddBracketStartEnd(cGvar.outMessage));
                         //Debug.WriteLine("outLastInserted=" + cFunc.AddBracketStartEnd(cGvar.outLastInserted));
@@ -603,6 +603,7 @@ namespace ActivityReportSystem.Database
 
         }
 
+        /* View Count Details
         private void ViewCountDetails(string StatementType, string SearchBy, string SearchVal)
         {
             string sStoredProcedure = "spCollectionDetails";
@@ -638,58 +639,58 @@ namespace ActivityReportSystem.Database
                                     case "cTotals":
 
                                         //Total Data
-                                        clsAppData.Template.InstallVolume   = int.Parse(Db.Reader["TotalIns"].ToString().Trim());
-                                        clsAppData.Template.ReprogVolume    = int.Parse(Db.Reader["TotalReprog"].ToString().Trim());
-                                        clsAppData.Template.ServVolume      = int.Parse(Db.Reader["TotalServ"].ToString().Trim());
-                                        clsAppData.Template.RepairVolume    = int.Parse(Db.Reader["TotalRep"].ToString().Trim());
+                                        sAppData.Template.InstallSize   = int.Parse(Db.Reader["TotalIns"].ToString().Trim());
+                                        sAppData.Template.ReprogSize    = int.Parse(Db.Reader["TotalReprog"].ToString().Trim());
+                                        sAppData.Template.ServSize      = int.Parse(Db.Reader["TotalServ"].ToString().Trim());
+                                        sAppData.Template.RepairSize    = int.Parse(Db.Reader["TotalRep"].ToString().Trim());
 
                                         //Terminal Inventory
-                                        clsAppData.Template.inMp200_Ttl_Stock   = int.Parse(Db.Reader["Total_MP200"].ToString().Trim());
-                                        clsAppData.Template.inS1E_Ttl_Stock     = int.Parse(Db.Reader["Total_S1E"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_Stock   = int.Parse(Db.Reader["Total_MP200"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_Stock     = int.Parse(Db.Reader["Total_S1E"].ToString().Trim());
 
                                    // MP200
 
                                         // INSTALLATION
-                                        clsAppData.Template.inMp200_Ttl_comIns = int.Parse(Db.Reader["MPComIns"].ToString().Trim());
-                                        clsAppData.Template.inMp200_Ttl_penIns = int.Parse(Db.Reader["MPPenIns"].ToString().Trim());
-                                        clsAppData.Template.inMp200_Ttl_canIns = int.Parse(Db.Reader["MPCanIns"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_comIns = int.Parse(Db.Reader["MPComIns"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_penIns = int.Parse(Db.Reader["MPPenIns"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_canIns = int.Parse(Db.Reader["MPCanIns"].ToString().Trim());
 
                                         // REPROGRAMMING
-                                        clsAppData.Template.inMp200_Ttl_comReprog = int.Parse(Db.Reader["MPComReprog"].ToString().Trim());
-                                        clsAppData.Template.inMp200_Ttl_penReprog = int.Parse(Db.Reader["MPPenReprog"].ToString().Trim());
-                                        clsAppData.Template.inMp200_Ttl_canReprog = int.Parse(Db.Reader["MPCanReprog"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_comReprog = int.Parse(Db.Reader["MPComReprog"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_penReprog = int.Parse(Db.Reader["MPPenReprog"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_canReprog = int.Parse(Db.Reader["MPCanReprog"].ToString().Trim());
 
                                         // SERVICING
-                                        clsAppData.Template.inMp200_Ttl_comServ = int.Parse(Db.Reader["MPComServ"].ToString().Trim());
-                                        clsAppData.Template.inMp200_Ttl_penServ = int.Parse(Db.Reader["MPPenServ"].ToString().Trim());
-                                        clsAppData.Template.inMp200_Ttl_canServ = int.Parse(Db.Reader["MPCanServ"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_comServ = int.Parse(Db.Reader["MPComServ"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_penServ = int.Parse(Db.Reader["MPPenServ"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_canServ = int.Parse(Db.Reader["MPCanServ"].ToString().Trim());
 
                                         // REPAIR
-                                        clsAppData.Template.inMp200_Ttl_comRepair = int.Parse(Db.Reader["MPComRep"].ToString().Trim());
-                                        clsAppData.Template.inMp200_Ttl_penRepair = int.Parse(Db.Reader["MPPenRep"].ToString().Trim());
-                                        clsAppData.Template.inMp200_Ttl_canRepair = int.Parse(Db.Reader["MPCanRep"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_comRepair = int.Parse(Db.Reader["MPComRep"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_penRepair = int.Parse(Db.Reader["MPPenRep"].ToString().Trim());
+                                        sAppData.Template.inMp200_Ttl_canRepair = int.Parse(Db.Reader["MPCanRep"].ToString().Trim());
 
                                    // S1E Mini
 
                                         // INSTALLATION
-                                        clsAppData.Template.inS1E_Ttl_comIns = int.Parse(Db.Reader["S1EComIns"].ToString().Trim());
-                                        clsAppData.Template.inS1E_Ttl_penIns = int.Parse(Db.Reader["S1EPenIns"].ToString().Trim());
-                                        clsAppData.Template.inS1E_Ttl_canIns = int.Parse(Db.Reader["S1ECanIns"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_comIns = int.Parse(Db.Reader["S1EComIns"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_penIns = int.Parse(Db.Reader["S1EPenIns"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_canIns = int.Parse(Db.Reader["S1ECanIns"].ToString().Trim());
 
                                         // REPROGRAMMING
-                                        clsAppData.Template.inS1E_Ttl_comReprog = int.Parse(Db.Reader["S1EComReprog"].ToString().Trim());
-                                        clsAppData.Template.inS1E_Ttl_penReprog = int.Parse(Db.Reader["S1EPenReprog"].ToString().Trim());
-                                        clsAppData.Template.inS1E_Ttl_canReprog = int.Parse(Db.Reader["S1ECanReprog"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_comReprog = int.Parse(Db.Reader["S1EComReprog"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_penReprog = int.Parse(Db.Reader["S1EPenReprog"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_canReprog = int.Parse(Db.Reader["S1ECanReprog"].ToString().Trim());
 
                                         // SERVICING
-                                        clsAppData.Template.inS1E_Ttl_comServ = int.Parse(Db.Reader["S1EComServ"].ToString().Trim());
-                                        clsAppData.Template.inS1E_Ttl_penServ = int.Parse(Db.Reader["S1EPenServ"].ToString().Trim());
-                                        clsAppData.Template.inS1E_Ttl_penServ = int.Parse(Db.Reader["S1ECanServ"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_comServ = int.Parse(Db.Reader["S1EComServ"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_penServ = int.Parse(Db.Reader["S1EPenServ"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_penServ = int.Parse(Db.Reader["S1ECanServ"].ToString().Trim());
 
                                         // REPAIR
-                                        clsAppData.Template.inS1E_Ttl_comRepair = int.Parse(Db.Reader["S1EComRep"].ToString().Trim());
-                                        clsAppData.Template.inS1E_Ttl_penRepair = int.Parse(Db.Reader["S1EPenRep"].ToString().Trim());
-                                        clsAppData.Template.inS1E_Ttl_penRepair = int.Parse(Db.Reader["S1ECanRep"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_comRepair = int.Parse(Db.Reader["S1EComRep"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_penRepair = int.Parse(Db.Reader["S1EPenRep"].ToString().Trim());
+                                        sAppData.Template.inS1E_Ttl_penRepair = int.Parse(Db.Reader["S1ECanRep"].ToString().Trim());
 
                                         break;
                                 }
@@ -717,6 +718,7 @@ namespace ActivityReportSystem.Database
             }
 
         }
+        */
 
         private void ViewSearchDate(DataGridView Obj, string Tablename, string SearchValue)
         {
@@ -799,7 +801,7 @@ namespace ActivityReportSystem.Database
             string spString = "CALL " + StoreProcedureName + "(" + "\"" + StatementType + "\"" + "," + "\"" + SearchBy + "\"" + "," + "\"" + SearchValue + "\"" + ")" + ";";
             Debug.WriteLine(spString);
 
-            Func.getRequestTime("GetReportWithStoredProcedure->Start");
+            clsFunctions.getRequestTime("GetReportWithStoredProcedure->Start");
 
             if (Db.Connect())
             {
@@ -810,7 +812,7 @@ namespace ActivityReportSystem.Database
                     adapter.SelectCommand.Parameters.Add("@p_StatementType", MySqlDbType.VarChar).Value = StatementType;
                     adapter.SelectCommand.Parameters.Add("@p_SearchBy", MySqlDbType.VarChar).Value = SearchBy;
                     adapter.SelectCommand.Parameters.Add("@p_SearchValue", MySqlDbType.VarChar).Value = SearchValue;
-                    adapter.SelectCommand.CommandTimeout = int.Parse(clsAppData.DataParam.sTimeOut); // Setting command timeout to 1800 second  (30mins)
+                    adapter.SelectCommand.CommandTimeout = int.Parse(sAppData.DataParam.sTimeOut); // Setting command timeout to 1800 second  (30mins)
 
                     adapter.Fill(rtnDs);
                 }
@@ -825,7 +827,7 @@ namespace ActivityReportSystem.Database
                 Db.Disconnect();
             }
 
-            Func.getResponseTime("GetReportWithStoredProcedure->End");
+            clsFunctions.getResponseTime("GetReportWithStoredProcedure->End");
 
             Db.Disconnect();
 

@@ -11,14 +11,14 @@ using ActivityReportSystem.Database;
 using ActivityReportSystem.Global;
 using System.Collections.Generic;
 using System.Reflection;
+using ActivityReportSystem.AppActivity.View;
 
 namespace ActivityReportSystem.Forms
 {
     public partial class frmSumDetails : Form
     {
-        private clsFunctions Func = new clsFunctions();
-        private clsSQLModels Sql = new clsSQLModels();
-
+        private clsFunctions Func = new clsFunctions();      
+        private clsAppViews Db = new clsAppViews();
 
         public frmSumDetails()
         {
@@ -30,17 +30,17 @@ namespace ActivityReportSystem.Forms
 
         private void frmSumDetails_Load(object sender, EventArgs e)
         {
-            lb_Activity.Text = clsAppData.DataParam.TempName;
+            lb_Activity.Text = sAppData.DataParam.TempName;
 
             Cursor.Current = Cursors.WaitCursor;
 
-            if (lb_Activity.Text == clsFunctions.sInstall || lb_Activity.Text == clsFunctions.sReprog)
+            if (sAppData.DataParam.TempName == clsFunctions.sInstall || sAppData.DataParam.TempName == clsFunctions.sReprog)
             {
-                Sql.setDetailedStatus(Dgv_Details, lb_Com, lb_Pen, lb_Can);
+                Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, string.Empty);
             }
             else
             {
-                Sql.setDetailedStatus(Dgv_Details, lb_Com, lb_Pen, lb_Can);
+                Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, string.Empty);
             }
 
             getDuplicateValue();
@@ -72,7 +72,7 @@ namespace ActivityReportSystem.Forms
             Tm_FadeOut.Start();
         }
 
-        // DISPLAY SUMMARY ------------------------------
+        // DISPLAY SUMMARY
         public void getDuplicateValue()
         {
             int inNoDates = 0;
@@ -162,5 +162,30 @@ namespace ActivityReportSystem.Forms
             Func.FadeOut(this, Tm_FadeOut);
         }
 
+        private void Btn_Search_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+
+            if (sAppData.DataParam.TempName == clsFunctions.sInstall || sAppData.DataParam.TempName == clsFunctions.sReprog)
+            {
+                Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, Tx_Search.Text.Trim());
+            }
+            else
+            {
+                Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, Tx_Search.Text.Trim());
+            }
+
+            getDuplicateValue();
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void Tx_Search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; // Prevent the "ding" sound
+                Btn_Search.PerformClick(); // Trigger the search button
+            }
+        }
     }
 }

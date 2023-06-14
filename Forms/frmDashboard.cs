@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 using ActivityReportSystem.Function;
 using ActivityReportSystem.Database;
 using ActivityReportSystem.Global;
-
+using ActivityReportSystem.AppActivity.View;
 
 namespace ActivityReportSystem.Forms
 {
@@ -17,11 +17,9 @@ namespace ActivityReportSystem.Forms
     public partial class frmDashboard : Form
     {
         private clsFunctions Func = new clsFunctions();
-        private clsSQLModels SpMethod = new clsSQLModels();
-        private clsDatabase Db = new clsDatabase();
+        clsAppViews Db = new clsAppViews();
 
-    // OVERIDE TO REDUCE LAG AND FLICKERING
-
+        // OVERIDE TO REDUCE LAG AND FLICKERING
         protected override CreateParams CreateParams
         {
             get
@@ -30,11 +28,12 @@ namespace ActivityReportSystem.Forms
                 handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
                 return handleParam;
             }
-        }
 
-      
+        }
+ 
         public frmDashboard()
         {
+            clsAppConfig SystemSettings = new clsAppConfig();
             InitializeComponent();
             InitializeDisplay();
             Tm_FadeIn.Start();
@@ -47,29 +46,22 @@ namespace ActivityReportSystem.Forms
             cmb_Model_Template.DataSource = clsFunctions.Templates;
         }
 
-
-    // PROCESS DISPLAY
-
+        // PROCESS DISPLAY
         public void InitializeDisplay()
         {
-            Func.setDefaultValue();
-            SpMethod.InitializeUpdates();
+            // Initialize Updates
+            Db.UpdateDashboard();
             Clear("Objects");
 
-    // Dashboard Data
+            // Dashboard Data
+            Db.LoadDashboardDetails(dgv_Sum_ComReq, string.Empty);
+            Db.LoadDashboardDetails(dgv_Sum_PenReq, string.Empty);
+            Db.LoadDashboardDetails(dgv_Model_List, string.Empty);
 
-            SpMethod.setGridDetails(dgv_Sum_ComReq, string.Empty);
-            SpMethod.setGridDetails(dgv_Sum_PenReq, string.Empty);
-            SpMethod.setGridDetails(dgv_Model_List, string.Empty);
- 
-    // Summary Values
-
-            Func.getSumValue();
-            getDisplay();
-
+            InitValues();
         }
 
-        private void getDisplay()
+        private void InitValues()
         {
 
             try
@@ -77,42 +69,41 @@ namespace ActivityReportSystem.Forms
                 // OVERVIEW
 
                 // INSTALLATION
-                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sInstall.ToUpper(),  clsAppData.Template.inSum_Ttl_penIns);
+                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sInstall.ToUpper(),  sAppData.Template.iTotal_penIns);
                 // REPROGRAMMING
-                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sReprog.ToUpper(),   clsAppData.Template.inSum_Ttl_penReprog);
+                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sReprog.ToUpper(),   sAppData.Template.iTotal_penReprog);
                 // SERVICING
-                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sServ.ToUpper(),     clsAppData.Template.inSum_Ttl_penServ);
+                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sServ.ToUpper(),     sAppData.Template.iTotal_penServ);
                 // REPAIR
-                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sRepair.ToUpper(),   clsAppData.Template.inSum_Ttl_penRep);
+                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sRepair.ToUpper(),   sAppData.Template.iTotal_penRep);
 
                 // PIE CHART
-                Func.setChartValue(chrt_Bdo_Summary, 0, "", clsAppData.Template.inSum_Ttl_Com);
-                Func.setChartValue(chrt_Bdo_Summary, 0, "", clsAppData.Template.inSum_Ttl_Pen);
+                Func.setChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Com);
+                Func.setChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Pen);
 
                 chrt_Bdo_Summary.Series[0].Points[0].Color = Color.FromArgb(41, 115, 185);
                 chrt_Bdo_Summary.Series[0].Points[1].Color = Color.FromArgb(230, 40, 35);
 
                 // BOX LABELS - SUMMARY VALUES
-                lb_ComSum.Text = clsAppData.Template.inSum_Ttl_Com.ToString("n0");
-                lb_PenSum.Text = clsAppData.Template.inSum_Ttl_Pen.ToString("n0");           
+                lb_ComSum.Text = sAppData.Template.iTotal_Com.ToString("n0");
+                lb_PenSum.Text = sAppData.Template.iTotal_Pen.ToString("n0");           
 
-                lb_InsTotal.Text    = clsAppData.Template.inSum_Ttl_comIns.ToString("n0");
-                lb_RepTotal.Text    = clsAppData.Template.inSum_Ttl_comReprog.ToString("n0");
-                lb_ServTotal.Text   = clsAppData.Template.inSum_Ttl_comServ.ToString("n0");
-                lb_RepairTotal.Text = clsAppData.Template.inSum_Ttl_comRep.ToString("n0");
+                lb_InsTotal.Text    = sAppData.Template.iTotal_comIns.ToString("n0");
+                lb_RepTotal.Text    = sAppData.Template.iTotal_comReprog.ToString("n0");
+                lb_ServTotal.Text   = sAppData.Template.iTotal_comServ.ToString("n0");
+                lb_RepairTotal.Text = sAppData.Template.iTotal_comRep.ToString("n0");
 
-                lb_C1.Text = Math.Round(clsAppData.Template.PInstall, 2).ToString() + "%";
-                lb_C2.Text = Math.Round(clsAppData.Template.PReprog,  2).ToString() + "%";
-                lb_C3.Text = Math.Round(clsAppData.Template.PServ,    2).ToString() + "%";
-                lb_C4.Text = Math.Round(clsAppData.Template.PRepair,  2).ToString() + "%";
+                lb_C1.Text = Math.Round(sAppData.Template.PInstall, 2).ToString() + "%";
+                lb_C2.Text = Math.Round(sAppData.Template.PReprog,  2).ToString() + "%";
+                lb_C3.Text = Math.Round(sAppData.Template.PServ,    2).ToString() + "%";
+                lb_C4.Text = Math.Round(sAppData.Template.PRepair,  2).ToString() + "%";
 
                 //string.Format("{0:#,###0}", repTOTAL.ToString());
             }
             catch (Exception ex)
             {
-                Func.setMessageBox(ex.Message, "Activity Report System", clsFunctions.IconType.iError);
+                clsFunctions.setMessageBox(ex.Message, "Activity Report System", clsFunctions.IconType.iError);
             }
-
 
         }
 
@@ -289,18 +280,20 @@ namespace ActivityReportSystem.Forms
         {
             if (cmb_Model_Template.Text == "")
             {
-                Func.setMessageBox("Please Select Template", "Date Search", clsFunctions.IconType.iInformation);
+                clsFunctions.setMessageBox("Please Select Template", "Date Search", clsFunctions.IconType.iInformation);
+                return;
             }
-            else if (cmb_Model_Template.Text == "Reprogramming")
+
+            if (cmb_Model_Template.Text == "Reprogramming")
             {
-                Func.setMessageBox("No Available Data to Display","Date Search", clsFunctions.IconType.iInformation);
+                clsFunctions.setMessageBox("No Available Data to Display","Date Search", clsFunctions.IconType.iInformation);
+                return;
             }
-            else
-            {
-                Func.ClearGridRows(dgv_Model_Status_List);
-                SpMethod.setSearchDate(dgv_Model_Status_List, cmb_Model_Template, dtp_Model_From, dtp_Model_To);
-                dgv_Model_Status_List.ClearSelection();
-            }
+
+            // Get Details
+            Db.SearchTerminalStatus(dgv_Model_Status_List, cmb_Model_Template, dtp_Model_From, dtp_Model_To);
+
+            dgv_Model_Status_List.ClearSelection();        
         }
 
     // ------------------------------------------------------------------
@@ -309,7 +302,7 @@ namespace ActivityReportSystem.Forms
         {
             // dbFunc.LocationHighlight(sender, pnHover);
             // TpcDashMain.SelectedTab = tbpMenuPage2;
-            clsAppData.DataParam.MenuControls = Tsm_Import.Text;
+            sAppData.DataParam.MenuControls = Tsm_Import.Text;
             frmShadow ShadowBG = new frmShadow();
 
             using (frmMImport imports = new frmMImport())
@@ -329,7 +322,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Installation_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            clsAppData.DataParam.TempName = clsFunctions.sInstall;
+            sAppData.DataParam.TempName = clsFunctions.sInstall;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails installation = new frmSumDetails())
@@ -347,7 +340,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Reprogram_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            clsAppData.DataParam.TempName = clsFunctions.sReprog;
+            sAppData.DataParam.TempName = clsFunctions.sReprog;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails reprogram = new frmSumDetails())
@@ -365,7 +358,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Service_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            clsAppData.DataParam.TempName = clsFunctions.sServ;
+            sAppData.DataParam.TempName = clsFunctions.sServ;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails servicing = new frmSumDetails())
@@ -383,7 +376,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Repair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            clsAppData.DataParam.TempName = clsFunctions.sRepair;
+            sAppData.DataParam.TempName = clsFunctions.sRepair;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails repair = new frmSumDetails())
@@ -424,9 +417,8 @@ namespace ActivityReportSystem.Forms
         private void cmb_Model_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmb_Model.Text.ToString() != string.Empty) {
-
-                //Db.setCountDetails(cmb_Model.Text.ToString().Trim());
-                SpMethod.setGridDetails(dgv_Model_List, cmb_Model.Text.ToString().Trim());
+                // Display All Details
+                Db.LoadDashboardDetails(dgv_Model_List, cmb_Model.Text.ToString().Trim());
             }
 
             switch (cmb_Model.SelectedIndex) {
@@ -436,21 +428,28 @@ namespace ActivityReportSystem.Forms
                     break;
 
                 case 1:
-                    SpMethod.setGridDetails(dgv_Model_List, string.Empty);
-                    lb_Total_Deployed.Text  = clsAppData.Template.inSum_Ttl_comIns.ToString("n0");
-                    lb_Total_Stocks.Text    = clsAppData.Template.Total_Stocks.ToString("n0");
+
+                    // All Details
+                    Db.LoadDashboardDetails(dgv_Model_List, string.Empty);
+
+                    lb_Total_Deployed.Text  = sAppData.Template.iTotal_comIns.ToString("n0");
+                    lb_Total_Stocks.Text    = sAppData.Template.Total_Stocks.ToString("n0");
 
                     break;
 
                 case 2:
-                    lb_Total_Deployed.Text  = clsAppData.Template.inMp200_Ttl_comIns.ToString("n0");
-                    lb_Total_Stocks.Text    = clsAppData.Template.inMp200_Ttl_Stock.ToString("n0");
 
+                    // MP200 Stocks and Deployed
+                    lb_Total_Deployed.Text  = Convert.ToInt32(sAppData.CountDetails.Rows[0]["MPComIns"]).ToString("n0");
+                    lb_Total_Stocks.Text    = Convert.ToInt32(sAppData.CountDetails.Rows[0]["Total_MP200"]).ToString("n0");
+                    
                     break;
 
                 case 3:
-                    lb_Total_Deployed.Text  = clsAppData.Template.inS1E_Ttl_comIns.ToString("n0");
-                    lb_Total_Stocks.Text    = clsAppData.Template.inS1E_Ttl_Stock.ToString("n0");
+
+                    // S1E Stocks and Deployed
+                    lb_Total_Deployed.Text  = Convert.ToInt32(sAppData.CountDetails.Rows[0]["S1EComIns"]).ToString("n0");
+                    lb_Total_Stocks.Text    = Convert.ToInt32(sAppData.CountDetails.Rows[0]["Total_S1E"]).ToString("n0");
                     break;
             }
         }

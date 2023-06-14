@@ -32,7 +32,7 @@ namespace ActivityReportSystem.Function
         public const string sDateFormat = "yyyy-MM-dd";
         public const string sTimeDefaultFormat = "hh:mm tt";
 
-        public static string LineSeperator = "============================================";
+        public static string LineSeperator = "====================================================";
 
     // TEMPLATE NAME
 
@@ -58,115 +58,7 @@ namespace ActivityReportSystem.Function
 
     //---------------------------------------------------------------------------------------------
 
-        public void setDefaultValue()
-        {
-            clsAppData.Template.inSum_Ttl_Com        = 0;
-            clsAppData.Template.inSum_Ttl_Pen        = 0;
-            clsAppData.Template.inSum_Ttl_Can        = 0;
 
-            clsAppData.Template.inSum_Ttl_comIns     = 0;
-            clsAppData.Template.inSum_Ttl_penIns     = 0;
-            clsAppData.Template.inSum_Ttl_canIns     = 0;
-
-            clsAppData.Template.inSum_Ttl_comReprog  = 0;
-            clsAppData.Template.inSum_Ttl_penReprog  = 0;
-            clsAppData.Template.inSum_Ttl_canReprog  = 0;
-
-            clsAppData.Template.inSum_Ttl_comServ    = 0;
-            clsAppData.Template.inSum_Ttl_penServ    = 0;
-            clsAppData.Template.inSum_Ttl_canServ    = 0;
-
-            clsAppData.Template.inSum_Ttl_comRep     = 0;
-            clsAppData.Template.inSum_Ttl_penRep     = 0;
-            clsAppData.Template.inSum_Ttl_canRep     = 0;
-
-            clsAppData.Template.inMp200_Ttl_Stock    = 0;
-            clsAppData.Template.inMp200_Ttl_comIns   = 0;
-            clsAppData.Template.inMp200_Ttl_comReprog = 0;
-            clsAppData.Template.inMp200_Ttl_comServ  = 0;
-            clsAppData.Template.inMp200_Ttl_comRepair = 0;
-
-            clsAppData.Template.inMp200_Ttl_penIns   = 0;
-            clsAppData.Template.inMp200_Ttl_penReprog = 0;
-            clsAppData.Template.inMp200_Ttl_penServ  = 0;
-            clsAppData.Template.inMp200_Ttl_penRepair = 0;
-
-            clsAppData.Template.inS1E_Ttl_Stock      = 0;
-            clsAppData.Template.inS1E_Ttl_comIns     = 0;
-            clsAppData.Template.inS1E_Ttl_comReprog  = 0;
-            clsAppData.Template.inS1E_Ttl_comServ    = 0;
-            clsAppData.Template.inS1E_Ttl_comRepair  = 0;
-
-            clsAppData.Template.inS1E_Ttl_penIns     = 0;
-            clsAppData.Template.inS1E_Ttl_penReprog  = 0;
-            clsAppData.Template.inS1E_Ttl_penServ    = 0;
-            clsAppData.Template.inS1E_Ttl_penRepair  = 0;
-
-            
-        }
-
-        public void getSumValue()
-        {
-
-            clsAppData.Template.Total_Stocks = clsAppData.Template.inMp200_Ttl_Stock + clsAppData.Template.inS1E_Ttl_Stock;
-
-            // COMPLETED SUMMARY  ----------------------------------
-
-            clsAppData.Template.inSum_Ttl_comIns         = clsAppData.Template.inMp200_Ttl_comIns     + clsAppData.Template.inS1E_Ttl_comIns;
-            clsAppData.Template.inSum_Ttl_comReprog      = clsAppData.Template.inMp200_Ttl_comReprog  + clsAppData.Template.inS1E_Ttl_comReprog;
-            clsAppData.Template.inSum_Ttl_comServ        = clsAppData.Template.inMp200_Ttl_comServ    + clsAppData.Template.inS1E_Ttl_comServ;
-            clsAppData.Template.inSum_Ttl_comRep         = clsAppData.Template.inMp200_Ttl_comRepair  + clsAppData.Template.inS1E_Ttl_comRepair;
-
-            // PENDING SUMMARY    ------------------------------------
-
-            clsAppData.Template.inSum_Ttl_penIns     = clsAppData.Template.inMp200_Ttl_penIns     + clsAppData.Template.inS1E_Ttl_penIns;
-            clsAppData.Template.inSum_Ttl_penReprog  = clsAppData.Template.inMp200_Ttl_penReprog  + clsAppData.Template.inS1E_Ttl_penReprog;
-            clsAppData.Template.inSum_Ttl_penServ    = clsAppData.Template.inMp200_Ttl_penServ    + clsAppData.Template.inS1E_Ttl_penServ;
-            clsAppData.Template.inSum_Ttl_penRep     = clsAppData.Template.inMp200_Ttl_penRepair  + clsAppData.Template.inS1E_Ttl_penRepair;
-
-            // CANCELLED SUMMARY  -----------------------------------
-
-            clsAppData.Template.inSum_Ttl_canIns     = clsAppData.Template.inMp200_Ttl_canIns     + clsAppData.Template.inS1E_Ttl_canIns;
-            clsAppData.Template.inSum_Ttl_canReprog  = clsAppData.Template.inMp200_Ttl_canReprog  + clsAppData.Template.inS1E_Ttl_canReprog;
-            clsAppData.Template.inSum_Ttl_canServ    = clsAppData.Template.inMp200_Ttl_canServ    + clsAppData.Template.inS1E_Ttl_canServ;
-            clsAppData.Template.inSum_Ttl_canRep     = clsAppData.Template.inMp200_Ttl_canRepair  + clsAppData.Template.inS1E_Ttl_canRepair;
-
-            // TOTAL SUMMARY --------------------------------------
-
-            clsAppData.Template.inSum_Ttl_Com = clsAppData.Template.inSum_Ttl_comIns + clsAppData.Template.inSum_Ttl_comReprog
-                                                           + clsAppData.Template.inSum_Ttl_comServ
-                                                           + clsAppData.Template.inSum_Ttl_comRep;
-
-            clsAppData.Template.inSum_Ttl_Pen = clsAppData.Template.inSum_Ttl_penIns + clsAppData.Template.inSum_Ttl_penReprog
-                                                           + clsAppData.Template.inSum_Ttl_penServ
-                                                           + clsAppData.Template.inSum_Ttl_penRep;
-
-            clsAppData.Template.inSum_Ttl_Can = clsAppData.Template.inSum_Ttl_canIns + clsAppData.Template.inSum_Ttl_canReprog
-                                                           + clsAppData.Template.inSum_Ttl_canServ
-                                                           + clsAppData.Template.inSum_Ttl_canRep;
-
-
-            if(clsAppData.Template.InstallVolume > 0)
-            {
-                clsAppData.Template.PInstall = getPercent(clsAppData.Template.inSum_Ttl_comIns, clsAppData.Template.InstallVolume);
-            }
-
-            if (clsAppData.Template.ReprogVolume > 0)
-            {
-                clsAppData.Template.PReprog = getPercent(clsAppData.Template.inSum_Ttl_comReprog, clsAppData.Template.ReprogVolume);
-            }
-
-            if (clsAppData.Template.ServVolume > 0)
-            {
-                clsAppData.Template.PServ = getPercent(clsAppData.Template.inSum_Ttl_comServ, clsAppData.Template.ServVolume);
-            }
-
-            if (clsAppData.Template.RepairVolume > 0)
-            {
-                clsAppData.Template.PRepair = getPercent(clsAppData.Template.inSum_Ttl_comRep, clsAppData.Template.RepairVolume);
-            }
-
-        }
 
     // Enum Types
 
@@ -195,7 +87,7 @@ namespace ActivityReportSystem.Function
 
     // MESSAGE BOX
 
-        public void setMessageBox(string sMessage, string sTitle, IconType iIcon)
+        public static void setMessageBox(string sMessage, string sTitle, IconType iIcon)
         {
             switch (iIcon)
             {
@@ -229,7 +121,7 @@ namespace ActivityReportSystem.Function
 
     // RESPONSE & REQUEST
 
-        public string getRequestTime(string sFunction)
+        public static string getRequestTime(string sFunction)
         {
             DateTime ProcessDateTime = DateTime.Now;
             string sProcessDateTime = "";
@@ -241,7 +133,7 @@ namespace ActivityReportSystem.Function
             return sProcessDateTime;
         }
 
-        public string getResponseTime(string sFunction)
+        public static string getResponseTime(string sFunction)
         {
             DateTime ProcessDateTime = DateTime.Now;
             string sProcessDateTime = "";
@@ -293,7 +185,7 @@ namespace ActivityReportSystem.Function
 
     // ADD VALUES
 
-        public int AddLabelValues(Label Obj1, Label Obj2)
+        public static int AddLabelValues(Label Obj1, Label Obj2)
         {
             int result = (
                            int.Parse(Obj1.Text.ToString()) +
@@ -303,7 +195,7 @@ namespace ActivityReportSystem.Function
             return result;
         }
 
-        public double getPercent(double Result, double DataSize)
+        public static double getPercent(double Result, double DataSize)
         {
             var percentage = (Result / DataSize) * 100;
 
