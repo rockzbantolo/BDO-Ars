@@ -19,13 +19,13 @@ namespace ActivityReportSystem.Database
             Debug.WriteLine(clsFunctions.LineSeperator);
             Debug.WriteLine("DATABASE INFORMATION");
             Debug.WriteLine(clsFunctions.LineSeperator);
-            Debug.WriteLine(string.Concat("Persist Security Info: ", sAppData.DataParam.sSecurity, "; "));
-            Debug.WriteLine(string.Concat("Server: ", sAppData.DataParam.sServer, "; "));
-            Debug.WriteLine(string.Concat("Port: ", sAppData.DataParam.sPort, "; "));
-            Debug.WriteLine(string.Concat("Database: ", sAppData.DataParam.sDatabase, "; "));
-            Debug.WriteLine(string.Concat("Username: ", sAppData.DataParam.sUserName, "; "));
-            Debug.WriteLine(string.Concat("Password: ", sAppData.DataParam.sPassword, "; "));
-            Debug.WriteLine(string.Concat("Connection Timeout: ", sAppData.DataParam.sTimeOut, ";"));
+            Debug.WriteLine(string.Concat("Persist Security Info: ", sAppData.Database.sSecurity, "; "));
+            Debug.WriteLine(string.Concat("Server: ", sAppData.Database.sServer, "; "));
+            Debug.WriteLine(string.Concat("Port: ", sAppData.Database.sPort, "; "));
+            Debug.WriteLine(string.Concat("Database: ", sAppData.Database.sDatabase, "; "));
+            Debug.WriteLine(string.Concat("Username: ", sAppData.Database.sUserName, "; "));
+            Debug.WriteLine(string.Concat("Password: ", sAppData.Database.sPassword, "; "));
+            Debug.WriteLine(string.Concat("Connection Timeout: ", sAppData.Database.sTimeOut, ";"));
             Debug.WriteLine(clsFunctions.LineSeperator);
         }
 
@@ -55,8 +55,8 @@ namespace ActivityReportSystem.Database
             catch (Exception ex)
             {
                 MessageBox.Show("Failed to connect to MySQL." +
-                   "Data Source:" + sAppData.DataParam.sServer + Environment.NewLine +
-                   "Database:" + sAppData.DataParam.sDatabase + Environment.NewLine +
+                   "Data Source:" + sAppData.Database.sServer + Environment.NewLine +
+                   "Database:" + sAppData.Database.sDatabase + Environment.NewLine +
                    "Connection String:" + ConnStrings + Environment.NewLine + Environment.NewLine +
                    "Error Message: " + ex.Message + Environment.NewLine + Environment.NewLine +
                    "Please contact system administrator",
@@ -81,14 +81,14 @@ namespace ActivityReportSystem.Database
 
             InitializeDatabaseSettings();
 
-            ConnString.Append(string.Concat("PERSIST SECURITY INFO = ", sAppData.DataParam.sSecurity, "; ",
-                                            "SERVER = ", sAppData.DataParam.sServer, "; ",
-                                            "PORT = ", sAppData.DataParam.sPort, "; ",
-                                            "DATABASE = ", sAppData.DataParam.sDatabase, "; ",
-                                            "UID = ", sAppData.DataParam.sUserName, "; ",
-                                            "PASSWORD = ", sAppData.DataParam.sPassword, "; ",
-                                            "SSL MODE = ", sAppData.DataParam.sSSLMode, "; ",
-                                            "CONNECT TIMEOUT = ", sAppData.DataParam.sTimeOut, ";\n"));
+            ConnString.Append(string.Concat("PERSIST SECURITY INFO = ", sAppData.Database.sSecurity, "; ",
+                                            "SERVER = ", sAppData.Database.sServer, "; ",
+                                            "PORT = ", sAppData.Database.sPort, "; ",
+                                            "DATABASE = ", sAppData.Database.sDatabase, "; ",
+                                            "UID = ", sAppData.Database.sUserName, "; ",
+                                            "PASSWORD = ", sAppData.Database.sPassword, "; ",
+                                            "SSL MODE = ", sAppData.Database.sSSLMode, "; ",
+                                            "CONNECT TIMEOUT = ", sAppData.Database.sTimeOut, ";\n"));
 
             Debug.WriteLine("\n[" + DateTime.Now + "] " + "Connection : \n" + ConnString);
 
@@ -109,8 +109,8 @@ namespace ActivityReportSystem.Database
             catch (Exception ex)
             {
                 MessageBox.Show("Failed to connect to MySQL."   + Environment.NewLine + Environment.NewLine +
-                    "Data Source:"       + sAppData.DataParam.sServer    + Environment.NewLine +
-                    "Database:"          + sAppData.DataParam.sDatabase  + Environment.NewLine + Environment.NewLine +
+                    "Data Source:"       + sAppData.Database.sServer    + Environment.NewLine +
+                    "Database:"          + sAppData.Database.sDatabase  + Environment.NewLine + Environment.NewLine +
                     "Connection String:" + "Null" + Environment.NewLine + Environment.NewLine +
                     "Error Message: "    + ex.Message       + Environment.NewLine + Environment.NewLine +
                     "Please contact system administrator",
@@ -213,23 +213,23 @@ namespace ActivityReportSystem.Database
             FullPath = "C:\\CASTLESTECH_ARS\\SETTINGS\\" + FileName;
             this.IniFile(FullPath);
 
-            sAppData.DataParam.sSecurity   = this.Read("_Security", "Security");
-            sAppData.DataParam.sServer     = this.Read("_Server", "Server");
-            sAppData.DataParam.sPort       = this.Read("_Port", "Port");
-            sAppData.DataParam.sDatabase   = this.Read("_Database", "Database");
-            sAppData.DataParam.sUserName   = this.Read("_UserName", "UserName");
-            sAppData.DataParam.sPassword   = this.Read("_Password", "Password");
-            sAppData.DataParam.sSSLMode    = this.Read("_SSLMode", "SSLMode");
-            sAppData.DataParam.sTimeOut    = "5000";
+            sAppData.Database.sSecurity   = this.Read("_Security", "Security");
+            sAppData.Database.sServer     = this.Read("_Server", "Server");
+            sAppData.Database.sPort       = this.Read("_Port", "Port");
+            sAppData.Database.sDatabase   = this.Read("_Database", "Database");
+            sAppData.Database.sUserName   = this.Read("_UserName", "UserName");
+            sAppData.Database.sPassword   = this.Read("_Password", "Password");
+            sAppData.Database.sSSLMode    = this.Read("_SSLMode", "SSLMode");
+            sAppData.Database.sTimeOut    = "5000";
 
-            sAppData.DataParam.ConnString = string.Concat("PERSIST SECURITY INFO = ", sAppData.DataParam.sSecurity, "; ",
-                                                    "SERVER = ", sAppData.DataParam.sServer, "; ",
-                                                    "PORT = ", sAppData.DataParam.sPort, "; ",
-                                                    "DATABASE = ", sAppData.DataParam.sDatabase, "; ",
-                                                    "UID = ", sAppData.DataParam.sUserName, "; ",
-                                                    "PASSWORD = ", sAppData.DataParam.sPassword, "; ",
-                                                    "SSL MODE = ", sAppData.DataParam.sSSLMode, "; ",
-                                                    "CONNECT TIMEOUT = ", sAppData.DataParam.sTimeOut, ";");
+            sAppData.DataParam.ConnString = string.Concat("PERSIST SECURITY INFO = ", sAppData.Database.sSecurity, "; ",
+                                                    "SERVER = ", sAppData.Database.sServer, "; ",
+                                                    "PORT = ", sAppData.Database.sPort, "; ",
+                                                    "DATABASE = ", sAppData.Database.sDatabase, "; ",
+                                                    "UID = ", sAppData.Database.sUserName, "; ",
+                                                    "PASSWORD = ", sAppData.Database.sPassword, "; ",
+                                                    "SSL MODE = ", sAppData.Database.sSSLMode, "; ",
+                                                    "CONNECT TIMEOUT = ", sAppData.Database.sTimeOut, ";");
 
         }
 

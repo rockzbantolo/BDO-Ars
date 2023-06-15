@@ -43,7 +43,7 @@ namespace ActivityReportSystem.Database
             StringBuilder Query = new StringBuilder();
             var cultureInfo = new CultureInfo("en-US");
 
-            sAppData.DataParam.outMessage = string.Empty;
+            sAppData.Database.outMessage = string.Empty;
             string RowQuery = string.Empty;
             string TempValue = string.Empty;
             bool isDateTime = false;
@@ -149,9 +149,9 @@ namespace ActivityReportSystem.Database
                 Obj = null;
 
                 // Check For Error Message
-                if (sAppData.DataParam.outMessage.Length > 0)
+                if (sAppData.Database.outMessage.Length > 0)
                 {
-                    MessageBox.Show(sAppData.DataParam.outMessage + "\n" + Template + " Column Count Doesn't Match Database Column",
+                    MessageBox.Show(sAppData.Database.outMessage + "\n" + Template + " Column Count Doesn't Match Database Column",
                     "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
@@ -195,7 +195,7 @@ namespace ActivityReportSystem.Database
         public void setDetailedStatus(DataGridView Obj, Label Com, Label Pen, Label Can)
         {
 
-            switch (sAppData.DataParam.TempName)
+            switch (sAppData.TemplateName)
             {
                 case clsFunctions.sInstall:
 
@@ -372,8 +372,8 @@ namespace ActivityReportSystem.Database
                         Db.Reader = Db.Command.ExecuteReader(); // Execute Command
 
                         // Hold to Variable
-                        sAppData.DataParam.outMessage = Db.Command.Parameters["@p_outErrorMessage"].Value.ToString().Trim();
-                        sAppData.DataParam.outLastInserted = Db.Command.Parameters["@p_outLastInsertID"].Value.ToString().Trim();
+                        sAppData.Database.outMessage = Db.Command.Parameters["@p_outErrorMessage"].Value.ToString().Trim();
+                        //sAppData.Database.outLastInserted = Db.Command.Parameters["@p_outLastInsertID"].Value.ToString().Trim();
 
                         //Debug.WriteLine("outMessage=" + cFunc.AddBracketStartEnd(cGvar.outMessage));
                         //Debug.WriteLine("outLastInserted=" + cFunc.AddBracketStartEnd(cGvar.outLastInserted));
@@ -812,7 +812,7 @@ namespace ActivityReportSystem.Database
                     adapter.SelectCommand.Parameters.Add("@p_StatementType", MySqlDbType.VarChar).Value = StatementType;
                     adapter.SelectCommand.Parameters.Add("@p_SearchBy", MySqlDbType.VarChar).Value = SearchBy;
                     adapter.SelectCommand.Parameters.Add("@p_SearchValue", MySqlDbType.VarChar).Value = SearchValue;
-                    adapter.SelectCommand.CommandTimeout = int.Parse(sAppData.DataParam.sTimeOut); // Setting command timeout to 1800 second  (30mins)
+                    adapter.SelectCommand.CommandTimeout = int.Parse(sAppData.Database.sTimeOut); // Setting command timeout to 1800 second  (30mins)
 
                     adapter.Fill(rtnDs);
                 }

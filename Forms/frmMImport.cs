@@ -7,6 +7,8 @@ using ActivityReportSystem.Function;
 using ActivityReportSystem.Database;
 using ActivityReportSystem.Global;
 using ActivityReportSystem.Forms;
+using ActivityReportSystem.AppActivity.View;
+using System.IO;
 
 namespace ActivityReportSystem
 {
@@ -14,7 +16,7 @@ namespace ActivityReportSystem
     {
 
         private clsFunctions cFunc  = new clsFunctions();
-        private clsSQLModels Sql = new clsSQLModels();
+        private clsAppViews Db = new clsAppViews();
 
         protected override CreateParams CreateParams
         {
@@ -62,18 +64,19 @@ namespace ActivityReportSystem
             {
                 if (!string.IsNullOrEmpty(tx.Text.ToString()))
                 {
-                    if (!cFunc.SavingConfirm(false, "Upload Process")) return;
+                    if (!clsFunctions.SavingConfirm(false, "Upload Process")) return;
 
                     Cursor.Current = Cursors.WaitCursor;
 
                     // Process Data and Save
-                    Debug.WriteLine("--- Saving Data ");
+                    Debug.WriteLine("--- Import Data ---");
 
-                    Sql.setCollectionInsert(clsFunctions.sInstall,    dgv_Imp_Installation);
-                    Sql.setCollectionInsert(clsFunctions.sReprog,     dgv_Imp_Reprogramming);
-                    Sql.setCollectionInsert(clsFunctions.sServ,       dgv_Imp_Servicing);
-                    Sql.setCollectionInsert(clsFunctions.sRepair,     dgv_Imp_Repair);
-                    Sql.setCollectionInsert(clsFunctions.sInventory,  dgv_Imp_Inventory);
+                    
+                    //Db.ImportDataUsingGrid(clsFunctions.sInstall,    dgv_Imp_Installation);
+                    //Db.ImportDataUsingGrid(clsFunctions.sReprog,     dgv_Imp_Reprogramming);
+                    //Db.ImportDataUsingGrid(clsFunctions.sServ,       dgv_Imp_Servicing);
+                    //Db.ImportDataUsingGrid(clsFunctions.sRepair,     dgv_Imp_Repair);
+                    //Db.ImportDataUsingGrid(clsFunctions.sInventory,  dgv_Imp_Inventory);
 
                     ClearObj();
 
@@ -191,77 +194,33 @@ namespace ActivityReportSystem
 
         private void btn_Imp_OpenInstallation_Click(object sender, EventArgs e)
         {
-            ProcessDataFile(tx_Imp_InstallationFile, dgv_Imp_Installation, tbpInstallation, clsFunctions.sInstall);
+            Db.ProcessDataFile(tx_Imp_InstallationFile, dgv_Imp_Installation, tpcActivity, tbpInstallation, clsFunctions.sInstall);
         }
 
         private void btn_Imp_OpenReprog_Click(object sender, EventArgs e)
         {
-            ProcessDataFile(tx_Imp_ReprogFile, dgv_Imp_Reprogramming, tbpReprogramming, clsFunctions.sReprog);
+            Db.ProcessDataFile(tx_Imp_ReprogFile, dgv_Imp_Reprogramming, tpcActivity, tbpReprogramming, clsFunctions.sReprog);
         }
 
         private void btn_Imp_OpenServicing_Click(object sender, EventArgs e)
         {
-            ProcessDataFile(tx_Imp_ServicingFile, dgv_Imp_Servicing, tbpServicing, clsFunctions.sServ);
+            Db.ProcessDataFile(tx_Imp_ServicingFile, dgv_Imp_Servicing, tpcActivity, tbpServicing, clsFunctions.sServ);
         }
 
         private void btn_Imp_OpenRepair_Click(object sender, EventArgs e)
         {
-            ProcessDataFile(tx_Imp_RepairFile, dgv_Imp_Repair, tbpRepair, clsFunctions.sRepair);
+            Db.ProcessDataFile(tx_Imp_RepairFile, dgv_Imp_Repair, tpcActivity, tbpRepair, clsFunctions.sRepair);
         }
 
         private void btn_Imp_OpenInvent_Click(object sender, EventArgs e)
         {
-            ProcessDataFile(tx_Imp_Inventory, dgv_Imp_Inventory, tbpInventory, clsFunctions.sInventory);
+            Db.ProcessDataFile(tx_Imp_Inventory, dgv_Imp_Inventory, tpcActivity, tbpInventory, clsFunctions.sInventory);
         }
 
-    // IMPORT PROCESS
-        private void ProcessDataFile(TextBox Tbx, DataGridView Obj, TabPage Tbp, string Template)
-        {
-            // OPEN DIALOG
-            OpenFileDialog Ed = new OpenFileDialog();
-            Ed.Filter = "Excel Files|*.xls;*.xlsx";
-            Ed.Title = "Select file to import " + Template;
+        // IMPORT PROCESS
 
-            try {
 
-                if (Ed.ShowDialog() == DialogResult.OK) {
-                    Debug.WriteLine(Ed.FileName);
-
-                    Tbx.Text = Ed.FileName;
-
-                    if (Tbx.Text.Contains(Template) == true) {
-                        if (Tbx.TextLength > 0) {
-
-                            Cursor.Current = Cursors.WaitCursor;
-
-                            try {
-
-                                cFunc.setDataBind(Obj, Tbx);
-                                cFunc.setGridAlterBackColor(Obj);
-                                cFunc.getGridHeaderList(Obj);
-                                tpcActivity.SelectedTab = Tbp;
-
-                            }
-                            catch (Exception e) {
-                                clsFunctions.setMessageBox(e.Message, "Activity Report System", clsFunctions.IconType.iError);
-                            }
-
-                            Cursor.Current = Cursors.Default;
-                        }
-                    }
-                    else {
-                        clsFunctions.setMessageBox("File Not a valid " + Template + " File", "Error Message", clsFunctions.IconType.iWarning);
-                        Tbx.Clear();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message, "Open failed.");
-            }
-        }
-
-    // REFRESH DASHBOARD
+        // REFRESH DASHBOARD
         public void Refresh_Dashboard()
         {
             Debug.WriteLine(" ---- Refresh Dashboard -----");

@@ -11,10 +11,12 @@ namespace ActivityReportSystem.Global
         public static int sSQLServerEnable  { get; set; }
         public static int sMySQLEnable      { get; set; }
         public static int iDataSize         { get; set; }
+        public static string TemplateName { get; set; }
+
 
         public static DataTable CountDetails { get; set; }
 
-        public class DataParam
+        public class Database
         {
             public static string sSource { get; set; }
             public static string sServer { get; set; }
@@ -30,14 +32,22 @@ namespace ActivityReportSystem.Global
 
             public static string sSSLMode { get; set; }
             public static string outMessage { get; set; }
-            public static string outLastInserted { get; set; }
+            public static int outLastInserted { get; set; }
+        }
 
+        public class FilePath
+        {
+            public const string Csv = "C:\\CASTLESTECH_ARS\\IMPORTS\\";
 
+            public static string CsvLoc;
+        }
+
+        public class DataParam
+        {
             public static string strLogUsername { get; set; }
             public static string strLogPassword { get; set; }
             public static string strLogUserLevel { get; set; }
             public static string strLogUserId { get; set; }
-            public static string TempName { get; set; }
             public static string MenuControls { get; set; }
 
             public static string ConnString { get; set; }

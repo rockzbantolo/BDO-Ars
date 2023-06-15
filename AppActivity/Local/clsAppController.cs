@@ -1,5 +1,4 @@
-﻿using ActivityReportSystem.AppActivity.Model;
-using ActivityReportSystem.Function;
+﻿using ActivityReportSystem.Function;
 using ActivityReportSystem.Global;
 using MySqlConnector;
 using System;
@@ -17,7 +16,7 @@ namespace ActivityReportSystem.AppActivity.Controller
     {
         MySQLStoredProcedure Sp = new MySQLStoredProcedure();
 
-        public DataTable ExecuteQuery(string StatementType, string StatementBy, string SearchValue, string MaintenanceType, string Sql, Action Action)
+        public DataTable ExecuteQuery(string StatementType, string StatementBy, string SearchValue, string Sql, Action Action)
         {
 
          #region Debug Details
@@ -31,11 +30,8 @@ namespace ActivityReportSystem.AppActivity.Controller
             if (!string.IsNullOrEmpty(SearchValue))
                 Debug.WriteLine("SearchValue: " + SearchValue);
 
-            if (!string.IsNullOrEmpty(MaintenanceType))
-                Debug.WriteLine("Maintenance Type: " + MaintenanceType);
-
             if (!string.IsNullOrEmpty(Sql))
-                Debug.WriteLine("SQL: " + Sql);
+                Debug.WriteLine("SQL: \n" + Sql);
 
             Debug.WriteLine(clsFunctions.LineSeperator);
 
@@ -114,7 +110,7 @@ namespace ActivityReportSystem.AppActivity.Controller
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine("Error Executing Stored Procedure: " + ex.Message);
+                        Debug.WriteLine("Error Executing Details Procedure: " + ex.Message);
                     }
                 }
             }
@@ -147,7 +143,7 @@ namespace ActivityReportSystem.AppActivity.Controller
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine("Error Executing Stored Procedure: " + ex.Message);
+                        Debug.WriteLine("Error Executing Update Procedure: " + ex.Message);
                     }
 
                 }
@@ -161,7 +157,7 @@ namespace ActivityReportSystem.AppActivity.Controller
 
                 Conn.Open();
 
-                Debug.WriteLine(string.Concat("CALL spCollectionInsert ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, "\"", ")"));
+                Debug.WriteLine(string.Concat("CALL spCollectionInsert ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", Sql, "\"", ")"));
                 Debug.WriteLine(clsFunctions.LineSeperator + "\n");
 
                 using (Cmd = new MySqlCommand("spCollectionInsert", Conn))
@@ -170,7 +166,7 @@ namespace ActivityReportSystem.AppActivity.Controller
                     Cmd.CommandType = CommandType.StoredProcedure;
 
                     Cmd.Parameters.AddWithValue("@StatementType", StatementType);
-                    Cmd.Parameters.AddWithValue("@StatementBy", StatementBy);
+                    Cmd.Parameters.AddWithValue("@SearchBy", StatementBy);
                     Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
                     Cmd.Parameters.AddWithValue("@pSQL", Sql);
 
@@ -183,18 +179,18 @@ namespace ActivityReportSystem.AppActivity.Controller
                         Cmd.ExecuteNonQuery();
 
                         // Retrieve the value of the output parameter
-                        sAppData.DataParam.outLastInserted = Cmd.Parameters["@outLastInsertID"].Value.ToString().Trim();
-                        sAppData.DataParam.outMessage = Cmd.Parameters["@outErrorMessage"].Value.ToString().Trim();
+                        sAppData.Database.outLastInserted = Convert.ToInt32(Cmd.Parameters["outLastInsertID"].Value);
+                        sAppData.Database.outMessage = Cmd.Parameters["@outErrorMessage"].Value.ToString().Trim();
 
                     }
                     catch (Exception ex)
                     {
 
-                        Debug.WriteLine("Error Executing Stored Procedure: " + ex.Message);
+                        Debug.WriteLine("Error Executing Insert Procedure: " + ex.Message);
                     }
                 }
 
-                Debug.WriteLine("Last Inserted ID : " + sAppData.DataParam.outLastInserted);
+                Debug.WriteLine("Last Inserted ID : " + sAppData.Database.outLastInserted + "\n");
             }
         }
 
@@ -204,10 +200,10 @@ namespace ActivityReportSystem.AppActivity.Controller
             {
                 Conn.Open();
 
-                Debug.WriteLine(string.Concat("CALL spCollectionUpdate ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, "\"", ")"));
+                Debug.WriteLine(string.Concat("CALL spCollectionDelete ", "(\"", StatementType, "\"", ",\"", StatementBy, "\"", ",\"", SearchValue, "\"", ")"));
                 Debug.WriteLine(clsFunctions.LineSeperator + "\n");
 
-                using (Cmd = new MySqlCommand("spCollectionUpdate", Conn))
+                using (Cmd = new MySqlCommand("spCollectionDelete", Conn))
                 {
                     Cmd.CommandType = CommandType.StoredProcedure;
 
@@ -222,7 +218,7 @@ namespace ActivityReportSystem.AppActivity.Controller
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine("Error Executing Stored Procedure: " + ex.Message);
+                        Debug.WriteLine("Error Executing Delete Procedure: " + ex.Message);
                     }
 
                 }
@@ -256,7 +252,7 @@ namespace ActivityReportSystem.AppActivity.Controller
                     adapter.SelectCommand.Parameters.Add("@p_StatementType", MySqlDbType.VarChar).Value = StatementType;
                     adapter.SelectCommand.Parameters.Add("@p_SearchBy", MySqlDbType.VarChar).Value = SearchBy;
                     adapter.SelectCommand.Parameters.Add("@p_SearchValue", MySqlDbType.VarChar).Value = SearchValue;
-                    adapter.SelectCommand.CommandTimeout = int.Parse(sAppData.DataParam.sTimeOut); // Setting command timeout to 1800 seconds (30 minutes)
+                    adapter.SelectCommand.CommandTimeout = int.Parse(sAppData.Database.sTimeOut); // Setting command timeout to 1800 seconds (30 minutes)
 
                     adapter.Fill(rtnDs);
                 }
@@ -385,7 +381,6 @@ namespace ActivityReportSystem.AppActivity.Controller
                 MessageBox.Show(sTemp, "Error Handler - " + FunctionName, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
         }*/
-
 
     }
 

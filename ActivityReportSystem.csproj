@@ -132,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppActivity\Local\clsAppController.cs" />
-    <Compile Include="AppActivity\Local\clsAppStoredProc.cs" />
     <Compile Include="AppActivity\Local\clsAppViews.cs" />
     <Compile Include="AppDatabase\clsConnection.cs" />
     <Compile Include="AppDatabase\clsSQLModels.cs" />

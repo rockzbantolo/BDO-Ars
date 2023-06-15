@@ -30,11 +30,11 @@ namespace ActivityReportSystem.Forms
 
         private void frmSumDetails_Load(object sender, EventArgs e)
         {
-            lb_Activity.Text = sAppData.DataParam.TempName;
+            lb_Activity.Text = sAppData.TemplateName;
 
             Cursor.Current = Cursors.WaitCursor;
 
-            if (sAppData.DataParam.TempName == clsFunctions.sInstall || sAppData.DataParam.TempName == clsFunctions.sReprog)
+            if (sAppData.TemplateName == clsFunctions.sInstall || sAppData.TemplateName == clsFunctions.sReprog)
             {
                 Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, string.Empty);
             }
@@ -166,7 +166,7 @@ namespace ActivityReportSystem.Forms
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            if (sAppData.DataParam.TempName == clsFunctions.sInstall || sAppData.DataParam.TempName == clsFunctions.sReprog)
+            if (sAppData.TemplateName == clsFunctions.sInstall || sAppData.TemplateName == clsFunctions.sReprog)
             {
                 Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, Tx_Search.Text.Trim());
             }

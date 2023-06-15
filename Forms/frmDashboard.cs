@@ -322,7 +322,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Installation_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.DataParam.TempName = clsFunctions.sInstall;
+            sAppData.TemplateName = clsFunctions.sInstall;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails installation = new frmSumDetails())
@@ -340,7 +340,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Reprogram_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.DataParam.TempName = clsFunctions.sReprog;
+            sAppData.TemplateName = clsFunctions.sReprog;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails reprogram = new frmSumDetails())
@@ -358,7 +358,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Service_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.DataParam.TempName = clsFunctions.sServ;
+            sAppData.TemplateName = clsFunctions.sServ;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails servicing = new frmSumDetails())
@@ -376,7 +376,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Repair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.DataParam.TempName = clsFunctions.sRepair;
+            sAppData.TemplateName = clsFunctions.sRepair;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails repair = new frmSumDetails())

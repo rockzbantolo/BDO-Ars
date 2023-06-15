@@ -11,6 +11,8 @@ using System.Data;
 using System.IO;
 using Spire.Xls;
 using System.Globalization;
+using System.Text;
+using System.Linq;
 
 namespace ActivityReportSystem.Function
 {
@@ -165,25 +167,22 @@ namespace ActivityReportSystem.Function
             return pOutput;
         }
 
-    // CONFIRMATION
+        // CONFIRMATION
 
-        public bool SavingConfirm(bool fUpdate, string pForm)
+        public static bool SavingConfirm(bool fUpdate, string pForm)
         {
-            bool fConfirm = true;
+            string action = fUpdate ? "Update" : "Save";
+            string title = fUpdate ? "Warning" : "Information";
+            string message = $"Are you sure you want to {action} Record?\n\n";
 
-            if (MessageBox.Show("Are you sure you want to " + (fUpdate == true ? "Update" : "Save") + " " + "Record?" +
-                                    "\n\n",
-                                    (fUpdate ? "Warning" : "Information") + " - " + pForm, MessageBoxButtons.YesNo,
-                                    (fUpdate ? MessageBoxIcon.Warning : MessageBoxIcon.Question),
-                                    MessageBoxDefaultButton.Button1) == DialogResult.No)
-            {
-                fConfirm = false;
-            }
+            DialogResult result = MessageBox.Show(message, $"{title} - {pForm}", MessageBoxButtons.YesNo,
+                fUpdate ? MessageBoxIcon.Warning : MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
-            return fConfirm;
+            return result == DialogResult.Yes;
         }
 
-    // ADD VALUES
+
+        // ADD VALUES
 
         public static int AddLabelValues(Label Obj1, Label Obj2)
         {
@@ -204,129 +203,224 @@ namespace ActivityReportSystem.Function
 
     // DATABIND
 
-        public void setDataBind(DataGridView Obj, TextBox Tbx)
+        public static void SetDataBind(DataGridView obj, TextBox tbx)
         {
-            if (Tbx.TextLength > 0)
-            {
-                System.Windows.Forms.Cursor.Current = Cursors.WaitCursor;
+            if (string.IsNullOrEmpty(tbx.Text)) return;
 
-                try
-                {
-                    getDataBind(Obj, getExcelWorkSheetName(Tbx.Text), Tbx.Text);
-                }
-                catch (Exception e)
-                {
-                    setMessageBox(e.Message, "Activity Report System", clsFunctions.IconType.iError);
-                }
-
-                System.Windows.Forms.Cursor.Current = Cursors.Default;
-            }
-
-        }
-
-        private void getDataBind(DataGridView Obj, string sSheetName, string PathFileName)
-        {
-            Debug.WriteLine("--- DataBind\n");
-
-            string pathName = PathFileName;
-            DataTable Dt = new DataTable();
-
-            string sConn = string.Empty;
-            string sQuery = string.Empty;
-            string sheetName = sSheetName;
-
-            //Debug.WriteLine("--DataBind--");
-            Debug.WriteLine("Sheet Name = " + sSheetName);
-            Debug.WriteLine("Path File Name = " + PathFileName);
-
-            ClearGridRows(Obj);
+            System.Windows.Forms.Cursor.Current = Cursors.WaitCursor;
 
             try
             {
-                FileInfo file = new FileInfo(PathFileName);
-                if (!file.Exists) { throw new Exception("Error, File doesn't Exists!"); }
+                GetDataBind(obj, GetExcelWorkSheetName(tbx.Text), tbx.Text);
+            }
+            catch (Exception e)
+            {
+                clsFunctions.setMessageBox(e.Message, "Activity Report System", clsFunctions.IconType.iError);
+            }
+
+            System.Windows.Forms.Cursor.Current = Cursors.Default;
+
+        }
+
+        private static void GetDataBind(DataGridView obj, string sheetName, string pathFileName)
+        {
+            Debug.WriteLine("--- DataBind\n");
+
+            string pathName = pathFileName;
+
+            Debug.WriteLine("Sheet Name = " + sheetName);
+            Debug.WriteLine("Path File Name = " + pathFileName);
+
+            obj.Rows.Clear();
+
+            try
+            {
+                FileInfo file = new FileInfo(pathFileName);
+                if (!file.Exists)
+                {
+                    throw new Exception("Error, File doesn't Exist!");
+                }
+
                 string extension = file.Extension;
+                string connectionStr;
 
                 switch (extension.ToLower())
                 {
                     case ".xls":
-                        sConn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + pathName + "; Extended Properties = 'Excel 12.0; HDR = Yes; IMEX = 1;'";
-                        break;
                     case ".xlsx":
-                        sConn = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + pathName + "; Extended Properties = 'Excel 12.0; HDR = Yes; IMEX = 1;'";
+                        connectionStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + pathName + "; Extended Properties = 'Excel 12.0; HDR = Yes; IMEX = 1;'";
                         break;
                     default:
-                        sConn = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source = " + pathName + "; Extended Properties = 'Excel 8.0; HDR = Yes; IMEX = 1;'";
+                        connectionStr = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source = " + pathName + "; Extended Properties = 'Excel 8.0; HDR = Yes; IMEX = 1;'";
                         break;
                 }
 
-                sQuery = string.Format("Select * from [{0}$]", sheetName);
+                string query = string.Format("Select * from [{0}$]", sheetName);
 
-                Debug.WriteLine("String Conn = " + sConn);
-                Debug.WriteLine("Query = " + sQuery);
+                Debug.WriteLine("Connection String = " + connectionStr);
+                Debug.WriteLine("Query = " + query);
 
-                OleDbConnection cnnxls  = new OleDbConnection(sConn);
-                OleDbDataAdapter Oda    = new OleDbDataAdapter(sQuery, cnnxls);
-
-                Oda.Fill(Dt);
-                Obj.DataSource = Dt;
-
-                Dt.Dispose();
-                cnnxls.Dispose();
-                Oda.Dispose();
+                using (OleDbConnection connection = new OleDbConnection(connectionStr))
+                {
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        obj.DataSource = dataTable;
+                    }
+                }
 
                 file = null;
-                Obj  = null;
-
+                obj = null;
             }
             catch (Exception ex)
             {
-                setMessageBox(ex.Message, "Import Data Failed", clsFunctions.IconType.iError);
+                clsFunctions.setMessageBox(ex.Message, "Import Data Failed", clsFunctions.IconType.iError);
             }
-
         }
 
-        public string getExcelWorkSheetName(string pFilePath) {
 
-            Debug.WriteLine("\n--- Get Excel Work Sheetname");
-
-            string sWorkSheetName = string.Empty;
-
-            // CREATE EXCEL WORKSHEET
-            Workbook workbook = new Workbook();
-            workbook.LoadFromFile(pFilePath);
-            Worksheet worksheet = workbook.Worksheets[0];
-
-            sWorkSheetName = worksheet.Name;
-
-            if (sWorkSheetName.Length <= 0)
-                sWorkSheetName = "Sheet1";
-
-            workbook.Dispose();
-            worksheet.Dispose();
-
-            return sWorkSheetName;
-        }
-
-        public string CheckDate(string sValue)
+        public static string GetExcelWorkSheetName(string filePath)
         {
+            Debug.WriteLine("\n--- Get Excel Worksheet Name");
 
-            string TempDate = string.Empty;
-            var cultureInfo = new CultureInfo("en-US");
-            DateTime xTempDate;
-            bool isDateTime = false;
+            string worksheetName = string.Empty;
 
-
-            isDateTime = DateTime.TryParse(sValue, cultureInfo, DateTimeStyles.NoCurrentDateDefault, out xTempDate);
-
-            if(!isDateTime)
+            try
             {
-                TempDate = sValue;
-                return TempDate;
+                using (Workbook workbook = new Workbook())
+                {
+                    workbook.LoadFromFile(filePath);
+                    Worksheet worksheet = workbook.Worksheets[0];
+
+                    worksheetName = worksheet.Name;
+
+                    if (string.IsNullOrEmpty(worksheetName))
+                        worksheetName = "Sheet1";
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex.Message);
             }
 
-            TempDate = xTempDate.ToString(sDateTimeFormat);
-            return TempDate;
+            return worksheetName;
+        }
+
+
+        public static string CheckDate(string sValue)
+        {
+            if (DateTime.TryParse(sValue, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedDate))
+            {
+                return parsedDate.ToString(sDateTimeFormat);
+            }
+
+            return sValue;
+        }
+
+        // EXPORT to CSV
+
+        public static string ExportToCSV(DataGridView obj, string fileName)
+        {
+            string path = string.Concat(sAppData.FilePath.Csv, "im_", fileName, "_", DateTime.Now.ToString("MMddyy"), ".csv");
+
+            try
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(path, false, Encoding.UTF8))
+                {
+                    // Write the column headers to the CSV file
+                    string headers = string.Join(",", obj.Columns.Cast<DataGridViewColumn>().Select(column => column.HeaderText.Replace(",", string.Empty)));
+                    file.WriteLine(headers);
+
+                    // Write the data rows to the CSV file
+                    foreach (DataGridViewRow row in obj.Rows)
+                    {
+                        string rowData = string.Join(",", row.Cells.Cast<DataGridViewCell>().Select(cell =>
+                        {
+                            // Check for DBNull values and replace them with an appropriate default value
+                            if (cell.Value == DBNull.Value || string.IsNullOrWhiteSpace(Convert.ToString(cell.Value)) || string.IsNullOrEmpty(Convert.ToString(cell.Value)))
+                            {
+                                return "-";
+                            }
+                            else
+                            {
+                                // Replace specific strings and special characters
+                                string cellValue = Convert.ToString(cell.Value)
+                                    .Replace("ñ", "n")
+                                    .Replace("Ñ", "N")
+                                    .Replace(" ", string.Empty)
+                                    .Replace(",", string.Empty)
+                                    .Replace("'", string.Empty)
+                                    .Replace("#NAME?", "-")
+                                    .Replace("#VALUE!", "-")
+                                    .Replace("\"", string.Empty);
+
+                                return cellValue;
+                            }
+                        }));
+
+                        file.WriteLine(rowData);
+                    }
+                }
+
+                Debug.WriteLine("----- Data exported to CSV file successfully. -----");
+                return path; // Return the file path
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error exporting data to CSV file: " + ex.Message);
+                return null; // Return null if an error occurs
+            }
+        }
+
+        public string  ConvertExcelToCsv(string excelFilePath, string csvFilePath)
+        {
+            Workbook workbook = new Workbook();
+            workbook.LoadFromFile(excelFilePath);
+            Worksheet worksheet = workbook.Worksheets[0]; // Assuming you want to convert the first worksheet
+
+            using (StreamWriter streamWriter = new StreamWriter(csvFilePath))
+            {
+                for (int row = 1; row <= worksheet.LastRow; row++)
+                {
+                    string rowData = "";
+                    for (int col = 1; col <= worksheet.LastColumn; col++)
+                    {
+                        CellRange cell = worksheet[row, col];
+                        string cellData = cell != null ? cell.Value?.ToString() ?? "" : "";
+
+                        if (string.IsNullOrWhiteSpace(cellData))
+                        {
+                            cellData = "-";
+                        }
+                        else
+                        {
+                            cellData = RemoveSpecialCharacters(cellData);
+                        }
+
+                        rowData += $"\"{cellData}\",";
+
+                    }
+
+                    streamWriter.WriteLine(rowData.TrimEnd(','));
+                }
+            }
+
+            return csvFilePath;
+        }
+
+        public static string RemoveSpecialCharacters(string input)
+        {
+            input = input.Replace("ñ", "n")
+                         .Replace("Ñ", "N")
+                         .Replace(" ", string.Empty)
+                         .Replace("'", string.Empty)
+                         .Replace("#NAME?", "-")
+                         .Replace("#VALUE!", "-")
+                         .Replace("\"", string.Empty)
+                         .Replace(",", string.Empty);
+
+            return input;
         }
 
     }
@@ -479,33 +573,27 @@ namespace ActivityReportSystem.Function
             Obj = null;
         }
 
-        public void setGridAlterBackColor(DataGridView Obj)
+        public static void SetGridAlterBackColor(DataGridView obj)
         {
-            for (int i = 0; i < Obj.Rows.Count - 1; i++)
+            for (int i = 0; i < obj.Rows.Count; i++)
             {
-                if (i % 2 == 0)
-                    Obj.Rows[i].DefaultCellStyle.BackColor = clsFunctions.AlternateBackColor1;
-                else
-                    Obj.Rows[i].DefaultCellStyle.BackColor = clsFunctions.AlternateBackColor2;
-
-                Obj.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                obj.Rows[i].DefaultCellStyle.BackColor = (i % 2 == 0) ? clsFunctions.AlternateBackColor1 : clsFunctions.AlternateBackColor2;
+                obj.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
             }
         }
 
-        public string getGridHeaderList(DataGridView Obj)
+        public static string GetGridHeaderList(DataGridView obj)
         {
-            string sOutput = string.Empty;
-            string sTemp = string.Empty;
+            StringBuilder sb = new StringBuilder();
 
-            for (int i = 0; i < Obj.ColumnCount; i++)
+            foreach (DataGridViewColumn column in obj.Columns)
             {
-                sTemp += Obj.Columns[i].Name + "," + Environment.NewLine;
+                sb.AppendLine(column.Name);
             }
-            sOutput = sTemp;
 
-            Debug.WriteLine("\nHeader List, Output = " + Environment.NewLine + sOutput);
-            return sOutput;
-
+            string output = sb.ToString();
+            Debug.WriteLine("\nHeader List, Output = \n" + output);
+            return output;
         }
 
         public string getGridSelectedRow(DataGridView Obj, int Rows)

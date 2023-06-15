@@ -7,13 +7,14 @@ using ActivityReportSystem.Database;
 using ActivityReportSystem.Global;
 using System.Drawing;
 using System.Text;
+using ActivityReportSystem.AppActivity.View;
 
 namespace ActivityReportSystem.Forms
 {
     public partial class frmBreakdown : Form
     {
         private clsFunctions cFunc = new clsFunctions();
-        private clsSQLModels Sql = new clsSQLModels();
+        clsAppViews Db = new clsAppViews();
 
         public frmBreakdown()
         {
@@ -22,8 +23,9 @@ namespace ActivityReportSystem.Forms
 
         private void frmBreakdown_Load(object sender, EventArgs e)
         {
-            Sql.setGridDetails(dgv_BdPendings, string.Empty);
-            Sql.setGridDetails(dgv_Bdp_Rep,    string.Empty);
+            Db.LoadDashboardDetails(dgv_BdPendings, string.Empty);
+            Db.LoadDashboardDetails(dgv_Bdp_Rep, string.Empty);
+
             ListItemsBackColor(dgv_BdPendings);
             ListItemsBackColor(dgv_Bdp_Rep);
             Tm_FadeIn.Start();
