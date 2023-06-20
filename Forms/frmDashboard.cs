@@ -16,7 +16,7 @@ namespace ActivityReportSystem.Forms
 
     public partial class frmDashboard : Form
     {
-        private clsFunctions Func = new clsFunctions();
+        private cFunctions Func = new cFunctions();
         clsAppViews Db = new clsAppViews();
 
         // OVERIDE TO REDUCE LAG AND FLICKERING
@@ -43,7 +43,7 @@ namespace ActivityReportSystem.Forms
         {
             tpc_MenuPage.Width = 1250;
             cmb_Model_Template.Items.Clear();
-            cmb_Model_Template.DataSource = clsFunctions.Templates;
+            cmb_Model_Template.DataSource = sAppData.Templates;
         }
 
         // PROCESS DISPLAY
@@ -63,23 +63,22 @@ namespace ActivityReportSystem.Forms
 
         private void InitValues()
         {
-
             try
             {
                 // OVERVIEW
 
                 // INSTALLATION
-                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sInstall.ToUpper(),  sAppData.Template.iTotal_penIns);
+                cFunctions.Charts.setChartValue(chrt_Bdo_Display, 0, sAppData.Installation.ToUpper(),  sAppData.Template.iTotal_penIns);
                 // REPROGRAMMING
-                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sReprog.ToUpper(),   sAppData.Template.iTotal_penReprog);
+                cFunctions.Charts.setChartValue(chrt_Bdo_Display, 0, sAppData.Reprogramming.ToUpper(), sAppData.Template.iTotal_penReprog);
                 // SERVICING
-                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sServ.ToUpper(),     sAppData.Template.iTotal_penServ);
+                cFunctions.Charts.setChartValue(chrt_Bdo_Display, 0, sAppData.Servicing.ToUpper(),     sAppData.Template.iTotal_penServ);
                 // REPAIR
-                Func.setChartValue(chrt_Bdo_Display, 0, clsFunctions.sRepair.ToUpper(),   sAppData.Template.iTotal_penRep);
+                cFunctions.Charts.setChartValue(chrt_Bdo_Display, 0, sAppData.Repair.ToUpper(),        sAppData.Template.iTotal_penRep);
 
                 // PIE CHART
-                Func.setChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Com);
-                Func.setChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Pen);
+                cFunctions.Charts.setChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Com);
+                cFunctions.Charts.setChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Pen);
 
                 chrt_Bdo_Summary.Series[0].Points[0].Color = Color.FromArgb(41, 115, 185);
                 chrt_Bdo_Summary.Series[0].Points[1].Color = Color.FromArgb(230, 40, 35);
@@ -102,7 +101,7 @@ namespace ActivityReportSystem.Forms
             }
             catch (Exception ex)
             {
-                clsFunctions.setMessageBox(ex.Message, "Activity Report System", clsFunctions.IconType.iError);
+                MessageBox.Show(ex.Message, "Activity Report System", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -120,8 +119,8 @@ namespace ActivityReportSystem.Forms
                     cmb_Model.Text = string.Empty;
                     lb_Total_Deployed.Text  = "0";
                     lb_Total_Stocks.Text    = "0";
-                    Func.ClearGridRows(dgv_Model_Status_List);
-                    Func.ClearGridRows(dgv_Model_List);
+                    cFunctions.Grid.ClearGridRows(dgv_Model_Status_List);
+                    cFunctions.Grid.ClearGridRows(dgv_Model_List);
 
                     break;
 
@@ -130,7 +129,7 @@ namespace ActivityReportSystem.Forms
                     cmb_Model.Text = string.Empty;
                     lb_Total_Deployed.Text  = "0";
                     lb_Total_Stocks.Text    = "0";
-                    Func.ClearGridRows(dgv_Model_List);
+                    cFunctions.Grid.ClearGridRows(dgv_Model_List);
 
                     break;
 
@@ -140,21 +139,21 @@ namespace ActivityReportSystem.Forms
                     cmb_Model_Template.Text = string.Empty;
                     dtp_Model_From.Value    = DateTime.Now;
                     dtp_Model_To.Value      = DateTime.Now;
-                    Func.ClearGridRows(dgv_Model_Status_List);
+                    cFunctions.Grid.ClearGridRows(dgv_Model_Status_List);
 
                     break;
 
                 case "Charts":
 
-                    Func.ClearCharts(chrt_Bdo_Display, 0);
-                    Func.ClearCharts(chrt_Bdo_Summary, 0);
+                    cFunctions.Charts.ClearCharts(chrt_Bdo_Display, 0);
+                    cFunctions.Charts.ClearCharts(chrt_Bdo_Summary, 0);
 
                     break;
 
                 case "Objects":
 
-                    Func.ClearCharts(chrt_Bdo_Display, 0);
-                    Func.ClearCharts(chrt_Bdo_Summary, 0);
+                    cFunctions.Charts.ClearCharts(chrt_Bdo_Display, 0);
+                    cFunctions.Charts.ClearCharts(chrt_Bdo_Summary, 0);
 
                     cmb_Model_Template.Text = string.Empty;
                     dtp_Model_From.Value    = DateTime.Now;
@@ -228,7 +227,7 @@ namespace ActivityReportSystem.Forms
 
         private void btn_Overview_Click(object sender, EventArgs e)
         {
-            Func.LocationHighlight(sender, pnHover);
+            cFunctions.Effects.LocationHighlight(sender, pnHover);
             Clear("Inputs");
             tpc_MenuPage.SelectedTab = tbp_Summary;
         }
@@ -266,7 +265,7 @@ namespace ActivityReportSystem.Forms
 
         private void btn_Model_Click(object sender, EventArgs e)
         {
-            Func.LocationHighlight(sender, pnHover);
+            cFunctions.Effects.LocationHighlight(sender, pnHover);
             Clear("Inputs");
             tpc_MenuPage.SelectedTab = tbp_Detailed;
         }
@@ -280,13 +279,15 @@ namespace ActivityReportSystem.Forms
         {
             if (cmb_Model_Template.Text == "")
             {
-                clsFunctions.setMessageBox("Please Select Template", "Date Search", clsFunctions.IconType.iInformation);
+                MessageBox.Show("Please Select Template", "Date Search",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             if (cmb_Model_Template.Text == "Reprogramming")
             {
-                clsFunctions.setMessageBox("No Available Data to Display","Date Search", clsFunctions.IconType.iInformation);
+                MessageBox.Show("No Available Data to Display", "Date Search",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -322,7 +323,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Installation_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.TemplateName = clsFunctions.sInstall;
+            sAppData.TemplateName = sAppData.Installation;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails installation = new frmSumDetails())
@@ -340,7 +341,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Reprogram_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.TemplateName = clsFunctions.sReprog;
+            sAppData.TemplateName = sAppData.Reprogramming;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails reprogram = new frmSumDetails())
@@ -358,7 +359,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Service_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.TemplateName = clsFunctions.sServ;
+            sAppData.TemplateName = sAppData.Servicing;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails servicing = new frmSumDetails())
@@ -376,7 +377,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Repair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.TemplateName = clsFunctions.sRepair;
+            sAppData.TemplateName = sAppData.Repair;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails repair = new frmSumDetails())
@@ -460,12 +461,12 @@ namespace ActivityReportSystem.Forms
 
         private void Tm_FadeIn_Tick(object sender, EventArgs e)
         {
-            Func.FadeIn(this, Tm_FadeIn);
+            cFunctions.Effects.FadeIn(this, Tm_FadeIn);
         }
 
         private void Tm_FadeOut_Tick(object sender, EventArgs e)
         {
-            Func.FadeOut(this, Tm_FadeOut);
+            cFunctions.Effects.FadeOut(this, Tm_FadeOut);
         }
 
 
@@ -473,52 +474,52 @@ namespace ActivityReportSystem.Forms
 
         private void pn_Menu_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pn_Menu, 0, 0, 0, 2);
+            cFunctions.Effects.BorderShadow(e, pn_Menu, 0, 0, 0, 2);
         }
 
         private void pn_Card_Install_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pn_Card_Install, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_Card_Install, 0, 0, 3, 3);
         }
 
         private void pn_Card_Reprogram_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pn_Card_Reprogram, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_Card_Reprogram, 0, 0, 3, 3);
         }
 
         private void pn_Card_Servicing_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pn_Card_Serv, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_Card_Serv, 0, 0, 3, 3);
         }
 
         private void pn_Card_Repair_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pn_Card_Repair, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_Card_Repair, 0, 0, 3, 3);
         }
 
         private void pn_Bdo_Sum_Body_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pn_Bdo_Sum_Body, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_Bdo_Sum_Body, 0, 0, 3, 3);
         }
 
         private void pn_MP200_Body_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pn_MP200_Body, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_MP200_Body, 0, 0, 3, 3);
         }
 
         private void pn_Lookup_Body_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pn_Lookup_Body, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_Lookup_Body, 0, 0, 3, 3);
         }
 
         private void pn_PenSum_Body_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pn_PenSum_Body, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_PenSum_Body, 0, 0, 3, 3);
         }
 
         private void pn_MenuHeader_Paint_1(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pn_MenuHeader, 0, 0, 0, 2);
+            cFunctions.Effects.BorderShadow(e, pn_MenuHeader, 0, 0, 0, 2);
         }
 
     #endregion

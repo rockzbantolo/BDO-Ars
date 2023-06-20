@@ -13,6 +13,13 @@ namespace ActivityReportSystem.Global
         public static int iDataSize         { get; set; }
         public static string TemplateName { get; set; }
 
+        public const string Installation  = "Installation";
+        public const string Reprogramming = "Reprogramming";
+        public const string Servicing     = "Servicing";
+        public const string Repair        = "Repair";
+        public const string Inventory     = "Inventory";
+
+        public static string[] Templates = { string.Empty, Installation, Reprogramming, Servicing, Repair };
 
         public static DataTable CountDetails { get; set; }
 
@@ -26,7 +33,7 @@ namespace ActivityReportSystem.Global
             public static string sSecurity { get; set; } = "False";
             public static string sPort { get; set; }
             public static string sTimeOut { get; set; } = "5000";
-
+            public static string AllowLoadLocalInfile { get; set; }
             public static string sMySQLDatabase { get; set; }
             public static string sSQLServerDatabase { get; set; }
 
@@ -39,7 +46,8 @@ namespace ActivityReportSystem.Global
         {
             public const string Csv = "C:\\CASTLESTECH_ARS\\IMPORTS\\";
 
-            public static string CsvLoc;
+            public const string Report = @"C:\\CASTLESTECH_ARS\\REPORTS\\";
+
         }
 
         public class DataParam
@@ -52,13 +60,6 @@ namespace ActivityReportSystem.Global
 
             public static string ConnString { get; set; }
 
-            public const string sInstall = "Installation";
-            public const string sReprog = "Reprogramming";
-            public const string sServ = "Servicing";
-            public const string sRepair = "Repair";
-            public const string sInventory = "Inventory";
-
-            public static string[] Templates = { string.Empty, sInstall, sReprog, sServ, sRepair };
         }
 
         public class Template

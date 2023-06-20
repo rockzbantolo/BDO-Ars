@@ -4,12 +4,13 @@ using System.IO;
 using System.Diagnostics;
 using ActivityReportSystem.Report;
 using ActivityReportSystem.Function;
+using ActivityReportSystem.Global;
 
 namespace ActivityReportSystem.Forms
 {
     public partial class frmReportViewer : Form
     {
-        private clsFunctions cFunc = new clsFunctions();
+        private cFunctions cFunc = new cFunctions();
 
         protected override CreateParams CreateParams
         {
@@ -41,7 +42,7 @@ namespace ActivityReportSystem.Forms
             string ReportPath = "";
             string reportFullPath = "";
 
-            ReportPath = @"C:\\CASTLESTECH_ARS\\REPORTS\\";
+            ReportPath = sAppData.FilePath.Report;
             reportFullPath = Path.Combine(ReportPath, "rptDashboard.rpt");
             Debug.WriteLine("reportFullPath=" + reportFullPath);
 
@@ -84,12 +85,12 @@ namespace ActivityReportSystem.Forms
 
         private void Tm_FadeIn_Tick(object sender, EventArgs e)
         {
-            cFunc.FadeIn(this, Tm_FadeIn);
+            cFunctions.Effects.FadeIn(this, Tm_FadeIn);
         }
 
         private void Tm_FadeOut_Tick(object sender, EventArgs e)
         {
-            cFunc.FadeOut(this, Tm_FadeOut);
+            cFunctions.Effects.FadeOut(this, Tm_FadeOut);
         }
     }
 }

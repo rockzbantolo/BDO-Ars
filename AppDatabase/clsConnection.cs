@@ -16,140 +16,20 @@ namespace ActivityReportSystem.Database
             MySqlSettings();
             SystemSettings();
 
-            Debug.WriteLine(clsFunctions.LineSeperator);
+            #region Debug Database Details
+            Debug.WriteLine(cFunctions.LineSeperator);
             Debug.WriteLine("DATABASE INFORMATION");
-            Debug.WriteLine(clsFunctions.LineSeperator);
+            Debug.WriteLine(cFunctions.LineSeperator);
             Debug.WriteLine(string.Concat("Persist Security Info: ", sAppData.Database.sSecurity, "; "));
             Debug.WriteLine(string.Concat("Server: ", sAppData.Database.sServer, "; "));
             Debug.WriteLine(string.Concat("Port: ", sAppData.Database.sPort, "; "));
             Debug.WriteLine(string.Concat("Database: ", sAppData.Database.sDatabase, "; "));
             Debug.WriteLine(string.Concat("Username: ", sAppData.Database.sUserName, "; "));
             Debug.WriteLine(string.Concat("Password: ", sAppData.Database.sPassword, "; "));
+            Debug.WriteLine(string.Concat("Local File : ", sAppData.Database.AllowLoadLocalInfile, ";"));
             Debug.WriteLine(string.Concat("Connection Timeout: ", sAppData.Database.sTimeOut, ";"));
-            Debug.WriteLine(clsFunctions.LineSeperator);
-        }
-
-    }
-
-    public class clsDatabase : clsSettings
-    {
-        // MYSQL SETTINGS
-        public MySqlConnection Conn = null;
-        public MySqlCommand Command = null;
-        public MySqlDataReader Reader = null;
-
-        public bool ClientConnection()
-        {
-            string ConnStrings = string.Empty;
-            bool isConnected = false;
-
-            ConnStrings = GetConnString();
-
-            try
-            {
-
-                Conn = new MySqlConnection(ConnStrings);
-                isConnected = Connect();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to connect to MySQL." +
-                   "Data Source:" + sAppData.Database.sServer + Environment.NewLine +
-                   "Database:" + sAppData.Database.sDatabase + Environment.NewLine +
-                   "Connection String:" + ConnStrings + Environment.NewLine + Environment.NewLine +
-                   "Error Message: " + ex.Message + Environment.NewLine + Environment.NewLine +
-                   "Please contact system administrator",
-                   "MySQL: Connect Database Server Client, failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                isConnected = false;
-                throw ex;
-            }
-            finally
-            {
-                Disconnect();
-            }
-
-            return isConnected;
-
-        }
-
-        public string GetConnString()
-        {
-            StringBuilder ConnString = new StringBuilder();
-
-            InitializeDatabaseSettings();
-
-            ConnString.Append(string.Concat("PERSIST SECURITY INFO = ", sAppData.Database.sSecurity, "; ",
-                                            "SERVER = ", sAppData.Database.sServer, "; ",
-                                            "PORT = ", sAppData.Database.sPort, "; ",
-                                            "DATABASE = ", sAppData.Database.sDatabase, "; ",
-                                            "UID = ", sAppData.Database.sUserName, "; ",
-                                            "PASSWORD = ", sAppData.Database.sPassword, "; ",
-                                            "SSL MODE = ", sAppData.Database.sSSLMode, "; ",
-                                            "CONNECT TIMEOUT = ", sAppData.Database.sTimeOut, ";\n"));
-
-            Debug.WriteLine("\n[" + DateTime.Now + "] " + "Connection : \n" + ConnString);
-
-            return ConnString.ToString();
-        }
-
-        public bool Connect()
-        {
-            bool isConnected = false;
-
-            try
-            {
-                Conn.Open();
-                isConnected = true;
-                //Debug.WriteLine("\n----------- Connected ----------");
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to connect to MySQL."   + Environment.NewLine + Environment.NewLine +
-                    "Data Source:"       + sAppData.Database.sServer    + Environment.NewLine +
-                    "Database:"          + sAppData.Database.sDatabase  + Environment.NewLine + Environment.NewLine +
-                    "Connection String:" + "Null" + Environment.NewLine + Environment.NewLine +
-                    "Error Message: "    + ex.Message       + Environment.NewLine + Environment.NewLine +
-                    "Please contact system administrator",
-                    "MySQL: OpenConnection, failed",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                isConnected = false;
-               throw ex;
-            }
-
-            return isConnected;
-
-        }
-
-        public bool Disconnect()
-        {
-            bool isDisconnected = false;
-            
-            try
-            {
-                Conn.Close();
-                isDisconnected = true;
-                //Debug.WriteLine("--------- Disconnected ---------");
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Close Connection:" + ex.Message);
-                throw ex;
-            }
-            finally
-            {
-                if (Conn != null)
-                {
-                    Conn.Close();
-                }
-            }
-
-            return isDisconnected;
+            Debug.WriteLine(cFunctions.LineSeperator + "\n");
+            #endregion
         }
 
     }
@@ -220,6 +100,7 @@ namespace ActivityReportSystem.Database
             sAppData.Database.sUserName   = this.Read("_UserName", "UserName");
             sAppData.Database.sPassword   = this.Read("_Password", "Password");
             sAppData.Database.sSSLMode    = this.Read("_SSLMode", "SSLMode");
+            sAppData.Database.AllowLoadLocalInfile = this.Read("_AllowLoadLocalInfile", "AllowLoadLocalInfile");
             sAppData.Database.sTimeOut    = "5000";
 
             sAppData.DataParam.ConnString = string.Concat("PERSIST SECURITY INFO = ", sAppData.Database.sSecurity, "; ",
@@ -229,6 +110,7 @@ namespace ActivityReportSystem.Database
                                                     "UID = ", sAppData.Database.sUserName, "; ",
                                                     "PASSWORD = ", sAppData.Database.sPassword, "; ",
                                                     "SSL MODE = ", sAppData.Database.sSSLMode, "; ",
+                                                    "AllowLoadLocalInfile = ", sAppData.Database.AllowLoadLocalInfile, ";",
                                                     "CONNECT TIMEOUT = ", sAppData.Database.sTimeOut, ";");
 
         }

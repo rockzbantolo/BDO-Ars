@@ -17,14 +17,14 @@ namespace ActivityReportSystem.Forms
 {
     public partial class frmSumDetails : Form
     {
-        private clsFunctions Func = new clsFunctions();      
+        private cFunctions Func = new cFunctions();      
         private clsAppViews Db = new clsAppViews();
 
         public frmSumDetails()
         {
             InitializeComponent();
-            Func.setDoubleBuffer(Dgv_Details, true);
-            Func.setDoubleBuffer(Dgv_Duplicate, true);
+            cFunctions.Effects.setDoubleBuffer(Dgv_Details, true);
+            cFunctions.Effects.setDoubleBuffer(Dgv_Duplicate, true);
             Tm_FadeIn.Start();
         }
 
@@ -34,7 +34,7 @@ namespace ActivityReportSystem.Forms
 
             Cursor.Current = Cursors.WaitCursor;
 
-            if (sAppData.TemplateName == clsFunctions.sInstall || sAppData.TemplateName == clsFunctions.sReprog)
+            if (sAppData.TemplateName == sAppData.Installation || sAppData.TemplateName == sAppData.Reprogramming)
             {
                 Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, string.Empty);
             }
@@ -59,12 +59,12 @@ namespace ActivityReportSystem.Forms
 
         private void pnCompleted_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pnCompleted, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pnCompleted, 0, 0, 3, 3);
         }
 
         private void pnCancel_Paint(object sender, PaintEventArgs e)
         {
-            Func.BorderShadow(e, pnCancel, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pnCancel, 0, 0, 3, 3);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -120,7 +120,8 @@ namespace ActivityReportSystem.Forms
                             Dgv_Details.Rows[i].Cells[7].Value.ToString(),
                             Dgv_Details.Rows[i].Cells[8].Value.ToString(),
                             Dgv_Details.Rows[i].Cells[9].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[10].Value.ToString());
+                            Dgv_Details.Rows[i].Cells[10].Value.ToString(),
+                            Dgv_Details.Rows[i].Cells[11].Value.ToString());
                     }
 
                 }
@@ -131,7 +132,7 @@ namespace ActivityReportSystem.Forms
                 }
             }
 
-            if (lb_Activity.Text == clsFunctions.sInstall || lb_Activity.Text == clsFunctions.sReprog)
+            if (lb_Activity.Text == sAppData.Installation || lb_Activity.Text == sAppData.Reprogramming)
             {
                 Dgv_Details.Columns[1].Visible = false;
                 Dgv_Duplicate.Columns[1].Visible = false;
@@ -154,19 +155,19 @@ namespace ActivityReportSystem.Forms
 
         private void Tm_FadeIn_Tick(object sender, EventArgs e)
         {
-            Func.FadeIn(this, Tm_FadeIn);
+            cFunctions.Effects.FadeIn(this, Tm_FadeIn);
         }
 
         private void Tm_FadeOut_Tick(object sender, EventArgs e)
         {
-            Func.FadeOut(this, Tm_FadeOut);
+            cFunctions.Effects.FadeOut(this, Tm_FadeOut);
         }
 
         private void Btn_Search_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            if (sAppData.TemplateName == clsFunctions.sInstall || sAppData.TemplateName == clsFunctions.sReprog)
+            if (sAppData.TemplateName == sAppData.Installation || sAppData.TemplateName == sAppData.Reprogramming)
             {
                 Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, Tx_Search.Text.Trim());
             }

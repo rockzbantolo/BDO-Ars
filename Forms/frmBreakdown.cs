@@ -13,7 +13,7 @@ namespace ActivityReportSystem.Forms
 {
     public partial class frmBreakdown : Form
     {
-        private clsFunctions cFunc = new clsFunctions();
+        private cFunctions cFunc = new cFunctions();
         clsAppViews Db = new clsAppViews();
 
         public frmBreakdown()
@@ -110,12 +110,12 @@ namespace ActivityReportSystem.Forms
 
         private void Tm_FadeIn_Tick(object sender, EventArgs e)
         {
-            cFunc.FadeIn(this, Tm_FadeIn);
+            cFunctions.Effects.FadeIn(this, Tm_FadeIn);
         }
 
         private void Tm_FadeOut_Tick(object sender, EventArgs e)
         {
-            cFunc.FadeOut(this, Tm_FadeOut);
+            cFunctions.Effects.FadeOut(this, Tm_FadeOut);
         }
 
 

@@ -15,7 +15,7 @@ namespace ActivityReportSystem
     public partial class frmMImport : Form
     {
 
-        private clsFunctions cFunc  = new clsFunctions();
+        private cFunctions cFunc  = new cFunctions();
         private clsAppViews Db = new clsAppViews();
 
         protected override CreateParams CreateParams
@@ -64,25 +64,25 @@ namespace ActivityReportSystem
             {
                 if (!string.IsNullOrEmpty(tx.Text.ToString()))
                 {
-                    if (!clsFunctions.SavingConfirm(false, "Upload Process")) return;
+                    if (!cFunctions.SavingConfirm(false, "Upload Process")) return;
 
                     Cursor.Current = Cursors.WaitCursor;
-
-                    // Process Data and Save
-                    Debug.WriteLine("--- Import Data ---");
-
                     
-                    //Db.ImportDataUsingGrid(clsFunctions.sInstall,    dgv_Imp_Installation);
-                    //Db.ImportDataUsingGrid(clsFunctions.sReprog,     dgv_Imp_Reprogramming);
-                    //Db.ImportDataUsingGrid(clsFunctions.sServ,       dgv_Imp_Servicing);
-                    //Db.ImportDataUsingGrid(clsFunctions.sRepair,     dgv_Imp_Repair);
-                    //Db.ImportDataUsingGrid(clsFunctions.sInventory,  dgv_Imp_Inventory);
+                    // Save Uploads
+                    Db.SaveCsvFile(sAppData.Installation);
+                    Db.SaveCsvFile(sAppData.Reprogramming);
+                    Db.SaveCsvFile(sAppData.Servicing);
+                    Db.SaveCsvFile(sAppData.Repair);
+
+                    //Db.SaveUsingGrid(sAppData.Installation, dgv_Imp_Installation);
 
                     ClearObj();
 
                     Cursor.Current = Cursors.Default;
                 }
             }
+
+            MessageBox.Show("Files Successfully Imported","Import Result",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void btnImpClear_Click(object sender, EventArgs e)
@@ -93,11 +93,11 @@ namespace ActivityReportSystem
                 = tx_Imp_RepairFile.Text
                 = tx_Imp_Inventory.Text = string.Empty;
 
-            cFunc.ClearDataGrid(dgv_Imp_Installation);
-            cFunc.ClearDataGrid(dgv_Imp_Reprogramming);
-            cFunc.ClearDataGrid(dgv_Imp_Servicing);
-            cFunc.ClearDataGrid(dgv_Imp_Repair);
-            cFunc.ClearDataGrid(dgv_Imp_Inventory);
+            cFunctions.Grid.ClearDataGrid(dgv_Imp_Installation);
+            cFunctions.Grid.ClearDataGrid(dgv_Imp_Reprogramming);
+            cFunctions.Grid.ClearDataGrid(dgv_Imp_Servicing);
+            cFunctions.Grid.ClearDataGrid(dgv_Imp_Repair);
+            cFunctions.Grid.ClearDataGrid(dgv_Imp_Inventory);
 
             rtb_Imp_Selected.Clear();
         }
@@ -111,44 +111,44 @@ namespace ActivityReportSystem
 
         private void grdImpInstallation_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            cFunc.addGridLineNo(sender, e, this.Font); // ADD LINE #
+            cFunctions.Grid.addGridLineNo(sender, e, this.Font); // ADD LINE #
         }
 
         private void grdImpReprogramming_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            cFunc.addGridLineNo(sender, e, this.Font); // ADD LINE #
+            cFunctions.Grid.addGridLineNo(sender, e, this.Font); // ADD LINE #
         }
 
         private void grdImpServicing_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            cFunc.addGridLineNo(sender, e, this.Font); // ADD LINE #
+            cFunctions.Grid.addGridLineNo(sender, e, this.Font); // ADD LINE #
         }
 
         private void grdImpRepair_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            cFunc.addGridLineNo(sender, e, this.Font);// ADD LINE #
+            cFunctions.Grid.addGridLineNo(sender, e, this.Font);// ADD LINE #
         }
 
         private void dgv_Imp_Inventory_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            cFunc.addGridLineNo(sender, e, this.Font); // ADD LINE #
+            cFunctions.Grid.addGridLineNo(sender, e, this.Font); // ADD LINE #
         }
 
     // BORDER SHADOW
 
         private void pn_Imp_BxTemplate_Paint(object sender, PaintEventArgs e)
         {
-            cFunc.BorderShadow(e, pn_Imp_BxTemplate, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_Imp_BxTemplate, 0, 0, 3, 3);
         }
 
         private void pn_Imp_BxPreview_Paint(object sender, PaintEventArgs e)
         {
-            cFunc.BorderShadow(e, pn_Imp_BxPreview, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_Imp_BxPreview, 0, 0, 3, 3);
         }
 
         private void pn_Imp_BxDataClick_Paint(object sender, PaintEventArgs e)
         {
-            cFunc.BorderShadow(e, pn_Imp_BxDataClick, 0, 0, 3, 3);
+            cFunctions.Effects.BorderShadow(e, pn_Imp_BxDataClick, 0, 0, 3, 3);
         }
 
     // VIEW SELECTED
@@ -156,31 +156,31 @@ namespace ActivityReportSystem
         private void dgv_Imp_Installation_DoubleClick(object sender, EventArgs e)
         {
             // GET DATAGRID DATA
-            string SelectedRow = cFunc.getGridSelectedRow(dgv_Imp_Installation, 0);
+            string SelectedRow = cFunctions.Grid.getGridSelectedRow(dgv_Imp_Installation, 0);
             viewSelectedRow(SelectedRow);
         }
 
         private void dgv_Imp_Reprogramming_DoubleClick(object sender, EventArgs e)
         {
-            string SelectedRow = cFunc.getGridSelectedRow(dgv_Imp_Reprogramming, 0);
+            string SelectedRow = cFunctions.Grid.getGridSelectedRow(dgv_Imp_Reprogramming, 0);
             viewSelectedRow(SelectedRow);
         }
 
         private void dgv_Imp_Servicing_DoubleClick(object sender, EventArgs e)
         {
-            string SelectedRow = cFunc.getGridSelectedRow(dgv_Imp_Servicing, 0);
+            string SelectedRow = cFunctions.Grid.getGridSelectedRow(dgv_Imp_Servicing, 0);
             viewSelectedRow(SelectedRow);
         }
 
         private void dgv_Imp_Repair_DoubleClick(object sender, EventArgs e)
         {
-            string SelectedRow = cFunc.getGridSelectedRow(dgv_Imp_Repair, 0);
+            string SelectedRow = cFunctions.Grid.getGridSelectedRow(dgv_Imp_Repair, 0);
             viewSelectedRow(SelectedRow);
         }
 
         private void dgv_Imp_Inventory_DoubleClick(object sender, EventArgs e)
         {
-            string SelectedRow = cFunc.getGridSelectedRow(dgv_Imp_Inventory, 0);
+            string SelectedRow = cFunctions.Grid.getGridSelectedRow(dgv_Imp_Inventory, 0);
             viewSelectedRow(SelectedRow);
         }
 
@@ -194,27 +194,27 @@ namespace ActivityReportSystem
 
         private void btn_Imp_OpenInstallation_Click(object sender, EventArgs e)
         {
-            Db.ProcessDataFile(tx_Imp_InstallationFile, dgv_Imp_Installation, tpcActivity, tbpInstallation, clsFunctions.sInstall);
+            Db.ProcessExcelFile(tx_Imp_InstallationFile, dgv_Imp_Installation, tpcActivity, tbpInstallation, sAppData.Installation);
         }
 
         private void btn_Imp_OpenReprog_Click(object sender, EventArgs e)
         {
-            Db.ProcessDataFile(tx_Imp_ReprogFile, dgv_Imp_Reprogramming, tpcActivity, tbpReprogramming, clsFunctions.sReprog);
+            Db.ProcessExcelFile(tx_Imp_ReprogFile, dgv_Imp_Reprogramming, tpcActivity, tbpReprogramming, sAppData.Reprogramming);
         }
 
         private void btn_Imp_OpenServicing_Click(object sender, EventArgs e)
         {
-            Db.ProcessDataFile(tx_Imp_ServicingFile, dgv_Imp_Servicing, tpcActivity, tbpServicing, clsFunctions.sServ);
+            Db.ProcessExcelFile(tx_Imp_ServicingFile, dgv_Imp_Servicing, tpcActivity, tbpServicing, sAppData.Servicing);
         }
 
         private void btn_Imp_OpenRepair_Click(object sender, EventArgs e)
         {
-            Db.ProcessDataFile(tx_Imp_RepairFile, dgv_Imp_Repair, tpcActivity, tbpRepair, clsFunctions.sRepair);
+            Db.ProcessExcelFile(tx_Imp_RepairFile, dgv_Imp_Repair, tpcActivity, tbpRepair, sAppData.Repair);
         }
 
         private void btn_Imp_OpenInvent_Click(object sender, EventArgs e)
         {
-            Db.ProcessDataFile(tx_Imp_Inventory, dgv_Imp_Inventory, tpcActivity, tbpInventory, clsFunctions.sInventory);
+            Db.ProcessExcelFile(tx_Imp_Inventory, dgv_Imp_Inventory, tpcActivity, tbpInventory, sAppData.Inventory);
         }
 
         // IMPORT PROCESS
@@ -224,8 +224,7 @@ namespace ActivityReportSystem
         public void Refresh_Dashboard()
         {
             Debug.WriteLine(" ---- Refresh Dashboard -----");
-            var Refresh = Application.OpenForms.OfType<frmDashboard>().Single();
-            Refresh.InitializeDisplay();
+            frmDashboard Dashboard = new frmDashboard();
         }
 
     // CLEAR OBJ
@@ -237,11 +236,11 @@ namespace ActivityReportSystem
             = tx_Imp_RepairFile.Text
             = tx_Imp_Inventory.Text = string.Empty;
 
-            cFunc.ClearDataGrid(dgv_Imp_Installation);
-            cFunc.ClearDataGrid(dgv_Imp_Reprogramming);
-            cFunc.ClearDataGrid(dgv_Imp_Servicing);
-            cFunc.ClearDataGrid(dgv_Imp_Repair);
-            cFunc.ClearDataGrid(dgv_Imp_Inventory);
+            cFunctions.Grid.ClearDataGrid(dgv_Imp_Installation);
+            cFunctions.Grid.ClearDataGrid(dgv_Imp_Reprogramming);
+            cFunctions.Grid.ClearDataGrid(dgv_Imp_Servicing);
+            cFunctions.Grid.ClearDataGrid(dgv_Imp_Repair);
+            cFunctions.Grid.ClearDataGrid(dgv_Imp_Inventory);
             rtb_Imp_Selected.Clear();
 
             Refresh_Dashboard();
@@ -250,12 +249,12 @@ namespace ActivityReportSystem
     // EFFECTS
         private void Tm_FadeIn_Tick(object sender, EventArgs e)
         {
-            cFunc.FadeIn(this, Tm_FadeIn);
+            cFunctions.Effects.FadeIn(this, Tm_FadeIn);
         }
 
         private void Tm_FadeOut_Tick(object sender, EventArgs e)
         {
-            cFunc.FadeOut(this, Tm_FadeOut);
+            cFunctions.Effects.FadeOut(this, Tm_FadeOut);
         }
     }
 }

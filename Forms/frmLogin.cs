@@ -20,8 +20,7 @@ namespace ActivityReportSystem.Forms
 {
     public partial class frmLogin : Form
     {
-        private clsFunctions dbFunction;
-        private clsDatabase Db;
+        private cFunctions dbFunction;
 
         public frmLogin()
         {
@@ -45,12 +44,12 @@ namespace ActivityReportSystem.Forms
 
             if (sAppData.DataParam.strLogUsername != txtUsername.Text.Trim())
             {
-                clsFunctions.setMessageBox("Incorrect Username", "Login", clsFunctions.IconType.iStop);
+                //cFunctions.setMessageBox("Incorrect Username", "Login", cFunctions.IconType.iStop);
 
             }
             else if (sAppData.DataParam.strLogPassword != txtPassword.Text.Trim())
             {
-                clsFunctions.setMessageBox("Incorrect Password", "Login", clsFunctions.IconType.iStop);
+                //cFunctions.setMessageBox("Incorrect Password", "Login", cFunctions.IconType.iStop);
             }
 
         }

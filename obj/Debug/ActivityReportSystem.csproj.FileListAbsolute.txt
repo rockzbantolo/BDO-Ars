@@ -299,7 +299,6 @@ C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\ActivityReportSystem.Forms.frm
 C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\ActivityReportSystem.Forms.frmSumDate.resources
 C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\ActivityReportSystem.Forms.frmSumDetails.resources
 C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\ActivityReportSystem.Forms.frmDashboard.resources
-C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\ActivityReportSystem.Forms.Frm_Testing.resources
 C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\ActivityReportSystem.Properties.Resources.resources
 C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\ActivityReportSystem.ucCards.resources
 C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\ActivityReportSystem.csproj.GenerateResource.Cache

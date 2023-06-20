@@ -9,30 +9,40 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using AppAction;
 
 namespace ActivityReportSystem.AppActivity.View
 {
     class clsAppViews
     {
 
-        clsAppController Method = new clsAppController();
-        clsFunctions cFunc = new clsFunctions();
+        clsSpController Controller = new clsSpController();
+        cFunctions cFunc = new cFunctions();
+
+        string csvPath, insPath, reprogPath, servPath, repPath, colName;
 
         // Overview UI
         public void LoadDashboardDetails(DataGridView obj, string SearchValue)
         {
+            DataTable Result = new DataTable();
+
             switch(obj.Name)
             {
                 // Completed Request
                 case "dgv_Sum_ComReq":
 
-                    DataTable CompletedRequest = Method.ExecuteQuery("View", "Completed Request", SearchValue, string.Empty, clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "Completed Request";
+                    Controller.SearchValue   = SearchValue;
+                    Controller.Sql           = "";
 
-                    if (CompletedRequest.Rows.Count > 0)
+                    Result = Controller.ExecuteAction(eAction.View);
+
+                    if (Result.Rows.Count > 0)
                     {
                         obj.Rows.Clear();
 
-                        foreach (DataRow row in CompletedRequest.Rows)
+                        foreach (DataRow row in Result.Rows)
                         {
                             obj.Rows.Add
                             (
@@ -54,13 +64,18 @@ namespace ActivityReportSystem.AppActivity.View
                 // Pending Request
                 case "dgv_Sum_PenReq":
 
-                    DataTable PendingRequest = Method.ExecuteQuery("View", "Pending Request", SearchValue, string.Empty, clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "Pending Request";
+                    Controller.SearchValue   = SearchValue;
+                    Controller.Sql           = "";
 
-                    if (PendingRequest.Rows.Count > 0)
+                    Result = Controller.ExecuteAction(eAction.View);
+
+                    if (Result.Rows.Count > 0)
                     {
                         obj.Rows.Clear();
 
-                        foreach (DataRow row in PendingRequest.Rows)
+                        foreach (DataRow row in Result.Rows)
                         {
                             obj.Rows.Add
                             (
@@ -83,13 +98,18 @@ namespace ActivityReportSystem.AppActivity.View
                 // Breakdown of Pending Request
                 case "dgv_BdPendings":
 
-                    DataTable BreakDownPending = Method.ExecuteQuery("View", "BD of Pending", SearchValue, string.Empty, clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "BD of Pending";
+                    Controller.SearchValue   = SearchValue;
+                    Controller.Sql           = "";
 
-                    if (BreakDownPending.Rows.Count > 0)
+                    Result = Controller.ExecuteAction(eAction.View);
+
+                    if (Result.Rows.Count > 0)
                     {
                         obj.Rows.Clear();
 
-                        foreach (DataRow row in BreakDownPending.Rows)
+                        foreach (DataRow row in Result.Rows)
                         {
                             obj.Rows.Add
                             (
@@ -112,13 +132,18 @@ namespace ActivityReportSystem.AppActivity.View
                 // Breakdown of Pending Repair
                 case "dgv_Bdp_Rep":
 
-                    DataTable BreakDownRepair = Method.ExecuteQuery("View", "BD of Pending Repair", SearchValue, string.Empty, clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "BD of Pending Repair";
+                    Controller.SearchValue   = SearchValue;
+                    Controller.Sql           = "";
 
-                    if (BreakDownRepair.Rows.Count > 0)
+                    Result = Controller.ExecuteAction(eAction.View);
+
+                    if (Result.Rows.Count > 0)
                     {
                         obj.Rows.Clear();
 
-                        foreach (DataRow row in BreakDownRepair.Rows)
+                        foreach (DataRow row in Result.Rows)
                         {
                             obj.Rows.Add
                             (
@@ -141,13 +166,18 @@ namespace ActivityReportSystem.AppActivity.View
                 // Terminal Status
                 case "dgv_Model_List":
 
-                    DataTable TerminalStatus = Method.ExecuteQuery("View", "Terminal Info", SearchValue, string.Empty, clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "Terminal Info";
+                    Controller.SearchValue   = SearchValue;
+                    Controller.Sql           = "";
 
-                    if (TerminalStatus.Rows.Count > 0)
+                    Result = Controller.ExecuteAction(eAction.View);
+
+                    if (Result.Rows.Count > 0)
                     {
                         obj.Rows.Clear();
 
-                        foreach (DataRow row in TerminalStatus.Rows)
+                        foreach (DataRow row in Result.Rows)
                         {
                             obj.Rows.Add
                             (
@@ -180,45 +210,67 @@ namespace ActivityReportSystem.AppActivity.View
             switch (sAppData.TemplateName)
             {
 
-                case clsFunctions.sInstall:
+                case sAppData.Installation:
 
-                    Result = Method.ExecuteQuery("View", "Installation", SearchValue, string.Empty, clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "Installation";
+                    Controller.SearchValue   = SearchValue;
+
+                    Result = Controller.ExecuteAction(eAction.View);
 
                     Com.Text = sAppData.Template.iTotal_comIns.ToString("n0");
                     Pen.Text = sAppData.Template.iTotal_penIns.ToString("n0");
                     Can.Text = sAppData.Template.iTotal_canIns.ToString("n0");
 
+                    colName = "ID";
+
                     break;
 
-                case clsFunctions.sReprog:
+                case sAppData.Reprogramming:
 
-                    Result = Method.ExecuteQuery("View", "Reprogramming", SearchValue, string.Empty, clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "Reprogramming";
+                    Controller.SearchValue   = SearchValue;
+
+                    Result = Controller.ExecuteAction(eAction.View);
 
                     Com.Text = sAppData.Template.iTotal_comReprog.ToString("n0");
                     Pen.Text = sAppData.Template.iTotal_penReprog.ToString("n0");
                     Can.Text = sAppData.Template.iTotal_canReprog.ToString("n0");
 
+                    colName = "ID";
+
                     break;
 
-                case clsFunctions.sServ:
+                case sAppData.Servicing:
 
-                    Result = Method.ExecuteQuery("View", "Servicing", SearchValue, string.Empty, clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "Servicing";
+                    Controller.SearchValue   = SearchValue;
+
+                    Result = Controller.ExecuteAction(eAction.View);
 
                     Com.Text = sAppData.Template.iTotal_comServ.ToString("n0");
                     Pen.Text = sAppData.Template.iTotal_penServ.ToString("n0");
                     Can.Text = sAppData.Template.iTotal_canServ.ToString("n0");
 
+                    colName = "Case_Referral";
+
                     break;
 
-                case clsFunctions.sRepair:
+                case sAppData.Repair:
 
-                    Result = Method.ExecuteQuery("View", "Repair", SearchValue, string.Empty, clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "Repair";
+                    Controller.SearchValue   = SearchValue;
+
+                    Result = Controller.ExecuteAction(eAction.View);
 
                     Com.Text = sAppData.Template.iTotal_comRep.ToString("n0");
                     Pen.Text = sAppData.Template.iTotal_penRep.ToString("n0");
                     Can.Text = sAppData.Template.iTotal_canRep.ToString("n0");
 
-                    obj.ClearSelection();
+                    colName = "Case_Referral";
 
                     break;
             }
@@ -232,7 +284,7 @@ namespace ActivityReportSystem.AppActivity.View
                     obj.Rows.Add
                     (
                         row["ID"].ToString().Trim(),
-                        row["ID"].ToString().Trim(),
+                        row[colName].ToString().Trim(),
                         row["Terminal_Model"].ToString().Trim(),
                         row["Merchant_ID"].ToString().Trim(),
                         row["Terminal_ID"].ToString().Trim(),
@@ -261,19 +313,19 @@ namespace ActivityReportSystem.AppActivity.View
 
             switch (Template.Text)
             {
-                case clsFunctions.sInstall:
+                case sAppData.Installation:
 
-                    Result = Method.ExecuteQuery("View",
-                             "Terminal Status",
-                             "tblinstallation" + "|"
-                                 + DtFrom.Value.ToString(clsFunctions.sDateFormat) + "|"
-                                 + DtTo.Value.ToString(clsFunctions.sDateFormat),
-                              string.Empty,
-                              clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "Terminal Status";
+                    Controller.SearchValue   = "tblinstallation" + "|" + 
+                                                DtFrom.Value.ToString(cFunctions.sDateFormat) + "|" +
+                                                DtTo.Value.ToString(cFunctions.sDateFormat);
+
+                    Result = Controller.ExecuteAction(eAction.View);
 
                     break;
 
-                case clsFunctions.sReprog:
+                case sAppData.Reprogramming:
                     /*
                     Result = Method.ExecuteQuery("View",
                              "Terminal Status",
@@ -286,27 +338,28 @@ namespace ActivityReportSystem.AppActivity.View
                     */
                     break;
 
-                case clsFunctions.sServ:
+                case sAppData.Servicing:
 
-                    Result = Method.ExecuteQuery("View",
-                             "Terminal Status",
-                             "tblservicing" + "|"
-                                 + DtFrom.Value.ToString(clsFunctions.sDateFormat) + "|"
-                                 + DtTo.Value.ToString(clsFunctions.sDateFormat),
-                              string.Empty,
-                              clsAppController.Action.View);
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "Terminal Status";
+                    Controller.SearchValue   = "tblservicing" + "|" +
+                                                DtFrom.Value.ToString(cFunctions.sDateFormat) + "|" +
+                                                DtTo.Value.ToString(cFunctions.sDateFormat);
+
+                    Result = Controller.ExecuteAction(eAction.View);
 
                     break;
 
-                case clsFunctions.sRepair:
+                case sAppData.Repair:
 
-                    Result = Method.ExecuteQuery("View",
-                             "Terminal Status",
-                             "tblrepair" + "|"
-                                 + DtFrom.Value.ToString(clsFunctions.sDateFormat) + "|"
-                                 + DtTo.Value.ToString(clsFunctions.sDateFormat),
-                              string.Empty,
-                              clsAppController.Action.View); ;
+                    Controller.StatementType = "View";
+                    Controller.SearchBy      = "Terminal Status";
+                    Controller.SearchValue   = "tblrepair" + "|" +
+                                                DtFrom.Value.ToString(cFunctions.sDateFormat) + "|" +
+                                                DtTo.Value.ToString(cFunctions.sDateFormat);
+
+                    Result = Controller.ExecuteAction(eAction.View);
+
                     break;
 
                 default:
@@ -337,97 +390,24 @@ namespace ActivityReportSystem.AppActivity.View
             }
         }
 
-        public void ImportDataUsingGrid(string Template, DataGridView Obj)
-        {
-            var queryBuilder = new StringBuilder();
-            var queryValues = new StringBuilder();
-            var cultureInfo = new CultureInfo("en-US");
-
-            string TempQuery = string.Empty;
-            int batchSize = 150;
-            int rowCount = Obj.Rows.Count;
-
-            if (rowCount > 0)
-            {
-                if (MessageBox.Show("Do you want to Delete Existing " + Template + " Database?" + "\nWarning this will permanently delete the data", "Database",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    Method.ExecuteQuery("Delete", Template, string.Empty, string.Empty, clsAppController.Action.Delete); // Delete Existing Data
-                }
-
-                for (int rowIndex = 0; rowIndex < rowCount; rowIndex++)
-                {
-                    queryBuilder.Append('(');
-
-                    for (int columnIndex = 0; columnIndex < Obj.ColumnCount; columnIndex++)
-                    {
-                        var cellValue = Obj.Rows[rowIndex].Cells[columnIndex].Value?.ToString().Trim() ?? string.Empty;
-
-                        // Remove Special Characters
-                        cellValue = cellValue.Replace("ñ", "n")
-                                           .Replace("Ñ", "N")
-                                           .Replace(" ", string.Empty)
-                                           .Replace(",", string.Empty)
-                                           .Replace("'", string.Empty)
-                                           .Replace("#NAME?", string.Empty)
-                                           .Replace("#VALUE!", string.Empty);
-
-                        // Check Cell for Date Formats
-                        if (DateTime.TryParse(cellValue, out DateTime tempDate))
-                        {
-                            cellValue = tempDate.ToString(clsFunctions.sDateTimeFormat);
-                        }
-
-                        queryBuilder.Append($"'{cellValue}',");
-                    }
-
-                    queryBuilder.Length = queryBuilder.Length - 1; // Remove Last Comma,
-                    queryBuilder.Append(')'); // Closed Bracket
-
-                    // Preserve Rows Value.
-                    TempQuery = queryBuilder.ToString();
-
-                    // Clear to Create New.
-                    queryBuilder.Clear();
-
-                    //if (queryValues.Length > 0) queryValues.Append(string.Concat(", ", Environment.NewLine, TempQuery));
-                    //else queryValues.Append(TempQuery);
-
-                    queryValues.Append(queryValues.Length > 0 ? $", {Environment.NewLine}{TempQuery}" : TempQuery);
-
-                    if ((rowIndex + 1) % batchSize == 0 || rowIndex == rowCount - 1)
-                    {
-                        Method.ExecuteQuery("Insert", Template, string.Empty, queryValues.ToString(), clsAppController.Action.Insert);
-                        queryValues.Clear(); // Clear the queryValues StringBuilder after executing each batch
-                    }
-                }
-
-                MessageBox.Show(Template + " Import Successful", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            Obj = null;
-        }
-
-        public void ProcessDataFile(TextBox Tbx, DataGridView Obj, TabControl tpcActivity, TabPage Tbp, string Template)
+        // Process XLS to CSV
+        public void ProcessExcelFile(TextBox Tbx, DataGridView Obj, TabControl tpcActivity, TabPage Tbp, string Template)
         {
             try
             {
                 using (OpenFileDialog ofd = new OpenFileDialog())
                 {
                     ofd.Filter = "Excel Files|*.xls;*.xlsx";
-                    ofd.Title = "Select file to import " + Template;
+                    ofd.Title  = "Select file to import " + Template;
 
                     if (ofd.ShowDialog() != DialogResult.OK)
                         return;
-
-                    Debug.WriteLine(ofd.FileName);
 
                     Tbx.Text = ofd.FileName;
 
                     if (!Tbx.Text.Contains(Template))
                     {
-                        clsFunctions.setMessageBox("File Not a valid " + Template + " File", "Error Message", clsFunctions.IconType.iWarning);
+                        MessageBox.Show("File Not a valid " + Template + " File", "Error Message",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         Tbx.Clear();
                         return;
                     }
@@ -440,20 +420,42 @@ namespace ActivityReportSystem.AppActivity.View
                         string csvFolderPath = sAppData.FilePath.Csv;
                         string csvFileName = Path.GetFileNameWithoutExtension(excelFilePath) + "_" + DateTime.Now.ToString("MMddyy") + ".csv";
 
-                        clsFunctions.SetDataBind(Obj, Tbx);
-                        clsFunctions.SetGridAlterBackColor(Obj);
+                        //clsFunctions.SetDataBind(Obj, Tbx);
+                        //clsFunctions.SetGridAlterBackColor(Obj);
                         //clsFunctions.GetGridHeaderList(Obj);
+
+                        switch(Template)
+                        {
+                            case sAppData.Installation:
+                                insPath = cFunc.ConvertExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
+                                Debug.WriteLine(Template + " CSV File Location : " + insPath);
+
+                                break;
+
+                            case sAppData.Reprogramming:
+                                reprogPath = cFunc.ConvertExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
+                                Debug.WriteLine(Template + " CSV File Location : " + reprogPath);
+                                break;
+
+                            case sAppData.Servicing:
+                                servPath = cFunc.ConvertExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
+                                Debug.WriteLine(Template + " CSV File Location : " + servPath);
+                                break;
+
+                            case sAppData.Repair:
+                                repPath = cFunc.ConvertExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
+                                Debug.WriteLine(Template + " CSV File Location : " + repPath);
+                                break;
+                        }
 
                         tpcActivity.SelectedTab = Tbp;
 
-                        sAppData.FilePath.CsvLoc = cFunc.ConvertExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
+                        MessageBox.Show("File Succefully Uploaded", "File Upload Result",MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        Debug.WriteLine("\nConvert Excel to CSV successfull.");
-                        Debug.WriteLine("File Location : " + sAppData.FilePath.CsvLoc);
                     }
                     catch (Exception e)
                     {
-                        clsFunctions.setMessageBox(e.Message, "Activity Report System", clsFunctions.IconType.iError);
+                       MessageBox.Show(e.Message, "Activity Report System", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     Cursor.Current = Cursors.Default;
@@ -467,6 +469,112 @@ namespace ActivityReportSystem.AppActivity.View
             }
         }
 
+        public void SaveCsvFile(string Template)
+        {
+            switch (Template)
+            {
+                case sAppData.Installation:
+                    csvPath = insPath;
+                    break;
+
+                case sAppData.Reprogramming:
+                    csvPath = reprogPath;
+                    break;
+
+                case sAppData.Servicing:
+                    csvPath = servPath;
+                    break;
+
+                case sAppData.Repair:
+                    csvPath = repPath;
+                    break;
+            }
+
+            if (csvPath != null)
+            {
+                if (MessageBox.Show("Do you want to Delete Existing " + Template + " Database?" +
+                    "\nWarning this will permanently delete the data", "Database",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    // Set Parameters for removal
+                    Controller.StatementType = "Delete";
+                    Controller.SearchBy = Template;
+                    Controller.ExecuteAction(eAction.Remove); // Truncate Existing Data
+
+                }
+
+                // Set Parameters for import
+                Controller.StatementType = "Import";
+                Controller.SearchBy = Template;
+                Controller.Sql = csvPath;
+                Controller.ExecuteAction(eAction.Import); // Save Files
+            }     
+        }
+
+        public void SaveGridFile(string Template, DataGridView Obj)
+        {
+            var queryBuilder = new StringBuilder();
+            var queryValues = new StringBuilder();
+            var cultureInfo = new CultureInfo("en-US");
+
+            string TempValue = string.Empty;
+            int batchSize = 150;
+            int rowCount = Obj.Rows.Count;
+
+            if (rowCount > 0)
+            {
+                if (MessageBox.Show("Do you want to Delete Existing " + Template + " Database?" + "\nWarning this will permanently delete the data", "Database",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    Controller.StatementType = "Delete";
+                    Controller.SearchBy = Template;
+                    Controller.ExecuteAction(eAction.Remove); // Delete Existing Data
+                }
+
+                for (int rowIndex = 0; rowIndex < rowCount; rowIndex++) // Total Index
+                {
+                    queryBuilder.Append('(');
+
+                    for (int columnIndex = 0; columnIndex < Obj.ColumnCount; columnIndex++) // Total Columns
+                    {
+                        var cellValue = Obj.Rows[rowIndex].Cells[columnIndex].Value?.ToString().Trim() ?? "";
+
+                        // Remove Special Characters
+                        cellValue = string.IsNullOrWhiteSpace(cellValue) ? "-" : cFunctions.ValidateData(cellValue);
+
+                        queryBuilder.Append($"'{cellValue}',");
+                    }
+
+                    queryBuilder.Length = queryBuilder.Length - 1; // Remove Last Comma,
+                    queryBuilder.Append(')'); // Wrap the Value
+
+                    // Preserve Rows Value.
+                    TempValue = queryBuilder.ToString();
+
+                    // Clear to Create New.
+                    queryBuilder.Clear();
+
+                    queryValues.Append(queryValues.Length > 0 ? $", {Environment.NewLine}{TempValue}" : TempValue);
+
+                    if ((rowIndex + 1) % batchSize == 0 || rowIndex == rowCount - 1)
+                    {
+                        Controller.StatementType = "Insert";
+                        Controller.SearchBy      = Template;
+                        Controller.Sql           = queryValues.ToString();
+
+                        Controller.ExecuteAction(eAction.Add);
+
+                        queryValues.Clear(); // Clear for Next Batch of Value
+                    }
+                }
+
+                MessageBox.Show(Template + " Import Successful", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            Obj = null;
+        }
+
         // Updates
         public void UpdateDashboard()
         {
@@ -474,7 +582,9 @@ namespace ActivityReportSystem.AppActivity.View
             DefaultValues();
 
             // Update Dashboard
-            Method.ExecuteQuery("Update", "Dashboard", string.Empty, string.Empty, clsAppController.Action.Update);
+            Controller.StatementType = "Update";
+            Controller.SearchBy      = "Dashboard";
+            Controller.ExecuteAction(eAction.Modify);
 
             // Execute
             LoadValues();
@@ -482,7 +592,10 @@ namespace ActivityReportSystem.AppActivity.View
 
         public void LoadValues()
         {
-            sAppData.CountDetails = Method.ExecuteQuery("View", "Total Counts", string.Empty, string.Empty, clsAppController.Action.View);
+            Controller.StatementType = "View";
+            Controller.SearchBy      = "Total Counts";
+
+            sAppData.CountDetails = Controller.ExecuteAction(eAction.View);
 
             if (sAppData.CountDetails.Rows.Count > 0)
             {
@@ -525,22 +638,22 @@ namespace ActivityReportSystem.AppActivity.View
 
                 if (sAppData.Template.InstallSize > 0)
                 {
-                    sAppData.Template.PInstall = clsFunctions.getPercent(sAppData.Template.iTotal_comIns, sAppData.Template.InstallSize);
+                    sAppData.Template.PInstall = cFunctions.getPercent(sAppData.Template.iTotal_comIns, sAppData.Template.InstallSize);
                 }
 
                 if (sAppData.Template.ReprogSize > 0)
                 {
-                    sAppData.Template.PReprog = clsFunctions.getPercent(sAppData.Template.iTotal_comReprog, sAppData.Template.ReprogSize);
+                    sAppData.Template.PReprog = cFunctions.getPercent(sAppData.Template.iTotal_comReprog, sAppData.Template.ReprogSize);
                 }
 
                 if (sAppData.Template.ServSize > 0)
                 {
-                    sAppData.Template.PServ = clsFunctions.getPercent(sAppData.Template.iTotal_comServ, sAppData.Template.ServSize);
+                    sAppData.Template.PServ = cFunctions.getPercent(sAppData.Template.iTotal_comServ, sAppData.Template.ServSize);
                 }
 
                 if (sAppData.Template.RepairSize > 0)
                 {
-                    sAppData.Template.PRepair = clsFunctions.getPercent(sAppData.Template.iTotal_comRep, sAppData.Template.RepairSize);
+                    sAppData.Template.PRepair = cFunctions.getPercent(sAppData.Template.iTotal_comRep, sAppData.Template.RepairSize);
                 }
 
             }
