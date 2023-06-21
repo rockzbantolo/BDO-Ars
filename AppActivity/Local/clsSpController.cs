@@ -17,11 +17,9 @@ namespace ActivityReportSystem.AppActivity.Controller
         public string SearchValue { get; set; }
         public string Sql { get; set; }
 
-        public DataTable ExecuteAction(eAction Action)
+        public DataTable ExecuteQuery(Perform Action)
         {
-
             DataTable resultTable = new DataTable();
-
 
             Sp.StatementType = StatementType;
             Sp.SearchBy      = SearchBy;
@@ -30,9 +28,9 @@ namespace ActivityReportSystem.AppActivity.Controller
 
             #region Debug Details
 
-            Debug.WriteLine(cFunctions.LineSeperator);
+            Debug.WriteLine(cFunctions.Format.LineSeperator);
             Debug.WriteLine("EXECUTE QUERY");
-            Debug.WriteLine(cFunctions.LineSeperator);
+            Debug.WriteLine(cFunctions.Format.LineSeperator);
             Debug.WriteLine("Statement Type: " + StatementType);
             Debug.WriteLine("Statement By: "   + SearchBy);
 
@@ -42,33 +40,32 @@ namespace ActivityReportSystem.AppActivity.Controller
             if (!string.IsNullOrEmpty(Sql))
                 Debug.WriteLine("SQL: \n" + Sql);
 
-            Debug.WriteLine(cFunctions.LineSeperator);
+            Debug.WriteLine(cFunctions.Format.LineSeperator);
 
             #endregion
 
 
             switch (Action)
             {
-                case eAction.View:
+                case Perform.View:
                     resultTable = Sp.CollectionDetails();
                     break;
 
-                case eAction.Modify:
+                case Perform.Update:
                     Sp.CollectionUpdate();
                     break;
 
-                case eAction.Add:
+                case Perform.Add:
                     Sp.CollectionInsert();
                     break;
 
-                case eAction.Import:
+                case Perform.Import:
                     Sp.CollectionImport();
                     break;
 
-                case eAction.Remove:
+                case Perform.Remove:
                     Sp.CollectionDelete();
                     break;
-
             }
 
             return resultTable;

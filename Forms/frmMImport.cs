@@ -9,6 +9,7 @@ using ActivityReportSystem.Global;
 using ActivityReportSystem.Forms;
 using ActivityReportSystem.AppActivity.View;
 using System.IO;
+using AppAction;
 
 namespace ActivityReportSystem
 {
@@ -55,51 +56,44 @@ namespace ActivityReportSystem
             }
         }
 
-    // FUNCTION BUTTONS 
-
+        // BUTTONS 
         private void btnImpSave_Click(object sender, EventArgs e)
         {
             // Check All Textboxes if Empty
-            foreach (TextBox tx in pn_Imp_BxTemplate.Controls.OfType<TextBox>())
-            {
-                if (!string.IsNullOrEmpty(tx.Text.ToString()))
-                {
-                    if (!cFunctions.SavingConfirm(false, "Upload Process")) return;
+            bool anyTextboxNotEmpty = pn_Imp_BxTemplate.Controls.OfType<TextBox>().Any(tx => !string.IsNullOrEmpty(tx.Text));
 
-                    Cursor.Current = Cursors.WaitCursor;
-                    
-                    // Save Uploads
-                    Db.SaveCsvFile(sAppData.Installation);
-                    Db.SaveCsvFile(sAppData.Reprogramming);
-                    Db.SaveCsvFile(sAppData.Servicing);
-                    Db.SaveCsvFile(sAppData.Repair);
+            if (!anyTextboxNotEmpty) return;
 
-                    //Db.SaveUsingGrid(sAppData.Installation, dgv_Imp_Installation);
+            if (!cFunctions.SavingConfirm(false, "Upload Process")) return;
 
-                    ClearObj();
+            Cursor.Current = Cursors.WaitCursor;
 
-                    Cursor.Current = Cursors.Default;
-                }
-            }
+            Db.SaveCsvFile(sAppData.Installation);
+            Db.SaveCsvFile(sAppData.Reprogramming);
+            Db.SaveCsvFile(sAppData.Servicing);
+            Db.SaveCsvFile(sAppData.Repair);
 
-            MessageBox.Show("Files Successfully Imported","Import Result",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            Cursor.Current = Cursors.Default;
+
+            MessageBox.Show("Files Successfully Imported", "Import Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            ClearObj();
         }
 
         private void btnImpClear_Click(object sender, EventArgs e)
         {
              tx_Imp_InstallationFile.Text
-                = tx_Imp_ReprogFile.Text
-                = tx_Imp_ServicingFile.Text
-                = tx_Imp_RepairFile.Text
-                = tx_Imp_Inventory.Text = string.Empty;
+             = tx_Imp_ReprogFile.Text
+             = tx_Imp_ServicingFile.Text
+             = tx_Imp_RepairFile.Text
+             = tx_Imp_Inventory.Text = string.Empty;
 
-            cFunctions.Grid.ClearDataGrid(dgv_Imp_Installation);
-            cFunctions.Grid.ClearDataGrid(dgv_Imp_Reprogramming);
-            cFunctions.Grid.ClearDataGrid(dgv_Imp_Servicing);
-            cFunctions.Grid.ClearDataGrid(dgv_Imp_Repair);
-            cFunctions.Grid.ClearDataGrid(dgv_Imp_Inventory);
-
-            rtb_Imp_Selected.Clear();
+            //cFunctions.Grid.ClearDataGrid(dgv_Imp_Installation);
+            //cFunctions.Grid.ClearDataGrid(dgv_Imp_Reprogramming);
+            //cFunctions.Grid.ClearDataGrid(dgv_Imp_Servicing);
+            //cFunctions.Grid.ClearDataGrid(dgv_Imp_Repair);
+            //cFunctions.Grid.ClearDataGrid(dgv_Imp_Inventory);
+            //rtb_Imp_Selected.Clear();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -107,35 +101,33 @@ namespace ActivityReportSystem
             Tm_FadeOut.Start();
         }
 
-    // LINE NUMBER
-
+        // LINE NUMBER
         private void grdImpInstallation_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            cFunctions.Grid.addGridLineNo(sender, e, this.Font); // ADD LINE #
+            cFunctions.Grid.AddGridLineNo(sender, e, this.Font); // ADD LINE #
         }
 
         private void grdImpReprogramming_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            cFunctions.Grid.addGridLineNo(sender, e, this.Font); // ADD LINE #
+            cFunctions.Grid.AddGridLineNo(sender, e, this.Font); // ADD LINE #
         }
 
         private void grdImpServicing_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            cFunctions.Grid.addGridLineNo(sender, e, this.Font); // ADD LINE #
+            cFunctions.Grid.AddGridLineNo(sender, e, this.Font); // ADD LINE #
         }
 
         private void grdImpRepair_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            cFunctions.Grid.addGridLineNo(sender, e, this.Font);// ADD LINE #
+            cFunctions.Grid.AddGridLineNo(sender, e, this.Font);// ADD LINE #
         }
 
         private void dgv_Imp_Inventory_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            cFunctions.Grid.addGridLineNo(sender, e, this.Font); // ADD LINE #
+            cFunctions.Grid.AddGridLineNo(sender, e, this.Font); // ADD LINE #
         }
 
-    // BORDER SHADOW
-
+        // BORDER SHADOW
         private void pn_Imp_BxTemplate_Paint(object sender, PaintEventArgs e)
         {
             cFunctions.Effects.BorderShadow(e, pn_Imp_BxTemplate, 0, 0, 3, 3);
@@ -151,8 +143,8 @@ namespace ActivityReportSystem
             cFunctions.Effects.BorderShadow(e, pn_Imp_BxDataClick, 0, 0, 3, 3);
         }
 
-    // VIEW SELECTED
-
+        #region Doublick Event Dgv
+        // VIEW SELECTED
         private void dgv_Imp_Installation_DoubleClick(object sender, EventArgs e)
         {
             // GET DATAGRID DATA
@@ -189,36 +181,33 @@ namespace ActivityReportSystem
             lb_Imp_Selected.Text = tpcActivity.SelectedTab.Text;
             rtb_Imp_Selected.Text = SelectedRow;
         }
+        #endregion
 
-    // OPEN FILE BUTTONS
-
+        // OPEN FILE DIALOG BUTTONS
         private void btn_Imp_OpenInstallation_Click(object sender, EventArgs e)
         {
-            Db.ProcessExcelFile(tx_Imp_InstallationFile, dgv_Imp_Installation, tpcActivity, tbpInstallation, sAppData.Installation);
+            Db.ProcessFile(tx_Imp_InstallationFile, sAppData.Installation);
         }
 
         private void btn_Imp_OpenReprog_Click(object sender, EventArgs e)
         {
-            Db.ProcessExcelFile(tx_Imp_ReprogFile, dgv_Imp_Reprogramming, tpcActivity, tbpReprogramming, sAppData.Reprogramming);
+            Db.ProcessFile(tx_Imp_ReprogFile, sAppData.Reprogramming);
         }
 
         private void btn_Imp_OpenServicing_Click(object sender, EventArgs e)
         {
-            Db.ProcessExcelFile(tx_Imp_ServicingFile, dgv_Imp_Servicing, tpcActivity, tbpServicing, sAppData.Servicing);
+            Db.ProcessFile(tx_Imp_ServicingFile, sAppData.Servicing);
         }
 
         private void btn_Imp_OpenRepair_Click(object sender, EventArgs e)
         {
-            Db.ProcessExcelFile(tx_Imp_RepairFile, dgv_Imp_Repair, tpcActivity, tbpRepair, sAppData.Repair);
+            Db.ProcessFile(tx_Imp_RepairFile, sAppData.Repair);
         }
 
         private void btn_Imp_OpenInvent_Click(object sender, EventArgs e)
         {
-            Db.ProcessExcelFile(tx_Imp_Inventory, dgv_Imp_Inventory, tpcActivity, tbpInventory, sAppData.Inventory);
+            Db.ProcessFile(tx_Imp_Inventory, sAppData.Inventory);
         }
-
-        // IMPORT PROCESS
-
 
         // REFRESH DASHBOARD
         public void Refresh_Dashboard()
@@ -227,7 +216,7 @@ namespace ActivityReportSystem
             frmDashboard Dashboard = new frmDashboard();
         }
 
-    // CLEAR OBJ
+        // CLEAR OBJ
         public void ClearObj()
         {
             tx_Imp_InstallationFile.Text
@@ -236,17 +225,17 @@ namespace ActivityReportSystem
             = tx_Imp_RepairFile.Text
             = tx_Imp_Inventory.Text = string.Empty;
 
-            cFunctions.Grid.ClearDataGrid(dgv_Imp_Installation);
-            cFunctions.Grid.ClearDataGrid(dgv_Imp_Reprogramming);
-            cFunctions.Grid.ClearDataGrid(dgv_Imp_Servicing);
-            cFunctions.Grid.ClearDataGrid(dgv_Imp_Repair);
-            cFunctions.Grid.ClearDataGrid(dgv_Imp_Inventory);
-            rtb_Imp_Selected.Clear();
+            //cFunctions.Grid.ClearDataGrid(dgv_Imp_Installation);
+            //cFunctions.Grid.ClearDataGrid(dgv_Imp_Reprogramming);
+            //cFunctions.Grid.ClearDataGrid(dgv_Imp_Servicing);
+            //cFunctions.Grid.ClearDataGrid(dgv_Imp_Repair);
+            //cFunctions.Grid.ClearDataGrid(dgv_Imp_Inventory);
+            //rtb_Imp_Selected.Clear();
 
             Refresh_Dashboard();
         }
 
-    // EFFECTS
+        // EFFECTS
         private void Tm_FadeIn_Tick(object sender, EventArgs e)
         {
             cFunctions.Effects.FadeIn(this, Tm_FadeIn);

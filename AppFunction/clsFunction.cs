@@ -16,13 +16,30 @@ using System.Linq;
 
 namespace AppAction
 {
-    public enum eAction
+    public enum Perform
     {
         View,
-        Modify,
+        Update,
         Add,
         Import,
         Remove
+    }
+
+    public enum Template
+    {
+        Installation,
+        Reprogramming,
+        Servicing,
+        Repair
+    }
+
+    public enum Ctrl
+    {
+        Inputs,
+        Model,
+        Search,
+        Charts,
+        Objects
     }
 }
 
@@ -31,34 +48,9 @@ namespace ActivityReportSystem.Function
     public class cFunctions
     {
 
-    // FORMATS
-
-        public const string sDash               = "-";
-        public const string sDateLengthFormat   = "0000-00-00";
-        public const string sTimeFormat     = "00:00:00";
-        public const string sDateDefault    = "00-00-0000";
-        public const string sTimeDefault    = "00:00:00 00";
-        public const string sDateDefaultFormat = "ddd, MMM-dd-yyyy";
-        public const string sDateTimeFormat = "MM-dd-yyyy HH:mm tt";
-        public const string sDateFormat = "yyyy-MM-dd";
-        public const string sTimeDefaultFormat = "hh:mm tt";
-        public const string LineSeperator = "====================================================";
-
-        #region Colors
-
-        public static readonly Color EntryBackColor      = Color.White;
-        public static readonly Color DisableBackColor    = Color.FromArgb(224, 224, 224);
-        public static readonly Color ListViewBackColor   = Color.Azure;
-        public static readonly Color GridViewBackColor   = Color.Azure;
-        public static readonly Color DateBackColor       = Color.Lavender;
-        public static readonly Color AlternateBackColor1 = Color.Snow;
-        public static readonly Color AlternateBackColor2 = Color.AliceBlue;
-
-        #endregion
-
         public static string getSearchValue(string SearchKey)
         {
-            string pValue = cFunctions.sDash;
+            string pValue = cFunctions.Format.Dash;
             int i = 0;
 
             while (clsArray.SearchKey.Length > i)
@@ -99,25 +91,6 @@ namespace ActivityReportSystem.Function
             return sProcessDateTime;
         }
 
-        // ADD BRACKETS
-        public static string AddBracketStartEnd(string pString)
-        {
-            string pOutput = "";
-
-            pOutput = "[" + pString + "]";
-
-            return pOutput;
-        }
-
-        public static string AddBracesStartEnd(string pString)
-        {
-            string pOutput = "";
-
-            pOutput = "{" + pString + "}";
-
-            return pOutput;
-        }
-
         // CONFIRMATION
         public static bool SavingConfirm(bool fUpdate, string pForm)
         {
@@ -131,7 +104,6 @@ namespace ActivityReportSystem.Function
             return result == DialogResult.Yes;
         }
 
-
         // ADD VALUES
         public static int AddLabelValues(Label Obj1, Label Obj2)
         {
@@ -143,243 +115,232 @@ namespace ActivityReportSystem.Function
             return result;
         }
 
-        public static double getPercent(double Result, double DataSize)
+        public static double GetPercent(double Result, double DataSize)
         {
             var percentage = (Result / DataSize) * 100;
 
             return percentage;
         }
 
-        // DATABIND
-        public static void SetDataBind(DataGridView obj, TextBox tbx)
+        public class Format
         {
-            if (string.IsNullOrEmpty(tbx.Text)) return;
+            public const string Dash = "-";
+            public const string Time = "00:00:00";
+            public const string DefaultTime = "00:00:00 00";
+            public const string DefaultTimeFormat = "hh:mm tt";
+            public const string DateLengthFormat = "0000-00-00";
+            public const string DefaultDateLength = "00-00-0000";
+            public const string DefaultDate = "ddd, MMM-dd-yyyy";
+            public const string DateTime = "MM-dd-yyyy HH:mm tt";
+            public const string Date = "yyyy-MM-dd";
+            public const string LineSeperator = "====================================================";
+        }
 
-            System.Windows.Forms.Cursor.Current = Cursors.WaitCursor;
-
-            try
-            {
-                GetDataBind(obj, GetExcelWorkSheetName(tbx.Text), tbx.Text);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Activity Report System", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            System.Windows.Forms.Cursor.Current = Cursors.Default;
+        public class DefaultColor
+        {
+            public static readonly Color EntryBackColor = Color.White;
+            public static readonly Color DisableBackColor = Color.FromArgb(224, 224, 224);
+            public static readonly Color ListViewBackColor = Color.Azure;
+            public static readonly Color GridViewBackColor = Color.Azure;
+            public static readonly Color DateBackColor = Color.Lavender;
+            public static readonly Color AlternateBackColor1 = Color.Snow;
+            public static readonly Color AlternateBackColor2 = Color.AliceBlue;
 
         }
 
-        private static void GetDataBind(DataGridView obj, string sheetName, string pathFileName)
+        public class Brackets
         {
-            Debug.WriteLine("-- DataBind\n");
-
-            string pathName = pathFileName;
-
-            Debug.WriteLine(" Sheet Name: " + sheetName);
-            Debug.WriteLine(" Path File Name: " + pathFileName);
-
-            obj.Rows.Clear();
-
-            try
+            // ADD BRACKETS
+            public static string AddBracketStartEnd(string pString)
             {
-                FileInfo file = new FileInfo(pathFileName);
-                if (!file.Exists)
+                return $"[{pString}]";
+            }
+
+            public static string AddBracesStartEnd(string pString)
+            {
+                return $"{{{pString}}}";
+            }
+        }
+
+        // DATABIND
+        public class DataBind
+        {
+            public static void SetDataBind(DataGridView obj, TextBox tbx)
+            {
+                if (string.IsNullOrEmpty(tbx.Text)) return;
+
+                System.Windows.Forms.Cursor.Current = Cursors.WaitCursor;
+
+                try
                 {
-                    throw new Exception("Error, File doesn't Exist!");
+                    GetDataBind(obj, GetExcelWorkSheetName(tbx.Text), tbx.Text);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, "Activity Report System", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                string extension = file.Extension;
-                string connectionStr;
+                System.Windows.Forms.Cursor.Current = Cursors.Default;
 
-                switch (extension.ToLower())
+            }
+
+            private static void GetDataBind(DataGridView obj, string sheetName, string pathFileName)
+            {
+                Debug.WriteLine("-- DataBind\n");
+
+                string pathName = pathFileName;
+
+                Debug.WriteLine(" Sheet Name: " + sheetName);
+                Debug.WriteLine(" Path File Name: " + pathFileName);
+
+                obj.Rows.Clear();
+
+                try
                 {
-                    case ".xls":
-                    case ".xlsx":
-                        connectionStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + pathName + "; Extended Properties = 'Excel 12.0; HDR = Yes; IMEX = 1;'";
-                        break;
-                    default:
-                        connectionStr = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source = " + pathName + "; Extended Properties = 'Excel 8.0; HDR = Yes; IMEX = 1;'";
-                        break;
-                }
-
-                string query = string.Format("Select * from [{0}$]", sheetName);
-
-                Debug.WriteLine("Connection String = " + connectionStr);
-                Debug.WriteLine("Query = " + query);
-
-                using (OleDbConnection connection = new OleDbConnection(connectionStr))
-                {
-                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection))
+                    FileInfo file = new FileInfo(pathFileName);
+                    if (!file.Exists)
                     {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                        obj.DataSource = dataTable;
+                        throw new Exception("Error, File doesn't Exist!");
+                    }
+
+                    string extension = file.Extension;
+                    string connectionStr;
+
+                    switch (extension.ToLower())
+                    {
+                        case ".xls":
+                        case ".xlsx":
+                            connectionStr = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + pathName + "; Extended Properties = 'Excel 12.0; HDR = Yes; IMEX = 1;'";
+                            break;
+                        default:
+                            connectionStr = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source = " + pathName + "; Extended Properties = 'Excel 8.0; HDR = Yes; IMEX = 1;'";
+                            break;
+                    }
+
+                    string query = string.Format("Select * from [{0}$]", sheetName);
+
+                    Debug.WriteLine("Connection String = " + connectionStr);
+                    Debug.WriteLine("Query = " + query);
+
+                    using (OleDbConnection connection = new OleDbConnection(connectionStr))
+                    {
+                        using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection))
+                        {
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+                            obj.DataSource = dataTable;
+                        }
+                    }
+
+                    file = null;
+                    obj = null;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Import Data Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            public static string GetExcelWorkSheetName(string filePath)
+            {
+                Debug.WriteLine("\n--- Get Excel Worksheet Name");
+
+                string worksheetName = string.Empty;
+
+                try
+                {
+                    using (Workbook workbook = new Workbook())
+                    {
+                        workbook.LoadFromFile(filePath);
+                        Worksheet worksheet = workbook.Worksheets[0];
+
+                        worksheetName = worksheet.Name;
+
+                        if (string.IsNullOrEmpty(worksheetName))
+                            worksheetName = "Sheet1";
                     }
                 }
-
-                file = null;
-                obj = null;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Import Data Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        public static string GetExcelWorkSheetName(string filePath)
-        {
-            Debug.WriteLine("\n--- Get Excel Worksheet Name");
-
-            string worksheetName = string.Empty;
-
-            try
-            {
-                using (Workbook workbook = new Workbook())
+                catch (Exception ex)
                 {
-                    workbook.LoadFromFile(filePath);
-                    Worksheet worksheet = workbook.Worksheets[0];
-
-                    worksheetName = worksheet.Name;
-
-                    if (string.IsNullOrEmpty(worksheetName))
-                        worksheetName = "Sheet1";
+                    Debug.WriteLine("Error: " + ex.Message);
                 }
+
+                return worksheetName;
             }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("Error: " + ex.Message);
-            }
-
-            return worksheetName;
-        }
-
-
-        public static string CheckDate(string sValue)
-        {
-            if (DateTime.TryParse(sValue, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedDate))
-            {
-                return parsedDate.ToString(sDateTimeFormat);
-            }
-
-            return sValue;
         }
 
         // EXPORT to CSV
-        public static string ExportToCSV(DataGridView obj, string fileName)
+        public class Convert
         {
-            string path = string.Concat(sAppData.FilePath.Csv, "im_", fileName, "_", DateTime.Now.ToString("MMddyy"), ".csv");
-
-            try
+            public static string ExcelToCsv(string excelFilePath, string csvFilePath)
             {
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(path, false, Encoding.UTF8))
+                Workbook workbook = new Workbook();
+                workbook.LoadFromFile(excelFilePath);
+                Worksheet worksheet = workbook.Worksheets[0]; // Assuming you want to convert the first worksheet
+
+                using (StreamWriter streamWriter = new StreamWriter(csvFilePath))
                 {
-                    // Write the column headers to the CSV file
-                    string headers = string.Join(",", obj.Columns.Cast<DataGridViewColumn>().Select(column => column.HeaderText.Replace(",", string.Empty)));
-                    file.WriteLine(headers);
-
-                    // Write the data rows to the CSV file
-                    foreach (DataGridViewRow row in obj.Rows)
+                    for (int row = 1; row <= worksheet.LastRow; row++)
                     {
-                        string rowData = string.Join(",", row.Cells.Cast<DataGridViewCell>().Select(cell =>
+                        List<string> rowData = new List<string>();
+                        for (int col = 1; col <= worksheet.LastColumn; col++)
                         {
-                            // Check for DBNull values and replace them with an appropriate default value
-                            if (cell.Value == DBNull.Value || string.IsNullOrWhiteSpace(Convert.ToString(cell.Value)) || string.IsNullOrEmpty(Convert.ToString(cell.Value)))
+                            CellRange cell = worksheet.Range[row, col];
+                            string cellData = cell != null ? cell.Value?.ToString() : "";
+
+                            cellData = string.IsNullOrWhiteSpace(cellData) ? "-" : CharAndDate(cellData);
+
+                            cellData = (cellData == DBNull.Value.ToString()) ? "-" : cellData;
+
+                            if (cellData.Contains(",") || cellData.Contains("\""))
                             {
-                                return "-";
+                                cellData = cellData.Replace("\"", "\"\""); // Escape double quotes by doubling them
+                                cellData = $"\"{cellData}\""; // Quote the value
                             }
-                            else
-                            {
-                                // Replace specific strings and special characters
-                                string cellValue = Convert.ToString(cell.Value)
-                                    .Replace("ñ", "n")
-                                    .Replace("Ñ", "N")
-                                    .Replace(" ", string.Empty)
-                                    .Replace(",", string.Empty)
-                                    .Replace("'", string.Empty)
-                                    .Replace("#NAME?", "-")
-                                    .Replace("#VALUE!", "-")
-                                    .Replace("\"", string.Empty);
 
-                                return cellValue;
-                            }
-                        }));
-
-                        file.WriteLine(rowData);
-                    }
-                }
-
-                Debug.WriteLine("----- Data exported to CSV file successfully. -----");
-                return path; // Return the file path
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error exporting data to CSV file: " + ex.Message);
-                return null; // Return null if an error occurs
-            }
-        }
-
-        public string ConvertExcelToCsv(string excelFilePath, string csvFilePath)
-        {
-            Workbook workbook = new Workbook();
-            workbook.LoadFromFile(excelFilePath);
-            Worksheet worksheet = workbook.Worksheets[0]; // Assuming you want to convert the first worksheet
-
-            using (StreamWriter streamWriter = new StreamWriter(csvFilePath))
-            {
-                for (int row = 1; row <= worksheet.LastRow; row++)
-                {
-                    List<string> rowData = new List<string>();
-                    for (int col = 1; col <= worksheet.LastColumn; col++)
-                    {
-                        CellRange cell = worksheet.Range[row, col];
-                        string cellData = cell != null ? cell.Value?.ToString() : "";
-
-                        cellData = string.IsNullOrWhiteSpace(cellData) ? "-" : ValidateData(cellData);
-
-                        cellData = (cellData == DBNull.Value.ToString()) ? "-" : cellData;
-
-                        if (cellData.Contains(",") || cellData.Contains("\""))
-                        {
-                            cellData = cellData.Replace("\"", "\"\""); // Escape double quotes by doubling them
-                            cellData = $"\"{cellData}\""; // Quote the value
+                            rowData.Add(cellData);
                         }
 
-                        rowData.Add(cellData);
+                        streamWriter.WriteLine(string.Join(",", rowData));
                     }
-
-                    streamWriter.WriteLine(string.Join(",", rowData));
                 }
+
+                return csvFilePath;
             }
 
-            return csvFilePath;
-        }
-
-        public static string ValidateData(string input)
-        {
-            input = input.Replace("ñ", "n")
-                         .Replace("Ñ", "N")
-                         .Replace("\t", "")
-                         .Replace("\n", "")
-                         .Replace("\r", "")
-                         .Replace(" ", "")
-                         .Replace(",", "")
-                         .Replace(" ", "")
-                         .Replace("'", "");
-
-            if (DateTime.TryParse(input, out DateTime tempDate))
+            public static string CharAndDate(string input)
             {
-                input = tempDate.ToString(cFunctions.sDateTimeFormat);
+                StringBuilder sb = new StringBuilder(input);
+
+                Dictionary<string, string> replacements = new Dictionary<string, string>
+                {
+                    { "ñ", "n" },
+                    { "Ñ", "N" },
+                    { "\t", "" },
+                    { "\n", "" },
+                    { "\r", "" },
+                    { " ", "" },
+                    { ",", "" },
+                    { "'", "" }
+                };
+
+                foreach (var replacement in replacements)
+                {
+                    sb.Replace(replacement.Key, replacement.Value);
+                }
+
+
+                if (DateTime.TryParse(input, out DateTime tempDate))
+                {
+                    return tempDate.ToString(Format.DateTime);
+                }
+
+                return sb.ToString();
             }
-
-            return input;
         }
-
-
 
         public class Effects
         {
-
             // REMOVES FLICKERING & LAG IN CONTROLS
             public static void setDoubleBuffer(Control ctl, bool DoubleBuffered)
             {
@@ -388,6 +349,7 @@ namespace ActivityReportSystem.Function
                     null, ctl, new object[] { DoubleBuffered });
             }
 
+            // GRAPHICS
             public static void LocationHighlight(object Sender, Panel obj)
             {
                 if (!obj.Visible)
@@ -401,15 +363,18 @@ namespace ActivityReportSystem.Function
 
             }
 
-            public static void BorderShadow(PaintEventArgs e, Panel Obj, int Left, int Top, int Right, int Bottom)
+            public static void BorderShadow(PaintEventArgs e, Control control, int left, int top, int right, int bottom)
             {
                 try
                 {
-                    ControlPaint.DrawBorder(e.Graphics, Obj.ClientRectangle,
-                    Color.FromArgb(189, 195, 199), Left, ButtonBorderStyle.Solid,   // LEFT
-                    Color.FromArgb(189, 195, 199), Top, ButtonBorderStyle.Solid,    // TOP
-                    Color.FromArgb(189, 195, 199), Right, ButtonBorderStyle.Solid,  // RIGHT
-                    Color.FromArgb(189, 195, 199), Bottom, ButtonBorderStyle.Solid);// BOTTOM
+                    Color borderColor = Color.FromArgb(189, 195, 199);
+
+                    ControlPaint.DrawBorder(e.Graphics, control.ClientRectangle,
+                        borderColor, left, ButtonBorderStyle.Solid,   // LEFT
+                        borderColor, top, ButtonBorderStyle.Solid,    // TOP
+                        borderColor, right, ButtonBorderStyle.Solid,  // RIGHT
+                        borderColor, bottom, ButtonBorderStyle.Solid  // BOTTOM
+                    );
                 }
                 finally
                 {
@@ -435,15 +400,15 @@ namespace ActivityReportSystem.Function
                 for (int i = 0; i < Obj.Rows.Count - 1; i++)
                 {
                     if (i % 2 == 0)
-                        Obj.Rows[i].DefaultCellStyle.BackColor = cFunctions.AlternateBackColor1;
+                        Obj.Rows[i].DefaultCellStyle.BackColor = DefaultColor.AlternateBackColor1;
                     else
-                        Obj.Rows[i].DefaultCellStyle.BackColor = cFunctions.AlternateBackColor2;
+                        Obj.Rows[i].DefaultCellStyle.BackColor = DefaultColor.AlternateBackColor2;
 
                     Obj.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                 }
             }
 
-            // EFFECTS
+            // TRANSITION
             public static void FadeIn(Form Frms, Timer Timer)
             {
 
@@ -465,13 +430,10 @@ namespace ActivityReportSystem.Function
 
                 Frms.Opacity -= .2;
             }
-
         }
-
 
         public class Grid
         {
-
             public int setGridCellValue(DataGridView Obj, int rowNum1, int cellNum1)
             {
                 int result = (int.Parse(Obj.Rows[rowNum1].Cells[cellNum1].Value.ToString()));
@@ -526,7 +488,7 @@ namespace ActivityReportSystem.Function
             {
                 for (int i = 0; i < obj.Rows.Count; i++)
                 {
-                    obj.Rows[i].DefaultCellStyle.BackColor = (i % 2 == 0) ? cFunctions.AlternateBackColor1 : cFunctions.AlternateBackColor2;
+                    obj.Rows[i].DefaultCellStyle.BackColor = (i % 2 == 0) ? DefaultColor.AlternateBackColor1 : DefaultColor.AlternateBackColor2;
                     obj.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                 }
             }
@@ -603,44 +565,35 @@ namespace ActivityReportSystem.Function
             }
 
             // ADD
-
-            public static void addGridLineNo(object sender, DataGridViewRowPostPaintEventArgs e, Font font)
+            public static void AddGridLineNo(object sender, DataGridViewRowPostPaintEventArgs e, Font font)
             {
-                var grid = sender as DataGridView;
-                var rowIdx = (e.RowIndex + 1).ToString();
+                if (!(sender is DataGridView grid)) return;
 
-                var centerformat = new StringFormat()
+                var rowIdx = (e.RowIndex + 1).ToString();
+                var centerformat = new StringFormat(StringFormatFlags.NoWrap)
                 {
-                    Alignment = StringAlignment.Center,
+                    Alignment     = StringAlignment.Center,
                     LineAlignment = StringAlignment.Center
                 };
 
                 var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
-                e.Graphics.DrawString(rowIdx, font, SystemBrushes.ControlText, headerBounds, centerformat);
+                using (var brush = new SolidBrush(grid.RowHeadersDefaultCellStyle.ForeColor))
+                {
+                    e.Graphics.DrawString(rowIdx, font, brush, headerBounds, centerformat);
+                }
             }
 
-            public static int addGridValues(DataGridView Obj1, int rowNum1, int cellNum1, DataGridView Obj2, int rowNum2, int cellNum2)
+            public static int AddGridValues(DataGridView grid1, int rowIndex1, int columnIndex1, DataGridView grid2, int rowIndex2, int columnIndex2)
             {
-                int result = (
-                               int.Parse(Obj1.Rows[rowNum1].Cells[cellNum1].Value.ToString()) +
-                               int.Parse(Obj2.Rows[rowNum2].Cells[cellNum2].Value.ToString())
-                             );
-
-                return result;
+                return (int)grid1.Rows[rowIndex1].Cells[columnIndex1].Value + (int)grid2.Rows[rowIndex2].Cells[columnIndex2].Value;
             }
 
-            public static int addGridCellValues(DataGridView Obj1, int rowNum1, int cellNum1, DataGridView Obj2, int rowNum2, int cellNum2)
+            public static int AddGridCellValues(DataGridView obj1, int rowNum1, int cellNum1, DataGridView obj2, int rowNum2, int cellNum2)
             {
-                int result = (
-                               int.Parse(Obj1.Rows[rowNum1].Cells[cellNum1].Value.ToString()) +
-                               int.Parse(Obj2.Rows[rowNum2].Cells[cellNum2].Value.ToString())
-                             );
-
-                return result;
+                return (int)obj1.Rows[rowNum1].Cells[cellNum1].Value + (int)obj2.Rows[rowNum2].Cells[cellNum2].Value;
             }
 
         }
-
 
         public class Charts
         {
@@ -650,11 +603,9 @@ namespace ActivityReportSystem.Function
                 Chart.Series[Series].Points.AddXY(Title, result);
             }
 
-            public static void setChartValue(System.Windows.Forms.DataVisualization.Charting.Chart Chart, int Series, string Title, int Val)
+            public static void SetChartValue(System.Windows.Forms.DataVisualization.Charting.Chart chart, int seriesIndex, string title, int value)
             {
-                int result;
-                result = Val;
-                Chart.Series[Series].Points.AddXY(Title, result);
+                chart.Series[seriesIndex].Points.AddXY(title, value);
             }
 
             public static void ClearCharts(System.Windows.Forms.DataVisualization.Charting.Chart Obj, int Series)
@@ -665,7 +616,5 @@ namespace ActivityReportSystem.Function
         }
 
     }
-
-
 
 }

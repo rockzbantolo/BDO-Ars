@@ -17,18 +17,18 @@ namespace ActivityReportSystem.Database
             SystemSettings();
 
             #region Debug Database Details
-            Debug.WriteLine(cFunctions.LineSeperator);
+            Debug.WriteLine(cFunctions.Format.LineSeperator);
             Debug.WriteLine("DATABASE INFORMATION");
-            Debug.WriteLine(cFunctions.LineSeperator);
+            Debug.WriteLine(cFunctions.Format.LineSeperator);
             Debug.WriteLine(string.Concat("Persist Security Info: ", sAppData.Database.sSecurity, "; "));
             Debug.WriteLine(string.Concat("Server: ", sAppData.Database.sServer, "; "));
             Debug.WriteLine(string.Concat("Port: ", sAppData.Database.sPort, "; "));
             Debug.WriteLine(string.Concat("Database: ", sAppData.Database.sDatabase, "; "));
             Debug.WriteLine(string.Concat("Username: ", sAppData.Database.sUserName, "; "));
             Debug.WriteLine(string.Concat("Password: ", sAppData.Database.sPassword, "; "));
-            Debug.WriteLine(string.Concat("Local File : ", sAppData.Database.AllowLoadLocalInfile, ";"));
+            Debug.WriteLine(string.Concat("Local File : ", sAppData.Database.LocalInFile, ";"));
             Debug.WriteLine(string.Concat("Connection Timeout: ", sAppData.Database.sTimeOut, ";"));
-            Debug.WriteLine(cFunctions.LineSeperator + "\n");
+            Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
             #endregion
         }
 
@@ -73,12 +73,6 @@ namespace ActivityReportSystem.Database
             set { filePath = value; }
         }
 
-
-        public void InitializeDatabaseSettings()
-        {
-            MySqlSettings();
-        }
-
         #region List Of Connections
 
         // READ
@@ -100,40 +94,19 @@ namespace ActivityReportSystem.Database
             sAppData.Database.sUserName   = this.Read("_UserName", "UserName");
             sAppData.Database.sPassword   = this.Read("_Password", "Password");
             sAppData.Database.sSSLMode    = this.Read("_SSLMode", "SSLMode");
-            sAppData.Database.AllowLoadLocalInfile = this.Read("_AllowLoadLocalInfile", "AllowLoadLocalInfile");
+            sAppData.Database.LocalInFile = this.Read("_AllowLoadLocalInfile", "AllowLoadLocalInfile");
             sAppData.Database.sTimeOut    = "5000";
 
-            sAppData.DataParam.ConnString = string.Concat("PERSIST SECURITY INFO = ", sAppData.Database.sSecurity, "; ",
-                                                    "SERVER = ", sAppData.Database.sServer, "; ",
-                                                    "PORT = ", sAppData.Database.sPort, "; ",
-                                                    "DATABASE = ", sAppData.Database.sDatabase, "; ",
-                                                    "UID = ", sAppData.Database.sUserName, "; ",
-                                                    "PASSWORD = ", sAppData.Database.sPassword, "; ",
-                                                    "SSL MODE = ", sAppData.Database.sSSLMode, "; ",
-                                                    "AllowLoadLocalInfile = ", sAppData.Database.AllowLoadLocalInfile, ";",
-                                                    "CONNECT TIMEOUT = ", sAppData.Database.sTimeOut, ";");
+            sAppData.ConnectionString = string.Concat("PERSIST SECURITY INFO = ", sAppData.Database.sSecurity, "; ",
+                                        "SERVER = ", sAppData.Database.sServer, "; ",
+                                        "PORT = ", sAppData.Database.sPort, "; ",
+                                        "DATABASE = ", sAppData.Database.sDatabase, "; ",
+                                        "UID = ", sAppData.Database.sUserName, "; ",
+                                        "PASSWORD = ", sAppData.Database.sPassword, "; ",
+                                        "SSL MODE = ", sAppData.Database.sSSLMode, "; ",
+                                        "AllowLoadLocalInfile = ", sAppData.Database.LocalInFile, ";",
+                                        "CONNECT TIMEOUT = ", sAppData.Database.sTimeOut, ";");
 
-        }
-
-        public void ApiDbSettings() {
-
-            string Path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
-            string FullPath = string.Empty;
-            string FileName = string.Empty;
-
-            FileName = "APIDatabaseSetting.ini";
-            FullPath = "C:\\SBSD_TLSYSTEM\\SETTING\\" + FileName;
-            this.IniFile(FullPath);
-
-            //cVariables.strServerEnable  = this.Read("_ServerEnable", "ServerEnable");
-            //cVariables.strSource        = this.Read("_Source", "Source");
-            //cVariables.strServer        = this.Read("_Server", "Server");
-            //cVariables.strDatabase      = this.Read("_Database", "Database");
-            //cVariables.strUserName      = this.Read("_UserName", "UserName");
-            //cVariables.strPassword      = this.Read("_Password", "Password");
-            //cVariables.strSecurity      = this.Read("_Security", "Security");
-            //cVariables.strPort          = this.Read("_Port", "Port");
-            //cVariables.strSSLMode       = this.Read("_SSLMode", "SSLMode");
         }
 
         public void ApiSettings()

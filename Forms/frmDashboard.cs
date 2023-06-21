@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using AppAction;
 using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,7 +52,7 @@ namespace ActivityReportSystem.Forms
         {
             // Initialize Updates
             Db.UpdateDashboard();
-            Clear("Objects");
+            Clear(Ctrl.Objects);
 
             // Dashboard Data
             Db.LoadDashboardDetails(dgv_Sum_ComReq, string.Empty);
@@ -68,17 +69,17 @@ namespace ActivityReportSystem.Forms
                 // OVERVIEW
 
                 // INSTALLATION
-                cFunctions.Charts.setChartValue(chrt_Bdo_Display, 0, sAppData.Installation.ToUpper(),  sAppData.Template.iTotal_penIns);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, sAppData.Installation.ToUpper(),  sAppData.Template.iTotal_penIns);
                 // REPROGRAMMING
-                cFunctions.Charts.setChartValue(chrt_Bdo_Display, 0, sAppData.Reprogramming.ToUpper(), sAppData.Template.iTotal_penReprog);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, sAppData.Reprogramming.ToUpper(), sAppData.Template.iTotal_penReprog);
                 // SERVICING
-                cFunctions.Charts.setChartValue(chrt_Bdo_Display, 0, sAppData.Servicing.ToUpper(),     sAppData.Template.iTotal_penServ);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, sAppData.Servicing.ToUpper(),     sAppData.Template.iTotal_penServ);
                 // REPAIR
-                cFunctions.Charts.setChartValue(chrt_Bdo_Display, 0, sAppData.Repair.ToUpper(),        sAppData.Template.iTotal_penRep);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, sAppData.Repair.ToUpper(),        sAppData.Template.iTotal_penRep);
 
                 // PIE CHART
-                cFunctions.Charts.setChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Com);
-                cFunctions.Charts.setChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Pen);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Com);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Pen);
 
                 chrt_Bdo_Summary.Series[0].Points[0].Color = Color.FromArgb(41, 115, 185);
                 chrt_Bdo_Summary.Series[0].Points[1].Color = Color.FromArgb(230, 40, 35);
@@ -106,11 +107,11 @@ namespace ActivityReportSystem.Forms
 
         }
 
-        private void Clear(string Obj)
+        private void Clear(Ctrl Obj)
         {
             switch (Obj)
             {
-                case "Inputs" :
+                case Ctrl.Inputs:
 
                     cmb_Model_Template.Text = string.Empty;
                     dtp_Model_From.Value    = DateTime.Now;
@@ -124,7 +125,7 @@ namespace ActivityReportSystem.Forms
 
                     break;
 
-                case "Model" :
+                case Ctrl.Model :
 
                     cmb_Model.Text = string.Empty;
                     lb_Total_Deployed.Text  = "0";
@@ -133,7 +134,7 @@ namespace ActivityReportSystem.Forms
 
                     break;
 
-                case "Date Search":
+                case Ctrl.Search:
 
                     dgv_Model_Status_List.ClearSelection();
                     cmb_Model_Template.Text = string.Empty;
@@ -143,14 +144,14 @@ namespace ActivityReportSystem.Forms
 
                     break;
 
-                case "Charts":
+                case Ctrl.Charts:
 
                     cFunctions.Charts.ClearCharts(chrt_Bdo_Display, 0);
                     cFunctions.Charts.ClearCharts(chrt_Bdo_Summary, 0);
 
                     break;
 
-                case "Objects":
+                case Ctrl.Objects:
 
                     cFunctions.Charts.ClearCharts(chrt_Bdo_Display, 0);
                     cFunctions.Charts.ClearCharts(chrt_Bdo_Summary, 0);
@@ -228,7 +229,7 @@ namespace ActivityReportSystem.Forms
         private void btn_Overview_Click(object sender, EventArgs e)
         {
             cFunctions.Effects.LocationHighlight(sender, pnHover);
-            Clear("Inputs");
+            Clear(Ctrl.Inputs);
             tpc_MenuPage.SelectedTab = tbp_Summary;
         }
 
@@ -266,13 +267,13 @@ namespace ActivityReportSystem.Forms
         private void btn_Model_Click(object sender, EventArgs e)
         {
             cFunctions.Effects.LocationHighlight(sender, pnHover);
-            Clear("Inputs");
+            Clear(Ctrl.Inputs);
             tpc_MenuPage.SelectedTab = tbp_Detailed;
         }
 
         private void btn_Model_Clear_Click(object sender, EventArgs e)
         {
-            Clear("Date Search");
+            Clear(Ctrl.Search);
         }
 
         private void btn_Model_Search_Click(object sender, EventArgs e)
@@ -425,7 +426,7 @@ namespace ActivityReportSystem.Forms
             switch (cmb_Model.SelectedIndex) {
 
                 case 0:
-                    Clear("Model");
+                    Clear(Ctrl.Model);
                     break;
 
                 case 1:

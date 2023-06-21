@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Activity Report System.exe" size="911360">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Activity Report System.exe" size="910848">
       <assemblyIdentity name="Activity Report System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PRARKxGbyMUAiEstu/nhuUF/dEpQsGvm+ntyDAM+Jwo=</dsig:DigestValue>
+        <dsig:DigestValue>jPU8H7NCuyfnIWHKTTkWzeNOoQIlmVgcP/Gg/elQcWk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

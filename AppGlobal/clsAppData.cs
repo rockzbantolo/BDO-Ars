@@ -1,6 +1,4 @@
-﻿
-
-using ActivityReportSystem.Function;
+﻿using ActivityReportSystem.Function;
 using System.Data;
 
 namespace ActivityReportSystem.Global
@@ -10,7 +8,6 @@ namespace ActivityReportSystem.Global
 
         public static int sSQLServerEnable  { get; set; }
         public static int sMySQLEnable      { get; set; }
-        public static int iDataSize         { get; set; }
         public static string TemplateName { get; set; }
 
         public const string Installation  = "Installation";
@@ -21,6 +18,7 @@ namespace ActivityReportSystem.Global
 
         public static string[] Templates = { string.Empty, Installation, Reprogramming, Servicing, Repair };
 
+        public static string ConnectionString { get; set; }
         public static DataTable CountDetails { get; set; }
 
         public class Database
@@ -33,7 +31,7 @@ namespace ActivityReportSystem.Global
             public static string sSecurity { get; set; } = "False";
             public static string sPort { get; set; }
             public static string sTimeOut { get; set; } = "5000";
-            public static string AllowLoadLocalInfile { get; set; }
+            public static string LocalInFile { get; set; }
             public static string sMySQLDatabase { get; set; }
             public static string sSQLServerDatabase { get; set; }
 
@@ -47,7 +45,6 @@ namespace ActivityReportSystem.Global
             public const string Csv = "C:\\CASTLESTECH_ARS\\IMPORTS\\";
 
             public const string Report = @"C:\\CASTLESTECH_ARS\\REPORTS\\";
-
         }
 
         public class DataParam
@@ -57,9 +54,6 @@ namespace ActivityReportSystem.Global
             public static string strLogUserLevel { get; set; }
             public static string strLogUserId { get; set; }
             public static string MenuControls { get; set; }
-
-            public static string ConnString { get; set; }
-
         }
 
         public class Template
@@ -103,9 +97,5 @@ namespace ActivityReportSystem.Global
             public static int iTotal_canRep { get; set; }
 
         }
-
     }
-
-
-
 }

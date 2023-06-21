@@ -19,7 +19,12 @@ namespace ActivityReportSystem.AppActivity.View
         clsSpController Controller = new clsSpController();
         cFunctions cFunc = new cFunctions();
 
-        string csvPath, insPath, reprogPath, servPath, repPath, colName;
+        private string csvPath { get; set; }
+        private string insPath { get; set; }
+        private string reprogPath { get; set; }
+        private string servPath { get; set; }
+        private string repPath { get; set; }
+        private string colName { get; set; }
 
         // Overview UI
         public void LoadDashboardDetails(DataGridView obj, string SearchValue)
@@ -36,7 +41,7 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.SearchValue   = SearchValue;
                     Controller.Sql           = "";
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     if (Result.Rows.Count > 0)
                     {
@@ -69,7 +74,7 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.SearchValue   = SearchValue;
                     Controller.Sql           = "";
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     if (Result.Rows.Count > 0)
                     {
@@ -103,7 +108,7 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.SearchValue   = SearchValue;
                     Controller.Sql           = "";
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     if (Result.Rows.Count > 0)
                     {
@@ -137,7 +142,7 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.SearchValue   = SearchValue;
                     Controller.Sql           = "";
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     if (Result.Rows.Count > 0)
                     {
@@ -171,7 +176,7 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.SearchValue   = SearchValue;
                     Controller.Sql           = "";
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     if (Result.Rows.Count > 0)
                     {
@@ -216,7 +221,7 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.SearchBy      = "Installation";
                     Controller.SearchValue   = SearchValue;
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     Com.Text = sAppData.Template.iTotal_comIns.ToString("n0");
                     Pen.Text = sAppData.Template.iTotal_penIns.ToString("n0");
@@ -232,7 +237,7 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.SearchBy      = "Reprogramming";
                     Controller.SearchValue   = SearchValue;
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     Com.Text = sAppData.Template.iTotal_comReprog.ToString("n0");
                     Pen.Text = sAppData.Template.iTotal_penReprog.ToString("n0");
@@ -248,7 +253,7 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.SearchBy      = "Servicing";
                     Controller.SearchValue   = SearchValue;
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     Com.Text = sAppData.Template.iTotal_comServ.ToString("n0");
                     Pen.Text = sAppData.Template.iTotal_penServ.ToString("n0");
@@ -264,7 +269,7 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.SearchBy      = "Repair";
                     Controller.SearchValue   = SearchValue;
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     Com.Text = sAppData.Template.iTotal_comRep.ToString("n0");
                     Pen.Text = sAppData.Template.iTotal_penRep.ToString("n0");
@@ -318,10 +323,10 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.StatementType = "View";
                     Controller.SearchBy      = "Terminal Status";
                     Controller.SearchValue   = "tblinstallation" + "|" + 
-                                                DtFrom.Value.ToString(cFunctions.sDateFormat) + "|" +
-                                                DtTo.Value.ToString(cFunctions.sDateFormat);
+                                                DtFrom.Value.ToString(cFunctions.Format.Date) + "|" +
+                                                DtTo.Value.ToString(cFunctions.Format.Date);
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     break;
 
@@ -343,10 +348,10 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.StatementType = "View";
                     Controller.SearchBy      = "Terminal Status";
                     Controller.SearchValue   = "tblservicing" + "|" +
-                                                DtFrom.Value.ToString(cFunctions.sDateFormat) + "|" +
-                                                DtTo.Value.ToString(cFunctions.sDateFormat);
+                                                DtFrom.Value.ToString(cFunctions.Format.Date) + "|" +
+                                                DtTo.Value.ToString(cFunctions.Format.Date);
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     break;
 
@@ -355,10 +360,10 @@ namespace ActivityReportSystem.AppActivity.View
                     Controller.StatementType = "View";
                     Controller.SearchBy      = "Terminal Status";
                     Controller.SearchValue   = "tblrepair" + "|" +
-                                                DtFrom.Value.ToString(cFunctions.sDateFormat) + "|" +
-                                                DtTo.Value.ToString(cFunctions.sDateFormat);
+                                                DtFrom.Value.ToString(cFunctions.Format.Date) + "|" +
+                                                DtTo.Value.ToString(cFunctions.Format.Date);
 
-                    Result = Controller.ExecuteAction(eAction.View);
+                    Result = Controller.ExecuteQuery(Perform.View);
 
                     break;
 
@@ -391,7 +396,7 @@ namespace ActivityReportSystem.AppActivity.View
         }
 
         // Process XLS to CSV
-        public void ProcessExcelFile(TextBox Tbx, DataGridView Obj, TabControl tpcActivity, TabPage Tbp, string Template)
+        public void ProcessFile(TextBox Tbx, string Template)
         {
             try
             {
@@ -427,28 +432,28 @@ namespace ActivityReportSystem.AppActivity.View
                         switch(Template)
                         {
                             case sAppData.Installation:
-                                insPath = cFunc.ConvertExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
+                                insPath = cFunctions.Convert.ExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
                                 Debug.WriteLine(Template + " CSV File Location : " + insPath);
 
                                 break;
 
                             case sAppData.Reprogramming:
-                                reprogPath = cFunc.ConvertExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
+                                reprogPath = cFunctions.Convert.ExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
                                 Debug.WriteLine(Template + " CSV File Location : " + reprogPath);
                                 break;
 
                             case sAppData.Servicing:
-                                servPath = cFunc.ConvertExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
+                                servPath = cFunctions.Convert.ExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
                                 Debug.WriteLine(Template + " CSV File Location : " + servPath);
                                 break;
 
                             case sAppData.Repair:
-                                repPath = cFunc.ConvertExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
+                                repPath = cFunctions.Convert.ExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
                                 Debug.WriteLine(Template + " CSV File Location : " + repPath);
                                 break;
                         }
 
-                        tpcActivity.SelectedTab = Tbp;
+                        //tpcActivity.SelectedTab = Tbp;
 
                         MessageBox.Show("File Succefully Uploaded", "File Upload Result",MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -459,9 +464,8 @@ namespace ActivityReportSystem.AppActivity.View
                     }
 
                     Cursor.Current = Cursors.Default;
-                                            
+                                          
                 }
-
             }
             catch (Exception ex)
             {
@@ -469,6 +473,7 @@ namespace ActivityReportSystem.AppActivity.View
             }
         }
 
+        // Save Data
         public void SaveCsvFile(string Template)
         {
             switch (Template)
@@ -498,16 +503,16 @@ namespace ActivityReportSystem.AppActivity.View
                 {
                     // Set Parameters for removal
                     Controller.StatementType = "Delete";
-                    Controller.SearchBy = Template;
-                    Controller.ExecuteAction(eAction.Remove); // Truncate Existing Data
+                    Controller.SearchBy      = Template;
+                    Controller.ExecuteQuery(Perform.Remove); // Truncate Existing Data
 
                 }
 
                 // Set Parameters for import
                 Controller.StatementType = "Import";
-                Controller.SearchBy = Template;
-                Controller.Sql = csvPath;
-                Controller.ExecuteAction(eAction.Import); // Save Files
+                Controller.SearchBy      = Template;
+                Controller.Sql           = csvPath;
+                Controller.ExecuteQuery(Perform.Import); // Save Files
             }     
         }
 
@@ -528,7 +533,7 @@ namespace ActivityReportSystem.AppActivity.View
                 {
                     Controller.StatementType = "Delete";
                     Controller.SearchBy = Template;
-                    Controller.ExecuteAction(eAction.Remove); // Delete Existing Data
+                    Controller.ExecuteQuery(Perform.Remove); // Delete Existing Data
                 }
 
                 for (int rowIndex = 0; rowIndex < rowCount; rowIndex++) // Total Index
@@ -540,7 +545,7 @@ namespace ActivityReportSystem.AppActivity.View
                         var cellValue = Obj.Rows[rowIndex].Cells[columnIndex].Value?.ToString().Trim() ?? "";
 
                         // Remove Special Characters
-                        cellValue = string.IsNullOrWhiteSpace(cellValue) ? "-" : cFunctions.ValidateData(cellValue);
+                        cellValue = string.IsNullOrWhiteSpace(cellValue) ? "-" : cFunctions.Convert.CharAndDate(cellValue);
 
                         queryBuilder.Append($"'{cellValue}',");
                     }
@@ -562,7 +567,7 @@ namespace ActivityReportSystem.AppActivity.View
                         Controller.SearchBy      = Template;
                         Controller.Sql           = queryValues.ToString();
 
-                        Controller.ExecuteAction(eAction.Add);
+                        Controller.ExecuteQuery(Perform.Add);
 
                         queryValues.Clear(); // Clear for Next Batch of Value
                     }
@@ -578,13 +583,10 @@ namespace ActivityReportSystem.AppActivity.View
         // Updates
         public void UpdateDashboard()
         {
-            // Clear Parameters
-            DefaultValues();
-
             // Update Dashboard
             Controller.StatementType = "Update";
             Controller.SearchBy      = "Dashboard";
-            Controller.ExecuteAction(eAction.Modify);
+            Controller.ExecuteQuery(Perform.Update);
 
             // Execute
             LoadValues();
@@ -595,7 +597,7 @@ namespace ActivityReportSystem.AppActivity.View
             Controller.StatementType = "View";
             Controller.SearchBy      = "Total Counts";
 
-            sAppData.CountDetails = Controller.ExecuteAction(eAction.View);
+            sAppData.CountDetails = Controller.ExecuteQuery(Perform.View);
 
             if (sAppData.CountDetails.Rows.Count > 0)
             {
@@ -638,22 +640,22 @@ namespace ActivityReportSystem.AppActivity.View
 
                 if (sAppData.Template.InstallSize > 0)
                 {
-                    sAppData.Template.PInstall = cFunctions.getPercent(sAppData.Template.iTotal_comIns, sAppData.Template.InstallSize);
+                    sAppData.Template.PInstall = cFunctions.GetPercent(sAppData.Template.iTotal_comIns, sAppData.Template.InstallSize);
                 }
 
                 if (sAppData.Template.ReprogSize > 0)
                 {
-                    sAppData.Template.PReprog = cFunctions.getPercent(sAppData.Template.iTotal_comReprog, sAppData.Template.ReprogSize);
+                    sAppData.Template.PReprog = cFunctions.GetPercent(sAppData.Template.iTotal_comReprog, sAppData.Template.ReprogSize);
                 }
 
                 if (sAppData.Template.ServSize > 0)
                 {
-                    sAppData.Template.PServ = cFunctions.getPercent(sAppData.Template.iTotal_comServ, sAppData.Template.ServSize);
+                    sAppData.Template.PServ = cFunctions.GetPercent(sAppData.Template.iTotal_comServ, sAppData.Template.ServSize);
                 }
 
                 if (sAppData.Template.RepairSize > 0)
                 {
-                    sAppData.Template.PRepair = cFunctions.getPercent(sAppData.Template.iTotal_comRep, sAppData.Template.RepairSize);
+                    sAppData.Template.PRepair = cFunctions.GetPercent(sAppData.Template.iTotal_comRep, sAppData.Template.RepairSize);
                 }
 
             }
@@ -662,31 +664,6 @@ namespace ActivityReportSystem.AppActivity.View
                 Debug.WriteLine("No Record Found!");
             }
         }
-
-        public void DefaultValues()
-        {
-            sAppData.Template.iTotal_Com = 0;
-            sAppData.Template.iTotal_Pen = 0;
-            sAppData.Template.iTotal_Can = 0;
-
-            sAppData.Template.iTotal_comIns = 0;
-            sAppData.Template.iTotal_penIns = 0;
-            sAppData.Template.iTotal_canIns = 0;
-
-            sAppData.Template.iTotal_comReprog = 0;
-            sAppData.Template.iTotal_penReprog = 0;
-            sAppData.Template.iTotal_canReprog = 0;
-
-            sAppData.Template.iTotal_comServ = 0;
-            sAppData.Template.iTotal_penServ = 0;
-            sAppData.Template.iTotal_canServ = 0;
-
-            sAppData.Template.iTotal_comRep = 0;
-            sAppData.Template.iTotal_penRep = 0;
-            sAppData.Template.iTotal_canRep = 0;
-
-        }
-
 
     }
 }

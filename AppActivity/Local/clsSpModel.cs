@@ -30,12 +30,12 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
             {
                 DataTable dataTable = new DataTable();
 
-                using (Conn = new MySqlConnection(sAppData.DataParam.ConnString))
+                using (Conn = new MySqlConnection(sAppData.ConnectionString))
                 {
                     Conn.Open();
 
                     Debug.WriteLine(string.Concat("CALL spCollectionDetails ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", SearchValue, "\"", ")"));
-                    Debug.WriteLine(cFunctions.LineSeperator + "\n");
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
                     using (Cmd = new MySqlCommand("spCollectionDetails", Conn))
                     {
@@ -67,12 +67,12 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
 
             public void CollectionUpdate()
             {
-                using (Conn = new MySqlConnection(sAppData.DataParam.ConnString))
+                using (Conn = new MySqlConnection(sAppData.ConnectionString))
                 {
                     Conn.Open();
 
                     Debug.WriteLine(string.Concat("CALL spCollectionUpdate ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", SearchValue, "\"", ")"));
-                    Debug.WriteLine(cFunctions.LineSeperator + "\n");
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
                     using (Cmd = new MySqlCommand("spCollectionUpdate", Conn))
                     {
@@ -99,13 +99,13 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
 
             public void CollectionInsert()
             {
-                using (Conn = new MySqlConnection(sAppData.DataParam.ConnString))
+                using (Conn = new MySqlConnection(sAppData.ConnectionString))
                 {
 
                     Conn.Open();
 
                     Debug.WriteLine(string.Concat("CALL spCollectionInsert ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", Sql, "\"", ")"));
-                    Debug.WriteLine(cFunctions.LineSeperator + "\n");
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
                     using (Cmd = new MySqlCommand("spCollectionInsert", Conn))
                     {
@@ -143,12 +143,12 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
 
             public void CollectionDelete()
             {
-                using (Conn = new MySqlConnection(sAppData.DataParam.ConnString))
+                using (Conn = new MySqlConnection(sAppData.ConnectionString))
                 {
                     Conn.Open();
 
                     Debug.WriteLine(string.Concat("CALL spCollectionDelete ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", SearchValue, "\"", ")"));
-                    Debug.WriteLine(cFunctions.LineSeperator + "\n");
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
                     using (Cmd = new MySqlCommand("spCollectionDelete", Conn))
                     {
@@ -240,7 +240,7 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
 
                 }
 
-                using (Conn = new MySqlConnection(sAppData.DataParam.ConnString))
+                using (Conn = new MySqlConnection(sAppData.ConnectionString))
                 {
                     Conn.Open();
 
@@ -260,7 +260,7 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
 
                     Debug.WriteLine($"- Loaded {loader.Load()} rows into {tableName} table.");
                     Debug.WriteLine("- Data imported successfully.");
-                    Debug.WriteLine(cFunctions.LineSeperator + "\n");
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
                 }
             }
 
