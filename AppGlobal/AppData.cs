@@ -58,6 +58,8 @@ namespace ActivityReportSystem.Global
 
         public class Template
         {
+            public static string iTotal_Installation { get; set; }
+
             // Data Size
             public static int InstallSize { get; set; }
             public static int ReprogSize { get; set; }
@@ -74,27 +76,32 @@ namespace ActivityReportSystem.Global
             public static int iTotal_Com { get; set; }
             public static int iTotal_Pen { get; set; }
             public static int iTotal_Can { get; set; }
+            public static int iTotal_Wait { get; set; }
             public static int Total_Stocks { get; set; }
 
-            // Installation
+            // Total Installation
             public static int iTotal_comIns { get; set; }
             public static int iTotal_penIns { get; set; }
             public static int iTotal_canIns { get; set; }
+            public static int iTotal_waitIns { get; set; }
 
-            // Reprogramming
+            // Total Reprogramming
             public static int iTotal_comReprog { get; set; }
             public static int iTotal_penReprog { get; set; }
             public static int iTotal_canReprog { get; set; }
-            
-            // Servicing
+            public static int iTotal_waitReprog { get; set; }
+
+            // Total Servicing
             public static int iTotal_comServ { get; set; }
             public static int iTotal_penServ { get; set; }
             public static int iTotal_canServ { get; set; }
+            public static int iTotal_waitServ { get; set; }
 
-            // Repair
+            // Total Repair
             public static int iTotal_comRep { get; set; }
             public static int iTotal_penRep { get; set; }
             public static int iTotal_canRep { get; set; }
+            public static int iTotal_waitRep { get; set; }
 
         }
     }

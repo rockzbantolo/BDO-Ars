@@ -131,10 +131,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppActivity\Local\clsSpController.cs" />
-    <Compile Include="AppActivity\Local\clsAppViews.cs" />
-    <Compile Include="AppActivity\Local\clsSpModel.cs" />
-    <Compile Include="AppDatabase\clsConnection.cs" />
+    <Compile Include="AppActivity\SpController.cs" />
+    <Compile Include="AppActivity\AppViews.cs" />
+    <Compile Include="AppActivity\SpModel.cs" />
+    <Compile Include="AppDatabase\Connection.cs" />
     <Compile Include="Forms\frmBreakdown.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,17 +147,17 @@
     <Compile Include="Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmMImport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmMImport.Designer.cs">
-      <DependentUpon>frmMImport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMImport.Designer.cs">
+      <DependentUpon>frmMImport.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmReportViewer.cs">
       <SubType>Form</SubType>
@@ -189,9 +189,9 @@
     <Compile Include="Forms\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppFunction\clsFunction.cs" />
-    <Compile Include="AppGlobal\clsArray.cs" />
-    <Compile Include="AppGlobal\clsAppData.cs" />
+    <Compile Include="AppFunction\Function.cs" />
+    <Compile Include="AppGlobal\Array.cs" />
+    <Compile Include="AppGlobal\AppData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -222,7 +222,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMImport.resx">
       <DependentUpon>frmMImport.cs</DependentUpon>
@@ -278,8 +277,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FTP\" />
-    <Folder Include="Model\" />
     <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>

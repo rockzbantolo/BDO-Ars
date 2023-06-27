@@ -18,32 +18,37 @@ namespace ActivityReportSystem.Forms
     public partial class frmSumDetails : Form
     {
         private cFunctions Func = new cFunctions();      
-        private clsAppViews Db = new clsAppViews();
+        private cAppViews Db = new cAppViews();
+
+        public string TableName { get; set; }
+        public string HeaderName { get; set; }
 
         public frmSumDetails()
         {
             InitializeComponent();
-            cFunctions.Effects.setDoubleBuffer(Dgv_Details, true);
-            cFunctions.Effects.setDoubleBuffer(Dgv_Duplicate, true);
+            cFunctions.Effects.setDoubleBuffer(dgv_Details, true);
+            cFunctions.Effects.setDoubleBuffer(dgv_Duplicate, true);
             Tm_FadeIn.Start();
         }
 
         private void frmSumDetails_Load(object sender, EventArgs e)
         {
-            lb_Activity.Text = sAppData.TemplateName;
+            lb_Activity.Text = HeaderName;
 
             Cursor.Current = Cursors.WaitCursor;
 
-            if (sAppData.TemplateName == sAppData.Installation || sAppData.TemplateName == sAppData.Reprogramming)
+            if(TableName == "tblinstallation" || TableName == "tblreprogramming")
             {
-                Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, string.Empty);
-            }
-            else
-            {
-                Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, string.Empty);
+                dgv_Details.Columns[1].Visible = false;
+                dgv_Duplicate.Columns[1].Visible = false;
             }
 
-            getDuplicateValue();
+            // Get Source Details
+            Db.ViewSourceDetails(dgv_Details, lb_Com, lb_Pen, lb_Can, lb_Wait, TableName);
+
+            // Get Duplicate Details
+            Db.ViewTerminalDetails(dgv_Duplicate, TableName);
+
             Cursor.Current = Cursors.Default;
         }
 
@@ -78,23 +83,23 @@ namespace ActivityReportSystem.Forms
             int inNoDates = 0;
             int Age;
 
-            if (Dgv_Details.Rows.Count > 0)
+            if (dgv_Details.Rows.Count > 0)
             {
-                for (int i = 0; i < Dgv_Details.Rows.Count; i++)
+                for (int i = 0; i < dgv_Details.Rows.Count; i++)
                 {
-                    string SerialVal    = Dgv_Details.Rows[i].Cells[5].Value.ToString();
-                    string DupSerial    = Dgv_Details.Rows[i].Cells[5].Value.ToString();
-                    string StatusVal    = Dgv_Details.Rows[i].Cells[7].Value.ToString();
-                    string DateVal      = Dgv_Details.Rows[i].Cells[10].Value.ToString();
-                    string Dependency   = Dgv_Details.Rows[i].Cells[9].Value.ToString();
-                    DataGridViewRow row = Dgv_Details.Rows[i];
+                    string SerialVal    = dgv_Details.Rows[i].Cells[5].Value.ToString();
+                    string DupSerial    = dgv_Details.Rows[i].Cells[5].Value.ToString();
+                    string StatusVal    = dgv_Details.Rows[i].Cells[7].Value.ToString();
+                    string DateVal      = dgv_Details.Rows[i].Cells[10].Value.ToString();
+                    string Dependency   = dgv_Details.Rows[i].Cells[9].Value.ToString();
+                    DataGridViewRow row = dgv_Details.Rows[i];
 
                     if (DateVal == "-" && StatusVal != "CANCELLED")
                     {
                         inNoDates += 1;
                     }
 
-                    int.TryParse(Dgv_Details.Rows[i].Cells[11].Value.ToString(), out Age);
+                    int.TryParse(dgv_Details.Rows[i].Cells[11].Value.ToString(), out Age);
 
                     if (Age >= 17)
                     {
@@ -109,19 +114,19 @@ namespace ActivityReportSystem.Forms
 
                     if (StatusVal == "CANCELLED" && SerialVal == DupSerial && ( Dependency.Contains("Duplicate") || Dependency.Contains("DUPLICATE")))
                     {
-                            Dgv_Duplicate.Rows.Add(
-                            Dgv_Details.Rows[i].Cells[0].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[1].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[2].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[3].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[4].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[5].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[6].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[7].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[8].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[9].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[10].Value.ToString(),
-                            Dgv_Details.Rows[i].Cells[11].Value.ToString());
+                            dgv_Duplicate.Rows.Add(
+                            dgv_Details.Rows[i].Cells[0].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[1].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[2].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[3].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[4].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[5].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[6].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[7].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[8].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[9].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[10].Value.ToString(),
+                            dgv_Details.Rows[i].Cells[11].Value.ToString());
                     }
 
                 }
@@ -134,23 +139,23 @@ namespace ActivityReportSystem.Forms
 
             if (lb_Activity.Text == sAppData.Installation || lb_Activity.Text == sAppData.Reprogramming)
             {
-                Dgv_Details.Columns[1].Visible = false;
-                Dgv_Duplicate.Columns[1].Visible = false;
+                dgv_Details.Columns[1].Visible = false;
+                dgv_Duplicate.Columns[1].Visible = false;
             }
 
-            Dgv_Duplicate.ClearSelection();
+            dgv_Duplicate.ClearSelection();
             lb_Wait.Text = inNoDates.ToString("n0");
   
         }
 
         private void dgv_Details_Leave(object sender, EventArgs e)
         {
-            Dgv_Details.ClearSelection();
+            dgv_Details.ClearSelection();
         }
 
         private void dgv_Duplicate_Leave(object sender, EventArgs e)
         {
-            Dgv_Duplicate.ClearSelection();
+            dgv_Duplicate.ClearSelection();
         }
 
         private void Tm_FadeIn_Tick(object sender, EventArgs e)
@@ -167,16 +172,12 @@ namespace ActivityReportSystem.Forms
         {
             Cursor.Current = Cursors.WaitCursor;
 
-            if (sAppData.TemplateName == sAppData.Installation || sAppData.TemplateName == sAppData.Reprogramming)
-            {
-                Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, Tx_Search.Text.Trim());
-            }
-            else
-            {
-                Db.LoadTemplateDetails(Dgv_Details, lb_Com, lb_Pen, lb_Can, Tx_Search.Text.Trim());
-            }
+            // Get Table Details
+            Db.ViewSourceDetails(dgv_Details, lb_Com, lb_Pen, lb_Can, lb_Wait, TableName + " | " + Tx_Search.Text);
 
-            getDuplicateValue();
+            // Get Duplicate Request
+            Db.ViewTerminalDetails(dgv_Duplicate, TableName);
+
             Cursor.Current = Cursors.Default;
         }
 
@@ -184,7 +185,7 @@ namespace ActivityReportSystem.Forms
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                e.Handled = true; // Prevent the "ding" sound
+                e.Handled = true;
                 Btn_Search.PerformClick(); // Trigger the search button
             }
         }

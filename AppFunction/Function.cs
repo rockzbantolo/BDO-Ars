@@ -145,7 +145,6 @@ namespace ActivityReportSystem.Function
             public static readonly Color DateBackColor = Color.Lavender;
             public static readonly Color AlternateBackColor1 = Color.Snow;
             public static readonly Color AlternateBackColor2 = Color.AliceBlue;
-
         }
 
         public class Brackets
@@ -288,7 +287,7 @@ namespace ActivityReportSystem.Function
                             CellRange cell = worksheet.Range[row, col];
                             string cellData = cell != null ? cell.Value?.ToString() : "";
 
-                            cellData = string.IsNullOrWhiteSpace(cellData) ? "-" : CharAndDate(cellData);
+                            cellData = string.IsNullOrWhiteSpace(cellData) ? "-" : FormatCharAndDate(cellData).ToUpper();
 
                             cellData = (cellData == DBNull.Value.ToString()) ? "-" : cellData;
 
@@ -308,7 +307,7 @@ namespace ActivityReportSystem.Function
                 return csvFilePath;
             }
 
-            public static string CharAndDate(string input)
+            public static string FormatCharAndDate(string input)
             {
                 StringBuilder sb = new StringBuilder(input);
 

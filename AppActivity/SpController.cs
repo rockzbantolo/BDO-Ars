@@ -8,23 +8,25 @@ using AppAction;
 
 namespace ActivityReportSystem.AppActivity.Controller
 {
-    class clsSpController
+    class cSpController
     {
-        clsSpModel.MySqlProcedure Sp = new clsSpModel.MySqlProcedure();
+
+        cSpModel.MySqlProcedure Sp = new cSpModel.MySqlProcedure();
 
         public string StatementType { get; set; }
         public string SearchBy { get; set; }
         public string SearchValue { get; set; }
         public string Sql { get; set; }
 
+
         public DataTable ExecuteQuery(Perform Action)
         {
-            DataTable resultTable = new DataTable();
+            DataTable Result = new DataTable();
 
-            Sp.StatementType = StatementType;
-            Sp.SearchBy      = SearchBy;
-            Sp.SearchValue   = SearchValue;
-            Sp.Sql           = Sql;
+            Sp.p_StatementType = StatementType;
+            Sp.p_SearchBy      = SearchBy;
+            Sp.p_SearchValue   = SearchValue;
+            Sp.p_Sql           = Sql;
 
             #region Debug Details
 
@@ -44,11 +46,10 @@ namespace ActivityReportSystem.AppActivity.Controller
 
             #endregion
 
-
             switch (Action)
             {
                 case Perform.View:
-                    resultTable = Sp.CollectionDetails();
+                    Result = Sp.CollectionDetails();
                     break;
 
                 case Perform.Update:
@@ -68,7 +69,7 @@ namespace ActivityReportSystem.AppActivity.Controller
                     break;
             }
 
-            return resultTable;
+            return Result;
         }
 
     }

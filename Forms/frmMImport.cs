@@ -17,7 +17,7 @@ namespace ActivityReportSystem
     {
 
         private cFunctions cFunc  = new cFunctions();
-        private clsAppViews Db = new clsAppViews();
+        private cAppViews Db = new cAppViews();
 
         protected override CreateParams CreateParams
         {

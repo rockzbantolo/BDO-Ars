@@ -18,7 +18,7 @@ namespace ActivityReportSystem.Forms
     public partial class frmDashboard : Form
     {
         private cFunctions Func = new cFunctions();
-        clsAppViews Db = new clsAppViews();
+        cAppViews Db = new cAppViews();
 
         // OVERIDE TO REDUCE LAG AND FLICKERING
         protected override CreateParams CreateParams
@@ -34,7 +34,7 @@ namespace ActivityReportSystem.Forms
  
         public frmDashboard()
         {
-            clsAppConfig SystemSettings = new clsAppConfig();
+            cAppConfig SystemSettings = new cAppConfig();
             InitializeComponent();
             InitializeDisplay();
             Tm_FadeIn.Start();
@@ -55,9 +55,10 @@ namespace ActivityReportSystem.Forms
             Clear(Ctrl.Objects);
 
             // Dashboard Data
-            Db.LoadDashboardDetails(dgv_Sum_ComReq, string.Empty);
-            Db.LoadDashboardDetails(dgv_Sum_PenReq, string.Empty);
-            Db.LoadDashboardDetails(dgv_Model_List, string.Empty);
+            Db.ViewTerminalDetails(dgv_Sum_ComReq, "");
+            Db.ViewTerminalDetails(dgv_Sum_PenReq, "");
+            Db.ViewTerminalDetails(dgv_Model_List, "");
+            Db.LoadValues();
 
             InitValues();
         }
@@ -121,7 +122,6 @@ namespace ActivityReportSystem.Forms
                     lb_Total_Deployed.Text  = "0";
                     lb_Total_Stocks.Text    = "0";
                     cFunctions.Grid.ClearGridRows(dgv_Model_Status_List);
-                    cFunctions.Grid.ClearGridRows(dgv_Model_List);
 
                     break;
 
@@ -293,7 +293,7 @@ namespace ActivityReportSystem.Forms
             }
 
             // Get Details
-            Db.SearchTerminalStatus(dgv_Model_Status_List, cmb_Model_Template, dtp_Model_From, dtp_Model_To);
+            Db.SearchTerminalHistory(dgv_Model_Status_List, cmb_Model_Template, dtp_Model_From, dtp_Model_To);
 
             dgv_Model_Status_List.ClearSelection();        
         }
@@ -324,8 +324,6 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Installation_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.TemplateName = sAppData.Installation;
-
             frmShadow ShadowBG = new frmShadow();
             using (frmSumDetails installation = new frmSumDetails())
             {
@@ -334,6 +332,8 @@ namespace ActivityReportSystem.Forms
                 ShadowBG.Show(this);
 
                 installation.Owner = ShadowBG;
+                installation.HeaderName = "Installation";
+                installation.TableName = "tblinstallation";
                 installation.ShowDialog();
 
                 ShadowBG.Dispose();
@@ -352,6 +352,8 @@ namespace ActivityReportSystem.Forms
                 ShadowBG.Show(this);
 
                 reprogram.Owner = ShadowBG;
+                reprogram.HeaderName = "Reprogramming";
+                reprogram.TableName = "tblreprogramming";
                 reprogram.ShowDialog();
 
                 ShadowBG.Dispose();
@@ -370,6 +372,8 @@ namespace ActivityReportSystem.Forms
                 ShadowBG.Show(this);
 
                 servicing.Owner = ShadowBG;
+                servicing.HeaderName = "Servicing";
+                servicing.TableName = "tblservicing";
                 servicing.ShowDialog();
 
                 ShadowBG.Dispose();
@@ -388,6 +392,8 @@ namespace ActivityReportSystem.Forms
                 ShadowBG.Show(this);
 
                 repair.Owner = ShadowBG;
+                repair.HeaderName = "Repair";
+                repair.TableName = "tblrepair";
                 repair.ShowDialog();
 
                 ShadowBG.Dispose();
@@ -418,42 +424,7 @@ namespace ActivityReportSystem.Forms
 
         private void cmb_Model_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmb_Model.Text.ToString() != string.Empty) {
-                // Display All Details
-                Db.LoadDashboardDetails(dgv_Model_List, cmb_Model.Text.ToString().Trim());
-            }
-
-            switch (cmb_Model.SelectedIndex) {
-
-                case 0:
-                    Clear(Ctrl.Model);
-                    break;
-
-                case 1:
-
-                    // All Details
-                    Db.LoadDashboardDetails(dgv_Model_List, string.Empty);
-
-                    lb_Total_Deployed.Text  = sAppData.Template.iTotal_comIns.ToString("n0");
-                    lb_Total_Stocks.Text    = sAppData.Template.Total_Stocks.ToString("n0");
-
-                    break;
-
-                case 2:
-
-                    // MP200 Stocks and Deployed
-                    lb_Total_Deployed.Text  = Convert.ToInt32(sAppData.CountDetails.Rows[0]["MPComIns"]).ToString("n0");
-                    lb_Total_Stocks.Text    = Convert.ToInt32(sAppData.CountDetails.Rows[0]["Total_MP200"]).ToString("n0");
-                    
-                    break;
-
-                case 3:
-
-                    // S1E Stocks and Deployed
-                    lb_Total_Deployed.Text  = Convert.ToInt32(sAppData.CountDetails.Rows[0]["S1EComIns"]).ToString("n0");
-                    lb_Total_Stocks.Text    = Convert.ToInt32(sAppData.CountDetails.Rows[0]["Total_S1E"]).ToString("n0");
-                    break;
-            }
+            Db.ViewTerminalDetails(dgv_Model_List, cmb_Model.Text.ToString());
         }
 
     #region Effects

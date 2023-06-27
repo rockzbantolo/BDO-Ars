@@ -9,9 +9,9 @@ using ActivityReportSystem.Function;
 
 namespace ActivityReportSystem.Database
 {
-    public class clsAppConfig : clsSettings
+    public class cAppConfig : cSettings
     {
-        public clsAppConfig()
+        public cAppConfig()
         {
             MySqlSettings();
             SystemSettings();
@@ -34,7 +34,7 @@ namespace ActivityReportSystem.Database
 
     }
 
-    public class clsSettings
+    public class cSettings
     {
 
     #region LIBRARY

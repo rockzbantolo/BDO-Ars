@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
 {
-    class clsSpModel
+    class cSpModel
     {
         public class MySqlProcedure
         {
@@ -20,10 +20,10 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
             private MySqlCommand Cmd;
             private MySqlDataReader Reader;
 
-            public string StatementType { get; set; }
-            public string SearchBy { get; set; }
-            public string SearchValue { get; set; }
-            public string Sql { get; set; }
+            public string p_StatementType { get; set; }
+            public string p_SearchBy { get; set; }
+            public string p_SearchValue { get; set; }
+            public string p_Sql { get; set; }
 
 
             public DataTable CollectionDetails()
@@ -34,7 +34,7 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
                 {
                     Conn.Open();
 
-                    Debug.WriteLine(string.Concat("CALL spCollectionDetails ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", SearchValue, "\"", ")"));
+                    Debug.WriteLine(string.Concat("CALL spCollectionDetails ", "(\"", p_StatementType, "\"", ",\"", p_SearchBy, "\"", ",\"", p_SearchValue, "\"", ")"));
                     Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
                     using (Cmd = new MySqlCommand("spCollectionDetails", Conn))
@@ -42,9 +42,9 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
                         Cmd.CommandType = CommandType.StoredProcedure;
 
                         // Add parameters
-                        Cmd.Parameters.AddWithValue("@StatementType", StatementType);
-                        Cmd.Parameters.AddWithValue("@SearchBy", SearchBy);
-                        Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
+                        Cmd.Parameters.AddWithValue("@p_StatementType", p_StatementType);
+                        Cmd.Parameters.AddWithValue("@p_SearchBy", p_SearchBy);
+                        Cmd.Parameters.AddWithValue("@p_SearchValue", p_SearchValue);
 
                         try
                         {
@@ -71,7 +71,7 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
                 {
                     Conn.Open();
 
-                    Debug.WriteLine(string.Concat("CALL spCollectionUpdate ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", SearchValue, "\"", ")"));
+                    Debug.WriteLine(string.Concat("CALL spCollectionUpdate ", "(\"", p_StatementType, "\"", ",\"", p_SearchBy, "\"", ",\"", p_SearchValue, "\"", ")"));
                     Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
                     using (Cmd = new MySqlCommand("spCollectionUpdate", Conn))
@@ -79,10 +79,10 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
                         Cmd.CommandType = CommandType.StoredProcedure;
 
                         // Add parameters to the command
-                        Cmd.Parameters.AddWithValue("@StatementType", StatementType);
-                        Cmd.Parameters.AddWithValue("@SearchBy", SearchBy);
-                        Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
-                        Cmd.Parameters.AddWithValue("@pSql", Sql);
+                        Cmd.Parameters.AddWithValue("@StatementType", p_StatementType);
+                        Cmd.Parameters.AddWithValue("@SearchBy", p_SearchBy);
+                        Cmd.Parameters.AddWithValue("@SearchValue", p_SearchValue);
+                        Cmd.Parameters.AddWithValue("@pSql", p_Sql);
 
                         try
                         {
@@ -104,7 +104,7 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
 
                     Conn.Open();
 
-                    Debug.WriteLine(string.Concat("CALL spCollectionInsert ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", Sql, "\"", ")"));
+                    Debug.WriteLine(string.Concat("CALL spCollectionInsert ", "(\"", p_StatementType, "\"", ",\"", p_SearchBy, "\"", ",\"", p_Sql, "\"", ")"));
                     Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
                     using (Cmd = new MySqlCommand("spCollectionInsert", Conn))
@@ -112,10 +112,10 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
 
                         Cmd.CommandType = CommandType.StoredProcedure;
 
-                        Cmd.Parameters.AddWithValue("@StatementType", StatementType);
-                        Cmd.Parameters.AddWithValue("@SearchBy", SearchBy);
-                        Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
-                        Cmd.Parameters.AddWithValue("@pSQL", Sql);
+                        Cmd.Parameters.AddWithValue("@StatementType", p_StatementType);
+                        Cmd.Parameters.AddWithValue("@SearchBy", p_SearchBy);
+                        Cmd.Parameters.AddWithValue("@SearchValue", p_SearchValue);
+                        Cmd.Parameters.AddWithValue("@pSQL", p_Sql);
 
                         Cmd.Parameters.Add("@outLastInsertID", MySqlDbType.VarChar, 255).Direction = ParameterDirection.Output;
                         Cmd.Parameters.Add("@outErrorMessage", MySqlDbType.VarChar, 255).Direction = ParameterDirection.Output;
@@ -147,7 +147,7 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
                 {
                     Conn.Open();
 
-                    Debug.WriteLine(string.Concat("CALL spCollectionDelete ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", SearchValue, "\"", ")"));
+                    Debug.WriteLine(string.Concat("CALL spCollectionDelete ", "(\"", p_StatementType, "\"", ",\"", p_SearchBy, "\"", ",\"", p_SearchValue, "\"", ")"));
                     Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
                     using (Cmd = new MySqlCommand("spCollectionDelete", Conn))
@@ -155,9 +155,9 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
                         Cmd.CommandType = CommandType.StoredProcedure;
 
                         // Add parameters to the command
-                        Cmd.Parameters.AddWithValue("@StatementType", StatementType);
-                        Cmd.Parameters.AddWithValue("@SearchBy", SearchBy);
-                        Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
+                        Cmd.Parameters.AddWithValue("@StatementType", p_StatementType);
+                        Cmd.Parameters.AddWithValue("@SearchBy", p_SearchBy);
+                        Cmd.Parameters.AddWithValue("@SearchValue", p_SearchValue);
 
                         try
                         {
@@ -178,7 +178,7 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
                 string tableName;
                 string[] columnNames;
 
-                switch (SearchBy)
+                switch (p_SearchBy)
                 {
                     case sAppData.Installation:
                         tableName = "tblinstallation";
@@ -235,7 +235,7 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
                         break;
 
                     default:
-                        Debug.WriteLine("Invalid " + SearchBy + " import type.");
+                        Debug.WriteLine("Invalid " + p_SearchBy + " import type.");
                         return;
 
                 }
@@ -249,7 +249,7 @@ namespace ActivityReportSystem.AppActivity.Local.SpMainActivity
                         TableName = tableName,
                         FieldTerminator = ",",
                         LineTerminator = "\n",
-                        FileName = Sql,
+                        FileName = p_Sql,
                         Local = true,
                         NumberOfLinesToSkip = 1, // Ignore 1 line (header)
                         FieldQuotationCharacter = '\0', // Disable field quotation

@@ -30,59 +30,45 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBreakdown));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DragHeader = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.BodyRadius = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnShadBDpen = new System.Windows.Forms.Panel();
-            this.pnShadBDPrep = new System.Windows.Forms.Panel();
             this.bne_BDP_Rep = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.dgv_BdPendings = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bne_BDPendings = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.dgv_Bdp_Rep = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bne_pnShadBDpen = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bne_pnShadBDPrep = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.Tm_FadeIn = new System.Windows.Forms.Timer(this.components);
             this.Tm_FadeOut = new System.Windows.Forms.Timer(this.components);
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Status_Remarks = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Btn_Search = new System.Windows.Forms.Button();
+            this.Tx_Search = new System.Windows.Forms.TextBox();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_BdPendings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Bdp_Rep)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Status_Remarks)).BeginInit();
             this.SuspendLayout();
             // 
             // DragHeader
@@ -100,7 +86,7 @@
             this.pnHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHeader.Location = new System.Drawing.Point(0, 0);
             this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(890, 60);
+            this.pnHeader.Size = new System.Drawing.Size(1141, 60);
             this.pnHeader.TabIndex = 0;
             // 
             // label1
@@ -120,7 +106,7 @@
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageActive = null;
-            this.btnClose.Location = new System.Drawing.Point(853, 12);
+            this.btnClose.Location = new System.Drawing.Point(1104, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 23);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,160 +123,21 @@
             // pnShadBDpen
             // 
             this.pnShadBDpen.BackColor = System.Drawing.Color.Silver;
-            this.pnShadBDpen.Location = new System.Drawing.Point(29, 20);
+            this.pnShadBDpen.Location = new System.Drawing.Point(35, 154);
             this.pnShadBDpen.Margin = new System.Windows.Forms.Padding(2);
             this.pnShadBDpen.Name = "pnShadBDpen";
-            this.pnShadBDpen.Size = new System.Drawing.Size(811, 585);
+            this.pnShadBDpen.Size = new System.Drawing.Size(1086, 536);
             this.pnShadBDpen.TabIndex = 153;
-            // 
-            // pnShadBDPrep
-            // 
-            this.pnShadBDPrep.BackColor = System.Drawing.Color.Silver;
-            this.pnShadBDPrep.Location = new System.Drawing.Point(27, 21);
-            this.pnShadBDPrep.Margin = new System.Windows.Forms.Padding(2);
-            this.pnShadBDPrep.Name = "pnShadBDPrep";
-            this.pnShadBDPrep.Size = new System.Drawing.Size(814, 577);
-            this.pnShadBDPrep.TabIndex = 154;
             // 
             // bne_BDP_Rep
             // 
             this.bne_BDP_Rep.ElipseRadius = 12;
-            this.bne_BDP_Rep.TargetControl = this.dgv_BdPendings;
-            // 
-            // dgv_BdPendings
-            // 
-            this.dgv_BdPendings.AllowUserToAddRows = false;
-            this.dgv_BdPendings.AllowUserToDeleteRows = false;
-            this.dgv_BdPendings.AllowUserToResizeColumns = false;
-            this.dgv_BdPendings.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.dgv_BdPendings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
-            this.dgv_BdPendings.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_BdPendings.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_BdPendings.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dgv_BdPendings.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_BdPendings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            this.dgv_BdPendings.ColumnHeadersHeight = 40;
-            this.dgv_BdPendings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_BdPendings.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.Column5});
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_BdPendings.DefaultCellStyle = dataGridViewCellStyle26;
-            this.dgv_BdPendings.DoubleBuffered = true;
-            this.dgv_BdPendings.EnableHeadersVisualStyles = false;
-            this.dgv_BdPendings.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgv_BdPendings.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
-            this.dgv_BdPendings.HeaderForeColor = System.Drawing.Color.White;
-            this.dgv_BdPendings.Location = new System.Drawing.Point(22, 16);
-            this.dgv_BdPendings.Name = "dgv_BdPendings";
-            this.dgv_BdPendings.ReadOnly = true;
-            this.dgv_BdPendings.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_BdPendings.RowHeadersVisible = false;
-            this.dgv_BdPendings.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_BdPendings.RowsDefaultCellStyle = dataGridViewCellStyle27;
-            this.dgv_BdPendings.RowTemplate.DividerHeight = 1;
-            this.dgv_BdPendings.RowTemplate.Height = 54;
-            this.dgv_BdPendings.RowTemplate.ReadOnly = true;
-            this.dgv_BdPendings.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_BdPendings.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_BdPendings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_BdPendings.ShowCellErrors = false;
-            this.dgv_BdPendings.ShowCellToolTips = false;
-            this.dgv_BdPendings.ShowEditingIcon = false;
-            this.dgv_BdPendings.ShowRowErrors = false;
-            this.dgv_BdPendings.Size = new System.Drawing.Size(816, 587);
-            this.dgv_BdPendings.TabIndex = 155;
-            this.dgv_BdPendings.Leave += new System.EventHandler(this.dgv_BdPendings_Leave);
+            this.bne_BDP_Rep.TargetControl = this;
             // 
             // bne_BDPendings
             // 
             this.bne_BDPendings.ElipseRadius = 12;
-            this.bne_BDPendings.TargetControl = this.dgv_Bdp_Rep;
-            // 
-            // dgv_Bdp_Rep
-            // 
-            this.dgv_Bdp_Rep.AllowUserToAddRows = false;
-            this.dgv_Bdp_Rep.AllowUserToDeleteRows = false;
-            this.dgv_Bdp_Rep.AllowUserToResizeColumns = false;
-            this.dgv_Bdp_Rep.AllowUserToResizeRows = false;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            this.dgv_Bdp_Rep.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
-            this.dgv_Bdp_Rep.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_Bdp_Rep.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_Bdp_Rep.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dgv_Bdp_Rep.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Bdp_Rep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
-            this.dgv_Bdp_Rep.ColumnHeadersHeight = 40;
-            this.dgv_Bdp_Rep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv_Bdp_Rep.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Bdp_Rep.DefaultCellStyle = dataGridViewCellStyle35;
-            this.dgv_Bdp_Rep.DoubleBuffered = true;
-            this.dgv_Bdp_Rep.EnableHeadersVisualStyles = false;
-            this.dgv_Bdp_Rep.GridColor = System.Drawing.Color.Gainsboro;
-            this.dgv_Bdp_Rep.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
-            this.dgv_Bdp_Rep.HeaderForeColor = System.Drawing.Color.White;
-            this.dgv_Bdp_Rep.Location = new System.Drawing.Point(21, 16);
-            this.dgv_Bdp_Rep.Name = "dgv_Bdp_Rep";
-            this.dgv_Bdp_Rep.ReadOnly = true;
-            this.dgv_Bdp_Rep.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_Bdp_Rep.RowHeadersVisible = false;
-            this.dgv_Bdp_Rep.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Bdp_Rep.RowsDefaultCellStyle = dataGridViewCellStyle36;
-            this.dgv_Bdp_Rep.RowTemplate.DividerHeight = 1;
-            this.dgv_Bdp_Rep.RowTemplate.Height = 41;
-            this.dgv_Bdp_Rep.RowTemplate.ReadOnly = true;
-            this.dgv_Bdp_Rep.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Bdp_Rep.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_Bdp_Rep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv_Bdp_Rep.ShowCellErrors = false;
-            this.dgv_Bdp_Rep.ShowCellToolTips = false;
-            this.dgv_Bdp_Rep.ShowEditingIcon = false;
-            this.dgv_Bdp_Rep.ShowRowErrors = false;
-            this.dgv_Bdp_Rep.Size = new System.Drawing.Size(818, 580);
-            this.dgv_Bdp_Rep.TabIndex = 156;
-            this.dgv_Bdp_Rep.Leave += new System.EventHandler(this.dgv_Bdp_Rep_Leave);
+            this.bne_BDPendings.TargetControl = this;
             // 
             // bne_pnShadBDpen
             // 
@@ -300,7 +147,7 @@
             // bne_pnShadBDPrep
             // 
             this.bne_pnShadBDPrep.ElipseRadius = 12;
-            this.bne_pnShadBDPrep.TargetControl = this.pnShadBDPrep;
+            this.bne_pnShadBDPrep.TargetControl = this;
             // 
             // Tm_FadeIn
             // 
@@ -312,156 +159,199 @@
             this.Tm_FadeOut.Interval = 20;
             this.Tm_FadeOut.Tick += new System.EventHandler(this.Tm_FadeOut_Tick);
             // 
-            // tabControl1
+            // dgv_Status_Remarks
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(9, 66);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(870, 642);
-            this.tabControl1.TabIndex = 157;
+            this.dgv_Status_Remarks.AllowUserToAddRows = false;
+            this.dgv_Status_Remarks.AllowUserToDeleteRows = false;
+            this.dgv_Status_Remarks.AllowUserToResizeColumns = false;
+            this.dgv_Status_Remarks.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv_Status_Remarks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Status_Remarks.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Status_Remarks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Status_Remarks.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dgv_Status_Remarks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Status_Remarks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_Status_Remarks.ColumnHeadersHeight = 35;
+            this.dgv_Status_Remarks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_Status_Remarks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Status_Remarks.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgv_Status_Remarks.DoubleBuffered = true;
+            this.dgv_Status_Remarks.EnableHeadersVisualStyles = false;
+            this.dgv_Status_Remarks.GridColor = System.Drawing.Color.Gainsboro;
+            this.dgv_Status_Remarks.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
+            this.dgv_Status_Remarks.HeaderForeColor = System.Drawing.Color.White;
+            this.dgv_Status_Remarks.Location = new System.Drawing.Point(28, 151);
+            this.dgv_Status_Remarks.Name = "dgv_Status_Remarks";
+            this.dgv_Status_Remarks.ReadOnly = true;
+            this.dgv_Status_Remarks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Status_Remarks.RowHeadersVisible = false;
+            this.dgv_Status_Remarks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Status_Remarks.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgv_Status_Remarks.RowTemplate.DividerHeight = 1;
+            this.dgv_Status_Remarks.RowTemplate.Height = 48;
+            this.dgv_Status_Remarks.RowTemplate.ReadOnly = true;
+            this.dgv_Status_Remarks.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Status_Remarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgv_Status_Remarks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv_Status_Remarks.ShowCellErrors = false;
+            this.dgv_Status_Remarks.ShowCellToolTips = false;
+            this.dgv_Status_Remarks.ShowEditingIcon = false;
+            this.dgv_Status_Remarks.ShowRowErrors = false;
+            this.dgv_Status_Remarks.Size = new System.Drawing.Size(1089, 535);
+            this.dgv_Status_Remarks.TabIndex = 158;
             // 
-            // tabPage1
+            // dataGridViewTextBoxColumn10
             // 
-            this.tabPage1.Controls.Add(this.dgv_BdPendings);
-            this.tabPage1.Controls.Add(this.pnShadBDpen);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(862, 614);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Breakdown of Pendings";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn10.HeaderText = "MODEL";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn10.Width = 120;
             // 
-            // tabPage2
+            // dataGridViewTextBoxColumn11
             // 
-            this.tabPage2.Controls.Add(this.dgv_Bdp_Rep);
-            this.tabPage2.Controls.Add(this.pnShadBDPrep);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(862, 614);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Breakdown of Pending Repairs";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn11.HeaderText = "SOURCE";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn11.Width = 130;
             // 
-            // dataGridViewTextBoxColumn5
+            // dataGridViewTextBoxColumn12
             // 
-            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle30;
-            this.dataGridViewTextBoxColumn5.HeaderText = "BREAKDOWN OF PENDING REPAIRS";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn5.Width = 310;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn12.HeaderText = "STATUS REMARKS";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn12.Width = 240;
             // 
-            // dataGridViewTextBoxColumn6
+            // dataGridViewTextBoxColumn13
             // 
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle31;
-            this.dataGridViewTextBoxColumn6.HeaderText = "< 7 DAYS";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn6.Width = 120;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn13.HeaderText = "STATUS";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn13.Width = 120;
             // 
-            // dataGridViewTextBoxColumn7
+            // dataGridViewTextBoxColumn14
             // 
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle32;
-            this.dataGridViewTextBoxColumn7.HeaderText = "> 7-30 DAYS";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn7.Width = 120;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn14.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn14.HeaderText = "< 7 DAYS";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn14.Width = 120;
             // 
-            // dataGridViewTextBoxColumn8
+            // Column1
             // 
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle33;
-            this.dataGridViewTextBoxColumn8.HeaderText = "> 30 DAYS";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn8.Width = 120;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column1.HeaderText = "> 7-30 DAYS";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1.Width = 120;
             // 
-            // dataGridViewTextBoxColumn9
+            // Column2
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle34;
-            this.dataGridViewTextBoxColumn9.HeaderText = "TOTAL";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn9.Width = 160;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Column2.HeaderText = "> 30 DAYS";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column2.Width = 120;
             // 
-            // dataGridViewTextBoxColumn1
+            // Column3
             // 
-            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle21;
-            this.dataGridViewTextBoxColumn1.HeaderText = "BREAKDOWN OF PENDINGS";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn1.Width = 310;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Column3.HeaderText = "TOTAL";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column3.Width = 120;
             // 
-            // dataGridViewTextBoxColumn2
+            // label4
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle22;
-            this.dataGridViewTextBoxColumn2.HeaderText = "< 7 DAYS";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn2.Width = 120;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(25, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(191, 15);
+            this.label4.TabIndex = 293;
+            this.label4.Text = "Terminal Model / Status Remarks";
             // 
-            // dataGridViewTextBoxColumn3
+            // Btn_Search
             // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle23;
-            this.dataGridViewTextBoxColumn3.HeaderText = "> 7-30 DAYS";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Width = 120;
+            this.Btn_Search.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Search.Location = new System.Drawing.Point(995, 102);
+            this.Btn_Search.Name = "Btn_Search";
+            this.Btn_Search.Size = new System.Drawing.Size(122, 33);
+            this.Btn_Search.TabIndex = 292;
+            this.Btn_Search.Text = "Search";
+            this.Btn_Search.UseVisualStyleBackColor = true;
+            this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
-            // dataGridViewTextBoxColumn4
+            // Tx_Search
             // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle24;
-            this.dataGridViewTextBoxColumn4.HeaderText = "> 30 DAYS";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn4.Width = 120;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle25;
-            this.Column5.HeaderText = "TOTAL";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column5.Width = 160;
+            this.Tx_Search.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tx_Search.Location = new System.Drawing.Point(28, 103);
+            this.Tx_Search.Name = "Tx_Search";
+            this.Tx_Search.Size = new System.Drawing.Size(961, 29);
+            this.Tx_Search.TabIndex = 291;
             // 
             // frmBreakdown
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(890, 720);
+            this.ClientSize = new System.Drawing.Size(1141, 711);
             this.ControlBox = false;
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Btn_Search);
+            this.Controls.Add(this.Tx_Search);
+            this.Controls.Add(this.dgv_Status_Remarks);
             this.Controls.Add(this.pnHeader);
+            this.Controls.Add(this.pnShadBDpen);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -478,12 +368,9 @@
             this.pnHeader.ResumeLayout(false);
             this.pnHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_BdPendings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Bdp_Rep)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Status_Remarks)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -493,29 +380,25 @@
         private Bunifu.Framework.UI.BunifuElipse BodyRadius;
         private System.Windows.Forms.Panel pnHeader;
         private System.Windows.Forms.Panel pnShadBDpen;
-        private System.Windows.Forms.Panel pnShadBDPrep;
         private Bunifu.Framework.UI.BunifuImageButton btnClose;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuElipse bne_BDP_Rep;
         private Bunifu.Framework.UI.BunifuElipse bne_BDPendings;
         private Bunifu.Framework.UI.BunifuElipse bne_pnShadBDpen;
         private Bunifu.Framework.UI.BunifuElipse bne_pnShadBDPrep;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_BdPendings;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_Bdp_Rep;
         private System.Windows.Forms.Timer Tm_FadeIn;
         private System.Windows.Forms.Timer Tm_FadeOut;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_Status_Remarks;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Btn_Search;
+        private System.Windows.Forms.TextBox Tx_Search;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
