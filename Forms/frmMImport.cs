@@ -214,6 +214,7 @@ namespace ActivityReportSystem
         {
             Debug.WriteLine(" ---- Refresh Dashboard -----");
             frmDashboard Dashboard = new frmDashboard();
+            Dashboard.InitializeDisplay();
         }
 
         // CLEAR OBJ

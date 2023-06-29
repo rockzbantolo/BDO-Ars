@@ -122,6 +122,8 @@ namespace ActivityReportSystem.Function
             return percentage;
         }
 
+        public const string Pipe = " | ";
+
         public class Format
         {
             public const string Dash = "-";

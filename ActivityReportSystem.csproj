@@ -299,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app_icon.ico" />
+    <None Include="Resources\ic_maximize_26px.png" />
+    <None Include="Resources\ic_maximize_48px.png" />
+    <None Include="Resources\ic_maximize_24px.png" />
     <None Include="Images\ic_search_24.png" />
     <None Include="Images\ic_delete_docs_21.png" />
     <None Include="Images\ic_servicing_48.png" />

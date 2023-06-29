@@ -19,6 +19,7 @@ namespace ActivityReportSystem.Forms
     {
         private cFunctions Func = new cFunctions();      
         private cAppViews Db = new cAppViews();
+        //private cAppViews.SourceDetails Source = new cAppViews.SourceDetails();
 
         public string TableName { get; set; }
         public string HeaderName { get; set; }
@@ -42,6 +43,17 @@ namespace ActivityReportSystem.Forms
                 dgv_Details.Columns[1].Visible = false;
                 dgv_Duplicate.Columns[1].Visible = false;
             }
+
+            // Set Controls.
+            //Source.Lbl_Completed = lb_Com;
+            //Source.Lbl_Pending   = lb_Pen;
+            //Source.Lbl_Cancelled = lb_Can;
+            //Source.Lbl_Waiting   = lb_Wait;
+            //Source.DgView      = dgv_Details;
+            //Source.SearchValue = TableName;
+
+            // Get Details
+            //Source.GetDetails();
 
             // Get Source Details
             Db.ViewSourceDetails(dgv_Details, lb_Com, lb_Pen, lb_Can, lb_Wait, TableName);
@@ -75,77 +87,6 @@ namespace ActivityReportSystem.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             Tm_FadeOut.Start();
-        }
-
-        // DISPLAY SUMMARY
-        public void getDuplicateValue()
-        {
-            int inNoDates = 0;
-            int Age;
-
-            if (dgv_Details.Rows.Count > 0)
-            {
-                for (int i = 0; i < dgv_Details.Rows.Count; i++)
-                {
-                    string SerialVal    = dgv_Details.Rows[i].Cells[5].Value.ToString();
-                    string DupSerial    = dgv_Details.Rows[i].Cells[5].Value.ToString();
-                    string StatusVal    = dgv_Details.Rows[i].Cells[7].Value.ToString();
-                    string DateVal      = dgv_Details.Rows[i].Cells[10].Value.ToString();
-                    string Dependency   = dgv_Details.Rows[i].Cells[9].Value.ToString();
-                    DataGridViewRow row = dgv_Details.Rows[i];
-
-                    if (DateVal == "-" && StatusVal != "CANCELLED")
-                    {
-                        inNoDates += 1;
-                    }
-
-                    int.TryParse(dgv_Details.Rows[i].Cells[11].Value.ToString(), out Age);
-
-                    if (Age >= 17)
-                    {
-                        row.DefaultCellStyle.BackColor = Color.IndianRed;
-                        row.DefaultCellStyle.ForeColor = Color.White;
-                    }
-                    else
-                    {
-                        row.DefaultCellStyle.BackColor = Color.White;
-                        row.DefaultCellStyle.ForeColor = Color.Black;
-                    }
-
-                    if (StatusVal == "CANCELLED" && SerialVal == DupSerial && ( Dependency.Contains("Duplicate") || Dependency.Contains("DUPLICATE")))
-                    {
-                            dgv_Duplicate.Rows.Add(
-                            dgv_Details.Rows[i].Cells[0].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[1].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[2].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[3].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[4].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[5].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[6].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[7].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[8].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[9].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[10].Value.ToString(),
-                            dgv_Details.Rows[i].Cells[11].Value.ToString());
-                    }
-
-                }
-
-                if (inNoDates <= 0)
-                {
-                    inNoDates = 0;
-                }
-            }
-
-            if (lb_Activity.Text == sAppData.Installation || lb_Activity.Text == sAppData.Reprogramming)
-            {
-                dgv_Details.Columns[1].Visible = false;
-                dgv_Duplicate.Columns[1].Visible = false;
-            }
-
-            dgv_Duplicate.ClearSelection();
-            lb_Wait.Text = inNoDates.ToString("n0");
-  
         }
 
         private void dgv_Details_Leave(object sender, EventArgs e)

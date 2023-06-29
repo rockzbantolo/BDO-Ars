@@ -17,6 +17,9 @@ namespace ActivityReportSystem.Forms
 
     public partial class frmDashboard : Form
     {
+        cAppViews.SourceDetails Src;
+        cAppConfig SystemSettings;
+
         private cFunctions Func = new cFunctions();
         cAppViews Db = new cAppViews();
 
@@ -34,14 +37,16 @@ namespace ActivityReportSystem.Forms
  
         public frmDashboard()
         {
-            cAppConfig SystemSettings = new cAppConfig();
+            SystemSettings = new cAppConfig();
+            Src = new cAppViews.SourceDetails();
+
             InitializeComponent();
-            InitializeDisplay();
             Tm_FadeIn.Start();
         }
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
+            InitializeDisplay();
             tpc_MenuPage.Width = 1250;
             cmb_Model_Template.Items.Clear();
             cmb_Model_Template.DataSource = sAppData.Templates;
@@ -50,6 +55,19 @@ namespace ActivityReportSystem.Forms
         // PROCESS DISPLAY
         public void InitializeDisplay()
         {
+
+            //Src.GetUpdates();
+            //Src.GetValues();
+
+            //Src.DgView = dgv_Sum_ComReq;
+            //Src.GetDetails();
+
+            //Src.DgView = dgv_Sum_PenReq;
+            //Src.GetDetails();
+
+            //Src.DgView = dgv_Model_List;
+            //Src.GetDetails();
+
             // Initialize Updates
             Db.UpdateDashboard();
             Clear(Ctrl.Objects);
