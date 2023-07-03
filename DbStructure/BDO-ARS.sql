@@ -31,10 +31,10 @@ CREATE TABLE `tblbdcomrequest` (
 /*Data for the table `tblbdcomrequest` */
 
 insert  into `tblbdcomrequest`(`Id`,`Template`,`TDelivered`,`TResolved`) values 
-(1,'INSTALLATION',7073,0),
+(1,'INSTALLATION',0,0),
 (2,'REPROGRAMMING',3,6),
-(3,'SERVICING',0,0),
-(4,'REPAIR',481,0);
+(3,'SERVICING',596,1725),
+(4,'REPAIR',0,0);
 
 /*Table structure for table `tblbdpending` */
 
@@ -60,7 +60,7 @@ insert  into `tblbdpending`(`Id`,`Template`,`Day7`,`Day730`,`Day30`) values
 (6,'    B. Defective Terminal (For Repair)',0,0,0),
 (7,'3. SERVICING',NULL,NULL,NULL),
 (8,'    A. c/o Citas - Ongoing Call-Out',0,0,0),
-(9,'    B. c/o Citas - For Repair',0,0,0),
+(9,'    B. c/o Citas - For Repair',0,0,294),
 (10,'    C. c/o BDO - Negative Call-Out / For Dispo',0,0,0);
 
 /*Table structure for table `tblbdpendingrep` */
@@ -82,16 +82,16 @@ insert  into `tblbdpendingrep`(`Id`,`Template`,`Day7`,`Day730`,`Day30`) values
 (1,'STEP 1. CALL-OUT & SHIPMENT FROM MERCHANT',NULL,NULL,NULL),
 (3,'    B. Awaiting Shipment from Merchant',0,0,0),
 (4,'STEP 2. DIAGNOSIS & JOB ORDER c/o CITAS',NULL,NULL,NULL),
-(5,'    A. For Diagnosis / Job Order',0,0,15),
+(5,'    A. For Diagnosis / Job Order',0,0,0),
 (8,'STEP 3. AWAITING MERCHANT PAYMENT',NULL,NULL,NULL),
-(9,'    A. Awaiting Payment - Sent Job Order',0,0,47),
+(9,'    A. Awaiting Payment - Sent Job Order',0,0,0),
 (10,'STEP 4. ONGOING REPAIR c/o CITAS',NULL,NULL,NULL),
-(11,'    A. Ongoing Repair (Paid by Merchant)',0,0,5),
+(11,'    A. Ongoing Repair (Paid by Merchant)',0,0,0),
 (12,'    B. Ongoing Repair  (Within Warranty)',0,0,0),
-(13,'    C. Ongoing Preparation (Re-test)',0,0,5),
+(13,'    C. Ongoing Preparation (Re-test)',0,0,0),
 (14,'STEP 5. DONE REPAIR - RELEASED TO COURIER',NULL,NULL,NULL),
-(15,'    A. Done Repair / Unit Received by Merchant',0,0,480),
-(16,'    B. In-transit to Merchant',0,0,8);
+(15,'    A. Done Repair / Unit Received by Merchant',0,0,0),
+(16,'    B. In-transit to Merchant',0,0,0);
 
 /*Table structure for table `tblbdpenrequest` */
 
@@ -111,8 +111,8 @@ CREATE TABLE `tblbdpenrequest` (
 insert  into `tblbdpenrequest`(`Id`,`Template`,`Day7`,`Day730`,`Day30`) values 
 (1,'INSTALLATION',0,0,0),
 (2,'REPROGRAMMING',0,0,3),
-(3,'SERVICING',0,0,0),
-(4,'REPAIR',0,0,104);
+(3,'SERVICING',0,0,381),
+(4,'REPAIR',0,0,0);
 
 /*Table structure for table `tblinstallation` */
 
@@ -171,7 +171,7 @@ CREATE TABLE `tblinventory` (
   `Warranty_Claim` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `Asset` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `Part_Num` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
-  `Model` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `Terminal_Model` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `Box_Num` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `Status` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `Date_Released_To_Repair` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
@@ -624,6 +624,10 @@ BEGIN
 					when "Info" then
 					
 						call `spViewSourceDetails`(p_StatementType, v_ViewBy, p_SearchValue);
+					
+					WHEN "Inventory" THEN
+					
+						CALL `spViewSourceDetails`(p_StatementType, v_ViewBy, p_SearchValue);
 
 				End case;
 				
@@ -1613,13 +1617,14 @@ BEGIN
 
 	IF (p_StatementType = "View") THEN
 	
-		SET v_SearchTable  = TRIM(SPLIT_STRING(p_SearchValue, '|' ,1));
-		SET v_SearchVal    = TRIM(SPLIT_STRING(p_SearchValue, '|' ,2));
 				
 		CASE p_SearchBy 
 		
 			
 			WHEN "Info" THEN
+			
+				SET v_SearchTable  = TRIM(SPLIT_STRING(p_SearchValue, '|' ,1));
+				SET v_SearchVal    = TRIM(SPLIT_STRING(p_SearchValue, '|' ,2));
 				
 				SET @Query = CONCAT('SELECT ID,
 							Terminal_Model,
@@ -1644,7 +1649,14 @@ BEGIN
 				PREPARE stmt FROM @Query;
 				EXECUTE stmt;
 				DEALLOCATE PREPARE stmt;
-
+				
+			
+			when "Inventory" then
+				
+				Select Count(*) as TotalInvent
+				from tblinventory
+				Where Terminal_Model Like Concat('%', p_SearchValue, '%');
+				
 
 		END CASE;
 				
@@ -1704,31 +1716,43 @@ BEGIN
 				LEFT JOIN (
 				
 				    SELECT
+				    
 					t.Source,
 					COUNT(*) AS Delivered
+					
 				    FROM (
+				    
 					SELECT 'INSTALLATION' AS Source, Terminal_Model, Status_Remarks FROM tblinstallation
+					
 					UNION ALL
 					SELECT 'REPROGRAMMING' AS Source, Terminal_Model, Status_Remarks FROM tblreprogramming
+					
 					UNION ALL
 					SELECT 'SERVICING' AS Source, Terminal_Model, Status_Remarks FROM tblservicing
+					
 					UNION ALL
 					SELECT 'REPAIR' AS Source, Terminal_Model, Status_Remarks FROM tblrepair
+					
 				    ) AS t
 				    
 				    WHERE (Status_Remarks IN ('Delivered', 'Picked Up'))
 					OR (Status_Remarks LIKE '%Done Repair%')
 					OR (Status_Remarks LIKE '%Done%')
 					OR (Status_Remarks LIKE '%Unit Received%')
+					
 				    GROUP BY t.Source
 				    
 				) AS d ON s.Source = d.Source
 				
 				LEFT JOIN (
+				
 				    SELECT
+				    
 					t.Source,
 					COUNT(*) AS Resolved
+					
 				    FROM (
+				    
 					SELECT 'INSTALLATION' AS Source, Terminal_Model, Status_Remarks FROM tblinstallation
 					UNION ALL
 					SELECT 'REPROGRAMMING' AS Source, Terminal_Model, Status_Remarks FROM tblreprogramming
@@ -1736,6 +1760,7 @@ BEGIN
 					SELECT 'SERVICING' AS Source, Terminal_Model, Status_Remarks FROM tblservicing
 					UNION ALL
 					SELECT 'REPAIR' AS Source, Terminal_Model, Status_Remarks FROM tblrepair
+					
 				    ) AS t
 				    
 				    WHERE Status_Remarks LIKE '%Resolved%'
@@ -1743,12 +1768,13 @@ BEGIN
 				    
 				) AS r ON s.Source = r.Source
 
-				WHERE EXISTS ( #Check if the Table Exist in every Tables
+				WHERE EXISTS (
 				    SELECT 1
 				    FROM tblinstallation
 				    WHERE Terminal_Model LIKE CONCAT('%', p_SearchValue, '%')
 				)
 				
+				OR s.Source = s.Source
 				ORDER BY FIELD(s.Source, 'INSTALLATION', 'REPROGRAMMING', 'SERVICING', 'REPAIR');
 
 
@@ -1762,41 +1788,46 @@ BEGIN
 				    COALESCE(t.`7-30Days`, 0) AS `7-30Days`,
 				    COALESCE(t.`30Days`, 0) AS `30Days`,
 				    COALESCE(t.`7Days`, 0) + COALESCE(t.`7-30Days`, 0) + COALESCE(t.`30Days`, 0) AS Total
+				    
 				FROM (
+				
 				    SELECT 'INSTALLATION' AS Source
+				    
 				    UNION ALL
 				    SELECT 'REPROGRAMMING' AS Source
+				    
 				    UNION ALL
 				    SELECT 'SERVICING' AS Source
+				    
 				    UNION ALL
 				    SELECT 'REPAIR' AS Source
+				    
 				) AS s
 				
 				LEFT JOIN (
+				
 				    SELECT
+				    
 					Source,
 					SUM(CASE WHEN DATEDIFF(CURDATE(), DATE_FORMAT(STR_TO_DATE(Date_Received, "%m-%d-%Y"), "%Y-%m-%d")) <= 7 THEN 1 ELSE 0 END) AS `7Days`,
 					SUM(CASE WHEN DATEDIFF(CURDATE(), DATE_FORMAT(STR_TO_DATE(Date_Received, "%m-%d-%Y"), "%Y-%m-%d")) BETWEEN 8 AND 30 THEN 1 ELSE 0 END) AS `7-30Days`,
 					SUM(CASE WHEN DATEDIFF(CURDATE(), DATE_FORMAT(STR_TO_DATE(Date_Received, "%m-%d-%Y"), "%Y-%m-%d")) > 30 THEN 1 ELSE 0 END) AS `30Days`
+				    
 				    FROM (
-					SELECT 'INSTALLATION' AS Source, Date_Received FROM tblinstallation WHERE STATUS IN ('Pending', 'Cancelled')
+				    
+					SELECT 'INSTALLATION' AS Source, Date_Received FROM tblinstallation WHERE `Status` IN ('Pending', 'Cancelled')
 					UNION ALL
-					SELECT 'REPROGRAMMING' AS Source, Date_Received FROM tblreprogramming WHERE STATUS IN ('Pending', 'Cancelled')
+					SELECT 'REPROGRAMMING' AS Source, Date_Received FROM tblreprogramming WHERE `Status` IN ('Pending', 'Cancelled')
 					UNION ALL
-					SELECT 'SERVICING' AS Source, Date_Received FROM tblservicing WHERE STATUS IN ('Pending', 'Cancelled')
+					SELECT 'SERVICING' AS Source, Date_Received FROM tblservicing WHERE `Status` IN ('Pending', 'Cancelled')
 					UNION ALL
-					SELECT 'REPAIR' AS Source, Date_Received FROM tblrepair WHERE STATUS IN ('Pending', 'Cancelled')
+					SELECT 'REPAIR' AS Source, Date_Received FROM tblrepair WHERE `Status` IN ('Pending', 'Cancelled')
+					
 				    ) AS combined
 				    
-				    WHERE EXISTS (
-				    SELECT 1
-				    FROM tblinstallation
-				    WHERE Terminal_Model LIKE CONCAT('%', p_SearchValue, '%')
-				    LIMIT 1
-				)
-				
 				  GROUP BY Source
 				) AS t ON s.Source = t.Source
+				
 				ORDER BY FIELD(s.Source, 'INSTALLATION', 'REPROGRAMMING', 'SERVICING', 'REPAIR');
 
 								
@@ -1867,17 +1898,17 @@ BEGIN
 				
 				
 				
-				
+
 					
 			WHEN "Status Summary" THEN
 			
 				SELECT 
 				
 				    s.Source,
-				    COALESCE(t.Completed, 0) AS Completed,
-				    COALESCE(t.Pending, 0) AS Pending,
-				    COALESCE(t.Cancelled, 0) AS Cancelled,
-				    COALESCE(t.Waiting, 0) AS Waiting,
+				    COALESCE(t.Completed, 0) AS `Completed`,
+				    COALESCE(t.Pending, 0) AS `Pending`,
+				    COALESCE(t.Cancelled, 0) AS `Cancelled`,
+				    COALESCE(t.Waiting, 0) AS `Waiting`,
 				    COALESCE(t.Completed, 0) + COALESCE(t.Pending, 0) + COALESCE(t.Cancelled, 0) AS Total
 				    
 				FROM (
@@ -1897,10 +1928,10 @@ BEGIN
 				    SELECT 
 				    
 					Source,
-					SUM(CASE WHEN `Status` LIKE '%Completed%' THEN 1 ELSE 0 END) AS Completed,
-					SUM(CASE WHEN `Status` LIKE '%Pending%' THEN 1 ELSE 0 END) AS Pending,
-					SUM(CASE WHEN `Status` LIKE '%Cancelled%' THEN 1 ELSE 0 END) AS Cancelled,
-					SUM(CASE WHEN Date_Received = '-' THEN 1 ELSE 0 END) AS Waiting
+					SUM(CASE WHEN `Status` LIKE '%Completed%' THEN 1 ELSE 0 END) AS `Completed`,
+					SUM(CASE WHEN `Status` LIKE '%Pending%' THEN 1 ELSE 0 END) AS `Pending`,
+					SUM(CASE WHEN `Status` LIKE '%Cancelled%' THEN 1 ELSE 0 END) AS `Cancelled`,
+					SUM(CASE WHEN Date_Received = '-' THEN 1 ELSE 0 END) AS `Waiting`
 					
 				    FROM (
 				    

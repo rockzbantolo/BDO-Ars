@@ -58,7 +58,8 @@ namespace ActivityReportSystem.Global
 
         public class Template
         {
-            public static string iTotal_Installation { get; set; }
+
+            public static int iTotal_Invent { get; set; }
 
             // Data Size
             public static int InstallSize { get; set; }

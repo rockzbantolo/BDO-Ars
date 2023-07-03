@@ -2,14 +2,12 @@
 using System.Linq;
 using System.Windows.Forms;
 using System.Diagnostics;
-using MySql.Data.MySqlClient;
 using ActivityReportSystem.Function;
-using ActivityReportSystem.Database;
 using ActivityReportSystem.Global;
 using ActivityReportSystem.Forms;
-using ActivityReportSystem.AppActivity.View;
 using System.IO;
 using AppAction;
+using ActivityReportSystem.AppActivity.Controller;
 
 namespace ActivityReportSystem
 {
@@ -17,7 +15,7 @@ namespace ActivityReportSystem
     {
 
         private cFunctions cFunc  = new cFunctions();
-        private cAppViews Db = new cAppViews();
+        private cSource Src = new cSource();
 
         protected override CreateParams CreateParams
         {
@@ -35,6 +33,7 @@ namespace ActivityReportSystem
             lb_Imp_Selected.Text = string.Empty;
             Tm_FadeIn.Start();
         }
+
 
         private void frmMImport_KeyDown(object sender, KeyEventArgs e)
         {
@@ -56,6 +55,7 @@ namespace ActivityReportSystem
             }
         }
 
+
         // BUTTONS 
         private void btnImpSave_Click(object sender, EventArgs e)
         {
@@ -68,10 +68,11 @@ namespace ActivityReportSystem
 
             Cursor.Current = Cursors.WaitCursor;
 
-            Db.SaveCsvFile(sAppData.Installation);
-            Db.SaveCsvFile(sAppData.Reprogramming);
-            Db.SaveCsvFile(sAppData.Servicing);
-            Db.SaveCsvFile(sAppData.Repair);
+            Src.ImportDetails(sAppData.Installation);
+            Src.ImportDetails(sAppData.Reprogramming);
+            Src.ImportDetails(sAppData.Servicing);
+            Src.ImportDetails(sAppData.Repair);
+            Src.ImportDetails(sAppData.Inventory);
 
             Cursor.Current = Cursors.Default;
 
@@ -101,6 +102,7 @@ namespace ActivityReportSystem
             Tm_FadeOut.Start();
         }
 
+
         // LINE NUMBER
         private void grdImpInstallation_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -127,6 +129,7 @@ namespace ActivityReportSystem
             cFunctions.Grid.AddGridLineNo(sender, e, this.Font); // ADD LINE #
         }
 
+
         // BORDER SHADOW
         private void pn_Imp_BxTemplate_Paint(object sender, PaintEventArgs e)
         {
@@ -142,6 +145,7 @@ namespace ActivityReportSystem
         {
             cFunctions.Effects.BorderShadow(e, pn_Imp_BxDataClick, 0, 0, 3, 3);
         }
+
 
         #region Doublick Event Dgv
         // VIEW SELECTED
@@ -183,39 +187,57 @@ namespace ActivityReportSystem
         }
         #endregion
 
+
         // OPEN FILE DIALOG BUTTONS
         private void btn_Imp_OpenInstallation_Click(object sender, EventArgs e)
         {
-            Db.ProcessFile(tx_Imp_InstallationFile, sAppData.Installation);
+            Src.SearchValue = sAppData.Installation;
+            Src.ImportProcess(tx_Imp_InstallationFile);
+
+            //Db.ProcessFile(tx_Imp_InstallationFile, sAppData.Installation);
         }
 
         private void btn_Imp_OpenReprog_Click(object sender, EventArgs e)
         {
-            Db.ProcessFile(tx_Imp_ReprogFile, sAppData.Reprogramming);
+            Src.SearchValue = sAppData.Reprogramming;
+            Src.ImportProcess(tx_Imp_ReprogFile);
+
+            //Db.ProcessFile(tx_Imp_ReprogFile, sAppData.Reprogramming);
         }
 
         private void btn_Imp_OpenServicing_Click(object sender, EventArgs e)
         {
-            Db.ProcessFile(tx_Imp_ServicingFile, sAppData.Servicing);
+            Src.SearchValue = sAppData.Servicing;
+            Src.ImportProcess(tx_Imp_ServicingFile);
+
+            //Db.ProcessFile(tx_Imp_ServicingFile, sAppData.Servicing);
         }
 
         private void btn_Imp_OpenRepair_Click(object sender, EventArgs e)
         {
-            Db.ProcessFile(tx_Imp_RepairFile, sAppData.Repair);
+            Src.SearchValue = sAppData.Repair;
+            Src.ImportProcess(tx_Imp_RepairFile);
+
+            //Db.ProcessFile(tx_Imp_RepairFile, sAppData.Repair);
         }
 
         private void btn_Imp_OpenInvent_Click(object sender, EventArgs e)
         {
-            Db.ProcessFile(tx_Imp_Inventory, sAppData.Inventory);
+            Src.SearchValue = sAppData.Inventory;
+            Src.ImportProcess(tx_Imp_Inventory);
+
+            //Db.ProcessFile(tx_Imp_Inventory, sAppData.Inventory);
         }
+
 
         // REFRESH DASHBOARD
         public void Refresh_Dashboard()
         {
             Debug.WriteLine(" ---- Refresh Dashboard -----");
-            frmDashboard Dashboard = new frmDashboard();
-            Dashboard.InitializeDisplay();
+            frmDashboard mainForm = Application.OpenForms.OfType<frmDashboard>().FirstOrDefault();
+            mainForm?.InitializeDisplay();
         }
+
 
         // CLEAR OBJ
         public void ClearObj()
@@ -235,6 +257,7 @@ namespace ActivityReportSystem
 
             Refresh_Dashboard();
         }
+
 
         // EFFECTS
         private void Tm_FadeIn_Tick(object sender, EventArgs e)

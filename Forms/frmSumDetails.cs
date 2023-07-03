@@ -1,28 +1,20 @@
 ﻿using System;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-using MySql.Data.MySqlClient;
 using ActivityReportSystem.Function;
-using ActivityReportSystem.Database;
-using ActivityReportSystem.Global;
-using System.Collections.Generic;
-using System.Reflection;
-using ActivityReportSystem.AppActivity.View;
+using ActivityReportSystem.AppActivity.Controller;
 
 namespace ActivityReportSystem.Forms
 {
     public partial class frmSumDetails : Form
     {
-        private cFunctions Func = new cFunctions();      
-        private cAppViews Db = new cAppViews();
-        //private cAppViews.SourceDetails Source = new cAppViews.SourceDetails();
+        private cFunctions Func  = new cFunctions();
+        private cSource    Src   = new cSource();
+        private cTerminal  Trmnl = new cTerminal();
+
 
         public string TableName { get; set; }
         public string HeaderName { get; set; }
+
 
         public frmSumDetails()
         {
@@ -44,22 +36,19 @@ namespace ActivityReportSystem.Forms
                 dgv_Duplicate.Columns[1].Visible = false;
             }
 
-            // Set Controls.
-            //Source.Lbl_Completed = lb_Com;
-            //Source.Lbl_Pending   = lb_Pen;
-            //Source.Lbl_Cancelled = lb_Can;
-            //Source.Lbl_Waiting   = lb_Wait;
-            //Source.DgView      = dgv_Details;
-            //Source.SearchValue = TableName;
-
             // Get Details
-            //Source.GetDetails();
+            Src.SearchValue = TableName;
+            Src.GetDetails(dgv_Details);
 
-            // Get Source Details
-            Db.ViewSourceDetails(dgv_Details, lb_Com, lb_Pen, lb_Can, lb_Wait, TableName);
+            // Set Controls
+            lb_Com.Text  = Src.Completed;
+            lb_Pen.Text  = Src.Pending;
+            lb_Can.Text  = Src.Cancelled;
+            lb_Wait.Text = Src.Waiting;
 
-            // Get Duplicate Details
-            Db.ViewTerminalDetails(dgv_Duplicate, TableName);
+            // Get Duplicate
+            Trmnl.SearchValue = TableName;
+            Trmnl.GetDetails(dgv_Duplicate);
 
             Cursor.Current = Cursors.Default;
         }
@@ -113,11 +102,25 @@ namespace ActivityReportSystem.Forms
         {
             Cursor.Current = Cursors.WaitCursor;
 
+            // Set Controls.
+            lb_Com.Text = Src.Completed;
+            lb_Pen.Text = Src.Pending;
+            lb_Can.Text = Src.Cancelled;
+            lb_Wait.Text = Src.Waiting;
+            Src.SearchValue = TableName + cFunctions.Pipe + Tx_Search.Text;
+
+            // Get Details
+            Src.GetDetails(dgv_Details);
+
+            // Get Duplicate
+            Trmnl.SearchValue = TableName;
+            Trmnl.GetDetails(dgv_Duplicate);
+
             // Get Table Details
-            Db.ViewSourceDetails(dgv_Details, lb_Com, lb_Pen, lb_Can, lb_Wait, TableName + " | " + Tx_Search.Text);
+            //Db.ViewSourceDetails(dgv_Details, lb_Com, lb_Pen, lb_Can, lb_Wait, TableName + " | " + Tx_Search.Text);
 
             // Get Duplicate Request
-            Db.ViewTerminalDetails(dgv_Duplicate, TableName);
+            //Db.ViewTerminalDetails(dgv_Duplicate, TableName);
 
             Cursor.Current = Cursors.Default;
         }

@@ -1,27 +1,25 @@
 ﻿using System;
-using System.Data;
 using AppAction;
 using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-using MySql.Data.MySqlClient;
 using ActivityReportSystem.Function;
 using ActivityReportSystem.Database;
 using ActivityReportSystem.Global;
-using ActivityReportSystem.AppActivity.View;
+using ActivityReportSystem.AppActivity.Controller;
 
 namespace ActivityReportSystem.Forms
 {
 
     public partial class frmDashboard : Form
     {
-        cAppViews.SourceDetails Src;
-        cAppConfig SystemSettings;
+        cSource Src = new cSource();
+        cTerminal Trmnl = new cTerminal();
+        //cAppViews.SourceDetails Src;
+        //cAppViews.TerminalDetails Trmnl;
+        cAppConfig SysSettings;
+        cFunctions Func = new cFunctions();
+        //cAppViews Db;
 
-        private cFunctions Func = new cFunctions();
-        cAppViews Db = new cAppViews();
 
         // OVERIDE TO REDUCE LAG AND FLICKERING
         protected override CreateParams CreateParams
@@ -37,9 +35,7 @@ namespace ActivityReportSystem.Forms
  
         public frmDashboard()
         {
-            SystemSettings = new cAppConfig();
-            Src = new cAppViews.SourceDetails();
-
+            SysSettings = new cAppConfig();
             InitializeComponent();
             Tm_FadeIn.Start();
         }
@@ -55,28 +51,14 @@ namespace ActivityReportSystem.Forms
         // PROCESS DISPLAY
         public void InitializeDisplay()
         {
+            Src.GetUpdates();
+            Src.GetValues();
 
-            //Src.GetUpdates();
-            //Src.GetValues();
-
-            //Src.DgView = dgv_Sum_ComReq;
-            //Src.GetDetails();
-
-            //Src.DgView = dgv_Sum_PenReq;
-            //Src.GetDetails();
-
-            //Src.DgView = dgv_Model_List;
-            //Src.GetDetails();
-
-            // Initialize Updates
-            Db.UpdateDashboard();
             Clear(Ctrl.Objects);
 
-            // Dashboard Data
-            Db.ViewTerminalDetails(dgv_Sum_ComReq, "");
-            Db.ViewTerminalDetails(dgv_Sum_PenReq, "");
-            Db.ViewTerminalDetails(dgv_Model_List, "");
-            Db.LoadValues();
+            Trmnl.GetDetails(dgv_Sum_ComReq);
+            Trmnl.GetDetails(dgv_Sum_PenReq);
+            Trmnl.GetDetails(dgv_Model_List);
 
             InitValues();
         }
@@ -311,7 +293,13 @@ namespace ActivityReportSystem.Forms
             }
 
             // Get Details
-            Db.SearchTerminalHistory(dgv_Model_Status_List, cmb_Model_Template, dtp_Model_From, dtp_Model_To);
+            Trmnl.Template  = cmb_Model_Template.Text.ToString();
+            Trmnl.DateFrom  = dtp_Model_From;
+            Trmnl.DateTo    = dtp_Model_To;
+
+            Trmnl.GetHistory(dgv_Model_Status_List);
+
+            //Db.SearchTerminalHistory(dgv_Model_Status_List, cmb_Model_Template, dtp_Model_From, dtp_Model_To);
 
             dgv_Model_Status_List.ClearSelection();        
         }
@@ -442,7 +430,19 @@ namespace ActivityReportSystem.Forms
 
         private void cmb_Model_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Db.ViewTerminalDetails(dgv_Model_List, cmb_Model.Text.ToString());
+            Trmnl.SearchValue = cmb_Model.Text.ToString();
+            Trmnl.GetDetails(dgv_Model_List);
+
+            // Get Inventory Count
+            Src.SearchValue = cmb_Model.Text.ToString();
+            Src.GetInventory();
+
+            // Get Values
+            Src.GetValues();
+
+            // Display Value
+            lb_Total_Deployed.Text  = Src.TotalDeployed.ToString();
+            lb_Total_Stocks.Text    = Src.TotalStocks.ToString();
         }
 
     #region Effects

@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Data;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using ActivityReportSystem.Function;
-using ActivityReportSystem.Database;
-using ActivityReportSystem.Global;
 using System.Drawing;
-using System.Text;
-using ActivityReportSystem.AppActivity.View;
+using System.Windows.Forms;
+using ActivityReportSystem.Function;
+using ActivityReportSystem.AppActivity.Controller;
 
 namespace ActivityReportSystem.Forms
 {
     public partial class frmBreakdown : Form
     {
-        private cFunctions cFunc = new cFunctions();
-        cAppViews Db = new cAppViews();
+        cFunctions cFunc = new cFunctions();
+        cTerminal Trmnl  = new cTerminal();
 
         public frmBreakdown()
         {
@@ -23,7 +18,7 @@ namespace ActivityReportSystem.Forms
 
         private void frmBreakdown_Load(object sender, EventArgs e)
         {
-            Db.ViewTerminalDetails(dgv_Status_Remarks, "");
+            Trmnl.GetDetails(dgv_Status_Remarks);
             Tm_FadeIn.Start();
         }
 
@@ -105,7 +100,8 @@ namespace ActivityReportSystem.Forms
 
         private void Btn_Search_Click(object sender, EventArgs e)
         {
-            Db.ViewTerminalDetails(dgv_Status_Remarks, Tx_Search.Text);
+            Trmnl.SearchValue = Tx_Search.Text;
+            Trmnl.GetDetails(dgv_Status_Remarks);
         }
     }
 }
