@@ -12,9 +12,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ActivityReportSystem.AppActivity.Controller
+namespace ActivityReportSystem.AppActivity.Model
 {
-    class cSource
+    class cSourceCtrl
     {
         cSpModel Sp = new cSpModel();
 
@@ -25,7 +25,7 @@ namespace ActivityReportSystem.AppActivity.Controller
 
         public int TotalStocks { get; set; }
         public int TotalDeployed { get; set; }
-        public string SearchValue { get; set; } = string.Empty;
+        public string SearchValue { get; set; }
 
         private string csvPath { get; set; }
         private string insPath { get; set; }

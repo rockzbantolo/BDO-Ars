@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Windows.Forms;
 using ActivityReportSystem.Function;
-using ActivityReportSystem.AppActivity.Controller;
+using ActivityReportSystem.AppActivity.Model;
 
 namespace ActivityReportSystem.Forms
 {
-    public partial class frmSumDetails : Form
+    public partial class frmViewDetails : Form
     {
         private cFunctions Func  = new cFunctions();
-        private cSource    Src   = new cSource();
-        private cTerminal  Trmnl = new cTerminal();
+        private cSourceCtrl    Src   = new cSourceCtrl();
+        private cTerminalCtrl  Trmnl = new cTerminalCtrl();
 
 
         public string TableName { get; set; }
         public string HeaderName { get; set; }
 
 
-        public frmSumDetails()
+        public frmViewDetails()
         {
             InitializeComponent();
             cFunctions.Effects.setDoubleBuffer(dgv_Details, true);

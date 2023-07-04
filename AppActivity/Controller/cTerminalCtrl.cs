@@ -10,9 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ActivityReportSystem.AppActivity.Controller
+namespace ActivityReportSystem.AppActivity.Model
 {
-    class cTerminal
+    class cTerminalCtrl
     {
         cSpModel Sp = new cSpModel();
 
@@ -20,7 +20,7 @@ namespace ActivityReportSystem.AppActivity.Controller
         public DateTimePicker DateFrom { get; set; }
         public DateTimePicker DateTo { get; set; }
         public string HeaderName { get; set; }
-        public string SearchValue { get; set; } = string.Empty;
+        public string SearchValue { get; set; }
 
 
         public void GetDetails(DataGridView obj)

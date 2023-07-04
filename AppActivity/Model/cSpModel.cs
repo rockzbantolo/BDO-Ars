@@ -7,25 +7,22 @@ using AppAction;
 using System.Windows.Forms;
 using System;
 
-namespace ActivityReportSystem.AppActivity.Controller
+namespace ActivityReportSystem.AppActivity.Model
 {
     class cSpModel
     {
-
         private MySqlConnection Conn;
         private MySqlCommand Cmd;
         private MySqlDataReader Reader;
 
         public string StatementType { get; set; }
         public string SearchBy { get; set; }
-        public string SearchValue { get; set; }
-        public string Sql { get; set; }
+        public string SearchValue { get; set; } = "";
+        public string Sql { get; set; } = "";
 
 
         public DataTable ExecuteQuery(Perform Action)
         {
-            DataTable Result = new DataTable();
-
             #region Debug Details
 
             Debug.WriteLine(cFunctions.Format.LineSeperator);
@@ -47,8 +44,7 @@ namespace ActivityReportSystem.AppActivity.Controller
             switch (Action)
             {
                 case Perform.View:
-                    Result = CollectionDetails();
-                    break;
+                    return CollectionDetails();
 
                 case Perform.Update:
                     CollectionUpdate();
@@ -67,7 +63,7 @@ namespace ActivityReportSystem.AppActivity.Controller
                     break;
             }
 
-            return Result;
+            return null;
         }
 
         private DataTable CollectionDetails()
@@ -75,67 +71,64 @@ namespace ActivityReportSystem.AppActivity.Controller
             DataTable dataTable = new DataTable();
 
             using (Conn = new MySqlConnection(sAppData.ConnectionString))
+
+            using (Cmd = new MySqlCommand("spCollectionDetails", Conn))
             {
-                Conn.Open();
+                Cmd.CommandType = CommandType.StoredProcedure;
 
-                Debug.WriteLine(string.Concat("CALL spCollectionDetails ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", SearchValue, "\"", ")"));
-                Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
+                // Add parameters
+                Cmd.Parameters.AddWithValue("@p_StatementType", StatementType);
+                Cmd.Parameters.AddWithValue("@p_SearchBy", SearchBy);
+                Cmd.Parameters.AddWithValue("@p_SearchValue", SearchValue);
 
-                using (Cmd = new MySqlCommand("spCollectionDetails", Conn))
+                try
                 {
-                    Cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Add parameters
-                    Cmd.Parameters.AddWithValue("@p_StatementType", StatementType);
-                    Cmd.Parameters.AddWithValue("@p_SearchBy", SearchBy);
-                    Cmd.Parameters.AddWithValue("@p_SearchValue", SearchValue);
-
-                    try
+                    Conn.Open();
+                    using (Reader = Cmd.ExecuteReader())
                     {
-                        using (Reader = Cmd.ExecuteReader())
-                        {
-                            dataTable.Load(Reader);
-                        }
+                        dataTable.Load(Reader);
+                        Debug.WriteLine($"SUCCESS - CALL spCollectionDetails (\"{StatementType}\", \"{SearchBy}\", \"{SearchValue}\")");
+                        Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
+                    }
 
-                        return dataTable;
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine("Error Executing Details Procedure: " + ex.Message);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"FAILED - CALL spCollectionDetails (\"{StatementType}\", \"{SearchBy}\", \"{SearchValue}\")");
+                    Debug.WriteLine("Error Executing Details Procedure: " + ex.Message);
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
                 }
             }
 
-            return dataTable; // Return an empty DataTable in case of an error
+            return dataTable;
         }
 
         private void CollectionUpdate()
         {
             using (Conn = new MySqlConnection(sAppData.ConnectionString))
+
+            using (Cmd = new MySqlCommand("spCollectionUpdate", Conn))
             {
-                Conn.Open();
+                Cmd.CommandType = CommandType.StoredProcedure;
 
-                Debug.WriteLine(string.Concat("CALL spCollectionUpdate ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", SearchValue, "\"", ")"));
-                Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
+                // Add parameters to the command
+                Cmd.Parameters.AddWithValue("@StatementType", StatementType);
+                Cmd.Parameters.AddWithValue("@SearchBy", SearchBy);
+                Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
+                Cmd.Parameters.AddWithValue("@pSql", Sql);
 
-                using (Cmd = new MySqlCommand("spCollectionUpdate", Conn))
+                try
                 {
-                    Cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Add parameters to the command
-                    Cmd.Parameters.AddWithValue("@StatementType", StatementType);
-                    Cmd.Parameters.AddWithValue("@SearchBy", SearchBy);
-                    Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
-                    Cmd.Parameters.AddWithValue("@pSql", Sql);
-
-                    try
-                    {
-                        Cmd.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine("Error Executing Update Procedure: " + ex.Message);
-                    }
+                    Conn.Open();
+                    Cmd.ExecuteNonQuery();
+                    Debug.WriteLine($"SUCCESS - CALL spCollectionUpdate (\"{StatementType}\", \"{SearchBy}\", \"{SearchValue}\")");
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"FAILED - CALL spCollectionUpdate (\"{StatementType}\", \"{SearchBy}\", \"{SearchValue}\")");
+                    Debug.WriteLine("Error Executing Update Procedure: " + ex.Message);
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
                 }
             }
@@ -144,77 +137,71 @@ namespace ActivityReportSystem.AppActivity.Controller
         private void CollectionInsert()
         {
             using (Conn = new MySqlConnection(sAppData.ConnectionString))
+
+            using (Cmd = new MySqlCommand("spCollectionInsert", Conn))
             {
+                Cmd.CommandType = CommandType.StoredProcedure;
 
-                Conn.Open();
+                Cmd.Parameters.AddWithValue("@StatementType", StatementType);
+                Cmd.Parameters.AddWithValue("@SearchBy", SearchBy);
+                Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
+                Cmd.Parameters.AddWithValue("@pSQL", Sql);
 
-                Debug.WriteLine(string.Concat("CALL spCollectionInsert ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", Sql, "\"", ")"));
-                Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
+                var outLastInsertIDParam = Cmd.Parameters.Add("@outLastInsertID", MySqlDbType.VarChar, 255);
+                outLastInsertIDParam.Direction = ParameterDirection.Output;
 
-                using (Cmd = new MySqlCommand("spCollectionInsert", Conn))
+                var outErrorMessageParam = Cmd.Parameters.Add("@outErrorMessage", MySqlDbType.VarChar, 255);
+                outErrorMessageParam.Direction = ParameterDirection.Output;
+
+                try
                 {
+                    Conn.Open();
+                    Cmd.ExecuteNonQuery();
 
-                    Cmd.CommandType = CommandType.StoredProcedure;
+                    Debug.WriteLine($"SUCCESS - CALL spCollectionInsert (\"{StatementType}\", \"{SearchBy}\", \"{Sql}\")");
+                    Debug.WriteLine("Last Inserted ID : " + sAppData.Database.outLastInserted + "\n");
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
-                    Cmd.Parameters.AddWithValue("@StatementType", StatementType);
-                    Cmd.Parameters.AddWithValue("@SearchBy", SearchBy);
-                    Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
-                    Cmd.Parameters.AddWithValue("@pSQL", Sql);
-
-                    Cmd.Parameters.Add("@outLastInsertID", MySqlDbType.VarChar, 255).Direction = ParameterDirection.Output;
-                    Cmd.Parameters.Add("@outErrorMessage", MySqlDbType.VarChar, 255).Direction = ParameterDirection.Output;
-
-                    try
-                    {
-
-                        Cmd.ExecuteNonQuery();
-
-                        // Retrieve the value of the output parameter
-                        sAppData.Database.outLastInserted = Convert.ToInt32(Cmd.Parameters["outLastInsertID"].Value);
-                        sAppData.Database.outMessage = Cmd.Parameters["@outErrorMessage"].Value.ToString().Trim();
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                        Debug.WriteLine("Error Executing Insert Procedure: " + ex.Message);
-                    }
+                    // Retrieve the value of the output parameter
+                    sAppData.Database.outLastInserted = Convert.ToInt32(outLastInsertIDParam.Value);
+                    sAppData.Database.outMessage      = outErrorMessageParam.Value.ToString().Trim();
                 }
-
-                Debug.WriteLine("Last Inserted ID : " + sAppData.Database.outLastInserted + "\n");
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"FAILED - CALL spCollectionInsert (\"{StatementType}\", \"{SearchBy}\", \"{Sql}\")");
+                    Debug.WriteLine("Error Executing Insert Procedure: " + ex.Message);
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
+                }
             }
         }
 
         private void CollectionDelete()
         {
             using (Conn = new MySqlConnection(sAppData.ConnectionString))
+
+            using (Cmd = new MySqlCommand("spCollectionDelete", Conn))
             {
-                Conn.Open();
+                Cmd.CommandType = CommandType.StoredProcedure;
 
-                Debug.WriteLine(string.Concat("CALL spCollectionDelete ", "(\"", StatementType, "\"", ",\"", SearchBy, "\"", ",\"", SearchValue, "\"", ")"));
-                Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
+                // Add parameters to the command
+                Cmd.Parameters.AddWithValue("@StatementType", StatementType);
+                Cmd.Parameters.AddWithValue("@SearchBy", SearchBy);
+                Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
 
-                using (Cmd = new MySqlCommand("spCollectionDelete", Conn))
+                try
                 {
-                    Cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Add parameters to the command
-                    Cmd.Parameters.AddWithValue("@StatementType", StatementType);
-                    Cmd.Parameters.AddWithValue("@SearchBy", SearchBy);
-                    Cmd.Parameters.AddWithValue("@SearchValue", SearchValue);
-
-                    try
-                    {
-                        Cmd.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine("Error Executing Delete Procedure: " + ex.Message);
-                    }
-
+                    Conn.Open();
+                    Cmd.ExecuteNonQuery();
+                    Debug.WriteLine($"SUCCESS - CALL spCollectionDelete (\"{StatementType}\", \"{SearchBy}\", \"{SearchValue}\")");
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"FAILED - CALL spCollectionDelete (\"{StatementType}\", \"{SearchBy}\", \"{SearchValue}\")");
+                    Debug.WriteLine("Error Executing Delete Procedure: " + ex.Message);
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
                 }
             }
-
         }
 
         private void CollectionImport()
@@ -294,56 +281,62 @@ namespace ActivityReportSystem.AppActivity.Controller
 
             }
 
-            using (Conn = new MySqlConnection(sAppData.ConnectionString))
+            try
             {
-                Conn.Open();
-
-                var loader = new MySqlBulkLoader(Conn)
+                using (Conn = new MySqlConnection(sAppData.ConnectionString))
                 {
-                    TableName = tableName,
-                    FieldTerminator = ",",
-                    LineTerminator = "\n",
-                    FileName = Sql,
-                    Local = true,
-                    NumberOfLinesToSkip = 1, // Ignore 1 line (header)
-                    FieldQuotationCharacter = '\0', // Disable field quotation
-                    FieldQuotationOptional = false // Make field quotation mandatory
-                };
+                    Conn.Open();
 
-                loader.Columns.AddRange(columnNames);
+                    var loader = new MySqlBulkLoader(Conn)
+                    {
+                        TableName = tableName,
+                        FieldTerminator = ",",
+                        LineTerminator = "\n",
+                        FileName = Sql,
+                        Local = true,
+                        NumberOfLinesToSkip = 1,        // Ignore 1 line (header)
+                        FieldQuotationCharacter = '\0', // Disable field quotation
+                        FieldQuotationOptional = false  // Make field quotation mandatory
+                    };
 
-                Debug.WriteLine($"- Loaded {loader.Load()} rows into {tableName} table.");
-                Debug.WriteLine("- Data imported successfully.");
-                Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
+                    loader.Columns.AddRange(columnNames);
+
+                    Debug.WriteLine($"- Loaded {loader.Load()} rows into {tableName} table.");
+                    Debug.WriteLine("- Data imported successfully.");
+                    Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error importing data: " + ex.Message);
             }
         }
 
-        private DataSet GetReportWithStoredProcedure(int ReportID, string StatementType, string SearchBy, string SearchValue, string StoreProcedureName)
+        public DataSet GetReportWithSp(string ReportHeader, string SpName)
         {
             DataSet rtnDs = new DataSet();
 
-            Debug.WriteLine("--GetReportWithStoredProcedure--");
-            Debug.WriteLine("ReportID=" + ReportID);
-            Debug.WriteLine("StatementType=" + StatementType);
-            Debug.WriteLine("SearchBy=" + SearchBy);
-            Debug.WriteLine("SearchValue=" + SearchValue);
-            Debug.WriteLine("StoreProcedureName=" + StoreProcedureName);
-            Debug.WriteLine("--GetReportWithStoredProcedure--");
-            Debug.WriteLine("--Stored Procedure(Report) --");
-
-            string spString = "CALL " + StoreProcedureName + "('" + StatementType + "','" + SearchBy + "','" + SearchValue + "');";
+            Debug.WriteLine("--Get Report--");
+            Debug.WriteLine("Report Header: " + ReportHeader);
+            Debug.WriteLine("StatementType: " + StatementType);
+            Debug.WriteLine("SearchBy: " + SearchBy);
+            Debug.WriteLine("SearchValue: " + SearchValue);
+            Debug.WriteLine("StoreProcedureName: " + SpName);
+ 
+            string spString = "CALL " + SpName + "('" + StatementType + "','" + SearchBy + "','" + SearchValue + "');";
             Debug.WriteLine(spString);
 
             cFunctions.getRequestTime("GetReportWithStoredProcedure->Start");
 
             try
             {
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(StoreProcedureName, Conn))
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(SpName, Conn))
                 {
                     adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                     adapter.SelectCommand.Parameters.Add("@p_StatementType", MySqlDbType.VarChar).Value = StatementType;
-                    adapter.SelectCommand.Parameters.Add("@p_SearchBy", MySqlDbType.VarChar).Value = SearchBy;
-                    adapter.SelectCommand.Parameters.Add("@p_SearchValue", MySqlDbType.VarChar).Value = SearchValue;
+                    adapter.SelectCommand.Parameters.Add("@p_SearchBy",      MySqlDbType.VarChar).Value = SearchBy;
+                    adapter.SelectCommand.Parameters.Add("@p_SearchValue",   MySqlDbType.VarChar).Value = SearchValue;
+
                     adapter.SelectCommand.CommandTimeout = int.Parse(sAppData.Database.sTimeOut); // Setting command timeout to 1800 seconds (30 minutes)
 
                     adapter.Fill(rtnDs);
@@ -351,7 +344,7 @@ namespace ActivityReportSystem.AppActivity.Controller
             }
             catch (MySqlException ex)
             {
-                MySQLErrorHandlerMessage(ex, "GetReportWithStoredProcedure", StoreProcedureName, StatementType, "", SearchBy, SearchValue, "", "");
+                MySQLErrorHandlerMessage(ex, "Get Sp Report", SpName, StatementType, "", SearchBy, SearchValue, "", "");
                 throw;
             }
 

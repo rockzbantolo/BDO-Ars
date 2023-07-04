@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ActivityReportSystem.Forms
 {
-    public partial class frmSumDate : Form
+    public partial class frmViewSumDate : Form
     {
-        public frmSumDate()
+        public frmViewSumDate()
         {
             InitializeComponent();
         }

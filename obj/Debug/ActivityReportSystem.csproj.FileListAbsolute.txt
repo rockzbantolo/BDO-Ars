@@ -309,20 +309,6 @@ C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\Activity Report System.applica
 C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\Activity Report System.exe
 C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\Activity Report System.pdb
 C:\Users\rockz\Documents\GitHub\BDO-MIS\obj\Debug\ActivityReportSystem.csprojResolveAssemblyReference.cache
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.csprojResolveAssemblyReference.cache
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmBreakdown.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmLogin.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmMain.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.frmMImport.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmReportViewer.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmShadow.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmSumDate.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmSumDetails.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmDashboard.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Properties.Resources.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.ucCards.resources
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.csproj.GenerateResource.Cache
-C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\Activity Report System.exe.licenses
 C:\Users\rockz\Documents\GitHub\BDO-ARS\bin\Debug\Report\rptDashboard.rpt
 C:\Users\rockz\Documents\GitHub\BDO-ARS\bin\Debug\Report\rptDashboard.cs
 C:\Users\rockz\Documents\GitHub\BDO-ARS\bin\Debug\Activity Report System.exe.config
@@ -368,8 +354,23 @@ C:\Users\rockz\Documents\GitHub\BDO-ARS\bin\Debug\System.Memory.xml
 C:\Users\rockz\Documents\GitHub\BDO-ARS\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\rockz\Documents\GitHub\BDO-ARS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\rockz\Documents\GitHub\BDO-ARS\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmViewBreakdown.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmLogin.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmMain.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.frmMImport.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmReportViewer.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmShadow.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmViewSumDate.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmViewDetails.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmDashboard.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Properties.Resources.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.ucCards.resources
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.csproj.GenerateResource.Cache
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\Activity Report System.exe.licenses
 C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\Activity Report System.TrustInfo.xml
 C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\Activity Report System.exe.manifest
 C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\Activity Report System.application
 C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\Activity Report System.exe
 C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\Activity Report System.pdb
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.csprojResolveAssemblyReference.cache
+C:\Users\rockz\Documents\GitHub\BDO-ARS\obj\Debug\ActivityReportSystem.Forms.frmViewReports.resources

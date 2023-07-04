@@ -7,7 +7,7 @@ using ActivityReportSystem.Global;
 using ActivityReportSystem.Forms;
 using System.IO;
 using AppAction;
-using ActivityReportSystem.AppActivity.Controller;
+using ActivityReportSystem.AppActivity.Model;
 
 namespace ActivityReportSystem
 {
@@ -15,7 +15,7 @@ namespace ActivityReportSystem
     {
 
         private cFunctions cFunc  = new cFunctions();
-        private cSource Src = new cSource();
+        private cSourceCtrl Src = new cSourceCtrl();
 
         protected override CreateParams CreateParams
         {

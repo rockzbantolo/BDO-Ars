@@ -2,16 +2,16 @@
 using System.Drawing;
 using System.Windows.Forms;
 using ActivityReportSystem.Function;
-using ActivityReportSystem.AppActivity.Controller;
+using ActivityReportSystem.AppActivity.Model;
 
 namespace ActivityReportSystem.Forms
 {
-    public partial class frmBreakdown : Form
+    public partial class frmViewBreakdown : Form
     {
         cFunctions cFunc = new cFunctions();
-        cTerminal Trmnl  = new cTerminal();
+        cTerminalCtrl Trmnl  = new cTerminalCtrl();
 
-        public frmBreakdown()
+        public frmViewBreakdown()
         {
             InitializeComponent();
         }

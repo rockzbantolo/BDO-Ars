@@ -131,15 +131,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppActivity\Controller\cSource.cs" />
-    <Compile Include="AppActivity\Controller\cTerminal.cs" />
-    <Compile Include="AppActivity\Model\SProcedure.cs" />
+    <Compile Include="AppActivity\Controller\cSourceCtrl.cs" />
+    <Compile Include="AppActivity\Controller\cTerminalCtrl.cs" />
+    <Compile Include="AppActivity\Model\cSpModel.cs" />
     <Compile Include="AppDatabase\Connection.cs" />
-    <Compile Include="Forms\frmBreakdown.cs">
+    <Compile Include="Forms\frmViewBreakdown.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmBreakdown.Designer.cs">
-      <DependentUpon>frmBreakdown.cs</DependentUpon>
+    <Compile Include="Forms\frmViewBreakdown.Designer.cs">
+      <DependentUpon>frmViewBreakdown.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmLogin.cs">
       <SubType>Form</SubType>
@@ -153,11 +153,11 @@
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmMImport.cs">
+    <Compile Include="Forms\frmImports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmMImport.Designer.cs">
-      <DependentUpon>frmMImport.cs</DependentUpon>
+    <Compile Include="Forms\frmImports.Designer.cs">
+      <DependentUpon>frmImports.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmReportViewer.cs">
       <SubType>Form</SubType>
@@ -171,17 +171,23 @@
     <Compile Include="Forms\frmShadow.Designer.cs">
       <DependentUpon>frmShadow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSumDate.cs">
+    <Compile Include="Forms\frmViewReports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSumDate.Designer.cs">
-      <DependentUpon>frmSumDate.cs</DependentUpon>
+    <Compile Include="Forms\frmViewReports.Designer.cs">
+      <DependentUpon>frmViewReports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSumDetails.cs">
+    <Compile Include="Forms\frmViewSumDate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSumDetails.Designer.cs">
-      <DependentUpon>frmSumDetails.cs</DependentUpon>
+    <Compile Include="Forms\frmViewSumDate.Designer.cs">
+      <DependentUpon>frmViewSumDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmViewDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmViewDetails.Designer.cs">
+      <DependentUpon>frmViewDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmDashboard.cs">
       <SubType>Form</SubType>
@@ -212,8 +218,8 @@
     <Compile Include="UserControl\ucCards.Designer.cs">
       <DependentUpon>ucCards.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\frmBreakdown.resx">
-      <DependentUpon>frmBreakdown.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmViewBreakdown.resx">
+      <DependentUpon>frmViewBreakdown.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLogin.resx">
@@ -223,8 +229,8 @@
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMImport.resx">
-      <DependentUpon>frmMImport.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmImports.resx">
+      <DependentUpon>frmImports.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReportViewer.resx">
@@ -235,12 +241,15 @@
       <DependentUpon>frmShadow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSumDate.resx">
-      <DependentUpon>frmSumDate.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmViewReports.resx">
+      <DependentUpon>frmViewReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmViewSumDate.resx">
+      <DependentUpon>frmViewSumDate.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSumDetails.resx">
-      <DependentUpon>frmSumDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmViewDetails.resx">
+      <DependentUpon>frmViewDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>

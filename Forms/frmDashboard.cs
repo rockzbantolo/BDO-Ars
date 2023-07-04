@@ -5,20 +5,18 @@ using System.Windows.Forms;
 using ActivityReportSystem.Function;
 using ActivityReportSystem.Database;
 using ActivityReportSystem.Global;
-using ActivityReportSystem.AppActivity.Controller;
+using ActivityReportSystem.AppActivity.Model;
 
 namespace ActivityReportSystem.Forms
 {
 
     public partial class frmDashboard : Form
     {
-        cSource Src = new cSource();
-        cTerminal Trmnl = new cTerminal();
-        //cAppViews.SourceDetails Src;
-        //cAppViews.TerminalDetails Trmnl;
         cAppConfig SysSettings;
-        cFunctions Func = new cFunctions();
-        //cAppViews Db;
+
+        cSourceCtrl   Src   = new cSourceCtrl();
+        cTerminalCtrl Trmnl = new cTerminalCtrl();
+        cFunctions    Func  = new cFunctions();
 
 
         // OVERIDE TO REDUCE LAG AND FLICKERING
@@ -250,7 +248,7 @@ namespace ActivityReportSystem.Forms
         private void btn_Breakdown_Click(object sender, EventArgs e)
         {
             frmShadow ShadowBG = new frmShadow();
-            using (frmBreakdown breakdown = new frmBreakdown())
+            using (frmViewBreakdown breakdown = new frmViewBreakdown())
             {
                 ShadowBG.Location = this.Location;
                 ShadowBG.Size = this.Size;
@@ -331,7 +329,7 @@ namespace ActivityReportSystem.Forms
         private void lk_View_Installation_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmShadow ShadowBG = new frmShadow();
-            using (frmSumDetails installation = new frmSumDetails())
+            using (frmViewDetails installation = new frmViewDetails())
             {
                 ShadowBG.Location = this.Location;
                 ShadowBG.Size = this.Size;
@@ -351,7 +349,7 @@ namespace ActivityReportSystem.Forms
             sAppData.TemplateName = sAppData.Reprogramming;
 
             frmShadow ShadowBG = new frmShadow();
-            using (frmSumDetails reprogram = new frmSumDetails())
+            using (frmViewDetails reprogram = new frmViewDetails())
             {
                 ShadowBG.Location = this.Location;
                 ShadowBG.Size = this.Size;
@@ -371,7 +369,7 @@ namespace ActivityReportSystem.Forms
             sAppData.TemplateName = sAppData.Servicing;
 
             frmShadow ShadowBG = new frmShadow();
-            using (frmSumDetails servicing = new frmSumDetails())
+            using (frmViewDetails servicing = new frmViewDetails())
             {
                 ShadowBG.Location = this.Location;
                 ShadowBG.Size = this.Size;
@@ -391,7 +389,7 @@ namespace ActivityReportSystem.Forms
             sAppData.TemplateName = sAppData.Repair;
 
             frmShadow ShadowBG = new frmShadow();
-            using (frmSumDetails repair = new frmSumDetails())
+            using (frmViewDetails repair = new frmViewDetails())
             {
                 ShadowBG.Location = this.Location;
                 ShadowBG.Size = this.Size;
