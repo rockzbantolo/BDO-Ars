@@ -42,7 +42,7 @@ namespace ActivityReportSystem.Forms
             string ReportPath = "";
             string reportFullPath = "";
 
-            ReportPath = sAppData.FilePath.Report;
+            ReportPath = AppData.FilePath.Report;
             reportFullPath = Path.Combine(ReportPath, "rptDashboard.rpt");
             Debug.WriteLine("reportFullPath=" + reportFullPath);
 

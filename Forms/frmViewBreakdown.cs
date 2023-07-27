@@ -18,6 +18,7 @@ namespace ActivityReportSystem.Forms
 
         private void frmBreakdown_Load(object sender, EventArgs e)
         {
+            cFunctions.Effects.setDoubleBuffer(dgv_Status_Remarks, true);
             Trmnl.GetDetails(dgv_Status_Remarks);
             Tm_FadeIn.Start();
         }

@@ -68,11 +68,11 @@ namespace ActivityReportSystem
 
             Cursor.Current = Cursors.WaitCursor;
 
-            Src.ImportDetails(sAppData.Installation);
-            Src.ImportDetails(sAppData.Reprogramming);
-            Src.ImportDetails(sAppData.Servicing);
-            Src.ImportDetails(sAppData.Repair);
-            Src.ImportDetails(sAppData.Inventory);
+            Src.ImportDetails(AppData.Installation);
+            Src.ImportDetails(AppData.Reprogramming);
+            Src.ImportDetails(AppData.Servicing);
+            Src.ImportDetails(AppData.Repair);
+            Src.ImportDetails(AppData.Inventory);
 
             Cursor.Current = Cursors.Default;
 
@@ -191,7 +191,7 @@ namespace ActivityReportSystem
         // OPEN FILE DIALOG BUTTONS
         private void btn_Imp_OpenInstallation_Click(object sender, EventArgs e)
         {
-            Src.SearchValue = sAppData.Installation;
+            Src.SearchValue = AppData.Installation;
             Src.ImportProcess(tx_Imp_InstallationFile);
 
             //Db.ProcessFile(tx_Imp_InstallationFile, sAppData.Installation);
@@ -199,7 +199,7 @@ namespace ActivityReportSystem
 
         private void btn_Imp_OpenReprog_Click(object sender, EventArgs e)
         {
-            Src.SearchValue = sAppData.Reprogramming;
+            Src.SearchValue = AppData.Reprogramming;
             Src.ImportProcess(tx_Imp_ReprogFile);
 
             //Db.ProcessFile(tx_Imp_ReprogFile, sAppData.Reprogramming);
@@ -207,7 +207,7 @@ namespace ActivityReportSystem
 
         private void btn_Imp_OpenServicing_Click(object sender, EventArgs e)
         {
-            Src.SearchValue = sAppData.Servicing;
+            Src.SearchValue = AppData.Servicing;
             Src.ImportProcess(tx_Imp_ServicingFile);
 
             //Db.ProcessFile(tx_Imp_ServicingFile, sAppData.Servicing);
@@ -215,7 +215,7 @@ namespace ActivityReportSystem
 
         private void btn_Imp_OpenRepair_Click(object sender, EventArgs e)
         {
-            Src.SearchValue = sAppData.Repair;
+            Src.SearchValue = AppData.Repair;
             Src.ImportProcess(tx_Imp_RepairFile);
 
             //Db.ProcessFile(tx_Imp_RepairFile, sAppData.Repair);
@@ -223,7 +223,7 @@ namespace ActivityReportSystem
 
         private void btn_Imp_OpenInvent_Click(object sender, EventArgs e)
         {
-            Src.SearchValue = sAppData.Inventory;
+            Src.SearchValue = AppData.Inventory;
             Src.ImportProcess(tx_Imp_Inventory);
 
             //Db.ProcessFile(tx_Imp_Inventory, sAppData.Inventory);
@@ -234,7 +234,7 @@ namespace ActivityReportSystem
         public void Refresh_Dashboard()
         {
             Debug.WriteLine(" ---- Refresh Dashboard -----");
-            frmDashboard mainForm = Application.OpenForms.OfType<frmDashboard>().FirstOrDefault();
+            frmMain mainForm = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
             mainForm?.InitializeDisplay();
         }
 

@@ -70,7 +70,7 @@ namespace ActivityReportSystem.AppActivity.Model
         {
             DataTable dataTable = new DataTable();
 
-            using (Conn = new MySqlConnection(sAppData.ConnectionString))
+            using (Conn = new MySqlConnection(AppData.ConnectionString))
 
             using (Cmd = new MySqlCommand("spCollectionDetails", Conn))
             {
@@ -105,7 +105,7 @@ namespace ActivityReportSystem.AppActivity.Model
 
         private void CollectionUpdate()
         {
-            using (Conn = new MySqlConnection(sAppData.ConnectionString))
+            using (Conn = new MySqlConnection(AppData.ConnectionString))
 
             using (Cmd = new MySqlCommand("spCollectionUpdate", Conn))
             {
@@ -136,7 +136,7 @@ namespace ActivityReportSystem.AppActivity.Model
 
         private void CollectionInsert()
         {
-            using (Conn = new MySqlConnection(sAppData.ConnectionString))
+            using (Conn = new MySqlConnection(AppData.ConnectionString))
 
             using (Cmd = new MySqlCommand("spCollectionInsert", Conn))
             {
@@ -159,12 +159,12 @@ namespace ActivityReportSystem.AppActivity.Model
                     Cmd.ExecuteNonQuery();
 
                     Debug.WriteLine($"SUCCESS - CALL spCollectionInsert (\"{StatementType}\", \"{SearchBy}\", \"{Sql}\")");
-                    Debug.WriteLine("Last Inserted ID : " + sAppData.Database.outLastInserted + "\n");
+                    Debug.WriteLine("Last Inserted ID : " + AppData.Database.outLastInserted + "\n");
                     Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
 
                     // Retrieve the value of the output parameter
-                    sAppData.Database.outLastInserted = Convert.ToInt32(outLastInsertIDParam.Value);
-                    sAppData.Database.outMessage      = outErrorMessageParam.Value.ToString().Trim();
+                    AppData.Database.outLastInserted = Convert.ToInt32(outLastInsertIDParam.Value);
+                    AppData.Database.outMessage      = outErrorMessageParam.Value.ToString().Trim();
                 }
                 catch (Exception ex)
                 {
@@ -177,7 +177,7 @@ namespace ActivityReportSystem.AppActivity.Model
 
         private void CollectionDelete()
         {
-            using (Conn = new MySqlConnection(sAppData.ConnectionString))
+            using (Conn = new MySqlConnection(AppData.ConnectionString))
 
             using (Cmd = new MySqlCommand("spCollectionDelete", Conn))
             {
@@ -211,7 +211,7 @@ namespace ActivityReportSystem.AppActivity.Model
 
             switch (SearchBy)
             {
-                case sAppData.Installation:
+                case AppData.Installation:
                     tableName = "tblinstallation";
                     columnNames = new string[]
                     { "Merchant_ID", "Terminal_ID", "Merchant_Name", "Address", "Municipality",
@@ -224,7 +224,7 @@ namespace ActivityReportSystem.AppActivity.Model
                         "Aging_Bracket", "All_Card_Test", "Reason", "SLA", "Reason_Failed_SLA" };
                     break;
 
-                case sAppData.Reprogramming:
+                case AppData.Reprogramming:
                     tableName = "tblreprogramming";
                     columnNames = new string[]
                     { "Requested_By", "Merchant_Name", "Terminal_ID", "Merchant_ID", "Serial_No",
@@ -237,7 +237,7 @@ namespace ActivityReportSystem.AppActivity.Model
                         "Reason", "Terminal_Model" };
                     break;
 
-                case sAppData.Servicing:
+                case AppData.Servicing:
                     tableName = "tblservicing";
                     columnNames = new string[]
                     { "Case_Referral", "Merchant_Name", "Terminal_ID", "Merchant_ID", "Merchant_Rep",
@@ -252,7 +252,7 @@ namespace ActivityReportSystem.AppActivity.Model
                         "Terminal_Model" };
                     break;
 
-                case sAppData.Repair:
+                case AppData.Repair:
                     tableName = "tblrepair";
                     columnNames = new string[]
                     { "Case_Referral", "Serial_No", "Merchant_ID", "Terminal_ID", "Merchant_Name",
@@ -265,7 +265,7 @@ namespace ActivityReportSystem.AppActivity.Model
                         "1st_Callback", "2nd_Callback", "3rd_Callback", "Aging_Bracket", "Terminal_Model"};
                     break;
 
-                case sAppData.Inventory:
+                case AppData.Inventory:
                     tableName = "tblinventory";
                     columnNames = new string[]
                     { "Serial_No", "Date_Delivered_Received", "Date_Wc_Expire", "Warranty_Claim",
@@ -283,7 +283,7 @@ namespace ActivityReportSystem.AppActivity.Model
 
             try
             {
-                using (Conn = new MySqlConnection(sAppData.ConnectionString))
+                using (Conn = new MySqlConnection(AppData.ConnectionString))
                 {
                     Conn.Open();
 
@@ -337,7 +337,7 @@ namespace ActivityReportSystem.AppActivity.Model
                     adapter.SelectCommand.Parameters.Add("@p_SearchBy",      MySqlDbType.VarChar).Value = SearchBy;
                     adapter.SelectCommand.Parameters.Add("@p_SearchValue",   MySqlDbType.VarChar).Value = SearchValue;
 
-                    adapter.SelectCommand.CommandTimeout = int.Parse(sAppData.Database.sTimeOut); // Setting command timeout to 1800 seconds (30 minutes)
+                    adapter.SelectCommand.CommandTimeout = int.Parse(AppData.Database.sTimeOut); // Setting command timeout to 1800 seconds (30 minutes)
 
                     adapter.Fill(rtnDs);
                 }

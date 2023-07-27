@@ -29,39 +29,43 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pn_Menu = new System.Windows.Forms.Panel();
             this.btn_Maximize = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -70,9 +74,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pn_MenuHeader = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.msHeader = new System.Windows.Forms.MenuStrip();
             this.Ms_File = new System.Windows.Forms.ToolStripMenuItem();
             this.Tsm_Import = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSource = new System.Windows.Forms.ToolStripMenuItem();
             this.Ms_Monitoring = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.Tsm_Dashboard = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +88,8 @@
             this.Tsm_Servicing = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.Tsm_Repair = new System.Windows.Forms.ToolStripMenuItem();
+            this.breakdownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSummary = new System.Windows.Forms.ToolStripMenuItem();
             this.Ms_Reports = new System.Windows.Forms.ToolStripMenuItem();
             this.Tsm_Source = new System.Windows.Forms.ToolStripMenuItem();
             this.installationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,6 +99,8 @@
             this.servicingToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.installationToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmReportView = new System.Windows.Forms.ToolStripMenuItem();
             this.Ms_Settings = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -99,9 +108,6 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.apiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pn_PenSum_Body = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.chrt_Bdo_Display = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pn_Card_Repair = new System.Windows.Forms.Panel();
             this.pb_Bdo_Repair = new System.Windows.Forms.PictureBox();
@@ -160,7 +166,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dtp_Model_To = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.pn_MP200_Body = new System.Windows.Forms.Panel();
+            this.pn_TerminalHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_Model = new System.Windows.Forms.ComboBox();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -171,8 +177,42 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.lb_Total_Deployed = new System.Windows.Forms.Label();
+            this.pn_SummaryBody = new System.Windows.Forms.Panel();
+            this.pn_TotalSumBody = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lb_C4 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lb_C3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lb_C2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lb_C1 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.lb_ComSum = new System.Windows.Forms.Label();
+            this.chrt_Bdo_Summary = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lb_PenSum = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.panel53 = new System.Windows.Forms.Panel();
+            this.panel52 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.chrt_Bdo_Display = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.bne_MainBody = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.label43 = new System.Windows.Forms.Label();
+            this.Tm_FadeOut = new System.Windows.Forms.Timer(this.components);
+            this.Tm_FadeIn = new System.Windows.Forms.Timer(this.components);
+            this.bne_pn_Lookup_Body = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bne_dgv_Model_List = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bne_SummaryBody = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bne_Bdo_Servicing = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bne_Bdo_Reprogram = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bne_Bdo_Installation = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bnd_Menu = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bne_Bdo_Repair = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bne_dgv_Bdo_ComReq = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bne_dgv_Summary_PenReq = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.pn_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Maximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Close)).BeginInit();
@@ -180,10 +220,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pn_MenuHeader.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.msHeader.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.pn_PenSum_Body.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chrt_Bdo_Display)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.pn_Card_Repair.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Bdo_Repair)).BeginInit();
@@ -205,8 +243,12 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.pn_Lookup_Body.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Model_Status_List)).BeginInit();
-            this.pn_MP200_Body.SuspendLayout();
+            this.pn_TerminalHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.pn_SummaryBody.SuspendLayout();
+            this.pn_TotalSumBody.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chrt_Bdo_Summary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chrt_Bdo_Display)).BeginInit();
             this.SuspendLayout();
             // 
             // pn_Menu
@@ -260,6 +302,7 @@
             this.btn_Close.TabIndex = 334;
             this.btn_Close.TabStop = false;
             this.btn_Close.Zoom = 10;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // btn_Minimize
             // 
@@ -274,6 +317,7 @@
             this.btn_Minimize.TabIndex = 330;
             this.btn_Minimize.TabStop = false;
             this.btn_Minimize.Zoom = 10;
+            this.btn_Minimize.Click += new System.EventHandler(this.btn_Minimize_Click);
             // 
             // pictureBox2
             // 
@@ -296,31 +340,34 @@
             this.pn_MenuHeader.Name = "pn_MenuHeader";
             this.pn_MenuHeader.Size = new System.Drawing.Size(1280, 42);
             this.pn_MenuHeader.TabIndex = 336;
+            this.pn_MenuHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_MenuHeader_Paint);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.menuStrip1);
+            this.panel1.Controls.Add(this.msHeader);
             this.panel1.Location = new System.Drawing.Point(12, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1256, 37);
             this.panel1.TabIndex = 1;
             // 
-            // menuStrip1
+            // msHeader
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msHeader.BackColor = System.Drawing.Color.White;
+            this.msHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msHeader.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msHeader.GripMargin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.msHeader.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Ms_File,
             this.Ms_Monitoring,
             this.Ms_Reports,
             this.Ms_Settings});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1256, 37);
-            this.menuStrip1.TabIndex = 0;
+            this.msHeader.Location = new System.Drawing.Point(0, 0);
+            this.msHeader.Name = "msHeader";
+            this.msHeader.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.msHeader.Size = new System.Drawing.Size(1256, 37);
+            this.msHeader.TabIndex = 0;
             // 
             // Ms_File
             // 
@@ -334,16 +381,28 @@
             // 
             // Tsm_Import
             // 
+            this.Tsm_Import.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmSource});
             this.Tsm_Import.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Tsm_Import.Name = "Tsm_Import";
-            this.Tsm_Import.Size = new System.Drawing.Size(109, 22);
+            this.Tsm_Import.Size = new System.Drawing.Size(152, 22);
             this.Tsm_Import.Text = "&Import";
+            // 
+            // tsmSource
+            // 
+            this.tsmSource.BackColor = System.Drawing.Color.White;
+            this.tsmSource.Name = "tsmSource";
+            this.tsmSource.Size = new System.Drawing.Size(152, 22);
+            this.tsmSource.Text = "&Source";
+            this.tsmSource.Click += new System.EventHandler(this.tsmSource_Click);
             // 
             // Ms_Monitoring
             // 
             this.Ms_Monitoring.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator4,
-            this.Tsm_Dashboard});
+            this.Tsm_Dashboard,
+            this.toolStripSeparator10,
+            this.breakdownToolStripMenuItem});
             this.Ms_Monitoring.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ms_Monitoring.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Ms_Monitoring.Name = "Ms_Monitoring";
@@ -353,7 +412,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
             // Tsm_Dashboard
             // 
@@ -365,8 +424,9 @@
             this.Tsm_Servicing,
             this.toolStripSeparator3,
             this.Tsm_Repair});
+            this.Tsm_Dashboard.Enabled = false;
             this.Tsm_Dashboard.Name = "Tsm_Dashboard";
-            this.Tsm_Dashboard.Size = new System.Drawing.Size(131, 22);
+            this.Tsm_Dashboard.Size = new System.Drawing.Size(152, 22);
             this.Tsm_Dashboard.Text = "&Dashboard";
             // 
             // Tsm_Installation
@@ -408,13 +468,30 @@
             this.Tsm_Repair.Size = new System.Drawing.Size(159, 22);
             this.Tsm_Repair.Text = "&Repair";
             // 
+            // breakdownToolStripMenuItem
+            // 
+            this.breakdownToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmSummary});
+            this.breakdownToolStripMenuItem.Name = "breakdownToolStripMenuItem";
+            this.breakdownToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.breakdownToolStripMenuItem.Text = "&Breakdown";
+            // 
+            // tsmSummary
+            // 
+            this.tsmSummary.Name = "tsmSummary";
+            this.tsmSummary.Size = new System.Drawing.Size(123, 22);
+            this.tsmSummary.Text = "&Summary";
+            this.tsmSummary.Click += new System.EventHandler(this.tsmSummary_Click);
+            // 
             // Ms_Reports
             // 
             this.Ms_Reports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Tsm_Source});
+            this.Tsm_Source,
+            this.toolStripSeparator11,
+            this.dashboardToolStripMenuItem});
             this.Ms_Reports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Ms_Reports.Name = "Ms_Reports";
-            this.Ms_Reports.Size = new System.Drawing.Size(59, 33);
+            this.Ms_Reports.Size = new System.Drawing.Size(63, 33);
             this.Ms_Reports.Text = "&Reports";
             // 
             // Tsm_Source
@@ -427,48 +504,64 @@
             this.servicingToolStripMenuItem2,
             this.toolStripSeparator9,
             this.installationToolStripMenuItem2});
+            this.Tsm_Source.Enabled = false;
             this.Tsm_Source.Name = "Tsm_Source";
-            this.Tsm_Source.Size = new System.Drawing.Size(109, 22);
+            this.Tsm_Source.Size = new System.Drawing.Size(152, 22);
             this.Tsm_Source.Text = "&Source";
             // 
             // installationToolStripMenuItem1
             // 
             this.installationToolStripMenuItem1.Name = "installationToolStripMenuItem1";
-            this.installationToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
+            this.installationToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.installationToolStripMenuItem1.Text = "&Installation";
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(156, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(162, 6);
             // 
             // servicingToolStripMenuItem1
             // 
             this.servicingToolStripMenuItem1.Name = "servicingToolStripMenuItem1";
-            this.servicingToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
+            this.servicingToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.servicingToolStripMenuItem1.Text = "&Reprogramming";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(156, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(162, 6);
             // 
             // servicingToolStripMenuItem2
             // 
             this.servicingToolStripMenuItem2.Name = "servicingToolStripMenuItem2";
-            this.servicingToolStripMenuItem2.Size = new System.Drawing.Size(159, 22);
+            this.servicingToolStripMenuItem2.Size = new System.Drawing.Size(165, 22);
             this.servicingToolStripMenuItem2.Text = "&Servicing";
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(156, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(162, 6);
             // 
             // installationToolStripMenuItem2
             // 
             this.installationToolStripMenuItem2.Name = "installationToolStripMenuItem2";
-            this.installationToolStripMenuItem2.Size = new System.Drawing.Size(159, 22);
+            this.installationToolStripMenuItem2.Size = new System.Drawing.Size(165, 22);
             this.installationToolStripMenuItem2.Text = "&Repair";
+            // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmReportView});
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dashboardToolStripMenuItem.Text = "&Dashboard";
+            // 
+            // tsmReportView
+            // 
+            this.tsmReportView.Name = "tsmReportView";
+            this.tsmReportView.Size = new System.Drawing.Size(152, 22);
+            this.tsmReportView.Text = "&Report View";
+            this.tsmReportView.Click += new System.EventHandler(this.tsmReportView_Click);
             // 
             // Ms_Settings
             // 
@@ -478,6 +571,7 @@
             this.systemToolStripMenuItem,
             this.toolStripSeparator6,
             this.apiToolStripMenuItem});
+            this.Ms_Settings.Enabled = false;
             this.Ms_Settings.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ms_Settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Ms_Settings.Name = "Ms_Settings";
@@ -487,29 +581,29 @@
             // databaseToolStripMenuItem
             // 
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.databaseToolStripMenuItem.Text = "&Database";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
             // 
             // systemToolStripMenuItem
             // 
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
-            this.systemToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.systemToolStripMenuItem.Text = "&System";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
             // 
             // apiToolStripMenuItem
             // 
             this.apiToolStripMenuItem.Name = "apiToolStripMenuItem";
-            this.apiToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.apiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.apiToolStripMenuItem.Text = "&Api";
             // 
             // tableLayoutPanel1
@@ -520,14 +614,14 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.14794F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.85206F));
-            this.tableLayoutPanel1.Controls.Add(this.pn_PenSum_Body, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.pn_SummaryBody, 1, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 151);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(40, 30, 40, 20);
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(40, 30, 40, 30);
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.43972F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.56028F));
@@ -535,105 +629,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1280, 809);
             this.tableLayoutPanel1.TabIndex = 337;
-            // 
-            // pn_PenSum_Body
-            // 
-            this.pn_PenSum_Body.BackColor = System.Drawing.Color.White;
-            this.pn_PenSum_Body.Controls.Add(this.label18);
-            this.pn_PenSum_Body.Controls.Add(this.chrt_Bdo_Display);
-            this.pn_PenSum_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_PenSum_Body.Location = new System.Drawing.Point(541, 35);
-            this.pn_PenSum_Body.Margin = new System.Windows.Forms.Padding(8, 5, 8, 8);
-            this.pn_PenSum_Body.Name = "pn_PenSum_Body";
-            this.pn_PenSum_Body.Size = new System.Drawing.Size(691, 278);
-            this.pn_PenSum_Body.TabIndex = 2;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label18.Location = new System.Drawing.Point(18, 16);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(117, 30);
-            this.label18.TabIndex = 12;
-            this.label18.Text = "TOTAL PENDING BY\r\nTEMPLATE";
-            // 
-            // chrt_Bdo_Display
-            // 
-            this.chrt_Bdo_Display.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chrt_Bdo_Display.BorderlineColor = System.Drawing.Color.Gray;
-            chartArea2.AxisX.LabelAutoFitMaxFontSize = 9;
-            chartArea2.AxisX.LabelAutoFitMinFontSize = 7;
-            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisX.LineColor = System.Drawing.Color.DarkGray;
-            chartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea2.AxisX.MajorTickMark.LineWidth = 2;
-            chartArea2.AxisX.MajorTickMark.Size = 0.5F;
-            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisX2.LabelAutoFitMaxFontSize = 7;
-            chartArea2.AxisX2.LabelStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisX2.LineColor = System.Drawing.Color.DarkGray;
-            chartArea2.AxisX2.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisY.LabelAutoFitMaxFontSize = 8;
-            chartArea2.AxisY.LabelAutoFitMinFontSize = 7;
-            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea2.AxisY.LineColor = System.Drawing.Color.DarkGray;
-            chartArea2.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            chartArea2.AxisY.MajorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisY.MajorTickMark.Size = 0.5F;
-            chartArea2.AxisY.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
-            chartArea2.AxisY2.LabelAutoFitMaxFontSize = 7;
-            chartArea2.AxisY2.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisY2.LineColor = System.Drawing.Color.DarkGray;
-            chartArea2.AxisY2.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisY2.MajorTickMark.LineWidth = 3;
-            chartArea2.AxisY2.MajorTickMark.Size = 3F;
-            chartArea2.Name = "ChartArea1";
-            this.chrt_Bdo_Display.ChartAreas.Add(chartArea2);
-            legend2.BackColor = System.Drawing.Color.Transparent;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend2.Enabled = false;
-            legend2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            legend2.IsEquallySpacedItems = true;
-            legend2.IsTextAutoFit = false;
-            legend2.ItemColumnSpacing = 30;
-            legend2.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
-            legend2.MaximumAutoSize = 40F;
-            legend2.Name = "Legend1";
-            legend2.TitleFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend2.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.GradientLine;
-            this.chrt_Bdo_Display.Legends.Add(legend2);
-            this.chrt_Bdo_Display.Location = new System.Drawing.Point(9, 68);
-            this.chrt_Bdo_Display.Margin = new System.Windows.Forms.Padding(2);
-            this.chrt_Bdo_Display.Name = "chrt_Bdo_Display";
-            series2.BorderColor = System.Drawing.Color.White;
-            series2.ChartArea = "ChartArea1";
-            series2.Color = System.Drawing.Color.Crimson;
-            series2.CustomProperties = "PixelPointWidth=60, EmptyPointValue=Zero, PointWidth=0.5, LabelStyle=Top";
-            series2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.MarkerBorderColor = System.Drawing.Color.Black;
-            series2.MarkerColor = System.Drawing.Color.White;
-            series2.MarkerSize = 6;
-            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series2.Name = "PENDING";
-            series2.ShadowColor = System.Drawing.Color.Silver;
-            series2.ShadowOffset = 1;
-            series2.YValuesPerPoint = 4;
-            this.chrt_Bdo_Display.Series.Add(series2);
-            this.chrt_Bdo_Display.Size = new System.Drawing.Size(670, 199);
-            this.chrt_Bdo_Display.TabIndex = 11;
-            this.chrt_Bdo_Display.TabStop = false;
             // 
             // tableLayoutPanel2
             // 
@@ -650,7 +645,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(487, 285);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(487, 281);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // pn_Card_Repair
@@ -661,11 +656,12 @@
             this.pn_Card_Repair.Controls.Add(this.lb_RepairTotal);
             this.pn_Card_Repair.Controls.Add(this.label30);
             this.pn_Card_Repair.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_Card_Repair.Location = new System.Drawing.Point(249, 148);
-            this.pn_Card_Repair.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
+            this.pn_Card_Repair.Location = new System.Drawing.Point(248, 145);
+            this.pn_Card_Repair.Margin = new System.Windows.Forms.Padding(5, 5, 3, 3);
             this.pn_Card_Repair.Name = "pn_Card_Repair";
-            this.pn_Card_Repair.Size = new System.Drawing.Size(235, 134);
+            this.pn_Card_Repair.Size = new System.Drawing.Size(236, 133);
             this.pn_Card_Repair.TabIndex = 11;
+            this.pn_Card_Repair.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_Card_Repair_Paint);
             // 
             // pb_Bdo_Repair
             // 
@@ -673,7 +669,7 @@
             this.pb_Bdo_Repair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             this.pb_Bdo_Repair.BackgroundImage = global::ActivityReportSystem.Properties.Resources.ic_repair_48;
             this.pb_Bdo_Repair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_Bdo_Repair.Location = new System.Drawing.Point(189, 8);
+            this.pb_Bdo_Repair.Location = new System.Drawing.Point(190, 8);
             this.pb_Bdo_Repair.Margin = new System.Windows.Forms.Padding(2);
             this.pb_Bdo_Repair.Name = "pb_Bdo_Repair";
             this.pb_Bdo_Repair.Size = new System.Drawing.Size(36, 32);
@@ -686,10 +682,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(150)))), ((int)(((byte)(133)))));
             this.panel6.Controls.Add(this.lk_View_Repair);
-            this.panel6.Location = new System.Drawing.Point(2, 89);
+            this.panel6.Location = new System.Drawing.Point(1, 87);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(234, 47);
+            this.panel6.Size = new System.Drawing.Size(232, 43);
             this.panel6.TabIndex = 328;
             // 
             // lk_View_Repair
@@ -708,6 +704,7 @@
             this.lk_View_Repair.TabStop = true;
             this.lk_View_Repair.Text = "View Details";
             this.lk_View_Repair.VisitedLinkColor = System.Drawing.Color.Yellow;
+            this.lk_View_Repair.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lk_View_Repair_LinkClicked);
             // 
             // lb_RepairTotal
             // 
@@ -715,7 +712,7 @@
             this.lb_RepairTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             this.lb_RepairTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RepairTotal.ForeColor = System.Drawing.Color.White;
-            this.lb_RepairTotal.Location = new System.Drawing.Point(20, 55);
+            this.lb_RepairTotal.Location = new System.Drawing.Point(20, 52);
             this.lb_RepairTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_RepairTotal.Name = "lb_RepairTotal";
             this.lb_RepairTotal.Size = new System.Drawing.Size(91, 30);
@@ -742,11 +739,12 @@
             this.pn_Card_Serv.Controls.Add(this.lb_ServTotal);
             this.pn_Card_Serv.Controls.Add(this.label23);
             this.pn_Card_Serv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_Card_Serv.Location = new System.Drawing.Point(3, 148);
-            this.pn_Card_Serv.Margin = new System.Windows.Forms.Padding(3, 6, 6, 3);
+            this.pn_Card_Serv.Location = new System.Drawing.Point(3, 145);
+            this.pn_Card_Serv.Margin = new System.Windows.Forms.Padding(3, 5, 5, 3);
             this.pn_Card_Serv.Name = "pn_Card_Serv";
-            this.pn_Card_Serv.Size = new System.Drawing.Size(234, 134);
+            this.pn_Card_Serv.Size = new System.Drawing.Size(235, 133);
             this.pn_Card_Serv.TabIndex = 10;
+            this.pn_Card_Serv.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_Card_Serv_Paint);
             // 
             // pb_Bdo_Servicing
             // 
@@ -754,7 +752,7 @@
             this.pb_Bdo_Servicing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
             this.pb_Bdo_Servicing.BackgroundImage = global::ActivityReportSystem.Properties.Resources.ic_servicing_48;
             this.pb_Bdo_Servicing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_Bdo_Servicing.Location = new System.Drawing.Point(190, 8);
+            this.pb_Bdo_Servicing.Location = new System.Drawing.Point(191, 8);
             this.pb_Bdo_Servicing.Margin = new System.Windows.Forms.Padding(2);
             this.pb_Bdo_Servicing.Name = "pb_Bdo_Servicing";
             this.pb_Bdo_Servicing.Size = new System.Drawing.Size(36, 32);
@@ -767,10 +765,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
             this.panel5.Controls.Add(this.lk_View_Service);
-            this.panel5.Location = new System.Drawing.Point(2, 89);
+            this.panel5.Location = new System.Drawing.Point(1, 87);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(233, 47);
+            this.panel5.Size = new System.Drawing.Size(231, 43);
             this.panel5.TabIndex = 327;
             // 
             // lk_View_Service
@@ -789,6 +787,7 @@
             this.lk_View_Service.TabStop = true;
             this.lk_View_Service.Text = "View Details";
             this.lk_View_Service.VisitedLinkColor = System.Drawing.Color.Yellow;
+            this.lk_View_Service.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lk_View_Service_LinkClicked);
             // 
             // lb_ServTotal
             // 
@@ -796,7 +795,7 @@
             this.lb_ServTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
             this.lb_ServTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ServTotal.ForeColor = System.Drawing.Color.White;
-            this.lb_ServTotal.Location = new System.Drawing.Point(20, 55);
+            this.lb_ServTotal.Location = new System.Drawing.Point(20, 52);
             this.lb_ServTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_ServTotal.Name = "lb_ServTotal";
             this.lb_ServTotal.Size = new System.Drawing.Size(91, 30);
@@ -824,10 +823,11 @@
             this.pn_Card_Install.Controls.Add(this.label2);
             this.pn_Card_Install.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_Card_Install.Location = new System.Drawing.Point(3, 3);
-            this.pn_Card_Install.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
+            this.pn_Card_Install.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.pn_Card_Install.Name = "pn_Card_Install";
-            this.pn_Card_Install.Size = new System.Drawing.Size(234, 133);
+            this.pn_Card_Install.Size = new System.Drawing.Size(235, 132);
             this.pn_Card_Install.TabIndex = 8;
+            this.pn_Card_Install.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_Card_Install_Paint);
             // 
             // pb_Bdo_Installation
             // 
@@ -835,7 +835,7 @@
             this.pb_Bdo_Installation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(159)))), ((int)(((byte)(31)))));
             this.pb_Bdo_Installation.BackgroundImage = global::ActivityReportSystem.Properties.Resources.ic_installation_48;
             this.pb_Bdo_Installation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_Bdo_Installation.Location = new System.Drawing.Point(190, 8);
+            this.pb_Bdo_Installation.Location = new System.Drawing.Point(191, 8);
             this.pb_Bdo_Installation.Margin = new System.Windows.Forms.Padding(2);
             this.pb_Bdo_Installation.Name = "pb_Bdo_Installation";
             this.pb_Bdo_Installation.Size = new System.Drawing.Size(36, 32);
@@ -848,7 +848,7 @@
             this.lb_InsTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(159)))), ((int)(((byte)(31)))));
             this.lb_InsTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_InsTotal.ForeColor = System.Drawing.Color.White;
-            this.lb_InsTotal.Location = new System.Drawing.Point(20, 55);
+            this.lb_InsTotal.Location = new System.Drawing.Point(20, 52);
             this.lb_InsTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_InsTotal.Name = "lb_InsTotal";
             this.lb_InsTotal.Size = new System.Drawing.Size(91, 30);
@@ -862,10 +862,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(145)))), ((int)(((byte)(18)))));
             this.panel3.Controls.Add(this.lk_View_Installation);
-            this.panel3.Location = new System.Drawing.Point(2, 88);
+            this.panel3.Location = new System.Drawing.Point(1, 86);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(233, 47);
+            this.panel3.Size = new System.Drawing.Size(231, 43);
             this.panel3.TabIndex = 318;
             // 
             // lk_View_Installation
@@ -884,6 +884,7 @@
             this.lk_View_Installation.TabStop = true;
             this.lk_View_Installation.Text = "View Details";
             this.lk_View_Installation.VisitedLinkColor = System.Drawing.Color.Yellow;
+            this.lk_View_Installation.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lk_View_Installation_LinkClicked);
             // 
             // label2
             // 
@@ -905,11 +906,12 @@
             this.pn_Card_Reprogram.Controls.Add(this.lb_RepTotal);
             this.pn_Card_Reprogram.Controls.Add(this.label16);
             this.pn_Card_Reprogram.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_Card_Reprogram.Location = new System.Drawing.Point(249, 3);
-            this.pn_Card_Reprogram.Margin = new System.Windows.Forms.Padding(6, 3, 3, 6);
+            this.pn_Card_Reprogram.Location = new System.Drawing.Point(248, 3);
+            this.pn_Card_Reprogram.Margin = new System.Windows.Forms.Padding(5, 3, 3, 5);
             this.pn_Card_Reprogram.Name = "pn_Card_Reprogram";
-            this.pn_Card_Reprogram.Size = new System.Drawing.Size(235, 133);
+            this.pn_Card_Reprogram.Size = new System.Drawing.Size(236, 132);
             this.pn_Card_Reprogram.TabIndex = 9;
+            this.pn_Card_Reprogram.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_Card_Reprogram_Paint);
             // 
             // pb_Bdo_Reprogram
             // 
@@ -917,7 +919,7 @@
             this.pb_Bdo_Reprogram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.pb_Bdo_Reprogram.BackgroundImage = global::ActivityReportSystem.Properties.Resources.ic_reprogramming_48;
             this.pb_Bdo_Reprogram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_Bdo_Reprogram.Location = new System.Drawing.Point(194, 8);
+            this.pb_Bdo_Reprogram.Location = new System.Drawing.Point(195, 8);
             this.pb_Bdo_Reprogram.Margin = new System.Windows.Forms.Padding(2);
             this.pb_Bdo_Reprogram.Name = "pb_Bdo_Reprogram";
             this.pb_Bdo_Reprogram.Size = new System.Drawing.Size(36, 32);
@@ -930,10 +932,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
             this.panel4.Controls.Add(this.lk_View_Reprogram);
-            this.panel4.Location = new System.Drawing.Point(2, 88);
+            this.panel4.Location = new System.Drawing.Point(1, 86);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(234, 47);
+            this.panel4.Size = new System.Drawing.Size(232, 43);
             this.panel4.TabIndex = 326;
             // 
             // lk_View_Reprogram
@@ -952,6 +954,7 @@
             this.lk_View_Reprogram.TabStop = true;
             this.lk_View_Reprogram.Text = "View Details";
             this.lk_View_Reprogram.VisitedLinkColor = System.Drawing.Color.Yellow;
+            this.lk_View_Reprogram.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lk_View_Reprogram_LinkClicked);
             // 
             // lb_RepTotal
             // 
@@ -959,7 +962,7 @@
             this.lb_RepTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.lb_RepTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RepTotal.ForeColor = System.Drawing.Color.White;
-            this.lb_RepTotal.Location = new System.Drawing.Point(20, 55);
+            this.lb_RepTotal.Location = new System.Drawing.Point(20, 52);
             this.lb_RepTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_RepTotal.Name = "lb_RepTotal";
             this.lb_RepTotal.Size = new System.Drawing.Size(91, 30);
@@ -986,12 +989,12 @@
             this.tableLayoutPanel3.Controls.Add(this.dgv_Sum_PenReq, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.dgv_Sum_ComReq, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(43, 324);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(43, 320);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(487, 462);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(487, 456);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // dgv_Sum_PenReq
@@ -1000,22 +1003,22 @@
             this.dgv_Sum_PenReq.AllowUserToDeleteRows = false;
             this.dgv_Sum_PenReq.AllowUserToResizeColumns = false;
             this.dgv_Sum_PenReq.AllowUserToResizeRows = false;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
-            this.dgv_Sum_PenReq.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgv_Sum_PenReq.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Sum_PenReq.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Sum_PenReq.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Sum_PenReq.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Sum_PenReq.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgv_Sum_PenReq.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Sum_PenReq.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
-            this.dgv_Sum_PenReq.ColumnHeadersHeight = 33;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Sum_PenReq.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_Sum_PenReq.ColumnHeadersHeight = 35;
             this.dgv_Sum_PenReq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_Sum_PenReq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -1029,19 +1032,19 @@
             this.dgv_Sum_PenReq.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.dgv_Sum_PenReq.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
             this.dgv_Sum_PenReq.HeaderForeColor = System.Drawing.Color.White;
-            this.dgv_Sum_PenReq.Location = new System.Drawing.Point(3, 237);
-            this.dgv_Sum_PenReq.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.dgv_Sum_PenReq.Location = new System.Drawing.Point(3, 234);
+            this.dgv_Sum_PenReq.Margin = new System.Windows.Forms.Padding(3, 6, 3, 5);
             this.dgv_Sum_PenReq.Name = "dgv_Sum_PenReq";
             this.dgv_Sum_PenReq.ReadOnly = true;
             this.dgv_Sum_PenReq.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_Sum_PenReq.RowHeadersVisible = false;
             this.dgv_Sum_PenReq.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Sum_PenReq.RowsDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Sum_PenReq.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_Sum_PenReq.RowTemplate.DividerHeight = 5;
-            this.dgv_Sum_PenReq.RowTemplate.Height = 40;
+            this.dgv_Sum_PenReq.RowTemplate.Height = 47;
             this.dgv_Sum_PenReq.RowTemplate.ReadOnly = true;
             this.dgv_Sum_PenReq.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Sum_PenReq.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -1050,14 +1053,15 @@
             this.dgv_Sum_PenReq.ShowCellToolTips = false;
             this.dgv_Sum_PenReq.ShowEditingIcon = false;
             this.dgv_Sum_PenReq.ShowRowErrors = false;
-            this.dgv_Sum_PenReq.Size = new System.Drawing.Size(481, 222);
+            this.dgv_Sum_PenReq.Size = new System.Drawing.Size(481, 217);
             this.dgv_Sum_PenReq.TabIndex = 344;
             this.dgv_Sum_PenReq.TabStop = false;
+            this.dgv_Sum_PenReq.Leave += new System.EventHandler(this.dgv_Sum_PenReq_Leave);
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewCellStyle33.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn5.HeaderText = "PENDING BY AGE";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -1066,8 +1070,8 @@
             // 
             // dataGridViewTextBoxColumn6
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn6.HeaderText = "< 7 DAYS";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -1076,8 +1080,8 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn7.HeaderText = "> 7-30 DAYS";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -1086,8 +1090,8 @@
             // 
             // dataGridViewTextBoxColumn8
             // 
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn8.HeaderText = "> 30 DAYS";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
@@ -1096,8 +1100,8 @@
             // 
             // dataGridViewTextBoxColumn9
             // 
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn9.HeaderText = "TOTAL";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -1110,23 +1114,22 @@
             this.dgv_Sum_ComReq.AllowUserToDeleteRows = false;
             this.dgv_Sum_ComReq.AllowUserToResizeColumns = false;
             this.dgv_Sum_ComReq.AllowUserToResizeRows = false;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.White;
-            this.dgv_Sum_ComReq.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.dgv_Sum_ComReq.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_Sum_ComReq.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Sum_ComReq.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_Sum_ComReq.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Sum_ComReq.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Sum_ComReq.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgv_Sum_ComReq.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Sum_ComReq.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
-            this.dgv_Sum_ComReq.ColumnHeadersHeight = 33;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Sum_ComReq.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgv_Sum_ComReq.ColumnHeadersHeight = 35;
             this.dgv_Sum_ComReq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_Sum_ComReq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn10,
@@ -1139,19 +1142,19 @@
             this.dgv_Sum_ComReq.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.dgv_Sum_ComReq.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
             this.dgv_Sum_ComReq.HeaderForeColor = System.Drawing.Color.White;
-            this.dgv_Sum_ComReq.Location = new System.Drawing.Point(3, 3);
-            this.dgv_Sum_ComReq.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
+            this.dgv_Sum_ComReq.Location = new System.Drawing.Point(3, 5);
+            this.dgv_Sum_ComReq.Margin = new System.Windows.Forms.Padding(3, 5, 3, 6);
             this.dgv_Sum_ComReq.Name = "dgv_Sum_ComReq";
             this.dgv_Sum_ComReq.ReadOnly = true;
             this.dgv_Sum_ComReq.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_Sum_ComReq.RowHeadersVisible = false;
             this.dgv_Sum_ComReq.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Sum_ComReq.RowsDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Sum_ComReq.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgv_Sum_ComReq.RowTemplate.DividerHeight = 5;
-            this.dgv_Sum_ComReq.RowTemplate.Height = 35;
+            this.dgv_Sum_ComReq.RowTemplate.Height = 47;
             this.dgv_Sum_ComReq.RowTemplate.ReadOnly = true;
             this.dgv_Sum_ComReq.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Sum_ComReq.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -1160,15 +1163,16 @@
             this.dgv_Sum_ComReq.ShowCellToolTips = false;
             this.dgv_Sum_ComReq.ShowEditingIcon = false;
             this.dgv_Sum_ComReq.ShowRowErrors = false;
-            this.dgv_Sum_ComReq.Size = new System.Drawing.Size(481, 222);
+            this.dgv_Sum_ComReq.Size = new System.Drawing.Size(481, 217);
             this.dgv_Sum_ComReq.TabIndex = 343;
             this.dgv_Sum_ComReq.TabStop = false;
+            this.dgv_Sum_ComReq.Leave += new System.EventHandler(this.dgv_Sum_ComReq_Leave);
             // 
             // dataGridViewTextBoxColumn10
             // 
-            dataGridViewCellStyle41.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn10.FillWeight = 197.2943F;
             this.dataGridViewTextBoxColumn10.HeaderText = "COMPLETED BY STATUS";
             this.dataGridViewTextBoxColumn10.MinimumWidth = 99;
@@ -1179,8 +1183,8 @@
             // 
             // dataGridViewTextBoxColumn11
             // 
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn11.FillWeight = 78.02466F;
             this.dataGridViewTextBoxColumn11.HeaderText = "DELIVERED";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
@@ -1190,8 +1194,8 @@
             // 
             // dataGridViewTextBoxColumn12
             // 
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewTextBoxColumn12.FillWeight = 117.2768F;
             this.dataGridViewTextBoxColumn12.HeaderText = "RESOLVED ISSUE";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
@@ -1216,12 +1220,12 @@
             this.tableLayoutPanel4.Controls.Add(this.dgv_Model_List, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(536, 324);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(536, 320);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 462F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(701, 462);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 456F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(701, 456);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
             // dgv_Model_List
@@ -1230,22 +1234,21 @@
             this.dgv_Model_List.AllowUserToDeleteRows = false;
             this.dgv_Model_List.AllowUserToResizeColumns = false;
             this.dgv_Model_List.AllowUserToResizeRows = false;
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.dgv_Model_List.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.dgv_Model_List.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_Model_List.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Model_List.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_Model_List.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.dgv_Model_List.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Model_List.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Model_List.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgv_Model_List.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Model_List.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Model_List.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgv_Model_List.ColumnHeadersHeight = 35;
             this.dgv_Model_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_Model_List.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1254,15 +1257,15 @@
             this.Column4,
             this.Column5,
             this.Column8});
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle52.NullValue = "0";
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Model_List.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.NullValue = "0";
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Model_List.DefaultCellStyle = dataGridViewCellStyle22;
             this.dgv_Model_List.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Model_List.DoubleBuffered = true;
             this.dgv_Model_List.EnableHeadersVisualStyles = false;
@@ -1276,12 +1279,12 @@
             this.dgv_Model_List.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_Model_List.RowHeadersVisible = false;
             this.dgv_Model_List.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Model_List.RowsDefaultCellStyle = dataGridViewCellStyle53;
-            this.dgv_Model_List.RowTemplate.DividerHeight = 3;
-            this.dgv_Model_List.RowTemplate.Height = 66;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Model_List.RowsDefaultCellStyle = dataGridViewCellStyle23;
+            this.dgv_Model_List.RowTemplate.DividerHeight = 5;
+            this.dgv_Model_List.RowTemplate.Height = 47;
             this.dgv_Model_List.RowTemplate.ReadOnly = true;
             this.dgv_Model_List.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Model_List.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -1290,14 +1293,15 @@
             this.dgv_Model_List.ShowCellToolTips = false;
             this.dgv_Model_List.ShowEditingIcon = false;
             this.dgv_Model_List.ShowRowErrors = false;
-            this.dgv_Model_List.Size = new System.Drawing.Size(433, 451);
+            this.dgv_Model_List.Size = new System.Drawing.Size(433, 445);
             this.dgv_Model_List.TabIndex = 1;
+            this.dgv_Model_List.Leave += new System.EventHandler(this.dgv_Model_List_Leave);
             // 
             // Column3
             // 
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle17;
             this.Column3.HeaderText = "MODEL";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -1306,9 +1310,9 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle48.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle18;
             this.Column2.FillWeight = 200F;
             this.Column2.HeaderText = "TEMPLATE";
             this.Column2.Name = "Column2";
@@ -1318,8 +1322,8 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle19;
             this.Column4.HeaderText = "COMPLETED";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -1328,8 +1332,8 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle20;
             this.Column5.HeaderText = "PENDING";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -1338,8 +1342,8 @@
             // 
             // Column8
             // 
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle21;
             this.Column8.HeaderText = "CANCELLED";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -1351,14 +1355,14 @@
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.pn_Lookup_Body, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.pn_MP200_Body, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.pn_TerminalHeader, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.97053F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.02947F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(254, 456);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(254, 450);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // pn_Lookup_Body
@@ -1374,10 +1378,10 @@
             this.pn_Lookup_Body.Controls.Add(this.dtp_Model_To);
             this.pn_Lookup_Body.Controls.Add(this.label3);
             this.pn_Lookup_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_Lookup_Body.Location = new System.Drawing.Point(3, 164);
+            this.pn_Lookup_Body.Location = new System.Drawing.Point(3, 162);
             this.pn_Lookup_Body.Margin = new System.Windows.Forms.Padding(3, 5, 5, 0);
             this.pn_Lookup_Body.Name = "pn_Lookup_Body";
-            this.pn_Lookup_Body.Size = new System.Drawing.Size(246, 292);
+            this.pn_Lookup_Body.Size = new System.Drawing.Size(246, 288);
             this.pn_Lookup_Body.TabIndex = 350;
             // 
             // btn_Model_Search
@@ -1394,6 +1398,7 @@
             this.btn_Model_Search.Text = "    Search";
             this.btn_Model_Search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Model_Search.UseVisualStyleBackColor = true;
+            this.btn_Model_Search.Click += new System.EventHandler(this.btn_Model_Search_Click);
             // 
             // btn_Model_Clear
             // 
@@ -1452,8 +1457,8 @@
             this.dgv_Model_Status_List.AllowUserToDeleteRows = false;
             this.dgv_Model_Status_List.AllowUserToResizeColumns = false;
             this.dgv_Model_Status_List.AllowUserToResizeRows = false;
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.White;
-            this.dgv_Model_Status_List.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            this.dgv_Model_Status_List.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dgv_Model_Status_List.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1462,28 +1467,28 @@
             this.dgv_Model_Status_List.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Model_Status_List.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dgv_Model_Status_List.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle55.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Model_Status_List.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Model_Status_List.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dgv_Model_Status_List.ColumnHeadersHeight = 30;
             this.dgv_Model_Status_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_Model_Status_List.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column7,
             this.Column6});
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Model_Status_List.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Model_Status_List.DefaultCellStyle = dataGridViewCellStyle29;
             this.dgv_Model_Status_List.DoubleBuffered = true;
             this.dgv_Model_Status_List.EnableHeadersVisualStyles = false;
             this.dgv_Model_Status_List.GridColor = System.Drawing.Color.Gainsboro;
@@ -1495,10 +1500,10 @@
             this.dgv_Model_Status_List.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_Model_Status_List.RowHeadersVisible = false;
             this.dgv_Model_Status_List.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Model_Status_List.RowsDefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Model_Status_List.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dgv_Model_Status_List.RowTemplate.Height = 35;
             this.dgv_Model_Status_List.RowTemplate.ReadOnly = true;
             this.dgv_Model_Status_List.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1508,13 +1513,13 @@
             this.dgv_Model_Status_List.ShowCellToolTips = false;
             this.dgv_Model_Status_List.ShowEditingIcon = false;
             this.dgv_Model_Status_List.ShowRowErrors = false;
-            this.dgv_Model_Status_List.Size = new System.Drawing.Size(213, 127);
+            this.dgv_Model_Status_List.Size = new System.Drawing.Size(213, 123);
             this.dgv_Model_Status_List.TabIndex = 1;
             // 
             // Column1
             // 
-            dataGridViewCellStyle56.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle26;
             this.Column1.HeaderText = "Model";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -1522,8 +1527,8 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle27;
             this.Column7.HeaderText = "Status";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -1531,8 +1536,8 @@
             // 
             // Column6
             // 
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle28;
             this.Column6.HeaderText = "Total";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -1586,25 +1591,26 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Date From";
             // 
-            // pn_MP200_Body
+            // pn_TerminalHeader
             // 
-            this.pn_MP200_Body.BackColor = System.Drawing.Color.White;
-            this.pn_MP200_Body.Controls.Add(this.label1);
-            this.pn_MP200_Body.Controls.Add(this.cmb_Model);
-            this.pn_MP200_Body.Controls.Add(this.panel18);
-            this.pn_MP200_Body.Controls.Add(this.label25);
-            this.pn_MP200_Body.Controls.Add(this.lb_Total_Stocks);
-            this.pn_MP200_Body.Controls.Add(this.panel22);
-            this.pn_MP200_Body.Controls.Add(this.label27);
-            this.pn_MP200_Body.Controls.Add(this.panel21);
-            this.pn_MP200_Body.Controls.Add(this.pictureBox7);
-            this.pn_MP200_Body.Controls.Add(this.lb_Total_Deployed);
-            this.pn_MP200_Body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_MP200_Body.Location = new System.Drawing.Point(3, 3);
-            this.pn_MP200_Body.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
-            this.pn_MP200_Body.Name = "pn_MP200_Body";
-            this.pn_MP200_Body.Size = new System.Drawing.Size(246, 151);
-            this.pn_MP200_Body.TabIndex = 1;
+            this.pn_TerminalHeader.BackColor = System.Drawing.Color.White;
+            this.pn_TerminalHeader.Controls.Add(this.label1);
+            this.pn_TerminalHeader.Controls.Add(this.cmb_Model);
+            this.pn_TerminalHeader.Controls.Add(this.panel18);
+            this.pn_TerminalHeader.Controls.Add(this.label25);
+            this.pn_TerminalHeader.Controls.Add(this.lb_Total_Stocks);
+            this.pn_TerminalHeader.Controls.Add(this.panel22);
+            this.pn_TerminalHeader.Controls.Add(this.label27);
+            this.pn_TerminalHeader.Controls.Add(this.panel21);
+            this.pn_TerminalHeader.Controls.Add(this.pictureBox7);
+            this.pn_TerminalHeader.Controls.Add(this.lb_Total_Deployed);
+            this.pn_TerminalHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_TerminalHeader.Location = new System.Drawing.Point(3, 3);
+            this.pn_TerminalHeader.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
+            this.pn_TerminalHeader.Name = "pn_TerminalHeader";
+            this.pn_TerminalHeader.Size = new System.Drawing.Size(246, 149);
+            this.pn_TerminalHeader.TabIndex = 1;
+            this.pn_TerminalHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_TerminalHeader_Paint);
             // 
             // label1
             // 
@@ -1636,6 +1642,7 @@
             this.cmb_Model.Size = new System.Drawing.Size(138, 25);
             this.cmb_Model.TabIndex = 0;
             this.cmb_Model.TabStop = false;
+            this.cmb_Model.SelectedIndexChanged += new System.EventHandler(this.cmb_Model_SelectedIndexChanged);
             // 
             // panel18
             // 
@@ -1643,7 +1650,7 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel18.Location = new System.Drawing.Point(0, 0);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(7, 151);
+            this.panel18.Size = new System.Drawing.Size(7, 149);
             this.panel18.TabIndex = 343;
             // 
             // label25
@@ -1652,7 +1659,7 @@
             this.label25.BackColor = System.Drawing.Color.White;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label25.Location = new System.Drawing.Point(33, 117);
+            this.label25.Location = new System.Drawing.Point(33, 114);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(63, 26);
             this.label25.TabIndex = 4;
@@ -1664,7 +1671,7 @@
             this.lb_Total_Stocks.BackColor = System.Drawing.Color.White;
             this.lb_Total_Stocks.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Total_Stocks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(159)))), ((int)(((byte)(31)))));
-            this.lb_Total_Stocks.Location = new System.Drawing.Point(138, 119);
+            this.lb_Total_Stocks.Location = new System.Drawing.Point(138, 116);
             this.lb_Total_Stocks.Name = "lb_Total_Stocks";
             this.lb_Total_Stocks.Size = new System.Drawing.Size(83, 25);
             this.lb_Total_Stocks.TabIndex = 3;
@@ -1673,7 +1680,7 @@
             // panel22
             // 
             this.panel22.BackColor = System.Drawing.Color.Silver;
-            this.panel22.Location = new System.Drawing.Point(121, 86);
+            this.panel22.Location = new System.Drawing.Point(121, 85);
             this.panel22.Margin = new System.Windows.Forms.Padding(2);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(2, 15);
@@ -1685,7 +1692,7 @@
             this.label27.BackColor = System.Drawing.Color.White;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label27.Location = new System.Drawing.Point(33, 80);
+            this.label27.Location = new System.Drawing.Point(33, 79);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(57, 26);
             this.label27.TabIndex = 2;
@@ -1694,7 +1701,7 @@
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.Color.Silver;
-            this.panel21.Location = new System.Drawing.Point(121, 125);
+            this.panel21.Location = new System.Drawing.Point(121, 122);
             this.panel21.Margin = new System.Windows.Forms.Padding(2);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(2, 15);
@@ -1718,11 +1725,363 @@
             this.lb_Total_Deployed.BackColor = System.Drawing.Color.White;
             this.lb_Total_Deployed.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Total_Deployed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
-            this.lb_Total_Deployed.Location = new System.Drawing.Point(138, 81);
+            this.lb_Total_Deployed.Location = new System.Drawing.Point(138, 80);
             this.lb_Total_Deployed.Name = "lb_Total_Deployed";
             this.lb_Total_Deployed.Size = new System.Drawing.Size(83, 25);
             this.lb_Total_Deployed.TabIndex = 0;
             this.lb_Total_Deployed.Text = "999,999";
+            // 
+            // pn_SummaryBody
+            // 
+            this.pn_SummaryBody.BackColor = System.Drawing.Color.White;
+            this.pn_SummaryBody.Controls.Add(this.pn_TotalSumBody);
+            this.pn_SummaryBody.Controls.Add(this.label18);
+            this.pn_SummaryBody.Controls.Add(this.chrt_Bdo_Display);
+            this.pn_SummaryBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_SummaryBody.Location = new System.Drawing.Point(538, 35);
+            this.pn_SummaryBody.Margin = new System.Windows.Forms.Padding(5);
+            this.pn_SummaryBody.Name = "pn_SummaryBody";
+            this.pn_SummaryBody.Size = new System.Drawing.Size(697, 277);
+            this.pn_SummaryBody.TabIndex = 2;
+            this.pn_SummaryBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_SummaryBody_Paint);
+            // 
+            // pn_TotalSumBody
+            // 
+            this.pn_TotalSumBody.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pn_TotalSumBody.BackColor = System.Drawing.Color.White;
+            this.pn_TotalSumBody.Controls.Add(this.label12);
+            this.pn_TotalSumBody.Controls.Add(this.lb_C4);
+            this.pn_TotalSumBody.Controls.Add(this.label10);
+            this.pn_TotalSumBody.Controls.Add(this.lb_C3);
+            this.pn_TotalSumBody.Controls.Add(this.label7);
+            this.pn_TotalSumBody.Controls.Add(this.lb_C2);
+            this.pn_TotalSumBody.Controls.Add(this.label6);
+            this.pn_TotalSumBody.Controls.Add(this.lb_C1);
+            this.pn_TotalSumBody.Controls.Add(this.label53);
+            this.pn_TotalSumBody.Controls.Add(this.label50);
+            this.pn_TotalSumBody.Controls.Add(this.lb_ComSum);
+            this.pn_TotalSumBody.Controls.Add(this.lb_PenSum);
+            this.pn_TotalSumBody.Controls.Add(this.label52);
+            this.pn_TotalSumBody.Controls.Add(this.panel53);
+            this.pn_TotalSumBody.Controls.Add(this.panel52);
+            this.pn_TotalSumBody.Controls.Add(this.chrt_Bdo_Summary);
+            this.pn_TotalSumBody.Location = new System.Drawing.Point(4, 9);
+            this.pn_TotalSumBody.Name = "pn_TotalSumBody";
+            this.pn_TotalSumBody.Size = new System.Drawing.Size(325, 264);
+            this.pn_TotalSumBody.TabIndex = 13;
+            this.pn_TotalSumBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_TotalSumBody_Paint);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label12.Location = new System.Drawing.Point(204, 226);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(27, 15);
+            this.label12.TabIndex = 349;
+            this.label12.Text = "C4 :";
+            // 
+            // lb_C4
+            // 
+            this.lb_C4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_C4.AutoSize = true;
+            this.lb_C4.BackColor = System.Drawing.Color.White;
+            this.lb_C4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_C4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.lb_C4.Location = new System.Drawing.Point(228, 226);
+            this.lb_C4.Name = "lb_C4";
+            this.lb_C4.Size = new System.Drawing.Size(55, 15);
+            this.lb_C4.TabIndex = 348;
+            this.lb_C4.Text = "100.00%";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(204, 206);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(27, 15);
+            this.label10.TabIndex = 347;
+            this.label10.Text = "C3 :";
+            // 
+            // lb_C3
+            // 
+            this.lb_C3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_C3.AutoSize = true;
+            this.lb_C3.BackColor = System.Drawing.Color.White;
+            this.lb_C3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_C3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
+            this.lb_C3.Location = new System.Drawing.Point(228, 206);
+            this.lb_C3.Name = "lb_C3";
+            this.lb_C3.Size = new System.Drawing.Size(55, 15);
+            this.lb_C3.TabIndex = 346;
+            this.lb_C3.Text = "100.00%";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(59, 226);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 15);
+            this.label7.TabIndex = 345;
+            this.label7.Text = "C2 :";
+            // 
+            // lb_C2
+            // 
+            this.lb_C2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lb_C2.AutoSize = true;
+            this.lb_C2.BackColor = System.Drawing.Color.White;
+            this.lb_C2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_C2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.lb_C2.Location = new System.Drawing.Point(83, 226);
+            this.lb_C2.Name = "lb_C2";
+            this.lb_C2.Size = new System.Drawing.Size(55, 15);
+            this.lb_C2.TabIndex = 344;
+            this.lb_C2.Text = "100.00%";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(59, 206);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 15);
+            this.label6.TabIndex = 343;
+            this.label6.Text = "C1 :";
+            // 
+            // lb_C1
+            // 
+            this.lb_C1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lb_C1.AutoSize = true;
+            this.lb_C1.BackColor = System.Drawing.Color.White;
+            this.lb_C1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_C1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(159)))), ((int)(((byte)(31)))));
+            this.lb_C1.Location = new System.Drawing.Point(83, 206);
+            this.lb_C1.Name = "lb_C1";
+            this.lb_C1.Size = new System.Drawing.Size(55, 15);
+            this.lb_C1.TabIndex = 342;
+            this.lb_C1.Text = "100.00%";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.BackColor = System.Drawing.Color.White;
+            this.label53.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label53.Location = new System.Drawing.Point(19, 20);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(92, 21);
+            this.label53.TabIndex = 336;
+            this.label53.Text = "SUMMARY";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.BackColor = System.Drawing.Color.White;
+            this.label50.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label50.Location = new System.Drawing.Point(19, 130);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(52, 30);
+            this.label50.TabIndex = 339;
+            this.label50.Text = "Total\r\nPending\r\n";
+            // 
+            // lb_ComSum
+            // 
+            this.lb_ComSum.AutoSize = true;
+            this.lb_ComSum.BackColor = System.Drawing.Color.White;
+            this.lb_ComSum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ComSum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.lb_ComSum.Location = new System.Drawing.Point(17, 96);
+            this.lb_ComSum.Name = "lb_ComSum";
+            this.lb_ComSum.Size = new System.Drawing.Size(68, 21);
+            this.lb_ComSum.TabIndex = 335;
+            this.lb_ComSum.Text = "999,999";
+            // 
+            // chrt_Bdo_Summary
+            // 
+            this.chrt_Bdo_Summary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chrt_Bdo_Summary.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chrt_Bdo_Summary.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.AutoFitMinFontSize = 10;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Enabled = false;
+            legend1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            legend1.IsEquallySpacedItems = true;
+            legend1.IsTextAutoFit = false;
+            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
+            legend1.MaximumAutoSize = 30F;
+            legend1.Name = "Legend1";
+            legend1.TextWrapThreshold = 30;
+            legend1.TitleFont = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chrt_Bdo_Summary.Legends.Add(legend1);
+            this.chrt_Bdo_Summary.Location = new System.Drawing.Point(100, 19);
+            this.chrt_Bdo_Summary.Margin = new System.Windows.Forms.Padding(2);
+            this.chrt_Bdo_Summary.Name = "chrt_Bdo_Summary";
+            series1.BorderColor = System.Drawing.Color.White;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.CustomProperties = "CollectedSliceExploded=True";
+            series1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.Label = "#PERCENT{P1}";
+            series1.LabelForeColor = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
+            series1.ShadowColor = System.Drawing.Color.Silver;
+            series1.ShadowOffset = 2;
+            series1.YValuesPerPoint = 4;
+            this.chrt_Bdo_Summary.Series.Add(series1);
+            this.chrt_Bdo_Summary.Size = new System.Drawing.Size(241, 179);
+            this.chrt_Bdo_Summary.TabIndex = 12;
+            this.chrt_Bdo_Summary.TabStop = false;
+            // 
+            // lb_PenSum
+            // 
+            this.lb_PenSum.AutoSize = true;
+            this.lb_PenSum.BackColor = System.Drawing.Color.White;
+            this.lb_PenSum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_PenSum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(40)))), ((int)(((byte)(35)))));
+            this.lb_PenSum.Location = new System.Drawing.Point(17, 163);
+            this.lb_PenSum.Name = "lb_PenSum";
+            this.lb_PenSum.Size = new System.Drawing.Size(68, 21);
+            this.lb_PenSum.TabIndex = 338;
+            this.lb_PenSum.Text = "999,999";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.BackColor = System.Drawing.Color.White;
+            this.label52.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label52.Location = new System.Drawing.Point(19, 62);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(68, 30);
+            this.label52.TabIndex = 337;
+            this.label52.Text = "Total\r\nCompleted\r\n";
+            // 
+            // panel53
+            // 
+            this.panel53.BackColor = System.Drawing.Color.Silver;
+            this.panel53.Location = new System.Drawing.Point(107, 137);
+            this.panel53.Margin = new System.Windows.Forms.Padding(2);
+            this.panel53.Name = "panel53";
+            this.panel53.Size = new System.Drawing.Size(2, 20);
+            this.panel53.TabIndex = 341;
+            // 
+            // panel52
+            // 
+            this.panel52.BackColor = System.Drawing.Color.Silver;
+            this.panel52.Location = new System.Drawing.Point(107, 68);
+            this.panel52.Margin = new System.Windows.Forms.Padding(2);
+            this.panel52.Name = "panel52";
+            this.panel52.Size = new System.Drawing.Size(2, 20);
+            this.panel52.TabIndex = 340;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label18.Location = new System.Drawing.Point(337, 11);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(117, 30);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "TOTAL PENDING BY\r\nTEMPLATE";
+            // 
+            // chrt_Bdo_Display
+            // 
+            this.chrt_Bdo_Display.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chrt_Bdo_Display.BorderlineColor = System.Drawing.Color.Gray;
+            chartArea2.AxisX.LabelAutoFitMaxFontSize = 9;
+            chartArea2.AxisX.LabelAutoFitMinFontSize = 7;
+            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX.LineColor = System.Drawing.Color.DarkGray;
+            chartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisX.MajorGrid.Enabled = false;
+            chartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea2.AxisX.MajorTickMark.LineWidth = 2;
+            chartArea2.AxisX.MajorTickMark.Size = 0.5F;
+            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX2.LabelAutoFitMaxFontSize = 7;
+            chartArea2.AxisX2.LabelStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX2.LineColor = System.Drawing.Color.DarkGray;
+            chartArea2.AxisX2.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisY.LabelAutoFitMaxFontSize = 8;
+            chartArea2.AxisY.LabelAutoFitMinFontSize = 7;
+            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea2.AxisY.LineColor = System.Drawing.Color.DarkGray;
+            chartArea2.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea2.AxisY.MajorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisY.MajorTickMark.Size = 0.5F;
+            chartArea2.AxisY.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
+            chartArea2.AxisY2.LabelAutoFitMaxFontSize = 7;
+            chartArea2.AxisY2.LabelStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY2.LineColor = System.Drawing.Color.DarkGray;
+            chartArea2.AxisY2.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisY2.MajorTickMark.LineWidth = 3;
+            chartArea2.AxisY2.MajorTickMark.Size = 3F;
+            chartArea2.Name = "ChartArea1";
+            this.chrt_Bdo_Display.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend2.Enabled = false;
+            legend2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            legend2.IsEquallySpacedItems = true;
+            legend2.IsTextAutoFit = false;
+            legend2.ItemColumnSpacing = 30;
+            legend2.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
+            legend2.MaximumAutoSize = 40F;
+            legend2.Name = "Legend1";
+            legend2.TitleFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.GradientLine;
+            this.chrt_Bdo_Display.Legends.Add(legend2);
+            this.chrt_Bdo_Display.Location = new System.Drawing.Point(319, 53);
+            this.chrt_Bdo_Display.Margin = new System.Windows.Forms.Padding(2);
+            this.chrt_Bdo_Display.Name = "chrt_Bdo_Display";
+            series2.BorderColor = System.Drawing.Color.White;
+            series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.Color.Crimson;
+            series2.CustomProperties = "PixelPointWidth=60, EmptyPointValue=Zero, PointWidth=0.5, LabelStyle=Top";
+            series2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.IsValueShownAsLabel = true;
+            series2.Legend = "Legend1";
+            series2.MarkerBorderColor = System.Drawing.Color.Black;
+            series2.MarkerColor = System.Drawing.Color.White;
+            series2.MarkerSize = 6;
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series2.Name = "PENDING";
+            series2.ShadowColor = System.Drawing.Color.Silver;
+            series2.ShadowOffset = 1;
+            series2.YValuesPerPoint = 4;
+            this.chrt_Bdo_Display.Series.Add(series2);
+            this.chrt_Bdo_Display.Size = new System.Drawing.Size(368, 217);
+            this.chrt_Bdo_Display.TabIndex = 11;
+            this.chrt_Bdo_Display.TabStop = false;
             // 
             // bne_MainBody
             // 
@@ -1733,20 +2092,92 @@
             // 
             this.label43.AutoSize = true;
             this.label43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.label43.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label43.Location = new System.Drawing.Point(29, 118);
+            this.label43.Location = new System.Drawing.Point(29, 119);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(105, 30);
+            this.label43.Size = new System.Drawing.Size(122, 32);
             this.label43.TabIndex = 341;
             this.label43.Text = "Overview";
             // 
+            // Tm_FadeOut
+            // 
+            this.Tm_FadeOut.Interval = 20;
+            this.Tm_FadeOut.Tick += new System.EventHandler(this.Tm_FadeOut_Tick);
+            // 
+            // Tm_FadeIn
+            // 
+            this.Tm_FadeIn.Interval = 20;
+            this.Tm_FadeIn.Tick += new System.EventHandler(this.Tm_FadeIn_Tick);
+            // 
+            // bne_pn_Lookup_Body
+            // 
+            this.bne_pn_Lookup_Body.ElipseRadius = 6;
+            this.bne_pn_Lookup_Body.TargetControl = this.pn_Lookup_Body;
+            // 
+            // bne_dgv_Model_List
+            // 
+            this.bne_dgv_Model_List.ElipseRadius = 12;
+            this.bne_dgv_Model_List.TargetControl = this.dgv_Model_List;
+            // 
+            // bne_SummaryBody
+            // 
+            this.bne_SummaryBody.ElipseRadius = 6;
+            this.bne_SummaryBody.TargetControl = this.pn_SummaryBody;
+            // 
+            // bne_Bdo_Servicing
+            // 
+            this.bne_Bdo_Servicing.ElipseRadius = 6;
+            this.bne_Bdo_Servicing.TargetControl = this.pn_Card_Serv;
+            // 
+            // bne_Bdo_Reprogram
+            // 
+            this.bne_Bdo_Reprogram.ElipseRadius = 6;
+            this.bne_Bdo_Reprogram.TargetControl = this.pn_Card_Reprogram;
+            // 
+            // bne_Bdo_Installation
+            // 
+            this.bne_Bdo_Installation.ElipseRadius = 6;
+            this.bne_Bdo_Installation.TargetControl = this.pn_Card_Install;
+            // 
+            // bnd_Menu
+            // 
+            this.bnd_Menu.Fixed = true;
+            this.bnd_Menu.Horizontal = true;
+            this.bnd_Menu.TargetControl = this.pn_Menu;
+            this.bnd_Menu.Vertical = true;
+            // 
+            // bne_Bdo_Repair
+            // 
+            this.bne_Bdo_Repair.ElipseRadius = 6;
+            this.bne_Bdo_Repair.TargetControl = this.pn_Card_Repair;
+            // 
+            // bne_dgv_Bdo_ComReq
+            // 
+            this.bne_dgv_Bdo_ComReq.ElipseRadius = 6;
+            this.bne_dgv_Bdo_ComReq.TargetControl = this.dgv_Sum_ComReq;
+            // 
+            // bne_dgv_Summary_PenReq
+            // 
+            this.bne_dgv_Summary_PenReq.ElipseRadius = 6;
+            this.bne_dgv_Summary_PenReq.TargetControl = this.dgv_Sum_PenReq;
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(149, 6);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(149, 6);
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1280, 960);
+            this.ControlBox = false;
             this.Controls.Add(this.label43);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pn_MenuHeader);
@@ -1754,10 +2185,13 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Castles Technology";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.pn_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Maximize)).EndInit();
@@ -1767,12 +2201,9 @@
             this.pn_MenuHeader.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.msHeader.ResumeLayout(false);
+            this.msHeader.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.pn_PenSum_Body.ResumeLayout(false);
-            this.pn_PenSum_Body.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chrt_Bdo_Display)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.pn_Card_Repair.ResumeLayout(false);
             this.pn_Card_Repair.PerformLayout();
@@ -1803,9 +2234,15 @@
             this.pn_Lookup_Body.ResumeLayout(false);
             this.pn_Lookup_Body.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Model_Status_List)).EndInit();
-            this.pn_MP200_Body.ResumeLayout(false);
-            this.pn_MP200_Body.PerformLayout();
+            this.pn_TerminalHeader.ResumeLayout(false);
+            this.pn_TerminalHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.pn_SummaryBody.ResumeLayout(false);
+            this.pn_SummaryBody.PerformLayout();
+            this.pn_TotalSumBody.ResumeLayout(false);
+            this.pn_TotalSumBody.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chrt_Bdo_Summary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chrt_Bdo_Display)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1821,7 +2258,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel pn_MenuHeader;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip msHeader;
         private System.Windows.Forms.ToolStripMenuItem Ms_File;
         private System.Windows.Forms.ToolStripMenuItem Tsm_Import;
         private System.Windows.Forms.ToolStripMenuItem Ms_Monitoring;
@@ -1876,9 +2313,6 @@
         private System.Windows.Forms.LinkLabel lk_View_Repair;
         private System.Windows.Forms.Label lb_RepairTotal;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Panel pn_PenSum_Body;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chrt_Bdo_Display;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_Sum_ComReq;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgv_Sum_PenReq;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -1889,7 +2323,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Panel pn_MP200_Body;
+        private System.Windows.Forms.Panel pn_TerminalHeader;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmb_Model;
         private System.Windows.Forms.Panel panel18;
@@ -1924,5 +2358,44 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private Bunifu.Framework.UI.BunifuElipse bne_MainBody;
         private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Timer Tm_FadeOut;
+        private System.Windows.Forms.Timer Tm_FadeIn;
+        private System.Windows.Forms.Panel pn_SummaryBody;
+        private System.Windows.Forms.Panel pn_TotalSumBody;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lb_C4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lb_C3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lb_C2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lb_C1;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label lb_ComSum;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chrt_Bdo_Summary;
+        private System.Windows.Forms.Label lb_PenSum;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Panel panel53;
+        private System.Windows.Forms.Panel panel52;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chrt_Bdo_Display;
+        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmSource;
+        private System.Windows.Forms.ToolStripMenuItem tsmReportView;
+        private System.Windows.Forms.ToolStripMenuItem breakdownToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmSummary;
+        private Bunifu.Framework.UI.BunifuElipse bne_pn_Lookup_Body;
+        private Bunifu.Framework.UI.BunifuElipse bne_dgv_Model_List;
+        private Bunifu.Framework.UI.BunifuElipse bne_SummaryBody;
+        private Bunifu.Framework.UI.BunifuElipse bne_Bdo_Servicing;
+        private Bunifu.Framework.UI.BunifuElipse bne_Bdo_Reprogram;
+        private Bunifu.Framework.UI.BunifuElipse bne_Bdo_Installation;
+        private Bunifu.Framework.UI.BunifuDragControl bnd_Menu;
+        private Bunifu.Framework.UI.BunifuElipse bne_Bdo_Repair;
+        private Bunifu.Framework.UI.BunifuElipse bne_dgv_Bdo_ComReq;
+        private Bunifu.Framework.UI.BunifuElipse bne_dgv_Summary_PenReq;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
     }
 }

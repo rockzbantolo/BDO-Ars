@@ -1,4 +1,6 @@
 ﻿using ActivityReportSystem.AppActivity.Model;
+using ActivityReportSystem.Global;
+using ActivityReportSystem.Report;
 using CrystalDecisions.CrystalReports.Engine;
 using System;
 using System.Collections.Generic;
@@ -16,7 +18,6 @@ namespace ActivityReportSystem.Forms
 {
     public partial class frmViewReports : Form
     {
-        public int ReportID { get; set; }
         public string ReportHeader {get; set;}
         public string ReportPath { get; set; }
         public string ReportFullPath { get; set; }
@@ -31,7 +32,9 @@ namespace ActivityReportSystem.Forms
 
         private void frmViewReports_Load(object sender, EventArgs e)
         {
-            switch(ReportID)
+            AppData.ReportID = 1;
+
+            switch (AppData.ReportID)
             {
                 case 1:
                     TerminalReport();
@@ -135,12 +138,10 @@ namespace ActivityReportSystem.Forms
 
         }
 
-
-
         private void TerminalReport()
         {
             ReportPath = GetReportPath();
-            ReportFullPath = Path.Combine(ReportPath, "rptImportSIM.rpt");
+            ReportFullPath = Path.Combine(ReportPath, "rptDashboard.rpt");
 
             Debug.WriteLine("Report Full Path: " + ReportFullPath);
 
@@ -155,17 +156,17 @@ namespace ActivityReportSystem.Forms
                 DataSet dsReport = Sp.GetReportWithSp(ReportHeader, SpName);
 
                 // Report Name .rpt
-                //rptImportSIM rptViewer = new rptImportSIM();
+                rptDashboard Dashboard = new rptDashboard();
 
                 // Load Report
-                //rptViewer.Load(ReportFullPath);
+                Dashboard.Load(ReportFullPath);
                 //rptViewer.SetDataSource(dsReport.Tables[0]);
 
                 //SetReceiptReportHeader(rptViewer);
                 //SetReceiptUser(rptViewer);
                 //SetReceiptImportCount(rptViewer);
 
-                //myViewer.ReportSource = rptViewer;
+                myViewer.ReportSource = Dashboard;
                 myViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None; // hide toggle tree view
 
             }

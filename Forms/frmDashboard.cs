@@ -43,7 +43,7 @@ namespace ActivityReportSystem.Forms
             InitializeDisplay();
             tpc_MenuPage.Width = 1250;
             cmb_Model_Template.Items.Clear();
-            cmb_Model_Template.DataSource = sAppData.Templates;
+            cmb_Model_Template.DataSource = AppData.Templates;
         }
 
         // PROCESS DISPLAY
@@ -68,34 +68,34 @@ namespace ActivityReportSystem.Forms
                 // OVERVIEW
 
                 // INSTALLATION
-                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, sAppData.Installation.ToUpper(),  sAppData.Template.iTotal_penIns);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, AppData.Installation.ToUpper(),  AppData.Template.iTotal_penIns);
                 // REPROGRAMMING
-                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, sAppData.Reprogramming.ToUpper(), sAppData.Template.iTotal_penReprog);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, AppData.Reprogramming.ToUpper(), AppData.Template.iTotal_penReprog);
                 // SERVICING
-                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, sAppData.Servicing.ToUpper(),     sAppData.Template.iTotal_penServ);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, AppData.Servicing.ToUpper(),     AppData.Template.iTotal_penServ);
                 // REPAIR
-                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, sAppData.Repair.ToUpper(),        sAppData.Template.iTotal_penRep);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Display, 0, AppData.Repair.ToUpper(),        AppData.Template.iTotal_penRep);
 
                 // PIE CHART
-                cFunctions.Charts.SetChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Com);
-                cFunctions.Charts.SetChartValue(chrt_Bdo_Summary, 0, "", sAppData.Template.iTotal_Pen);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Summary, 0, "", AppData.Template.iTotal_Com);
+                cFunctions.Charts.SetChartValue(chrt_Bdo_Summary, 0, "", AppData.Template.iTotal_Pen);
 
                 chrt_Bdo_Summary.Series[0].Points[0].Color = Color.FromArgb(41, 115, 185);
                 chrt_Bdo_Summary.Series[0].Points[1].Color = Color.FromArgb(230, 40, 35);
 
                 // BOX LABELS - SUMMARY VALUES
-                lb_ComSum.Text = sAppData.Template.iTotal_Com.ToString("n0");
-                lb_PenSum.Text = sAppData.Template.iTotal_Pen.ToString("n0");           
+                lb_ComSum.Text = AppData.Template.iTotal_Com.ToString("n0");
+                lb_PenSum.Text = AppData.Template.iTotal_Pen.ToString("n0");           
 
-                lb_InsTotal.Text    = sAppData.Template.iTotal_comIns.ToString("n0");
-                lb_RepTotal.Text    = sAppData.Template.iTotal_comReprog.ToString("n0");
-                lb_ServTotal.Text   = sAppData.Template.iTotal_comServ.ToString("n0");
-                lb_RepairTotal.Text = sAppData.Template.iTotal_comRep.ToString("n0");
+                lb_InsTotal.Text    = AppData.Template.iTotal_comIns.ToString("n0");
+                lb_RepTotal.Text    = AppData.Template.iTotal_comReprog.ToString("n0");
+                lb_ServTotal.Text   = AppData.Template.iTotal_comServ.ToString("n0");
+                lb_RepairTotal.Text = AppData.Template.iTotal_comRep.ToString("n0");
 
-                lb_C1.Text = Math.Round(sAppData.Template.PInstall, 2).ToString() + "%";
-                lb_C2.Text = Math.Round(sAppData.Template.PReprog,  2).ToString() + "%";
-                lb_C3.Text = Math.Round(sAppData.Template.PServ,    2).ToString() + "%";
-                lb_C4.Text = Math.Round(sAppData.Template.PRepair,  2).ToString() + "%";
+                lb_C1.Text = Math.Round(AppData.Template.PInstall, 2).ToString() + "%";
+                lb_C2.Text = Math.Round(AppData.Template.PReprog,  2).ToString() + "%";
+                lb_C3.Text = Math.Round(AppData.Template.PServ,    2).ToString() + "%";
+                lb_C4.Text = Math.Round(AppData.Template.PRepair,  2).ToString() + "%";
 
                 //string.Format("{0:#,###0}", repTOTAL.ToString());
             }
@@ -233,6 +233,8 @@ namespace ActivityReportSystem.Forms
 
         private void btn_ReportView_Click(object sender, EventArgs e)
         {
+
+
             frmShadow ShadowBG = new frmShadow();
             using (frmReportViewer report = new frmReportViewer())
             {
@@ -308,7 +310,7 @@ namespace ActivityReportSystem.Forms
         {
             // dbFunc.LocationHighlight(sender, pnHover);
             // TpcDashMain.SelectedTab = tbpMenuPage2;
-            sAppData.DataParam.MenuControls = Tsm_Import.Text;
+            AppData.DataParam.MenuControls = Tsm_Import.Text;
             frmShadow ShadowBG = new frmShadow();
 
             using (frmMImport imports = new frmMImport())
@@ -346,7 +348,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Reprogram_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.TemplateName = sAppData.Reprogramming;
+            AppData.TemplateName = AppData.Reprogramming;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmViewDetails reprogram = new frmViewDetails())
@@ -366,7 +368,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Service_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.TemplateName = sAppData.Servicing;
+            AppData.TemplateName = AppData.Servicing;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmViewDetails servicing = new frmViewDetails())
@@ -386,7 +388,7 @@ namespace ActivityReportSystem.Forms
 
         private void lk_View_Repair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            sAppData.TemplateName = sAppData.Repair;
+            AppData.TemplateName = AppData.Repair;
 
             frmShadow ShadowBG = new frmShadow();
             using (frmViewDetails repair = new frmViewDetails())

@@ -42,12 +42,12 @@ namespace ActivityReportSystem.Forms
         {
             CheckUserDetails(txtUsername.Text, txtPassword.Text);
 
-            if (sAppData.DataParam.strLogUsername != txtUsername.Text.Trim())
+            if (AppData.DataParam.strLogUsername != txtUsername.Text.Trim())
             {
                 //cFunctions.setMessageBox("Incorrect Username", "Login", cFunctions.IconType.iStop);
 
             }
-            else if (sAppData.DataParam.strLogPassword != txtPassword.Text.Trim())
+            else if (AppData.DataParam.strLogPassword != txtPassword.Text.Trim())
             {
                 //cFunctions.setMessageBox("Incorrect Password", "Login", cFunctions.IconType.iStop);
             }

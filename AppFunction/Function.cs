@@ -124,6 +124,17 @@ namespace ActivityReportSystem.Function
 
         public const string Pipe = " | ";
 
+        public static void ClearAllDataGridViewSelections(Form frms)
+        {
+            foreach (Control control in frms.Controls)
+            {
+                if (control is DataGridView dataGridView)
+                {
+                    dataGridView.ClearSelection();
+                }
+            }
+        }
+
         public class Format
         {
             public const string Dash = "-";

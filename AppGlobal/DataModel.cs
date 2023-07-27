@@ -3,23 +3,24 @@ using System.Data;
 
 namespace ActivityReportSystem.Global
 {
-    struct sAppData
+    struct AppData
     {
 
-        public static int sSQLServerEnable  { get; set; }
-        public static int sMySQLEnable      { get; set; }
+        public static int sSQLServerEnable { get; set; }
+        public static int sMySQLEnable { get; set; }
         public static string TemplateName { get; set; }
 
-        public const string Installation  = "Installation";
+        public const string Installation = "Installation";
         public const string Reprogramming = "Reprogramming";
-        public const string Servicing     = "Servicing";
-        public const string Repair        = "Repair";
-        public const string Inventory     = "Inventory";
+        public const string Servicing = "Servicing";
+        public const string Repair = "Repair";
+        public const string Inventory = "Inventory";
 
         public static string[] Templates = { string.Empty, Installation, Reprogramming, Servicing, Repair };
 
         public static string ConnectionString { get; set; }
         public static DataTable CountDetails { get; set; }
+        public static int ReportID {get; set;}
 
         public class Database
         {
@@ -44,7 +45,7 @@ namespace ActivityReportSystem.Global
         {
             public const string Csv = "C:\\CASTLESTECH_ARS\\IMPORTS\\";
 
-            public const string Report = @"C:\\CASTLESTECH_ARS\\REPORTS\\";
+            public const string Report = "C:\\CASTLESTECH_ARS\\REPORTS\\";
         }
 
         public class DataParam

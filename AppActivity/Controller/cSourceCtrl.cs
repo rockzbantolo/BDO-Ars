@@ -18,6 +18,7 @@ namespace ActivityReportSystem.AppActivity.Model
     {
         cSpModel Sp = new cSpModel();
 
+        // Return Results
         public string Completed { get; set; }
         public string Pending { get; set; }
         public string Cancelled { get; set; }
@@ -27,6 +28,7 @@ namespace ActivityReportSystem.AppActivity.Model
         public int TotalDeployed { get; set; }
         public string SearchValue { get; set; }
 
+        // Paths
         private string csvPath { get; set; }
         private string insPath { get; set; }
         private string reprogPath { get; set; }
@@ -48,31 +50,31 @@ namespace ActivityReportSystem.AppActivity.Model
             switch (SearchValue)
             {
                 case string s when s.Contains("tblinstallation"):
-                    Completed = sAppData.Template.iTotal_comIns.ToString("n0");
-                    Pending   = sAppData.Template.iTotal_penIns.ToString("n0");
-                    Cancelled = sAppData.Template.iTotal_canIns.ToString("n0");
-                    Waiting   = sAppData.Template.iTotal_waitIns.ToString("n0");
+                    Completed = AppData.Template.iTotal_comIns.ToString("n0");
+                    Pending   = AppData.Template.iTotal_penIns.ToString("n0");
+                    Cancelled = AppData.Template.iTotal_canIns.ToString("n0");
+                    Waiting   = AppData.Template.iTotal_waitIns.ToString("n0");
                     break;
 
                 case string s when s.Contains("tblreprogramming"):
-                    Completed = sAppData.Template.iTotal_comReprog.ToString("n0");
-                    Pending   = sAppData.Template.iTotal_penReprog.ToString("n0");
-                    Cancelled = sAppData.Template.iTotal_canReprog.ToString("n0");
-                    Waiting   = sAppData.Template.iTotal_waitReprog.ToString("n0");
+                    Completed = AppData.Template.iTotal_comReprog.ToString("n0");
+                    Pending   = AppData.Template.iTotal_penReprog.ToString("n0");
+                    Cancelled = AppData.Template.iTotal_canReprog.ToString("n0");
+                    Waiting   = AppData.Template.iTotal_waitReprog.ToString("n0");
                     break;
 
                 case string s when s.Contains("tblservicing"):
-                    Completed = sAppData.Template.iTotal_comServ.ToString("n0");
-                    Pending   = sAppData.Template.iTotal_penServ.ToString("n0");
-                    Cancelled = sAppData.Template.iTotal_canServ.ToString("n0");
-                    Waiting   = sAppData.Template.iTotal_waitServ.ToString("n0");
+                    Completed = AppData.Template.iTotal_comServ.ToString("n0");
+                    Pending   = AppData.Template.iTotal_penServ.ToString("n0");
+                    Cancelled = AppData.Template.iTotal_canServ.ToString("n0");
+                    Waiting   = AppData.Template.iTotal_waitServ.ToString("n0");
                     break;
 
                 case string s when s.Contains("tblrepair"):
-                    Completed = sAppData.Template.iTotal_comRep.ToString("n0");
-                    Pending   = sAppData.Template.iTotal_penRep.ToString("n0");
-                    Cancelled = sAppData.Template.iTotal_canRep.ToString("n0");
-                    Waiting   = sAppData.Template.iTotal_waitRep.ToString("n0");
+                    Completed = AppData.Template.iTotal_comRep.ToString("n0");
+                    Pending   = AppData.Template.iTotal_penRep.ToString("n0");
+                    Cancelled = AppData.Template.iTotal_canRep.ToString("n0");
+                    Waiting   = AppData.Template.iTotal_waitRep.ToString("n0");
                     break;
 
                 default:
@@ -136,40 +138,40 @@ namespace ActivityReportSystem.AppActivity.Model
             if (Result.Rows.Count > 0 && Result.Rows.Count >= 4)
             {
                 // COMPLETED SUMMARY
-                sAppData.Template.iTotal_comIns     = int.Parse(Result.Rows[0]["Completed"].ToString().Trim());
-                sAppData.Template.iTotal_comReprog  = int.Parse(Result.Rows[1]["Completed"].ToString().Trim());
-                sAppData.Template.iTotal_comServ    = int.Parse(Result.Rows[2]["Completed"].ToString().Trim());
-                sAppData.Template.iTotal_comRep     = int.Parse(Result.Rows[3]["Completed"].ToString().Trim());
+                AppData.Template.iTotal_comIns     = int.Parse(Result.Rows[0]["Completed"].ToString().Trim());
+                AppData.Template.iTotal_comReprog  = int.Parse(Result.Rows[1]["Completed"].ToString().Trim());
+                AppData.Template.iTotal_comServ    = int.Parse(Result.Rows[2]["Completed"].ToString().Trim());
+                AppData.Template.iTotal_comRep     = int.Parse(Result.Rows[3]["Completed"].ToString().Trim());
 
                 // PENDING SUMMARY
-                sAppData.Template.iTotal_penIns     = int.Parse(Result.Rows[0]["Pending"].ToString().Trim());
-                sAppData.Template.iTotal_penReprog  = int.Parse(Result.Rows[1]["Pending"].ToString().Trim());
-                sAppData.Template.iTotal_penServ    = int.Parse(Result.Rows[2]["Pending"].ToString().Trim());
-                sAppData.Template.iTotal_penRep     = int.Parse(Result.Rows[3]["Pending"].ToString().Trim());
+                AppData.Template.iTotal_penIns     = int.Parse(Result.Rows[0]["Pending"].ToString().Trim());
+                AppData.Template.iTotal_penReprog  = int.Parse(Result.Rows[1]["Pending"].ToString().Trim());
+                AppData.Template.iTotal_penServ    = int.Parse(Result.Rows[2]["Pending"].ToString().Trim());
+                AppData.Template.iTotal_penRep     = int.Parse(Result.Rows[3]["Pending"].ToString().Trim());
 
                 // CANCELLED SUMMARY
-                sAppData.Template.iTotal_canIns     = int.Parse(Result.Rows[0]["Cancelled"].ToString().Trim());
-                sAppData.Template.iTotal_canReprog  = int.Parse(Result.Rows[1]["Cancelled"].ToString().Trim());
-                sAppData.Template.iTotal_canServ    = int.Parse(Result.Rows[2]["Cancelled"].ToString().Trim());
-                sAppData.Template.iTotal_canRep     = int.Parse(Result.Rows[3]["Cancelled"].ToString().Trim());
+                AppData.Template.iTotal_canIns     = int.Parse(Result.Rows[0]["Cancelled"].ToString().Trim());
+                AppData.Template.iTotal_canReprog  = int.Parse(Result.Rows[1]["Cancelled"].ToString().Trim());
+                AppData.Template.iTotal_canServ    = int.Parse(Result.Rows[2]["Cancelled"].ToString().Trim());
+                AppData.Template.iTotal_canRep     = int.Parse(Result.Rows[3]["Cancelled"].ToString().Trim());
 
                 // WAITING SUMMARY
-                sAppData.Template.iTotal_waitIns    = int.Parse(Result.Rows[0]["Waiting"].ToString().Trim());
-                sAppData.Template.iTotal_waitReprog = int.Parse(Result.Rows[1]["Waiting"].ToString().Trim());
-                sAppData.Template.iTotal_waitServ   = int.Parse(Result.Rows[2]["Waiting"].ToString().Trim());
-                sAppData.Template.iTotal_waitRep    = int.Parse(Result.Rows[3]["Waiting"].ToString().Trim());
+                AppData.Template.iTotal_waitIns    = int.Parse(Result.Rows[0]["Waiting"].ToString().Trim());
+                AppData.Template.iTotal_waitReprog = int.Parse(Result.Rows[1]["Waiting"].ToString().Trim());
+                AppData.Template.iTotal_waitServ   = int.Parse(Result.Rows[2]["Waiting"].ToString().Trim());
+                AppData.Template.iTotal_waitRep    = int.Parse(Result.Rows[3]["Waiting"].ToString().Trim());
 
                 // TOTAL SUMMARY
-                sAppData.Template.iTotal_Com = sAppData.Template.iTotal_comIns + sAppData.Template.iTotal_comReprog + sAppData.Template.iTotal_comServ + sAppData.Template.iTotal_comRep;
-                sAppData.Template.iTotal_Pen = sAppData.Template.iTotal_penIns + sAppData.Template.iTotal_penReprog + sAppData.Template.iTotal_penServ + sAppData.Template.iTotal_penRep;
-                sAppData.Template.iTotal_Can = sAppData.Template.iTotal_canIns + sAppData.Template.iTotal_canReprog + sAppData.Template.iTotal_canServ + sAppData.Template.iTotal_canRep;
-                sAppData.Template.iTotal_Wait = sAppData.Template.iTotal_waitIns + sAppData.Template.iTotal_waitReprog + sAppData.Template.iTotal_waitServ + sAppData.Template.iTotal_waitRep;
+                AppData.Template.iTotal_Com = AppData.Template.iTotal_comIns + AppData.Template.iTotal_comReprog + AppData.Template.iTotal_comServ + AppData.Template.iTotal_comRep;
+                AppData.Template.iTotal_Pen = AppData.Template.iTotal_penIns + AppData.Template.iTotal_penReprog + AppData.Template.iTotal_penServ + AppData.Template.iTotal_penRep;
+                AppData.Template.iTotal_Can = AppData.Template.iTotal_canIns + AppData.Template.iTotal_canReprog + AppData.Template.iTotal_canServ + AppData.Template.iTotal_canRep;
+                AppData.Template.iTotal_Wait = AppData.Template.iTotal_waitIns + AppData.Template.iTotal_waitReprog + AppData.Template.iTotal_waitServ + AppData.Template.iTotal_waitRep;
 
                 // Data Volume
-                sAppData.Template.InstallSize = int.Parse(Result.Rows[0]["Total"].ToString().Trim());
-                sAppData.Template.ReprogSize = int.Parse(Result.Rows[1]["Total"].ToString().Trim());
-                sAppData.Template.ServSize = int.Parse(Result.Rows[2]["Total"].ToString().Trim());
-                sAppData.Template.RepairSize = int.Parse(Result.Rows[3]["Total"].ToString().Trim());
+                AppData.Template.InstallSize = int.Parse(Result.Rows[0]["Total"].ToString().Trim());
+                AppData.Template.ReprogSize = int.Parse(Result.Rows[1]["Total"].ToString().Trim());
+                AppData.Template.ServSize = int.Parse(Result.Rows[2]["Total"].ToString().Trim());
+                AppData.Template.RepairSize = int.Parse(Result.Rows[3]["Total"].ToString().Trim());
 
             }
             else
@@ -177,7 +179,7 @@ namespace ActivityReportSystem.AppActivity.Model
                 Debug.WriteLine("Get Values : No Record Found!\n");
             }
 
-            TotalDeployed = sAppData.Template.iTotal_comIns;
+            TotalDeployed = AppData.Template.iTotal_comIns;
 
             if (SearchValue == string.Empty)
             {
@@ -185,29 +187,29 @@ namespace ActivityReportSystem.AppActivity.Model
             }
             else
             {
-                TotalStocks = Math.Abs(sAppData.Template.iTotal_comIns - sAppData.Template.iTotal_Invent);
+                TotalStocks = Math.Abs(AppData.Template.iTotal_comIns - AppData.Template.iTotal_Invent);
             }
 
 
 
-            if (sAppData.Template.InstallSize > 0)
+            if (AppData.Template.InstallSize > 0)
             {
-                sAppData.Template.PInstall = cFunctions.GetPercent(sAppData.Template.iTotal_comIns, sAppData.Template.InstallSize);
+                AppData.Template.PInstall = cFunctions.GetPercent(AppData.Template.iTotal_comIns, AppData.Template.InstallSize);
             }
 
-            if (sAppData.Template.ReprogSize > 0)
+            if (AppData.Template.ReprogSize > 0)
             {
-                sAppData.Template.PReprog = cFunctions.GetPercent(sAppData.Template.iTotal_comReprog, sAppData.Template.ReprogSize);
+                AppData.Template.PReprog = cFunctions.GetPercent(AppData.Template.iTotal_comReprog, AppData.Template.ReprogSize);
             }
 
-            if (sAppData.Template.ServSize > 0)
+            if (AppData.Template.ServSize > 0)
             {
-                sAppData.Template.PServ = cFunctions.GetPercent(sAppData.Template.iTotal_comServ, sAppData.Template.ServSize);
+                AppData.Template.PServ = cFunctions.GetPercent(AppData.Template.iTotal_comServ, AppData.Template.ServSize);
             }
 
-            if (sAppData.Template.RepairSize > 0)
+            if (AppData.Template.RepairSize > 0)
             {
-                sAppData.Template.PRepair = cFunctions.GetPercent(sAppData.Template.iTotal_comRep, sAppData.Template.RepairSize);
+                AppData.Template.PRepair = cFunctions.GetPercent(AppData.Template.iTotal_comRep, AppData.Template.RepairSize);
             }
 
         }
@@ -225,7 +227,7 @@ namespace ActivityReportSystem.AppActivity.Model
             if (Result.Rows.Count > 0)
             {
                 // COMPLETED SUMMARY
-                sAppData.Template.iTotal_Invent = int.Parse(Result.Rows[0]["TotalInvent"].ToString().Trim());
+                AppData.Template.iTotal_Invent = int.Parse(Result.Rows[0]["TotalInvent"].ToString().Trim());
             }
             else
             {
@@ -308,23 +310,23 @@ namespace ActivityReportSystem.AppActivity.Model
         {
             switch (SourceName)
             {
-                case sAppData.Installation:
+                case AppData.Installation:
                     csvPath = insPath;
                     break;
 
-                case sAppData.Reprogramming:
+                case AppData.Reprogramming:
                     csvPath = reprogPath;
                     break;
 
-                case sAppData.Servicing:
+                case AppData.Servicing:
                     csvPath = servPath;
                     break;
 
-                case sAppData.Repair:
+                case AppData.Repair:
                     csvPath = repPath;
                     break;
 
-                case sAppData.Inventory:
+                case AppData.Inventory:
                     csvPath = inventPath;
                     break;
             }
@@ -376,7 +378,7 @@ namespace ActivityReportSystem.AppActivity.Model
                     try
                     {
                         string excelFilePath = ofd.FileName;
-                        string csvFolderPath = sAppData.FilePath.Csv;
+                        string csvFolderPath = AppData.FilePath.Csv;
                         string csvFileName = Path.GetFileNameWithoutExtension(excelFilePath) + "_" + DateTime.Now.ToString("MMddyy") + ".csv";
 
                         //clsFunctions.SetDataBind(Obj, Tbx);
@@ -385,28 +387,28 @@ namespace ActivityReportSystem.AppActivity.Model
 
                         switch (SearchValue)
                         {
-                            case sAppData.Installation:
+                            case AppData.Installation:
                                 insPath = cFunctions.Convert.ExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
                                 Debug.WriteLine(SearchValue + " CSV File Location : " + insPath);
 
                                 break;
 
-                            case sAppData.Reprogramming:
+                            case AppData.Reprogramming:
                                 reprogPath = cFunctions.Convert.ExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
                                 Debug.WriteLine(SearchValue + " CSV File Location : " + reprogPath);
                                 break;
 
-                            case sAppData.Servicing:
+                            case AppData.Servicing:
                                 servPath = cFunctions.Convert.ExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
                                 Debug.WriteLine(SearchValue + " CSV File Location : " + servPath);
                                 break;
 
-                            case sAppData.Repair:
+                            case AppData.Repair:
                                 repPath = cFunctions.Convert.ExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
                                 Debug.WriteLine(SearchValue + " CSV File Location : " + repPath);
                                 break;
 
-                            case sAppData.Inventory:
+                            case AppData.Inventory:
                                 inventPath = cFunctions.Convert.ExcelToCsv(excelFilePath, Path.Combine(csvFolderPath, csvFileName));
                                 Debug.WriteLine(SearchValue + " CSV File Location : " + inventPath);
                                 break;

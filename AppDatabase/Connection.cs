@@ -20,14 +20,14 @@ namespace ActivityReportSystem.Database
             Debug.WriteLine(cFunctions.Format.LineSeperator);
             Debug.WriteLine("DATABASE INFORMATION");
             Debug.WriteLine(cFunctions.Format.LineSeperator);
-            Debug.WriteLine(string.Concat("Persist Security Info: ", sAppData.Database.sSecurity, "; "));
-            Debug.WriteLine(string.Concat("Server: ", sAppData.Database.sServer, "; "));
-            Debug.WriteLine(string.Concat("Port: ", sAppData.Database.sPort, "; "));
-            Debug.WriteLine(string.Concat("Database: ", sAppData.Database.sDatabase, "; "));
-            Debug.WriteLine(string.Concat("Username: ", sAppData.Database.sUserName, "; "));
-            Debug.WriteLine(string.Concat("Password: ", sAppData.Database.sPassword, "; "));
-            Debug.WriteLine(string.Concat("Local File : ", sAppData.Database.LocalInFile, ";"));
-            Debug.WriteLine(string.Concat("Connection Timeout: ", sAppData.Database.sTimeOut, ";"));
+            Debug.WriteLine(string.Concat("Persist Security Info: ", AppData.Database.sSecurity, "; "));
+            Debug.WriteLine(string.Concat("Server: ", AppData.Database.sServer, "; "));
+            Debug.WriteLine(string.Concat("Port: ", AppData.Database.sPort, "; "));
+            Debug.WriteLine(string.Concat("Database: ", AppData.Database.sDatabase, "; "));
+            Debug.WriteLine(string.Concat("Username: ", AppData.Database.sUserName, "; "));
+            Debug.WriteLine(string.Concat("Password: ", AppData.Database.sPassword, "; "));
+            Debug.WriteLine(string.Concat("Local File : ", AppData.Database.LocalInFile, ";"));
+            Debug.WriteLine(string.Concat("Connection Timeout: ", AppData.Database.sTimeOut, ";"));
             Debug.WriteLine(cFunctions.Format.LineSeperator + "\n");
             #endregion
         }
@@ -87,25 +87,25 @@ namespace ActivityReportSystem.Database
             FullPath = "C:\\CASTLESTECH_ARS\\SETTINGS\\" + FileName;
             this.IniFile(FullPath);
 
-            sAppData.Database.sSecurity   = this.Read("_Security", "Security");
-            sAppData.Database.sServer     = this.Read("_Server", "Server");
-            sAppData.Database.sPort       = this.Read("_Port", "Port");
-            sAppData.Database.sDatabase   = this.Read("_Database", "Database");
-            sAppData.Database.sUserName   = this.Read("_UserName", "UserName");
-            sAppData.Database.sPassword   = this.Read("_Password", "Password");
-            sAppData.Database.sSSLMode    = this.Read("_SSLMode", "SSLMode");
-            sAppData.Database.LocalInFile = this.Read("_AllowLoadLocalInfile", "AllowLoadLocalInfile");
-            sAppData.Database.sTimeOut    = "5000";
+            AppData.Database.sSecurity   = this.Read("_Security", "Security");
+            AppData.Database.sServer     = this.Read("_Server", "Server");
+            AppData.Database.sPort       = this.Read("_Port", "Port");
+            AppData.Database.sDatabase   = this.Read("_Database", "Database");
+            AppData.Database.sUserName   = this.Read("_UserName", "UserName");
+            AppData.Database.sPassword   = this.Read("_Password", "Password");
+            AppData.Database.sSSLMode    = this.Read("_SSLMode", "SSLMode");
+            AppData.Database.LocalInFile = this.Read("_AllowLoadLocalInfile", "AllowLoadLocalInfile");
+            AppData.Database.sTimeOut    = "5000";
 
-            sAppData.ConnectionString = string.Concat("PERSIST SECURITY INFO = ", sAppData.Database.sSecurity, "; ",
-                                        "SERVER = ", sAppData.Database.sServer, "; ",
-                                        "PORT = ", sAppData.Database.sPort, "; ",
-                                        "DATABASE = ", sAppData.Database.sDatabase, "; ",
-                                        "UID = ", sAppData.Database.sUserName, "; ",
-                                        "PASSWORD = ", sAppData.Database.sPassword, "; ",
-                                        "SSL MODE = ", sAppData.Database.sSSLMode, "; ",
-                                        "AllowLoadLocalInfile = ", sAppData.Database.LocalInFile, ";",
-                                        "CONNECT TIMEOUT = ", sAppData.Database.sTimeOut, ";");
+            AppData.ConnectionString = string.Concat("PERSIST SECURITY INFO = ", AppData.Database.sSecurity, "; ",
+                                        "SERVER = ", AppData.Database.sServer, "; ",
+                                        "PORT = ", AppData.Database.sPort, "; ",
+                                        "DATABASE = ", AppData.Database.sDatabase, "; ",
+                                        "UID = ", AppData.Database.sUserName, "; ",
+                                        "PASSWORD = ", AppData.Database.sPassword, "; ",
+                                        "SSL MODE = ", AppData.Database.sSSLMode, "; ",
+                                        "AllowLoadLocalInfile = ", AppData.Database.LocalInFile, ";",
+                                        "CONNECT TIMEOUT = ", AppData.Database.sTimeOut, ";");
 
         }
 

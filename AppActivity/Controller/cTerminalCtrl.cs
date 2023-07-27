@@ -210,7 +210,7 @@ namespace ActivityReportSystem.AppActivity.Model
 
             switch (Template)
             {
-                case sAppData.Installation:
+                case AppData.Installation:
 
                     Sp.StatementType = "View";
                     Sp.SearchBy = "Terminal" + cFunctions.Pipe + "History";
@@ -222,7 +222,7 @@ namespace ActivityReportSystem.AppActivity.Model
 
                     break;
 
-                case sAppData.Reprogramming:
+                case AppData.Reprogramming:
                     /*
                     Ctrl.StatementType = "View";
                     Ctrl.SearchBy      = "Terminal" + cFunctions.Pipe + "History";
@@ -234,7 +234,7 @@ namespace ActivityReportSystem.AppActivity.Model
                     */
                     break;
 
-                case sAppData.Servicing:
+                case AppData.Servicing:
 
                     Sp.StatementType = "View";
                     Sp.SearchBy = "Terminal" + cFunctions.Pipe + "History";
@@ -246,7 +246,7 @@ namespace ActivityReportSystem.AppActivity.Model
 
                     break;
 
-                case sAppData.Repair:
+                case AppData.Repair:
 
                     Sp.StatementType = "View";
                     Sp.SearchBy = "Terminal" + cFunctions.Pipe + "History";
