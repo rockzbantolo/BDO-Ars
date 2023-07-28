@@ -9,7 +9,7 @@ using System;
 
 namespace ActivityReportSystem.AppActivity.Model
 {
-    class cSpModel
+    class StoredProcedures
     {
         private MySqlConnection Conn;
         private MySqlCommand Cmd;

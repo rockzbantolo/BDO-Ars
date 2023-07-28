@@ -37,7 +37,7 @@ namespace ActivityReportSystem.Forms
 
         }
 
-        void ActivityReport()
+        private void ActivityReport()
         {
             string ReportPath = "";
             string reportFullPath = "";

@@ -1,4 +1,5 @@
 ﻿using ActivityReportSystem.AppActivity.Model;
+using ActivityReportSystem.Function;
 using ActivityReportSystem.Global;
 using ActivityReportSystem.Report;
 using CrystalDecisions.CrystalReports.Engine;
@@ -18,12 +19,13 @@ namespace ActivityReportSystem.Forms
 {
     public partial class frmViewReports : Form
     {
+        public int ReportID { get; set; }
         public string ReportHeader {get; set;}
         public string ReportPath { get; set; }
         public string ReportFullPath { get; set; }
         public string SpName { get; set; }
 
-        cSpModel Sp = new cSpModel();
+        StoredProcedures Sp = new StoredProcedures();
 
         public frmViewReports()
         {
@@ -32,12 +34,13 @@ namespace ActivityReportSystem.Forms
 
         private void frmViewReports_Load(object sender, EventArgs e)
         {
-            AppData.ReportID = 1;
+            Cursor.Current = Cursors.WaitCursor;
 
-            switch (AppData.ReportID)
+            Tm_FadeIn.Start();
+            switch (ReportID)
             {
                 case 1:
-                    TerminalReport();
+                    DashboardReport();
                     break;
 
                 case 2:
@@ -49,6 +52,8 @@ namespace ActivityReportSystem.Forms
                 case 4:
                     break;
             }
+
+            Cursor.Current = Cursors.Default;
         }
 
         private string GetReportPath()
@@ -138,7 +143,22 @@ namespace ActivityReportSystem.Forms
 
         }
 
-        private void TerminalReport()
+        private void Tm_FadeIn_Tick(object sender, EventArgs e)
+        {
+            cFunctions.Effects.FadeIn(this, Tm_FadeIn);
+        }
+
+        private void Tm_FadeOut_Tick(object sender, EventArgs e)
+        {
+            cFunctions.Effects.FadeOut(this, Tm_FadeOut);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Tm_FadeOut.Start();
+        }
+
+        private void DashboardReport()
         {
             ReportPath = GetReportPath();
             ReportFullPath = Path.Combine(ReportPath, "rptDashboard.rpt");
@@ -177,5 +197,6 @@ namespace ActivityReportSystem.Forms
 
             }
         }
+
     }
 }

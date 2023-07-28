@@ -14,17 +14,19 @@ namespace ActivityReportSystem.AppActivity.Model
 {
     class cTerminalCtrl
     {
-        cSpModel Sp = new cSpModel();
+        StoredProcedures Sp;
 
         public string Template { get; set; }
         public DateTimePicker DateFrom { get; set; }
         public DateTimePicker DateTo { get; set; }
         public string HeaderName { get; set; }
-        public string SearchValue { get; set; }
+        public string SearchValue { get; set; } = "";
 
 
         public void GetDetails(DataGridView obj)
         {
+            Sp = new StoredProcedures();
+
             DataTable Result = new DataTable();
 
             obj.Rows.Clear();
@@ -151,7 +153,6 @@ namespace ActivityReportSystem.AppActivity.Model
                                 row["Total"].ToString().Trim()
                             );
                         }
-
                     }
                     else
                     {
@@ -206,6 +207,8 @@ namespace ActivityReportSystem.AppActivity.Model
 
         public void GetHistory(DataGridView obj)
         {
+            Sp = new StoredProcedures();
+
             DataTable Result = new DataTable();
 
             switch (Template)

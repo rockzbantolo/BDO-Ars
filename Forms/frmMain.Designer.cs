@@ -88,6 +88,7 @@
             this.Tsm_Servicing = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.Tsm_Repair = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.breakdownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSummary = new System.Windows.Forms.ToolStripMenuItem();
             this.Ms_Reports = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,6 +100,7 @@
             this.servicingToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.installationToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReportView = new System.Windows.Forms.ToolStripMenuItem();
             this.Ms_Settings = new System.Windows.Forms.ToolStripMenuItem();
@@ -190,11 +192,11 @@
             this.label53 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.lb_ComSum = new System.Windows.Forms.Label();
-            this.chrt_Bdo_Summary = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lb_PenSum = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.panel53 = new System.Windows.Forms.Panel();
             this.panel52 = new System.Windows.Forms.Panel();
+            this.chrt_Bdo_Summary = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label18 = new System.Windows.Forms.Label();
             this.chrt_Bdo_Display = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.bne_MainBody = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -211,8 +213,7 @@
             this.bne_Bdo_Repair = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bne_dgv_Bdo_ComReq = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bne_dgv_Summary_PenReq = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.bne_TerminalHeader = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pn_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Maximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Close)).BeginInit();
@@ -262,7 +263,7 @@
             this.pn_Menu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn_Menu.Location = new System.Drawing.Point(0, 0);
             this.pn_Menu.Name = "pn_Menu";
-            this.pn_Menu.Size = new System.Drawing.Size(1280, 44);
+            this.pn_Menu.Size = new System.Drawing.Size(1280, 53);
             this.pn_Menu.TabIndex = 335;
             // 
             // btn_Maximize
@@ -271,7 +272,7 @@
             this.btn_Maximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
             this.btn_Maximize.Image = global::ActivityReportSystem.Properties.Resources.ic_maximize_26px;
             this.btn_Maximize.ImageActive = null;
-            this.btn_Maximize.Location = new System.Drawing.Point(1222, 10);
+            this.btn_Maximize.Location = new System.Drawing.Point(1222, 13);
             this.btn_Maximize.Name = "btn_Maximize";
             this.btn_Maximize.Size = new System.Drawing.Size(20, 20);
             this.btn_Maximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -283,7 +284,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.LightGray;
-            this.panel7.Location = new System.Drawing.Point(132, 10);
+            this.panel7.Location = new System.Drawing.Point(154, 16);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(2, 20);
@@ -295,7 +296,7 @@
             this.btn_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
             this.btn_Close.Image = global::ActivityReportSystem.Properties.Resources.ic_close_25;
             this.btn_Close.ImageActive = null;
-            this.btn_Close.Location = new System.Drawing.Point(1248, 10);
+            this.btn_Close.Location = new System.Drawing.Point(1248, 13);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(20, 20);
             this.btn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -310,7 +311,7 @@
             this.btn_Minimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
             this.btn_Minimize.Image = global::ActivityReportSystem.Properties.Resources.ic_minimize2_26;
             this.btn_Minimize.ImageActive = null;
-            this.btn_Minimize.Location = new System.Drawing.Point(1196, 10);
+            this.btn_Minimize.Location = new System.Drawing.Point(1196, 13);
             this.btn_Minimize.Name = "btn_Minimize";
             this.btn_Minimize.Size = new System.Drawing.Size(20, 20);
             this.btn_Minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -323,10 +324,10 @@
             // 
             this.pictureBox2.BackgroundImage = global::ActivityReportSystem.Properties.Resources.castleslogo_white;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 8);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(114, 35);
+            this.pictureBox2.Size = new System.Drawing.Size(130, 35);
             this.pictureBox2.TabIndex = 147;
             this.pictureBox2.TabStop = false;
             // 
@@ -335,7 +336,7 @@
             this.pn_MenuHeader.BackColor = System.Drawing.Color.White;
             this.pn_MenuHeader.Controls.Add(this.panel1);
             this.pn_MenuHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pn_MenuHeader.Location = new System.Drawing.Point(0, 44);
+            this.pn_MenuHeader.Location = new System.Drawing.Point(0, 53);
             this.pn_MenuHeader.Margin = new System.Windows.Forms.Padding(2);
             this.pn_MenuHeader.Name = "pn_MenuHeader";
             this.pn_MenuHeader.Size = new System.Drawing.Size(1280, 42);
@@ -392,7 +393,7 @@
             // 
             this.tsmSource.BackColor = System.Drawing.Color.White;
             this.tsmSource.Name = "tsmSource";
-            this.tsmSource.Size = new System.Drawing.Size(152, 22);
+            this.tsmSource.Size = new System.Drawing.Size(109, 22);
             this.tsmSource.Text = "&Source";
             this.tsmSource.Click += new System.EventHandler(this.tsmSource_Click);
             // 
@@ -467,6 +468,11 @@
             this.Tsm_Repair.Name = "Tsm_Repair";
             this.Tsm_Repair.Size = new System.Drawing.Size(159, 22);
             this.Tsm_Repair.Text = "&Repair";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(149, 6);
             // 
             // breakdownToolStripMenuItem
             // 
@@ -548,6 +554,11 @@
             this.installationToolStripMenuItem2.Size = new System.Drawing.Size(165, 22);
             this.installationToolStripMenuItem2.Text = "&Repair";
             // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(149, 6);
+            // 
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -559,7 +570,7 @@
             // tsmReportView
             // 
             this.tsmReportView.Name = "tsmReportView";
-            this.tsmReportView.Size = new System.Drawing.Size(152, 22);
+            this.tsmReportView.Size = new System.Drawing.Size(144, 22);
             this.tsmReportView.Text = "&Report View";
             this.tsmReportView.Click += new System.EventHandler(this.tsmReportView_Click);
             // 
@@ -712,7 +723,7 @@
             this.lb_RepairTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             this.lb_RepairTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RepairTotal.ForeColor = System.Drawing.Color.White;
-            this.lb_RepairTotal.Location = new System.Drawing.Point(20, 52);
+            this.lb_RepairTotal.Location = new System.Drawing.Point(28, 52);
             this.lb_RepairTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_RepairTotal.Name = "lb_RepairTotal";
             this.lb_RepairTotal.Size = new System.Drawing.Size(91, 30);
@@ -795,7 +806,7 @@
             this.lb_ServTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
             this.lb_ServTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ServTotal.ForeColor = System.Drawing.Color.White;
-            this.lb_ServTotal.Location = new System.Drawing.Point(20, 52);
+            this.lb_ServTotal.Location = new System.Drawing.Point(28, 52);
             this.lb_ServTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_ServTotal.Name = "lb_ServTotal";
             this.lb_ServTotal.Size = new System.Drawing.Size(91, 30);
@@ -848,7 +859,7 @@
             this.lb_InsTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(159)))), ((int)(((byte)(31)))));
             this.lb_InsTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_InsTotal.ForeColor = System.Drawing.Color.White;
-            this.lb_InsTotal.Location = new System.Drawing.Point(20, 52);
+            this.lb_InsTotal.Location = new System.Drawing.Point(28, 52);
             this.lb_InsTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_InsTotal.Name = "lb_InsTotal";
             this.lb_InsTotal.Size = new System.Drawing.Size(91, 30);
@@ -962,7 +973,7 @@
             this.lb_RepTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.lb_RepTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RepTotal.ForeColor = System.Drawing.Color.White;
-            this.lb_RepTotal.Location = new System.Drawing.Point(20, 52);
+            this.lb_RepTotal.Location = new System.Drawing.Point(28, 52);
             this.lb_RepTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_RepTotal.Name = "lb_RepTotal";
             this.lb_RepTotal.Size = new System.Drawing.Size(91, 30);
@@ -1379,9 +1390,9 @@
             this.pn_Lookup_Body.Controls.Add(this.label3);
             this.pn_Lookup_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_Lookup_Body.Location = new System.Drawing.Point(3, 162);
-            this.pn_Lookup_Body.Margin = new System.Windows.Forms.Padding(3, 5, 5, 0);
+            this.pn_Lookup_Body.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.pn_Lookup_Body.Name = "pn_Lookup_Body";
-            this.pn_Lookup_Body.Size = new System.Drawing.Size(246, 288);
+            this.pn_Lookup_Body.Size = new System.Drawing.Size(248, 288);
             this.pn_Lookup_Body.TabIndex = 350;
             // 
             // btn_Model_Search
@@ -1393,7 +1404,7 @@
             this.btn_Model_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Model_Search.Location = new System.Drawing.Point(17, 108);
             this.btn_Model_Search.Name = "btn_Model_Search";
-            this.btn_Model_Search.Size = new System.Drawing.Size(214, 33);
+            this.btn_Model_Search.Size = new System.Drawing.Size(216, 33);
             this.btn_Model_Search.TabIndex = 9;
             this.btn_Model_Search.Text = "    Search";
             this.btn_Model_Search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1409,7 +1420,7 @@
             this.btn_Model_Clear.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Model_Clear.Location = new System.Drawing.Point(128, 107);
             this.btn_Model_Clear.Name = "btn_Model_Clear";
-            this.btn_Model_Clear.Size = new System.Drawing.Size(102, 33);
+            this.btn_Model_Clear.Size = new System.Drawing.Size(104, 33);
             this.btn_Model_Clear.TabIndex = 8;
             this.btn_Model_Clear.Text = "    Clear";
             this.btn_Model_Clear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1448,7 +1459,7 @@
             "Repair"});
             this.cmb_Model_Template.Location = new System.Drawing.Point(91, 16);
             this.cmb_Model_Template.Name = "cmb_Model_Template";
-            this.cmb_Model_Template.Size = new System.Drawing.Size(140, 23);
+            this.cmb_Model_Template.Size = new System.Drawing.Size(142, 23);
             this.cmb_Model_Template.TabIndex = 4;
             // 
             // dgv_Model_Status_List
@@ -1513,7 +1524,7 @@
             this.dgv_Model_Status_List.ShowCellToolTips = false;
             this.dgv_Model_Status_List.ShowEditingIcon = false;
             this.dgv_Model_Status_List.ShowRowErrors = false;
-            this.dgv_Model_Status_List.Size = new System.Drawing.Size(213, 123);
+            this.dgv_Model_Status_List.Size = new System.Drawing.Size(215, 123);
             this.dgv_Model_Status_List.TabIndex = 1;
             // 
             // Column1
@@ -1554,7 +1565,7 @@
             this.dtp_Model_From.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_Model_From.Location = new System.Drawing.Point(91, 45);
             this.dtp_Model_From.Name = "dtp_Model_From";
-            this.dtp_Model_From.Size = new System.Drawing.Size(140, 23);
+            this.dtp_Model_From.Size = new System.Drawing.Size(142, 23);
             this.dtp_Model_From.TabIndex = 2;
             // 
             // label4
@@ -1578,7 +1589,7 @@
             this.dtp_Model_To.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_Model_To.Location = new System.Drawing.Point(91, 74);
             this.dtp_Model_To.Name = "dtp_Model_To";
-            this.dtp_Model_To.Size = new System.Drawing.Size(140, 23);
+            this.dtp_Model_To.Size = new System.Drawing.Size(142, 23);
             this.dtp_Model_To.TabIndex = 6;
             // 
             // label3
@@ -1606,9 +1617,9 @@
             this.pn_TerminalHeader.Controls.Add(this.lb_Total_Deployed);
             this.pn_TerminalHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_TerminalHeader.Location = new System.Drawing.Point(3, 3);
-            this.pn_TerminalHeader.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
+            this.pn_TerminalHeader.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.pn_TerminalHeader.Name = "pn_TerminalHeader";
-            this.pn_TerminalHeader.Size = new System.Drawing.Size(246, 149);
+            this.pn_TerminalHeader.Size = new System.Drawing.Size(248, 149);
             this.pn_TerminalHeader.TabIndex = 1;
             this.pn_TerminalHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_TerminalHeader_Paint);
             // 
@@ -1713,7 +1724,7 @@
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.BackgroundImage = global::ActivityReportSystem.Properties.Resources.ic_combo_chart_52;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox7.Location = new System.Drawing.Point(201, 8);
+            this.pictureBox7.Location = new System.Drawing.Point(203, 8);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(37, 31);
             this.pictureBox7.TabIndex = 16;
@@ -1882,7 +1893,7 @@
             this.label53.BackColor = System.Drawing.Color.White;
             this.label53.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label53.Location = new System.Drawing.Point(19, 20);
+            this.label53.Location = new System.Drawing.Point(18, 7);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(92, 21);
             this.label53.TabIndex = 336;
@@ -1911,48 +1922,6 @@
             this.lb_ComSum.Size = new System.Drawing.Size(68, 21);
             this.lb_ComSum.TabIndex = 335;
             this.lb_ComSum.Text = "999,999";
-            // 
-            // chrt_Bdo_Summary
-            // 
-            this.chrt_Bdo_Summary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.chrt_Bdo_Summary.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chrt_Bdo_Summary.ChartAreas.Add(chartArea1);
-            legend1.Alignment = System.Drawing.StringAlignment.Center;
-            legend1.AutoFitMinFontSize = 10;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Enabled = false;
-            legend1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            legend1.IsEquallySpacedItems = true;
-            legend1.IsTextAutoFit = false;
-            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
-            legend1.MaximumAutoSize = 30F;
-            legend1.Name = "Legend1";
-            legend1.TextWrapThreshold = 30;
-            legend1.TitleFont = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chrt_Bdo_Summary.Legends.Add(legend1);
-            this.chrt_Bdo_Summary.Location = new System.Drawing.Point(100, 19);
-            this.chrt_Bdo_Summary.Margin = new System.Windows.Forms.Padding(2);
-            this.chrt_Bdo_Summary.Name = "chrt_Bdo_Summary";
-            series1.BorderColor = System.Drawing.Color.White;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.CustomProperties = "CollectedSliceExploded=True";
-            series1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.IsValueShownAsLabel = true;
-            series1.Label = "#PERCENT{P1}";
-            series1.LabelForeColor = System.Drawing.Color.White;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
-            series1.ShadowColor = System.Drawing.Color.Silver;
-            series1.ShadowOffset = 2;
-            series1.YValuesPerPoint = 4;
-            this.chrt_Bdo_Summary.Series.Add(series1);
-            this.chrt_Bdo_Summary.Size = new System.Drawing.Size(241, 179);
-            this.chrt_Bdo_Summary.TabIndex = 12;
-            this.chrt_Bdo_Summary.TabStop = false;
             // 
             // lb_PenSum
             // 
@@ -1996,12 +1965,54 @@
             this.panel52.Size = new System.Drawing.Size(2, 20);
             this.panel52.TabIndex = 340;
             // 
+            // chrt_Bdo_Summary
+            // 
+            this.chrt_Bdo_Summary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chrt_Bdo_Summary.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chrt_Bdo_Summary.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.AutoFitMinFontSize = 10;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Enabled = false;
+            legend1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            legend1.IsEquallySpacedItems = true;
+            legend1.IsTextAutoFit = false;
+            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
+            legend1.MaximumAutoSize = 30F;
+            legend1.Name = "Legend1";
+            legend1.TextWrapThreshold = 30;
+            legend1.TitleFont = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chrt_Bdo_Summary.Legends.Add(legend1);
+            this.chrt_Bdo_Summary.Location = new System.Drawing.Point(100, 19);
+            this.chrt_Bdo_Summary.Margin = new System.Windows.Forms.Padding(2);
+            this.chrt_Bdo_Summary.Name = "chrt_Bdo_Summary";
+            series1.BorderColor = System.Drawing.Color.White;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.CustomProperties = "CollectedSliceExploded=True";
+            series1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.Label = "#PERCENT{P1}";
+            series1.LabelForeColor = System.Drawing.Color.White;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
+            series1.ShadowColor = System.Drawing.Color.Silver;
+            series1.ShadowOffset = 2;
+            series1.YValuesPerPoint = 4;
+            this.chrt_Bdo_Summary.Series.Add(series1);
+            this.chrt_Bdo_Summary.Size = new System.Drawing.Size(241, 179);
+            this.chrt_Bdo_Summary.TabIndex = 12;
+            this.chrt_Bdo_Summary.TabStop = false;
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label18.Location = new System.Drawing.Point(337, 11);
+            this.label18.Location = new System.Drawing.Point(340, 16);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(117, 30);
             this.label18.TabIndex = 12;
@@ -2085,7 +2096,7 @@
             // 
             // bne_MainBody
             // 
-            this.bne_MainBody.ElipseRadius = 6;
+            this.bne_MainBody.ElipseRadius = 10;
             this.bne_MainBody.TargetControl = this;
             // 
             // label43
@@ -2117,7 +2128,7 @@
             // 
             // bne_dgv_Model_List
             // 
-            this.bne_dgv_Model_List.ElipseRadius = 12;
+            this.bne_dgv_Model_List.ElipseRadius = 11;
             this.bne_dgv_Model_List.TargetControl = this.dgv_Model_List;
             // 
             // bne_SummaryBody
@@ -2162,15 +2173,10 @@
             this.bne_dgv_Summary_PenReq.ElipseRadius = 6;
             this.bne_dgv_Summary_PenReq.TargetControl = this.dgv_Sum_PenReq;
             // 
-            // toolStripSeparator10
+            // bne_TerminalHeader
             // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(149, 6);
+            this.bne_TerminalHeader.ElipseRadius = 6;
+            this.bne_TerminalHeader.TargetControl = this.pn_TerminalHeader;
             // 
             // frmMain
             // 
@@ -2192,7 +2198,6 @@
             this.Text = "Castles Technology";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.pn_Menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Maximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Close)).EndInit();
@@ -2397,5 +2402,6 @@
         private Bunifu.Framework.UI.BunifuElipse bne_dgv_Summary_PenReq;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private Bunifu.Framework.UI.BunifuElipse bne_TerminalHeader;
     }
 }

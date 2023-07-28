@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>36</ApplicationRevision>
+    <ApplicationRevision>37</ApplicationRevision>
     <ApplicationVersion>1.3.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -131,9 +131,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppActivity\Controller\cSourceCtrl.cs" />
-    <Compile Include="AppActivity\Controller\cTerminalCtrl.cs" />
-    <Compile Include="AppActivity\Model\cSpModel.cs" />
+    <Compile Include="AppActivities\Controller\Source.cs" />
+    <Compile Include="AppActivities\Controller\Terminal.cs" />
+    <Compile Include="AppActivities\Model\Procedures.cs" />
     <Compile Include="AppDatabase\Connection.cs" />
     <Compile Include="Forms\frmViewBreakdown.cs">
       <SubType>Form</SubType>
@@ -195,9 +195,9 @@
     <Compile Include="Forms\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppFunction\Function.cs" />
-    <Compile Include="AppGlobal\Array.cs" />
-    <Compile Include="AppGlobal\DataModel.cs" />
+    <Compile Include="AppModels\Function.cs" />
+    <Compile Include="AppGlobals\Array.cs" />
+    <Compile Include="AppGlobals\DataModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -286,7 +286,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppModels\" />
     <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>

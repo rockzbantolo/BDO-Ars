@@ -130,15 +130,15 @@
 </value>
   </data>
   <metadata name="bneDashBody.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>492, 13</value>
+    <value>23, 24</value>
   </metadata>
   <metadata name="DragHeader.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>619, 13</value>
+    <value>150, 24</value>
   </metadata>
   <metadata name="Tm_FadeIn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>737, 13</value>
+    <value>268, 24</value>
   </metadata>
   <metadata name="Tm_FadeOut.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>847, 13</value>
+    <value>378, 24</value>
   </metadata>
 </root>

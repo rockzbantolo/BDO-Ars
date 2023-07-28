@@ -16,7 +16,7 @@ namespace ActivityReportSystem.AppActivity.Model
 {
     class cSourceCtrl
     {
-        cSpModel Sp = new cSpModel();
+        StoredProcedures Sp = new StoredProcedures();
 
         // Return Results
         public string Completed { get; set; }

@@ -30,10 +30,8 @@ namespace ActivityReportSystem
         public frmMImport()
         {
             InitializeComponent();
-            lb_Imp_Selected.Text = string.Empty;
             Tm_FadeIn.Start();
         }
-
 
         private void frmMImport_KeyDown(object sender, KeyEventArgs e)
         {
@@ -102,90 +100,11 @@ namespace ActivityReportSystem
             Tm_FadeOut.Start();
         }
 
-
-        // LINE NUMBER
-        private void grdImpInstallation_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            cFunctions.Grid.AddGridLineNo(sender, e, this.Font); // ADD LINE #
-        }
-
-        private void grdImpReprogramming_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            cFunctions.Grid.AddGridLineNo(sender, e, this.Font); // ADD LINE #
-        }
-
-        private void grdImpServicing_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            cFunctions.Grid.AddGridLineNo(sender, e, this.Font); // ADD LINE #
-        }
-
-        private void grdImpRepair_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            cFunctions.Grid.AddGridLineNo(sender, e, this.Font);// ADD LINE #
-        }
-
-        private void dgv_Imp_Inventory_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            cFunctions.Grid.AddGridLineNo(sender, e, this.Font); // ADD LINE #
-        }
-
-
         // BORDER SHADOW
         private void pn_Imp_BxTemplate_Paint(object sender, PaintEventArgs e)
         {
             cFunctions.Effects.BorderShadow(e, pn_Imp_BxTemplate, 0, 0, 3, 3);
         }
-
-        private void pn_Imp_BxPreview_Paint(object sender, PaintEventArgs e)
-        {
-            cFunctions.Effects.BorderShadow(e, pn_Imp_BxPreview, 0, 0, 3, 3);
-        }
-
-        private void pn_Imp_BxDataClick_Paint(object sender, PaintEventArgs e)
-        {
-            cFunctions.Effects.BorderShadow(e, pn_Imp_BxDataClick, 0, 0, 3, 3);
-        }
-
-
-        #region Doublick Event Dgv
-        // VIEW SELECTED
-        private void dgv_Imp_Installation_DoubleClick(object sender, EventArgs e)
-        {
-            // GET DATAGRID DATA
-            string SelectedRow = cFunctions.Grid.getGridSelectedRow(dgv_Imp_Installation, 0);
-            viewSelectedRow(SelectedRow);
-        }
-
-        private void dgv_Imp_Reprogramming_DoubleClick(object sender, EventArgs e)
-        {
-            string SelectedRow = cFunctions.Grid.getGridSelectedRow(dgv_Imp_Reprogramming, 0);
-            viewSelectedRow(SelectedRow);
-        }
-
-        private void dgv_Imp_Servicing_DoubleClick(object sender, EventArgs e)
-        {
-            string SelectedRow = cFunctions.Grid.getGridSelectedRow(dgv_Imp_Servicing, 0);
-            viewSelectedRow(SelectedRow);
-        }
-
-        private void dgv_Imp_Repair_DoubleClick(object sender, EventArgs e)
-        {
-            string SelectedRow = cFunctions.Grid.getGridSelectedRow(dgv_Imp_Repair, 0);
-            viewSelectedRow(SelectedRow);
-        }
-
-        private void dgv_Imp_Inventory_DoubleClick(object sender, EventArgs e)
-        {
-            string SelectedRow = cFunctions.Grid.getGridSelectedRow(dgv_Imp_Inventory, 0);
-            viewSelectedRow(SelectedRow);
-        }
-
-        private void viewSelectedRow(string SelectedRow)
-        {
-            lb_Imp_Selected.Text = tpcActivity.SelectedTab.Text;
-            rtb_Imp_Selected.Text = SelectedRow;
-        }
-        #endregion
 
 
         // OPEN FILE DIALOG BUTTONS
@@ -238,7 +157,6 @@ namespace ActivityReportSystem
             mainForm?.InitializeDisplay();
         }
 
-
         // CLEAR OBJ
         public void ClearObj()
         {
@@ -269,6 +187,7 @@ namespace ActivityReportSystem
         {
             cFunctions.Effects.FadeOut(this, Tm_FadeOut);
         }
+
     }
 }
 

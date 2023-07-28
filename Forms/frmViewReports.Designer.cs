@@ -77,6 +77,7 @@
             this.btnClose.TabIndex = 331;
             this.btnClose.TabStop = false;
             this.btnClose.Zoom = 10;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // myViewer
             // 
@@ -106,10 +107,12 @@
             // Tm_FadeIn
             // 
             this.Tm_FadeIn.Interval = 30;
+            this.Tm_FadeIn.Tick += new System.EventHandler(this.Tm_FadeIn_Tick);
             // 
             // Tm_FadeOut
             // 
             this.Tm_FadeOut.Interval = 20;
+            this.Tm_FadeOut.Tick += new System.EventHandler(this.Tm_FadeOut_Tick);
             // 
             // frmViewReports
             // 

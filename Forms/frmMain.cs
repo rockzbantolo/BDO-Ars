@@ -208,34 +208,6 @@ namespace ActivityReportSystem.Forms
             }
         }
 
-        private void tsmReportView_Click(object sender, EventArgs e)
-        {
-            frmShadow ShadowBG = new frmShadow();
-            using (frmReportViewer report = new frmReportViewer())
-            {
-                ShadowBG.Location = this.Location;
-                ShadowBG.Size = this.Size;
-                ShadowBG.Show(this);
-                report.Owner = ShadowBG;
-                report.ShowDialog();
-                ShadowBG.Dispose();
-            }
-        }
-
-        private void tsmSummary_Click(object sender, EventArgs e)
-        {
-            frmShadow ShadowBG = new frmShadow();
-            using (frmViewBreakdown breakdown = new frmViewBreakdown())
-            {
-                ShadowBG.Location = this.Location;
-                ShadowBG.Size = this.Size;
-                ShadowBG.Show(this);
-                breakdown.Owner = ShadowBG;
-                breakdown.ShowDialog();
-                ShadowBG.Dispose();
-            }
-        }
-
         private void btn_Model_Search_Click(object sender, EventArgs e)
         {
             if (cmb_Model_Template.Text == "")
@@ -262,6 +234,34 @@ namespace ActivityReportSystem.Forms
             //Db.SearchTerminalHistory(dgv_Model_Status_List, cmb_Model_Template, dtp_Model_From, dtp_Model_To);
 
             dgv_Model_Status_List.ClearSelection();
+        }
+
+        private void tsmReportView_Click(object sender, EventArgs e)
+        {
+            frmShadow ShadowBG = new frmShadow();
+            using (frmReportViewer report = new frmReportViewer())
+            {
+                ShadowBG.Location = this.Location;
+                ShadowBG.Size = this.Size;
+                ShadowBG.Show(this);
+                report.Owner = ShadowBG;
+                report.ShowDialog();
+                ShadowBG.Dispose();
+            }
+        }
+
+        private void tsmSummary_Click(object sender, EventArgs e)
+        {
+            frmShadow ShadowBG = new frmShadow();
+            using (frmViewBreakdown breakdown = new frmViewBreakdown())
+            {
+                ShadowBG.Location = this.Location;
+                ShadowBG.Size = this.Size;
+                ShadowBG.Show(this);
+                breakdown.Owner = ShadowBG;
+                breakdown.ShowDialog();
+                ShadowBG.Dispose();
+            }
         }
 
         private void tsmSource_Click(object sender, EventArgs e)
@@ -443,9 +443,5 @@ namespace ActivityReportSystem.Forms
             cFunctions.Effects.BorderShadow(e, pn_MenuHeader, 0, 0, 0, 2);
         }
 
-        private void frmMain_Resize(object sender, EventArgs e)
-        {
-
-        }
     }
 }
