@@ -272,9 +272,9 @@
             this.btn_Maximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
             this.btn_Maximize.Image = global::ActivityReportSystem.Properties.Resources.ic_maximize_26px;
             this.btn_Maximize.ImageActive = null;
-            this.btn_Maximize.Location = new System.Drawing.Point(1222, 13);
+            this.btn_Maximize.Location = new System.Drawing.Point(1221, 13);
             this.btn_Maximize.Name = "btn_Maximize";
-            this.btn_Maximize.Size = new System.Drawing.Size(20, 20);
+            this.btn_Maximize.Size = new System.Drawing.Size(22, 22);
             this.btn_Maximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Maximize.TabIndex = 342;
             this.btn_Maximize.TabStop = false;
@@ -298,7 +298,7 @@
             this.btn_Close.ImageActive = null;
             this.btn_Close.Location = new System.Drawing.Point(1248, 13);
             this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(20, 20);
+            this.btn_Close.Size = new System.Drawing.Size(22, 22);
             this.btn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Close.TabIndex = 334;
             this.btn_Close.TabStop = false;
@@ -311,9 +311,9 @@
             this.btn_Minimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
             this.btn_Minimize.Image = global::ActivityReportSystem.Properties.Resources.ic_minimize2_26;
             this.btn_Minimize.ImageActive = null;
-            this.btn_Minimize.Location = new System.Drawing.Point(1196, 13);
+            this.btn_Minimize.Location = new System.Drawing.Point(1194, 13);
             this.btn_Minimize.Name = "btn_Minimize";
-            this.btn_Minimize.Size = new System.Drawing.Size(20, 20);
+            this.btn_Minimize.Size = new System.Drawing.Size(22, 22);
             this.btn_Minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_Minimize.TabIndex = 330;
             this.btn_Minimize.TabStop = false;
@@ -324,10 +324,10 @@
             // 
             this.pictureBox2.BackgroundImage = global::ActivityReportSystem.Properties.Resources.castleslogo_white;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 8);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 7);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(130, 35);
+            this.pictureBox2.Size = new System.Drawing.Size(140, 41);
             this.pictureBox2.TabIndex = 147;
             this.pictureBox2.TabStop = false;
             // 
@@ -512,7 +512,7 @@
             this.installationToolStripMenuItem2});
             this.Tsm_Source.Enabled = false;
             this.Tsm_Source.Name = "Tsm_Source";
-            this.Tsm_Source.Size = new System.Drawing.Size(152, 22);
+            this.Tsm_Source.Size = new System.Drawing.Size(133, 22);
             this.Tsm_Source.Text = "&Source";
             // 
             // installationToolStripMenuItem1
@@ -557,14 +557,14 @@
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(130, 6);
             // 
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmReportView});
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.dashboardToolStripMenuItem.Text = "&Dashboard";
             // 
             // tsmReportView
@@ -592,29 +592,29 @@
             // databaseToolStripMenuItem
             // 
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.databaseToolStripMenuItem.Text = "&Database";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
             // 
             // systemToolStripMenuItem
             // 
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
-            this.systemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.systemToolStripMenuItem.Text = "&System";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(119, 6);
             // 
             // apiToolStripMenuItem
             // 
             this.apiToolStripMenuItem.Name = "apiToolStripMenuItem";
-            this.apiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.apiToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.apiToolStripMenuItem.Text = "&Api";
             // 
             // tableLayoutPanel1
@@ -623,8 +623,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.14794F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.85206F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.91667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.08333F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 1);
@@ -656,7 +656,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(487, 281);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(473, 281);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // pn_Card_Repair
@@ -667,10 +667,10 @@
             this.pn_Card_Repair.Controls.Add(this.lb_RepairTotal);
             this.pn_Card_Repair.Controls.Add(this.label30);
             this.pn_Card_Repair.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_Card_Repair.Location = new System.Drawing.Point(248, 145);
+            this.pn_Card_Repair.Location = new System.Drawing.Point(241, 145);
             this.pn_Card_Repair.Margin = new System.Windows.Forms.Padding(5, 5, 3, 3);
             this.pn_Card_Repair.Name = "pn_Card_Repair";
-            this.pn_Card_Repair.Size = new System.Drawing.Size(236, 133);
+            this.pn_Card_Repair.Size = new System.Drawing.Size(229, 133);
             this.pn_Card_Repair.TabIndex = 11;
             this.pn_Card_Repair.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_Card_Repair_Paint);
             // 
@@ -680,7 +680,7 @@
             this.pb_Bdo_Repair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
             this.pb_Bdo_Repair.BackgroundImage = global::ActivityReportSystem.Properties.Resources.ic_repair_48;
             this.pb_Bdo_Repair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_Bdo_Repair.Location = new System.Drawing.Point(190, 8);
+            this.pb_Bdo_Repair.Location = new System.Drawing.Point(183, 8);
             this.pb_Bdo_Repair.Margin = new System.Windows.Forms.Padding(2);
             this.pb_Bdo_Repair.Name = "pb_Bdo_Repair";
             this.pb_Bdo_Repair.Size = new System.Drawing.Size(36, 32);
@@ -696,7 +696,7 @@
             this.panel6.Location = new System.Drawing.Point(1, 87);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(232, 43);
+            this.panel6.Size = new System.Drawing.Size(225, 43);
             this.panel6.TabIndex = 328;
             // 
             // lk_View_Repair
@@ -753,7 +753,7 @@
             this.pn_Card_Serv.Location = new System.Drawing.Point(3, 145);
             this.pn_Card_Serv.Margin = new System.Windows.Forms.Padding(3, 5, 5, 3);
             this.pn_Card_Serv.Name = "pn_Card_Serv";
-            this.pn_Card_Serv.Size = new System.Drawing.Size(235, 133);
+            this.pn_Card_Serv.Size = new System.Drawing.Size(228, 133);
             this.pn_Card_Serv.TabIndex = 10;
             this.pn_Card_Serv.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_Card_Serv_Paint);
             // 
@@ -763,7 +763,7 @@
             this.pb_Bdo_Servicing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
             this.pb_Bdo_Servicing.BackgroundImage = global::ActivityReportSystem.Properties.Resources.ic_servicing_48;
             this.pb_Bdo_Servicing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_Bdo_Servicing.Location = new System.Drawing.Point(191, 8);
+            this.pb_Bdo_Servicing.Location = new System.Drawing.Point(184, 8);
             this.pb_Bdo_Servicing.Margin = new System.Windows.Forms.Padding(2);
             this.pb_Bdo_Servicing.Name = "pb_Bdo_Servicing";
             this.pb_Bdo_Servicing.Size = new System.Drawing.Size(36, 32);
@@ -779,7 +779,7 @@
             this.panel5.Location = new System.Drawing.Point(1, 87);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(231, 43);
+            this.panel5.Size = new System.Drawing.Size(224, 43);
             this.panel5.TabIndex = 327;
             // 
             // lk_View_Service
@@ -836,7 +836,7 @@
             this.pn_Card_Install.Location = new System.Drawing.Point(3, 3);
             this.pn_Card_Install.Margin = new System.Windows.Forms.Padding(3, 3, 5, 5);
             this.pn_Card_Install.Name = "pn_Card_Install";
-            this.pn_Card_Install.Size = new System.Drawing.Size(235, 132);
+            this.pn_Card_Install.Size = new System.Drawing.Size(228, 132);
             this.pn_Card_Install.TabIndex = 8;
             this.pn_Card_Install.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_Card_Install_Paint);
             // 
@@ -846,7 +846,7 @@
             this.pb_Bdo_Installation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(159)))), ((int)(((byte)(31)))));
             this.pb_Bdo_Installation.BackgroundImage = global::ActivityReportSystem.Properties.Resources.ic_installation_48;
             this.pb_Bdo_Installation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_Bdo_Installation.Location = new System.Drawing.Point(191, 8);
+            this.pb_Bdo_Installation.Location = new System.Drawing.Point(184, 8);
             this.pb_Bdo_Installation.Margin = new System.Windows.Forms.Padding(2);
             this.pb_Bdo_Installation.Name = "pb_Bdo_Installation";
             this.pb_Bdo_Installation.Size = new System.Drawing.Size(36, 32);
@@ -876,7 +876,7 @@
             this.panel3.Location = new System.Drawing.Point(1, 86);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(231, 43);
+            this.panel3.Size = new System.Drawing.Size(224, 43);
             this.panel3.TabIndex = 318;
             // 
             // lk_View_Installation
@@ -917,10 +917,10 @@
             this.pn_Card_Reprogram.Controls.Add(this.lb_RepTotal);
             this.pn_Card_Reprogram.Controls.Add(this.label16);
             this.pn_Card_Reprogram.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_Card_Reprogram.Location = new System.Drawing.Point(248, 3);
+            this.pn_Card_Reprogram.Location = new System.Drawing.Point(241, 3);
             this.pn_Card_Reprogram.Margin = new System.Windows.Forms.Padding(5, 3, 3, 5);
             this.pn_Card_Reprogram.Name = "pn_Card_Reprogram";
-            this.pn_Card_Reprogram.Size = new System.Drawing.Size(236, 132);
+            this.pn_Card_Reprogram.Size = new System.Drawing.Size(229, 132);
             this.pn_Card_Reprogram.TabIndex = 9;
             this.pn_Card_Reprogram.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_Card_Reprogram_Paint);
             // 
@@ -930,7 +930,7 @@
             this.pb_Bdo_Reprogram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.pb_Bdo_Reprogram.BackgroundImage = global::ActivityReportSystem.Properties.Resources.ic_reprogramming_48;
             this.pb_Bdo_Reprogram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pb_Bdo_Reprogram.Location = new System.Drawing.Point(195, 8);
+            this.pb_Bdo_Reprogram.Location = new System.Drawing.Point(188, 8);
             this.pb_Bdo_Reprogram.Margin = new System.Windows.Forms.Padding(2);
             this.pb_Bdo_Reprogram.Name = "pb_Bdo_Reprogram";
             this.pb_Bdo_Reprogram.Size = new System.Drawing.Size(36, 32);
@@ -946,7 +946,7 @@
             this.panel4.Location = new System.Drawing.Point(1, 86);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(232, 43);
+            this.panel4.Size = new System.Drawing.Size(225, 43);
             this.panel4.TabIndex = 326;
             // 
             // lk_View_Reprogram
@@ -1005,7 +1005,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(487, 456);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(473, 456);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // dgv_Sum_PenReq
@@ -1064,7 +1064,7 @@
             this.dgv_Sum_PenReq.ShowCellToolTips = false;
             this.dgv_Sum_PenReq.ShowEditingIcon = false;
             this.dgv_Sum_PenReq.ShowRowErrors = false;
-            this.dgv_Sum_PenReq.Size = new System.Drawing.Size(481, 217);
+            this.dgv_Sum_PenReq.Size = new System.Drawing.Size(467, 217);
             this.dgv_Sum_PenReq.TabIndex = 344;
             this.dgv_Sum_PenReq.TabStop = false;
             this.dgv_Sum_PenReq.Leave += new System.EventHandler(this.dgv_Sum_PenReq_Leave);
@@ -1174,7 +1174,7 @@
             this.dgv_Sum_ComReq.ShowCellToolTips = false;
             this.dgv_Sum_ComReq.ShowEditingIcon = false;
             this.dgv_Sum_ComReq.ShowRowErrors = false;
-            this.dgv_Sum_ComReq.Size = new System.Drawing.Size(481, 217);
+            this.dgv_Sum_ComReq.Size = new System.Drawing.Size(467, 217);
             this.dgv_Sum_ComReq.TabIndex = 343;
             this.dgv_Sum_ComReq.TabStop = false;
             this.dgv_Sum_ComReq.Leave += new System.EventHandler(this.dgv_Sum_ComReq_Leave);
@@ -1226,17 +1226,17 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.20609F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.79391F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.44056F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.55944F));
             this.tableLayoutPanel4.Controls.Add(this.dgv_Model_List, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(536, 320);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(522, 320);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 456F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(701, 456);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(715, 456);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
             // dgv_Model_List
@@ -1283,8 +1283,8 @@
             this.dgv_Model_List.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgv_Model_List.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(55)))), ((int)(((byte)(153)))));
             this.dgv_Model_List.HeaderForeColor = System.Drawing.Color.White;
-            this.dgv_Model_List.Location = new System.Drawing.Point(265, 5);
-            this.dgv_Model_List.Margin = new System.Windows.Forms.Padding(5, 5, 3, 6);
+            this.dgv_Model_List.Location = new System.Drawing.Point(286, 5);
+            this.dgv_Model_List.Margin = new System.Windows.Forms.Padding(5, 5, 3, 4);
             this.dgv_Model_List.Name = "dgv_Model_List";
             this.dgv_Model_List.ReadOnly = true;
             this.dgv_Model_List.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1304,7 +1304,7 @@
             this.dgv_Model_List.ShowCellToolTips = false;
             this.dgv_Model_List.ShowEditingIcon = false;
             this.dgv_Model_List.ShowRowErrors = false;
-            this.dgv_Model_List.Size = new System.Drawing.Size(433, 445);
+            this.dgv_Model_List.Size = new System.Drawing.Size(426, 447);
             this.dgv_Model_List.TabIndex = 1;
             this.dgv_Model_List.Leave += new System.EventHandler(this.dgv_Model_List_Leave);
             // 
@@ -1373,7 +1373,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.97053F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.02947F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(254, 450);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(275, 450);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // pn_Lookup_Body
@@ -1392,7 +1392,7 @@
             this.pn_Lookup_Body.Location = new System.Drawing.Point(3, 162);
             this.pn_Lookup_Body.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.pn_Lookup_Body.Name = "pn_Lookup_Body";
-            this.pn_Lookup_Body.Size = new System.Drawing.Size(248, 288);
+            this.pn_Lookup_Body.Size = new System.Drawing.Size(269, 288);
             this.pn_Lookup_Body.TabIndex = 350;
             // 
             // btn_Model_Search
@@ -1404,7 +1404,7 @@
             this.btn_Model_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Model_Search.Location = new System.Drawing.Point(17, 108);
             this.btn_Model_Search.Name = "btn_Model_Search";
-            this.btn_Model_Search.Size = new System.Drawing.Size(216, 33);
+            this.btn_Model_Search.Size = new System.Drawing.Size(237, 33);
             this.btn_Model_Search.TabIndex = 9;
             this.btn_Model_Search.Text = "    Search";
             this.btn_Model_Search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1420,7 +1420,7 @@
             this.btn_Model_Clear.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Model_Clear.Location = new System.Drawing.Point(128, 107);
             this.btn_Model_Clear.Name = "btn_Model_Clear";
-            this.btn_Model_Clear.Size = new System.Drawing.Size(104, 33);
+            this.btn_Model_Clear.Size = new System.Drawing.Size(125, 33);
             this.btn_Model_Clear.TabIndex = 8;
             this.btn_Model_Clear.Text = "    Clear";
             this.btn_Model_Clear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -1459,7 +1459,7 @@
             "Repair"});
             this.cmb_Model_Template.Location = new System.Drawing.Point(91, 16);
             this.cmb_Model_Template.Name = "cmb_Model_Template";
-            this.cmb_Model_Template.Size = new System.Drawing.Size(142, 23);
+            this.cmb_Model_Template.Size = new System.Drawing.Size(163, 23);
             this.cmb_Model_Template.TabIndex = 4;
             // 
             // dgv_Model_Status_List
@@ -1524,7 +1524,7 @@
             this.dgv_Model_Status_List.ShowCellToolTips = false;
             this.dgv_Model_Status_List.ShowEditingIcon = false;
             this.dgv_Model_Status_List.ShowRowErrors = false;
-            this.dgv_Model_Status_List.Size = new System.Drawing.Size(215, 123);
+            this.dgv_Model_Status_List.Size = new System.Drawing.Size(236, 123);
             this.dgv_Model_Status_List.TabIndex = 1;
             // 
             // Column1
@@ -1565,7 +1565,7 @@
             this.dtp_Model_From.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_Model_From.Location = new System.Drawing.Point(91, 45);
             this.dtp_Model_From.Name = "dtp_Model_From";
-            this.dtp_Model_From.Size = new System.Drawing.Size(142, 23);
+            this.dtp_Model_From.Size = new System.Drawing.Size(163, 23);
             this.dtp_Model_From.TabIndex = 2;
             // 
             // label4
@@ -1589,7 +1589,7 @@
             this.dtp_Model_To.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_Model_To.Location = new System.Drawing.Point(91, 74);
             this.dtp_Model_To.Name = "dtp_Model_To";
-            this.dtp_Model_To.Size = new System.Drawing.Size(142, 23);
+            this.dtp_Model_To.Size = new System.Drawing.Size(163, 23);
             this.dtp_Model_To.TabIndex = 6;
             // 
             // label3
@@ -1619,7 +1619,7 @@
             this.pn_TerminalHeader.Location = new System.Drawing.Point(3, 3);
             this.pn_TerminalHeader.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.pn_TerminalHeader.Name = "pn_TerminalHeader";
-            this.pn_TerminalHeader.Size = new System.Drawing.Size(248, 149);
+            this.pn_TerminalHeader.Size = new System.Drawing.Size(269, 149);
             this.pn_TerminalHeader.TabIndex = 1;
             this.pn_TerminalHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_TerminalHeader_Paint);
             // 
@@ -1724,7 +1724,7 @@
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.BackgroundImage = global::ActivityReportSystem.Properties.Resources.ic_combo_chart_52;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox7.Location = new System.Drawing.Point(203, 8);
+            this.pictureBox7.Location = new System.Drawing.Point(224, 8);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(37, 31);
             this.pictureBox7.TabIndex = 16;
@@ -1749,10 +1749,10 @@
             this.pn_SummaryBody.Controls.Add(this.label18);
             this.pn_SummaryBody.Controls.Add(this.chrt_Bdo_Display);
             this.pn_SummaryBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_SummaryBody.Location = new System.Drawing.Point(538, 35);
+            this.pn_SummaryBody.Location = new System.Drawing.Point(524, 35);
             this.pn_SummaryBody.Margin = new System.Windows.Forms.Padding(5);
             this.pn_SummaryBody.Name = "pn_SummaryBody";
-            this.pn_SummaryBody.Size = new System.Drawing.Size(697, 277);
+            this.pn_SummaryBody.Size = new System.Drawing.Size(711, 277);
             this.pn_SummaryBody.TabIndex = 2;
             this.pn_SummaryBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_SummaryBody_Paint);
             // 
@@ -1779,7 +1779,7 @@
             this.pn_TotalSumBody.Controls.Add(this.chrt_Bdo_Summary);
             this.pn_TotalSumBody.Location = new System.Drawing.Point(4, 9);
             this.pn_TotalSumBody.Name = "pn_TotalSumBody";
-            this.pn_TotalSumBody.Size = new System.Drawing.Size(325, 264);
+            this.pn_TotalSumBody.Size = new System.Drawing.Size(330, 264);
             this.pn_TotalSumBody.TabIndex = 13;
             this.pn_TotalSumBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_TotalSumBody_Paint);
             // 
@@ -1788,11 +1788,11 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(204, 226);
+            this.label12.Location = new System.Drawing.Point(206, 226);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(27, 15);
+            this.label12.Size = new System.Drawing.Size(31, 17);
             this.label12.TabIndex = 349;
             this.label12.Text = "C4 :";
             // 
@@ -1801,11 +1801,11 @@
             this.lb_C4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_C4.AutoSize = true;
             this.lb_C4.BackColor = System.Drawing.Color.White;
-            this.lb_C4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_C4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_C4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.lb_C4.Location = new System.Drawing.Point(228, 226);
+            this.lb_C4.Location = new System.Drawing.Point(234, 226);
             this.lb_C4.Name = "lb_C4";
-            this.lb_C4.Size = new System.Drawing.Size(55, 15);
+            this.lb_C4.Size = new System.Drawing.Size(58, 17);
             this.lb_C4.TabIndex = 348;
             this.lb_C4.Text = "100.00%";
             // 
@@ -1814,11 +1814,11 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(204, 206);
+            this.label10.Location = new System.Drawing.Point(206, 206);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 15);
+            this.label10.Size = new System.Drawing.Size(31, 17);
             this.label10.TabIndex = 347;
             this.label10.Text = "C3 :";
             // 
@@ -1827,11 +1827,11 @@
             this.lb_C3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_C3.AutoSize = true;
             this.lb_C3.BackColor = System.Drawing.Color.White;
-            this.lb_C3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_C3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_C3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
-            this.lb_C3.Location = new System.Drawing.Point(228, 206);
+            this.lb_C3.Location = new System.Drawing.Point(234, 206);
             this.lb_C3.Name = "lb_C3";
-            this.lb_C3.Size = new System.Drawing.Size(55, 15);
+            this.lb_C3.Size = new System.Drawing.Size(58, 17);
             this.lb_C3.TabIndex = 346;
             this.lb_C3.Text = "100.00%";
             // 
@@ -1840,11 +1840,11 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(59, 226);
+            this.label7.Location = new System.Drawing.Point(56, 226);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 15);
+            this.label7.Size = new System.Drawing.Size(31, 17);
             this.label7.TabIndex = 345;
             this.label7.Text = "C2 :";
             // 
@@ -1853,11 +1853,11 @@
             this.lb_C2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_C2.AutoSize = true;
             this.lb_C2.BackColor = System.Drawing.Color.White;
-            this.lb_C2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_C2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_C2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.lb_C2.Location = new System.Drawing.Point(83, 226);
             this.lb_C2.Name = "lb_C2";
-            this.lb_C2.Size = new System.Drawing.Size(55, 15);
+            this.lb_C2.Size = new System.Drawing.Size(58, 17);
             this.lb_C2.TabIndex = 344;
             this.lb_C2.Text = "100.00%";
             // 
@@ -1866,11 +1866,11 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(59, 206);
+            this.label6.Location = new System.Drawing.Point(56, 206);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 15);
+            this.label6.Size = new System.Drawing.Size(31, 17);
             this.label6.TabIndex = 343;
             this.label6.Text = "C1 :";
             // 
@@ -1879,11 +1879,11 @@
             this.lb_C1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lb_C1.AutoSize = true;
             this.lb_C1.BackColor = System.Drawing.Color.White;
-            this.lb_C1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_C1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_C1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(159)))), ((int)(((byte)(31)))));
             this.lb_C1.Location = new System.Drawing.Point(83, 206);
             this.lb_C1.Name = "lb_C1";
-            this.lb_C1.Size = new System.Drawing.Size(55, 15);
+            this.lb_C1.Size = new System.Drawing.Size(58, 17);
             this.lb_C1.TabIndex = 342;
             this.lb_C1.Text = "100.00%";
             // 
@@ -1893,7 +1893,7 @@
             this.label53.BackColor = System.Drawing.Color.White;
             this.label53.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label53.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label53.Location = new System.Drawing.Point(18, 7);
+            this.label53.Location = new System.Drawing.Point(13, 7);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(92, 21);
             this.label53.TabIndex = 336;
@@ -1905,7 +1905,7 @@
             this.label50.BackColor = System.Drawing.Color.White;
             this.label50.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label50.Location = new System.Drawing.Point(19, 130);
+            this.label50.Location = new System.Drawing.Point(26, 130);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(52, 30);
             this.label50.TabIndex = 339;
@@ -1917,7 +1917,7 @@
             this.lb_ComSum.BackColor = System.Drawing.Color.White;
             this.lb_ComSum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ComSum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
-            this.lb_ComSum.Location = new System.Drawing.Point(17, 96);
+            this.lb_ComSum.Location = new System.Drawing.Point(24, 96);
             this.lb_ComSum.Name = "lb_ComSum";
             this.lb_ComSum.Size = new System.Drawing.Size(68, 21);
             this.lb_ComSum.TabIndex = 335;
@@ -1929,7 +1929,7 @@
             this.lb_PenSum.BackColor = System.Drawing.Color.White;
             this.lb_PenSum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_PenSum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(40)))), ((int)(((byte)(35)))));
-            this.lb_PenSum.Location = new System.Drawing.Point(17, 163);
+            this.lb_PenSum.Location = new System.Drawing.Point(24, 163);
             this.lb_PenSum.Name = "lb_PenSum";
             this.lb_PenSum.Size = new System.Drawing.Size(68, 21);
             this.lb_PenSum.TabIndex = 338;
@@ -1941,7 +1941,7 @@
             this.label52.BackColor = System.Drawing.Color.White;
             this.label52.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label52.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label52.Location = new System.Drawing.Point(19, 62);
+            this.label52.Location = new System.Drawing.Point(26, 62);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(68, 30);
             this.label52.TabIndex = 337;
@@ -1985,7 +1985,7 @@
             legend1.TextWrapThreshold = 30;
             legend1.TitleFont = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chrt_Bdo_Summary.Legends.Add(legend1);
-            this.chrt_Bdo_Summary.Location = new System.Drawing.Point(100, 19);
+            this.chrt_Bdo_Summary.Location = new System.Drawing.Point(105, 7);
             this.chrt_Bdo_Summary.Margin = new System.Windows.Forms.Padding(2);
             this.chrt_Bdo_Summary.Name = "chrt_Bdo_Summary";
             series1.BorderColor = System.Drawing.Color.White;
@@ -2003,7 +2003,7 @@
             series1.ShadowOffset = 2;
             series1.YValuesPerPoint = 4;
             this.chrt_Bdo_Summary.Series.Add(series1);
-            this.chrt_Bdo_Summary.Size = new System.Drawing.Size(241, 179);
+            this.chrt_Bdo_Summary.Size = new System.Drawing.Size(250, 191);
             this.chrt_Bdo_Summary.TabIndex = 12;
             this.chrt_Bdo_Summary.TabStop = false;
             // 
@@ -2071,7 +2071,7 @@
             legend2.TitleFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             legend2.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.GradientLine;
             this.chrt_Bdo_Display.Legends.Add(legend2);
-            this.chrt_Bdo_Display.Location = new System.Drawing.Point(319, 53);
+            this.chrt_Bdo_Display.Location = new System.Drawing.Point(334, 53);
             this.chrt_Bdo_Display.Margin = new System.Windows.Forms.Padding(2);
             this.chrt_Bdo_Display.Name = "chrt_Bdo_Display";
             series2.BorderColor = System.Drawing.Color.White;
@@ -2090,7 +2090,7 @@
             series2.ShadowOffset = 1;
             series2.YValuesPerPoint = 4;
             this.chrt_Bdo_Display.Series.Add(series2);
-            this.chrt_Bdo_Display.Size = new System.Drawing.Size(368, 217);
+            this.chrt_Bdo_Display.Size = new System.Drawing.Size(367, 217);
             this.chrt_Bdo_Display.TabIndex = 11;
             this.chrt_Bdo_Display.TabStop = false;
             // 
