@@ -386,7 +386,7 @@
             this.tsmSource});
             this.Tsm_Import.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Tsm_Import.Name = "Tsm_Import";
-            this.Tsm_Import.Size = new System.Drawing.Size(152, 22);
+            this.Tsm_Import.Size = new System.Drawing.Size(109, 22);
             this.Tsm_Import.Text = "&Import";
             // 
             // tsmSource
@@ -413,7 +413,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(130, 6);
             // 
             // Tsm_Dashboard
             // 
@@ -427,7 +427,7 @@
             this.Tsm_Repair});
             this.Tsm_Dashboard.Enabled = false;
             this.Tsm_Dashboard.Name = "Tsm_Dashboard";
-            this.Tsm_Dashboard.Size = new System.Drawing.Size(152, 22);
+            this.Tsm_Dashboard.Size = new System.Drawing.Size(133, 22);
             this.Tsm_Dashboard.Text = "&Dashboard";
             // 
             // Tsm_Installation
@@ -472,14 +472,14 @@
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(130, 6);
             // 
             // breakdownToolStripMenuItem
             // 
             this.breakdownToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmSummary});
             this.breakdownToolStripMenuItem.Name = "breakdownToolStripMenuItem";
-            this.breakdownToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.breakdownToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.breakdownToolStripMenuItem.Text = "&Breakdown";
             // 
             // tsmSummary
@@ -721,12 +721,12 @@
             // 
             this.lb_RepairTotal.AutoSize = true;
             this.lb_RepairTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.lb_RepairTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_RepairTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RepairTotal.ForeColor = System.Drawing.Color.White;
             this.lb_RepairTotal.Location = new System.Drawing.Point(28, 52);
             this.lb_RepairTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_RepairTotal.Name = "lb_RepairTotal";
-            this.lb_RepairTotal.Size = new System.Drawing.Size(91, 30);
+            this.lb_RepairTotal.Size = new System.Drawing.Size(83, 25);
             this.lb_RepairTotal.TabIndex = 325;
             this.lb_RepairTotal.Text = "999,999";
             // 
@@ -804,12 +804,12 @@
             // 
             this.lb_ServTotal.AutoSize = true;
             this.lb_ServTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(82)))), ((int)(((byte)(83)))));
-            this.lb_ServTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ServTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ServTotal.ForeColor = System.Drawing.Color.White;
             this.lb_ServTotal.Location = new System.Drawing.Point(28, 52);
             this.lb_ServTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_ServTotal.Name = "lb_ServTotal";
-            this.lb_ServTotal.Size = new System.Drawing.Size(91, 30);
+            this.lb_ServTotal.Size = new System.Drawing.Size(83, 25);
             this.lb_ServTotal.TabIndex = 325;
             this.lb_ServTotal.Text = "999,999";
             // 
@@ -857,12 +857,12 @@
             // 
             this.lb_InsTotal.AutoSize = true;
             this.lb_InsTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(159)))), ((int)(((byte)(31)))));
-            this.lb_InsTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_InsTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_InsTotal.ForeColor = System.Drawing.Color.White;
             this.lb_InsTotal.Location = new System.Drawing.Point(28, 52);
             this.lb_InsTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_InsTotal.Name = "lb_InsTotal";
-            this.lb_InsTotal.Size = new System.Drawing.Size(91, 30);
+            this.lb_InsTotal.Size = new System.Drawing.Size(83, 25);
             this.lb_InsTotal.TabIndex = 316;
             this.lb_InsTotal.Text = "999,999";
             this.lb_InsTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -971,12 +971,12 @@
             // 
             this.lb_RepTotal.AutoSize = true;
             this.lb_RepTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.lb_RepTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_RepTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_RepTotal.ForeColor = System.Drawing.Color.White;
             this.lb_RepTotal.Location = new System.Drawing.Point(28, 52);
             this.lb_RepTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_RepTotal.Name = "lb_RepTotal";
-            this.lb_RepTotal.Size = new System.Drawing.Size(91, 30);
+            this.lb_RepTotal.Size = new System.Drawing.Size(83, 25);
             this.lb_RepTotal.TabIndex = 325;
             this.lb_RepTotal.Text = "999,999";
             this.lb_RepTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
